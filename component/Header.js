@@ -3,7 +3,7 @@
 import React from 'react';
 import Script from 'next/script';
 import { useScrollPosition } from '../hooks';
-
+import Link from 'next/link';
 import { useState } from 'react';
 import $ from "jquery";
 const Header = () => {
