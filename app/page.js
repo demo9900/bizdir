@@ -1,7 +1,19 @@
+'use client';
 import React from 'react'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import Header from '../component/Header'
+import Footer from '../component/Footer';
+import BottomMenu from '../component/BottomMenu';
 import Link from 'next/link'
 const page = () => {
+  var settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
   const category = {
     "data":[
       {
@@ -76,14 +88,14 @@ const page = () => {
                 <div>
                   <h4>The Royal Spa Center For Womens</h4>
                   <span>No:2, 4th Avenue, Newyork, USA, Near to Airport</span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
                 <div>
                   <h4>Real estate</h4>
                   <span>Chennai, India</span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
@@ -93,7 +105,7 @@ const page = () => {
                     Schools, university, colleges, online classes, tution
                     centers, distance education..
                   </span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
@@ -103,42 +115,42 @@ const page = () => {
                     hotel booking online, hotel reservation, holiday room
                     booking
                   </span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
                 <div>
                   <h4>Import and export</h4>
                   <span>Import and export to other countrys with low cost</span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
                 <div>
                   <h4>Properties in Illunois</h4>
                   <span>Villas, Plots, House rent and buy</span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
                 <div>
                   <h4>Schools in Adyar</h4>
                   <span>schools, adyar, education, </span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
                 <div>
                   <h4>Laptop services near you</h4>
                   <span>laptop services, computer services</span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
               <li>
                 <div>
                   <h4>Hospital and medical services near you</h4>
                   <span>Hospital and medical services near you</span>
-                  <a href="all-listing.html" />
+                  <Link href="/all-listing" />
                 </div>
               </li>
             </ul>
@@ -165,7 +177,7 @@ const page = () => {
               Choose from a collection of handpicked luxury villas &amp;
               apartments
             </p>{" "}
-            <a href="#">Explore Now</a>
+            <Link href="/#">Explore Now</Link>
           </div>
         </li>
         <li>
@@ -176,7 +188,7 @@ const page = () => {
               Choose from a collection of handpicked luxury villas &amp;
               apartments
             </p>{" "}
-            <a href="#">Explore Now</a>
+            <Link href="/#">Explore Now</Link>
           </div>
         </li>
         <li>
@@ -187,7 +199,7 @@ const page = () => {
               Choose from a collection of handpicked luxury villas &amp;
               apartments
             </p>{" "}
-            <a href="#">Explore Now</a>
+            <Link href="/#">Explore Now</Link>
           </div>
         </li>
         <li>
@@ -198,7 +210,7 @@ const page = () => {
               Choose from a collection of handpicked luxury villas &amp;
               apartments
             </p>{" "}
-            <a href="#">Explore Now</a>
+            <Link href="/#">Explore Now</Link>
           </div>
         </li>
       </ul>
@@ -236,7 +248,7 @@ const page = () => {
 
         </div>})}
 				</div>
-        <a href="all-category.html" className="more">View all services</a>
+        <Link href="/all-category" className="more">View all services</Link>
 			  </div>
         
         </div>
@@ -284,9 +296,9 @@ const page = () => {
                   </div>
                   <p>09 Listings</p>
                 </div>{" "}
-                <a href="all-listing.html" className="fclick">
+                <Link href="/all-listing" className="fclick">
                   &nbsp;
-                </a>
+                </Link>
               </div>
             </li>
             <li>
@@ -312,9 +324,9 @@ const page = () => {
                   </div>
                   <p>06 Listings</p>
                 </div>
-                <a href="all-listing.html" className="fclick">
+                <Link href="/all-listing" className="fclick">
                   &nbsp;
-                </a>
+                </Link>
               </div>
             </li>
             <li>
@@ -340,9 +352,9 @@ const page = () => {
                   </div>
                   <p>03 Listings</p>
                 </div>{" "}
-                <a href="all-listing.html" className="fclick">
+                <Link href="/all-listing" className="fclick">
                   &nbsp;
-                </a>
+                </Link>
               </div>
             </li>
             <li>
@@ -368,9 +380,9 @@ const page = () => {
                   </div>
                   <p>23 Listings</p>
                 </div>{" "}
-                <a href="all-listing.html" className="fclick">
+                <Link href="/all-listing" className="fclick">
                   &nbsp;
-                </a>
+                </Link>
               </div>
             </li>
             <li>
@@ -396,9 +408,9 @@ const page = () => {
                   </div>
                   <p>23 Listings</p>
                 </div>{" "}
-                <a href="all-listing.html" className="fclick">
+                <Link href="/all-listing" className="fclick">
                   &nbsp;
-                </a>
+                </Link>
               </div>
             </li>
           </ul>
@@ -435,7 +447,7 @@ const page = () => {
                 <p>Titan wedding happ, North street, No 2, Newyork, USA</p>{" "}
                 <span className="rat-sh">5.0</span>
               </div>{" "}
-              <a href="listing-details.html">&nbsp;</a>
+              <Link href="/listing-details">&nbsp;</Link>
             </div>
             {/*POPULAR LISTINGS*/}
             <div className="hom-mpop">
@@ -465,7 +477,7 @@ const page = () => {
                 </p>{" "}
                 <span className="rat-sh">5.0</span>
               </div>
-              <a href="listing-details.html">&nbsp;</a>
+              <Link href="/listing-details">&nbsp;</Link>
             </div>
             {/*POPULAR LISTINGS*/}
             <div className="hom-mpop">
@@ -480,7 +492,7 @@ const page = () => {
                 <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>{" "}
                 <span className="rat-sh">4.0</span>
               </div>
-              <a href="listing-details.html">&nbsp;</a>
+              <Link href="/listing-details">&nbsp;</Link>
             </div>
           </div>
         </div>
@@ -498,7 +510,7 @@ const page = () => {
                 <h4>Digital Products</h4>
                 <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>
               </div>
-              <a href="listing-details.html">&nbsp;</a>
+              <Link href="/listing-details">&nbsp;</Link>
             </div>
             {/*POPULAR LISTINGS*/}
             <div className="hom-mpop">
@@ -513,7 +525,7 @@ const page = () => {
                 <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>{" "}
                 <span className="rat-sh">3.0</span>
               </div>
-              <a href="listing-details.html">&nbsp;</a>
+              <Link href="/listing-details">&nbsp;</Link>
             </div>
             {/*POPULAR LISTINGS*/}
             <div className="hom-mpop">
@@ -527,7 +539,7 @@ const page = () => {
                 <h4>Hospitals</h4>
                 <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>
               </div>{" "}
-              <a href="listing-details.html">&nbsp;</a>
+              <Link href="/listing-details">&nbsp;</Link>
             </div>
             {/*POPULAR LISTINGS*/}
             <div className="hom-mpop">
@@ -542,7 +554,7 @@ const page = () => {
                 <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>{" "}
                 <span className="rat-sh">3.0</span>
               </div>{" "}
-              <a href="listing-details.html">&nbsp;</a>
+              <Link href="/listing-details">&nbsp;</Link>
             </div>
           </div>
         </div>
@@ -728,7 +740,7 @@ const page = () => {
     </div>
   </div>
   </section>
-
+  
   <>
   <section>
     <div className="str str-full">
@@ -764,7 +776,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -782,7 +794,7 @@ const page = () => {
                       {" "}
                       <span>2.0</span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -800,7 +812,7 @@ const page = () => {
                       {" "}
                       <span>3.3</span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -814,7 +826,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -828,7 +840,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                 </ul>
@@ -853,7 +865,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -867,7 +879,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -881,7 +893,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -899,7 +911,7 @@ const page = () => {
                       {" "}
                       <span>3.7</span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -917,7 +929,7 @@ const page = () => {
                       {" "}
                       <span>3.2</span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                 </ul>
@@ -942,7 +954,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -960,7 +972,7 @@ const page = () => {
                       {" "}
                       <span>4.0</span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -974,7 +986,7 @@ const page = () => {
                         No:2, 4th Avenue, Newyork, USA, Near to Airport
                       </span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -992,7 +1004,7 @@ const page = () => {
                       {" "}
                       <span>4.0</span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                   {/*LISTINGS*/}
@@ -1010,7 +1022,7 @@ const page = () => {
                       {" "}
                       <span>3.0</span>
                     </div>
-                    <a href="listing-details.html" className="fclick" />
+                    <Link href="/listing-details" className="fclick" />
                   </li>
                   {/*LISTINGS*/}
                 </ul>
@@ -1030,29 +1042,24 @@ const page = () => {
       data-ride="carousel"
     >
       <div className="carousel-inner">
+      <Slider {...settings}>
         <div className="carousel-item active">
           <img src="/slider/1.jpg" alt="Los Angeles" />
-          <a
-            href="https://bizbookdirectorytemplate.com/demo.html"
+          <Link
+            href="/https://bizbookdirectorytemplate.com/demo"
             target="_blank"
           />
         </div>
         <div className="carousel-item ">
           <img src="/slider/2.jpg" alt="Los Angeles" />
-          <a
-            href="https://bizbookdirectorytemplate.com/demo.html"
+          <Link
+            href="/https://bizbookdirectorytemplate.com/demo"
             target="_blank"
           />
         </div>
+        </Slider>
       </div>
-      <a className="carousel-control-prev" href="#demo" data-slide="prev">
-        {" "}
-        <span className="carousel-control-prev-icon" />
-      </a>
-      <a className="carousel-control-next" href="#demo" data-slide="next">
-        {" "}
-        <span className="carousel-control-next-icon" />
-      </a>
+     
     </div>
   </section>
   {/* START */}
@@ -1074,16 +1081,16 @@ const page = () => {
               <div className="hom-eve-lhs-1 col-md-4">
                 <div className="eve-box">
                   <div>
-                    <a href="event-details.html">
+                    <Link href="/event-details">
                       <img src="/events/1.png" alt="" />
                       <span>
                         <b>Dec 31</b>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <h4>
-                      <a href="event-details.html">Online Marketers Meet-Up</a>
+                      <Link href="/event-details">Online Marketers Meet-Up</Link>
                     </h4>
                     <span className="addr">London, UK</span>
                     <span className="pho">6622442200</span>
@@ -1093,9 +1100,9 @@ const page = () => {
                       <img src="/user/1.png" alt="" /> <b>Hosted by</b>
                       <br />
                       <h4>Directory Finder</h4>
-                      <a
+                      <Link
                         target="_blank"
-                        href="profile.html"
+                        href="/profile"
                         className="fclick"
                       />
                     </div>
@@ -1105,16 +1112,16 @@ const page = () => {
               <div className="hom-eve-lhs-1 col-md-4">
                 <div className="eve-box">
                   <div>
-                    <a href="event-details.html">
+                    <Link href="/event-details">
                       <img src="/events/2.jpg" alt="" />
                       <span>
                         <b>Dec 31</b>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <h4>
-                      <a href="event-details.html">New year celebration</a>
+                      <Link href="/event-details">New year celebration</Link>
                     </h4>
                     <span className="addr">London, UK</span>
                     <span className="pho">6622442200</span>
@@ -1124,9 +1131,9 @@ const page = () => {
                       <img src="/user/2.jpeg" alt="" /> <b>Hosted by</b>
                       <br />
                       <h4>Chris moris</h4>
-                      <a
+                      <Link
                         target="_blank"
-                        href="profile.html"
+                        href="/profile"
                         className="fclick"
                       />
                     </div>
@@ -1145,7 +1152,7 @@ const page = () => {
                       <span>
                         Jan <b> 07</b>
                       </span>
-                      <a href="event-details.html" className="fclick" />
+                      <Link href="/event-details" className="fclick" />
                     </div>
                   </li>
                   <li>
@@ -1158,7 +1165,7 @@ const page = () => {
                       <span>
                         Jan <b> 10</b>
                       </span>
-                      <a href="event-details.html" className="fclick" />
+                      <Link href="/event-details" className="fclick" />
                     </div>
                   </li>
                   <li>
@@ -1171,7 +1178,7 @@ const page = () => {
                       <span>
                         Jan <b> 18</b>
                       </span>
-                      <a href="event-details.html" className="fclick" />
+                      <Link href="/event-details" className="fclick" />
                     </div>
                   </li>
                   <li>
@@ -1184,7 +1191,7 @@ const page = () => {
                       <span>
                         Mar <b> 18</b>
                       </span>
-                      <a href="event-details.html" className="fclick" />
+                      <Link href="/event-details" className="fclick" />
                     </div>
                   </li>
                   <li>
@@ -1197,7 +1204,7 @@ const page = () => {
                       <span>
                         Jan <b> 31</b>
                       </span>
-                      <a href="event-details.html" className="fclick" />
+                      <Link href="/event-details" className="fclick" />
                     </div>
                   </li>
                   <li>
@@ -1210,7 +1217,7 @@ const page = () => {
                       <span>
                         Jan <b> 18</b>
                       </span>
-                      <a href="event-details.html" className="fclick" />
+                      <Link href="/event-details" className="fclick" />
                     </div>
                   </li>
                 </ul>
@@ -1296,7 +1303,7 @@ const page = () => {
                               <h4>Events</h4>
                               <span>Email configuration</span>
                           </div>
-                          <a href="events" class="fclick"></a>
+                          <Link href="/events" class="fclick"></Link>
                       </div>
                   </li>
                   <li>
@@ -1308,7 +1315,7 @@ const page = () => {
                               <h4>Blog posts</h4>
                               <span>Email configuration</span>
                           </div>
-                          <a href="blog-posts" class="fclick"></a>
+                          <Link href="/blog-posts" class="fclick"></Link>
                       </div>
                   </li>
                   <li>
@@ -1320,7 +1327,7 @@ const page = () => {
                               <h4>How it works</h4>
                               <span>Email configuration</span>
                           </div>
-                          <a href="how-to.html" class="fclick"></a>
+                          <Link href="/how-to" class="fclick"></Link>
                       </div>
                   </li>
                   <li>
@@ -1332,7 +1339,7 @@ const page = () => {
                               <h4>Pricing details</h4>
                               <span>Email configuration</span>
                           </div>
-                          <a href="pricing-details.html" class="fclick"></a>
+                          <Link href="/pricing-details" class="fclick"></Link>
                       </div>
                   </li>
               </ul>
@@ -1376,12 +1383,12 @@ const page = () => {
                   </li>
                 </ul>
               </form>
-              <a href="#">
+              <Link href="/#">
                 <img src="/android.png" alt="" />
-              </a>
-              <a href="#">
+              </Link>
+              <Link href="/#">
                 <img src="/apple.png" alt="" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -1396,11 +1403,11 @@ const page = () => {
         <div className="row">
           <div className="filt-com lhs-ads">
             <div className="ads-box">
-              <a href="">
+              <Link href="/">
                 {" "}
                 <span>Ad</span>
                 <img src="/ads/ads2.jpg" alt="" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -1578,7 +1585,7 @@ const page = () => {
             </div>
             <div className="col-md-3 bb-link">
               {" "}
-              <a href="pricing-details.html">Add my business</a>
+              <Link href="/pricing-details">Add my business</Link>
             </div>
           </div>
         </div>
@@ -1586,293 +1593,47 @@ const page = () => {
     </div>
   </section>
   {/* END */}
-  <section className=" wed-hom-footer">
-    <div className="container">
-      <div className="row foot-supp">
-        <h2>
-          <span>Free support:</span> +01 5426 24400 &nbsp;&nbsp;|&nbsp;&nbsp;{" "}
-          <span>Email:</span> rn53themes@gmail.com
-        </h2>
-      </div>
-      <div className="row wed-foot-link">
-        <div className="col-md-4 foot-tc-mar-t-o">
-          <h4>Top Category</h4>
-          <ul>
-            <li>
-              <a href="all-listing.html">Digital Products</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Spa and Facial</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Real Estate</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Sports</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Education</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Electricals</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Automobiles</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Transportation</a>
-            </li>
-          </ul>
-        </div>
-        <div className="col-md-4">
-          <h4>Trending Category</h4>
-          <ul>
-            <li>
-              <a href="all-listing.html">Hospitals</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Hotels And Resorts</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Automobiles</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Hotels And Resorts</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Real Estate</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Sports</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Education</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Electricals</a>
-            </li>
-          </ul>
-        </div>
-        <div className="col-md-4">
-          <h4>HELP &amp; SUPPORT</h4>
-          <ul>
-            <li>
-              <a href="about.html">About us</a>
-            </li>
-            <li>
-              <a href="faq.html">FAQ</a>
-            </li>
-            <li>
-              <a href="feedback.html">Feedback</a>
-            </li>
-            <li>
-              <a href="contact-us.html">Contact us</a>
-            </li>
-            {/*                    <li><a href="#">*/}
-            {/*</a>*/}
-            {/*                    </li>*/}
-          </ul>
-        </div>
-      </div>
-      {/* POPULAR TAGS */}
-      <div className="row wed-foot-link-pop">
-        <div className="col-md-12">
-          <h4>Popular Tags</h4>
-          <ul>
-            <li>
-              <a href="all-listing.html">Wedding halls in London</a>
-            </li>
-            <li>
-              <a href="all-listing.html">Schools in Chennai</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Schools in NewYork</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Illunois</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Chennai1</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Enents in Tailand</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Flat for rent in Melborn</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Schools in NewYork</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Illunois</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Chennai1</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Enents in Tailand</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Flat for rent in Melborn</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Schools in NewYork</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Illunois</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Chennai1</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Enents in Tailand</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Flat for rent in Melborn</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Schools in NewYork</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Illunois</a>
-            </li>
-            <li>
-              <a href="dashboard.html">Real estate in Chennai1</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/* POPULAR TAGS */}
-      <div className="row wed-foot-link-1">
-        <div className="col-md-4">
-          <h4>Get In Touch</h4>
-          <p>
-            Address: 28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.
-          </p>
-          <p>
-            Phone: <a href="tel:+01 5426 24400">+01 5426 24400</a>
-          </p>
-          <p>
-            Email:{" "}
-            <a href="mailto:rn53themes@gmail.com">rn53themes@gmail.com</a>
-          </p>
-        </div>
-        <div className="col-md-4 fot-app">
-          <h4>DOWNLOAD OUR FREE MOBILE APPS</h4>
-          <ul>
-            <li>
-              <a href="">
-                <img src="/gstore.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="/astore.png" alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="col-md-4 fot-soc">
-          <h4>SOCIAL MEDIA</h4>
-          <ul>
-            <li>
-              <a target="_blank" href="">
-                <img src="/social/1.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://twitter.com/Google?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-              >
-                <img src="/social/2.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://www.facebook.com/Rn53themes-1956793534579530/"
-              >
-                <img src="/social/3.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="">
-                <img src="/social/4.png" alt="" />
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="">
-                <img src="/social/5.png" alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="row foot-count">
-        <ul>
-          <li>
-            <a target="_blank" href="http://www.domainname.au">
-              Australia
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.domainname.uk">
-              UK
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.domainname.usa">
-              USA
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.domainname.in">
-              India
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.domainname.ge">
-              Germany
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.domainname.ch">
-              China
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.domainname.fr">
-              france
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+ <Footer/>
   {/* START */}
-  <section>
-    <div className="cr">
-      <div className="container">
-        <div className="row">
-          <p>
-            Copyright © 2017-2021{" "}
-            <a href="https://rn53themes.net/" target="_blank">
-              Rn53 Themes
-            </a>
-            . Proudly powered by{" "}
-            <a href="https://rn53themes.net/" target="_blank">
-              Rn53Themes.net
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  
+
+  <BottomMenu/>
+
 </>
 
+<style jsx>
+  {`
+  .hom-top {
+    transition: all 0.5s ease;
+    background: none;
+    box-shadow: none;
+}
 
+.top-ser {
+    display: none;
+}
 
+.dmact .top-ser {
+    display: block;
+}
+
+.caro-home {
+    margin-top: 90px;
+    float: left;
+    width: 100%;
+}
+
+.carousel-item:before {
+    background: none;
+}
+.slick-next{
+  right:50px!important;
+}
+.slick-prev{
+  left:50px!important
+}
+  `}
+</style>
     </>
   )
 }

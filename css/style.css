@@ -114,6 +114,7 @@ a:hover {
     /* makes sure it stays on top */
 }
 
+
 #status, #loadingmessage1 {
     position: absolute;
     left: 47%;
@@ -1025,7 +1026,7 @@ div#event_detail_enq_success p{
 }
 .hom-top.dmact {
     transition: all 0.5s ease;
-    background: #20344c;
+    background: #20344c!important;
     box-shadow: 0px 11px 18px -8px rgba(42, 42, 42, 0.63);
 }
 .hom-nav{
@@ -4083,7 +4084,13 @@ color: #FF9800;
 }
 .pglist-p-com-ti h3 i {
 }
-.list-slider {
+.slick-prev
+{
+    left: 50px!important;
+    z-index: 9;
+}
+.slick-next{
+    right: 50px!important;
 }
 .list-slider-nav {
     margin-top: 175%;
@@ -6681,6 +6688,7 @@ background: #F44336;
     height: auto;
     border-radius: 50%;
     object-fit: cover;
+    text-align:center!important;
     /* float: left; */
     /* margin-right: 10px; */
     height: 120px;

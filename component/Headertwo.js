@@ -3,7 +3,7 @@
 import React from 'react';
 import Script from 'next/script';
 import { useScrollPosition } from '../hooks';
-
+import Link from 'next/link';
 import { useState } from 'react';
 import $ from "jquery";
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <>
     
-    <div className={`${scrollPosition > 0 ? 'hom-top dmact': 'hom-top'}`}>
+    <div className="hom-top dmact">
   <div className="container">
     <div className="row">
       <div className="hom-nav  db-open ">
