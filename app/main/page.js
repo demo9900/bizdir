@@ -14,13 +14,13 @@ export default function page() {
         <div className="flex justify-between">
           <div className="lg:w-3/12">
             <div className="logo float-left">
-              <Link href="//">
+              <a href="/">
                 <img
                   src="https://ik.imagekit.io/rrw4vjgxohv/bizbook/logo-b.png?ik-sdk-version=javascript-1.4.3&updatedAt=1672921621987"
                   className="pt-2 w-48"
                   alt="logo"
                 />
-              </Link>
+              </a>
             </div>
 
             <button
@@ -100,40 +100,40 @@ export default function page() {
                       
                       <ul className="mt-3 text-[15px]">
                         <li>
-                        <Link href="//" className={`text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full`}>
+                        <a href="/" className={`text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full`}>
                         <img src="/icon/shop.png" alt="" />
                         All Services
-                        </Link>
+                        </a>
                         </li>
                         <li>
-                        <Link href="//" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
+                        <a href="/" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
                         <img src="/icon/shop.png" alt="" />
                         All Services
-                        </Link>
+                        </a>
                         </li>
                         <li>
-                        <Link href="//" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
+                        <a href="/" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
                         <img src="/icon/shop.png" alt="" />
                         All Services
-                        </Link>
+                        </a>
                         </li>
                         <li>
-                        <Link href="//" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
+                        <a href="/" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
                         <img src="/icon/shop.png" alt="" />
                         All Services
-                        </Link>
+                        </a>
                         </li>
                         <li>
-                        <Link href="//" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
+                        <a href="/" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
                         <img src="/icon/shop.png" alt="" />
                         All Services
-                        </Link>
+                        </a>
                         </li>
                         <li>
-                        <Link href="//" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
+                        <a href="/" className="text-[#49494c] text-[13px]  font-sans py-2 px-5 uppercase font-semibold w-full">
                         <img src="/icon/shop.png" alt="" />
                         All Services
-                        </Link>
+                        </a>
                         </li>
                         
                        
@@ -145,7 +145,7 @@ export default function page() {
                       </p>
                       <ul className="mt-3 text-[15px]">
                         <li>
-                          <Link
+                          <a
                             href="/#"
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                           >
@@ -153,10 +153,10 @@ export default function page() {
                             <p className="text-gray-500 font-normal">
                               Tweak existing functionality
                             </p>
-                          </Link>
+                          </a>
                         </li>
                         <li>
-                          <Link
+                          <a
                             href="/#"
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                           >
@@ -164,10 +164,10 @@ export default function page() {
                             <p className="text-gray-500 font-normal">
                               Get your time back
                             </p>
-                          </Link>
+                          </a>
                         </li>
                         <li>
-                          <Link
+                          <a
                             href="/#"
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-indigo-600"
                           >
@@ -175,7 +175,7 @@ export default function page() {
                             <p className="text-gray-500 font-normal">
                               Generate content for socials
                             </p>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -350,12 +350,12 @@ export default function page() {
               <div className="mt-8">
                 <ul className="flex flex-col space-y-8">
                   <li className="flex items-center justify-between">
-                    <Link
+                    <a
                       href="/javascript:void(0)"
                       className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                     >
                       Home
-                    </Link>
+                    </a>
                     <button
                       className="fill-stroke text-black dark:text-white"
                       aria-label="show options"
@@ -378,12 +378,12 @@ export default function page() {
                     </button>
                   </li>
                   <li className="flex items-center justify-between">
-                    <Link
+                    <a
                       href="/javascript:void(0)"
                       className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                     >
                       Catalog
-                    </Link>
+                    </a>
                     <button
                       className="fill-stroke text-black dark:text-white"
                       aria-label="show options"
@@ -406,12 +406,12 @@ export default function page() {
                     </button>
                   </li>
                   <li className="flex items-center justify-between">
-                    <Link
+                    <a
                       href="/javascript:void(0)"
                       className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                     >
                       Pages
-                    </Link>
+                    </a>
                     <button
                       className="fill-stroke text-black dark:text-white"
                       aria-label="show options"
@@ -434,12 +434,12 @@ export default function page() {
                     </button>
                   </li>
                   <li className="flex items-center justify-between">
-                    <Link
+                    <a
                       href="/javascript:void(0)"
                       className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                     >
                       Blog
-                    </Link>
+                    </a>
                     <button
                       className="fill-stroke text-black dark:text-white"
                       aria-label="show options"
@@ -462,12 +462,12 @@ export default function page() {
                     </button>
                   </li>
                   <li className="flex items-center justify-between">
-                    <Link
+                    <a
                       href="/javascript:void(0)"
                       className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                     >
                       Contact us
-                    </Link>
+                    </a>
                     <button
                       className="fill-stroke text-black dark:text-white"
                       aria-label="show options"
@@ -570,75 +570,75 @@ export default function page() {
             </h2>
             <ul className="mt-6 flex flex-col space-y-6">
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Bags
-                </Link>
+                </a>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Shoes
-                </Link>
+                </a>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Capes
-                </Link>
+                </a>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Coats
-                </Link>
+                </a>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Denim 2021
-                </Link>
+                </a>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Leather shoe collection 2021
-                </Link>
+                </a>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Active wear
-                </Link>
+                </a>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Sweat suits
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
           <div className="w-full h-full flex items-end">
             <ul className="bg-gray-50 dark:bg-gray-800 py-10 px-4 flex flex-col space-y-8 w-full">
               <li>
-                <Link
+                <a
                   className="flex items-center space-x-2 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   href="/javascript:void(0)"
                 >
@@ -675,10 +675,10 @@ export default function page() {
                     </svg>
                   </div>
                   <p className="text-base">Cart</p>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   className="flex items-center space-x-2 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   href="/javascript:void(0)"
                 >
@@ -701,7 +701,7 @@ export default function page() {
                     </svg>
                   </div>
                   <p className="text-base">Wishlist</p>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -751,12 +751,12 @@ export default function page() {
           <div className="mt-6 mx-4 ">
             <ul className="flex flex-col space-y-8 ">
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-base text-gray-800 focus:outline-none dark:text-gray-800 focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Home
-                </Link>
+                </a>
                 <button className="focus:outline-none focus:ring-2 text-black dark:text-gray-800 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5">
                   <svg
                     className="fill-stroke"
@@ -777,12 +777,12 @@ export default function page() {
                 </button>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-base text-gray-800 focus:outline-none dark:text-gray-800 focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Catalog
-                </Link>
+                </a>
                 <button className="focus:outline-none focus:ring-2 text-black dark:text-gray-800 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5">
                   <svg
                     className="fill-stroke"
@@ -803,12 +803,12 @@ export default function page() {
                 </button>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-base text-gray-800 focus:outline-none dark:text-gray-800 focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Pages
-                </Link>
+                </a>
                 <button className="focus:outline-none focus:ring-2 text-black dark:text-gray-800 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5">
                   <svg
                     className="fill-stroke"
@@ -829,12 +829,12 @@ export default function page() {
                 </button>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-base text-gray-800 focus:outline-none dark:text-gray-800 focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Blog
-                </Link>
+                </a>
                 <button className="focus:outline-none focus:ring-2 text-black dark:text-gray-800 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5">
                   <svg
                     className="fill-stroke"
@@ -855,12 +855,12 @@ export default function page() {
                 </button>
               </li>
               <li className="flex items-center justify-between">
-                <Link
+                <a
                   href="/javascript:void(0)"
                   className="text-base text-gray-800 focus:outline-none dark:text-gray-800 focus:ring-2 focus:ring-gray-800 hover:underline"
                 >
                   Contact us
-                </Link>
+                </a>
                 <button className="focus:outline-none focus:ring-2 text-black dark:text-gray-800 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5">
                   <svg
                     className="fill-stroke"
@@ -885,7 +885,7 @@ export default function page() {
           <div className="w-full h-full flex items-end">
             <ul className="bg-white dark:bg-white py-10 px-4 flex flex-col space-y-8 w-full">
               <li>
-                <Link
+                <a
                   className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   href="/javascript:void(0)"
                 >
@@ -921,10 +921,10 @@ export default function page() {
                     </svg>
                   </div>
                   <p className="text-base text-gray-800">Cart</p>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
                   href="/javascript:void(0)"
                 >
@@ -946,7 +946,7 @@ export default function page() {
                     </svg>
                   </div>
                   <p className="text-base text-gray-800">Wishlist</p>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
