@@ -968,7 +968,7 @@ div#event_detail_enq_success p{
 /* = 5.HOME PAGE BANNER AND SEARCH BOX
 /*-------------------------------------------------*/
 .hom-head{
-    padding: 175px 0px 170px 0px;
+    padding: 81px 0px 136px 0px;
     background: #ffeee5;
     background: linear-gradient(to top,#fff,#ffeee5 70%);
     background-image: url('/banner4.jpg');
@@ -1130,7 +1130,7 @@ div#event_detail_enq_success p{
     font-weight: 700;
     font-size: 58px;
     color: #fff;
-    padding-bottom: 35px;
+    padding-bottom: 15px;
     text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.39);
     line-height: 55px;
 }
@@ -1138,7 +1138,7 @@ div#event_detail_enq_success p{
     font-weight: 300;
     margin: 0px 0px 30px 0px;
     color: #fff;
-    padding-bottom: 35px;
+    padding-bottom: 5px;
     text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.9);
     font-size: 20px;
 }
@@ -1229,7 +1229,7 @@ border-radius: 30px;
     display: table;
     width: 100%;
     position: relative;
-    padding-top: 40px;
+    padding-top: 9px;
     margin-bottom: -245px;
     margin-top: 50px;
     /* position: absolute; */
@@ -1320,7 +1320,7 @@ border-radius: 30px;
     text-align: center;
     width: 100%;
     margin-bottom: 40px;
-    padding-top: 90px;
+    padding-top: 38px;
 }
 .home-tit h2{
     font-size: 42px;
@@ -2309,7 +2309,7 @@ left: -5px;
         padding: 1px 10px;
         display: inline-block;
         border-radius: 2px;
-        color: #007bff;
+        color: #212529;
         font-weight: 500;
 }
 .sh-all-scat-box .rhs ol li a span{
@@ -2331,7 +2331,7 @@ left: -5px;
     background: #f6f6f7;
     float: left;
     width: 100%;
-    margin: 90px 0px 0px 0px;
+    margin: 35px 0px 0px 0px;
     padding-bottom: 80px;
 }
 .hom-mpop-main{

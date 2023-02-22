@@ -58,7 +58,7 @@ const page = () => {
           <br />
           Service Experts
         </b>{" "}
-        Restaurants, cafe's, and bars in New york{" "}
+        Restaurants, cafe&apos;s, and bars in New york{" "}
       </h1>
     </div>
     <div className="ban-search">
@@ -231,7 +231,7 @@ const page = () => {
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
 
         {category.data.map((item)=>{
-       return <div className="product overflow-hidden  bg-white mb-5 rounded-md">
+       return <div key={item.key} className="product overflow-hidden  bg-white mb-5 rounded-md">
 
 <Link href='/' className='no-underline hover:no-underline'>
    <div className='land-pack-grid-img transform transition duration-500 hover:scale-105'>
@@ -1366,7 +1366,7 @@ const page = () => {
                 <li>Manage your listing, enquiry and reviews</li>
               </ul>{" "}
               <span>
-                We'll send you a link, to you below provided email id &amp; open
+                We&apos;ll send you a link, to you below provided email id &amp; open
                 it on your smart phone to download the app
               </span>
               <form>
