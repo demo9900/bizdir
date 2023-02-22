@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="row foot-supp">
         <h2>
           <span>Free support:</span> +919350751751 &nbsp;&nbsp;|&nbsp;&nbsp;{" "}
-          <span>Email:</span> arunaug@gmail.com
+          <span>Email:</span> connect@bizdir.in
         </h2>
       </div>
       <div className="row wed-foot-link">
@@ -172,7 +172,7 @@ const Footer = () => {
           </p>
           <p>
             Email:{" "}
-            <Link href="/mailto:arunaug@gmail.com">arunaug@gmail.com</Link>
+            <Link href="/mailto:connect@bizdir.in">connect@bizdir.in</Link>
           </p>
         </div>
         <div className="col-md-4 fot-app">

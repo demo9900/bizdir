@@ -244,7 +244,7 @@ const page = () => {
                   <b>City : </b> Sydney
                 </li>
                 <li>
-                  <b>Email : </b> arunaug@gmail.com
+                  <b>Email : </b> connect@bizdir.in
                 </li>
                 <li className="pro">
                   <input type="text" defaultValue="profile" readOnly="" />

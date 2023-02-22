@@ -17,7 +17,7 @@ $color_setting_row = getAllCustomCss();
  * Copyright 2020-2022 rn53themes
  * Last Changes: 1 jan 2021
  * Author: Digital koncept
- * Email:      arunaug@gmail.com
+ * Email:      connect@bizdir.in
  * Website:    www.bizdir.in
  * Website:    www.directoryfinder.net
  -----------------------------------------------*/

@@ -623,7 +623,7 @@ const page = () => {
                     <td>1</td>
                     <td>Rolexo Villas in California</td>
                     <td>Digital koncept</td>
-                    <td>arunaug@gmail.com</td>
+                    <td>connect@bizdir.in</td>
                     <td>5522114422</td>
                     <td />
                     <td>
@@ -664,7 +664,7 @@ const page = () => {
                     <td>2</td>
                     <td>The Royal Spa Center for Women</td>
                     <td>Digital koncept</td>
-                    <td>arunaug@gmail.com</td>
+                    <td>connect@bizdir.in</td>
                     <td>5522114422</td>
                     <td>Sydney</td>
                     <td>

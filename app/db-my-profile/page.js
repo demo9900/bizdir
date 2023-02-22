@@ -192,7 +192,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>Email Id</td>
-                <td>arunaug@gmail.com</td>
+                <td>connect@bizdir.in</td>
               </tr>
               <tr>
                 <td>Profile Password</td>
