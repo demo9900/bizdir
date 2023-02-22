@@ -22,7 +22,7 @@ const page = () => {
       <div className="ud-lhs">
         <div className="ud-lhs-s1">
           <img src="/user/62736rn53themes.png" alt="" />
-          <h4>Rn53 Themes</h4>
+          <h4>Digital koncept</h4>
           <b>Join on 26, Mar 2021</b>
           <Link className="ud-lhs-view-pro" target="_blank" href="/profile">
             My profile
@@ -195,7 +195,7 @@ const page = () => {
                 <td>
                   <Link
                     href="//invoices/66625invoice-(4).pdf"
-                    download="Rn53 Themes-Invoice-1577556969"
+                    download="Digital koncept-Invoice-1577556969"
                     className="db-invo-dwn"
                   >
                     Download Invoice
@@ -212,7 +212,7 @@ const page = () => {
                 <td>
                   <Link
                     href="//invoices/60279invoice-(4).pdf"
-                    download="Rn53 Themes-Invoice-1577557007"
+                    download="Digital koncept-Invoice-1577557007"
                     className="db-invo-dwn"
                   >
                     Download Invoice
@@ -229,7 +229,7 @@ const page = () => {
                 <td>
                   <Link
                     href="//invoices/25142invoice-(5).pdf"
-                    download="Rn53 Themes-Invoice-1577557641"
+                    download="Digital koncept-Invoice-1577557641"
                     className="db-invo-dwn"
                   >
                     Download Invoice

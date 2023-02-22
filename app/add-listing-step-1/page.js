@@ -149,7 +149,7 @@ const page = () => {
                         name="listing_website"
                         className="form-control"
                         defaultValue=""
-                        placeholder="Website(www.rn53themes.net)"
+                        placeholder="Website(www.bizdir.in)"
                       />
                     </div>
                   </div>

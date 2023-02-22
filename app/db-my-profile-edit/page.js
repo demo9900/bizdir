@@ -22,7 +22,7 @@ const page = () => {
       <div className="ud-lhs">
         <div className="ud-lhs-s1">
           <img src="/user/62736rn53themes.png" alt="" />
-          <h4>Rn53 Themes</h4>
+          <h4>Digital koncept</h4>
           <b>Join on 26, Mar 2021</b>
           <Link className="ud-lhs-view-pro" target="_blank" href="/profile">
             My profile
@@ -208,11 +208,11 @@ const page = () => {
                 {/*								</tr>*/}
                 <tr>
                   <td>Name</td>
-                  <td>Rn53 Themes</td>
+                  <td>Digital koncept</td>
                 </tr>
                 <tr>
                   <td>Email Id</td>
-                  <td>rn53themes@gmail.com</td>
+                  <td>arunaug@gmail.com</td>
                 </tr>
                 <tr>
                   <td>Profile Password</td>
@@ -325,7 +325,7 @@ const page = () => {
                         type="text"
                         className="form-control"
                         name="user_website"
-                        defaultValue="www.rn53themes.net"
+                        defaultValue="www.bizdir.in"
                       />
                     </div>
                   </td>

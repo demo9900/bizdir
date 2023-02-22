@@ -32,7 +32,7 @@ const page = () => {
                 <div className="pro-ful-img">
                   <img src="/user/1.png" alt="" />
                   <h4>
-                    <b>Rn53 themes</b>{" "}
+                    <b>Digital koncept</b>{" "}
                   </h4>
                   <Link
                     href="/profile"
@@ -221,7 +221,7 @@ const page = () => {
                 <div className="pro-ful-img">
                   <img src="/user/1.png" alt="" />
                   <h4>
-                    <b>Rn53 themes</b>{" "}
+                    <b>Digital koncept</b>{" "}
                   </h4>
                   <Link
                     href="/profile"
@@ -410,7 +410,7 @@ const page = () => {
                 <div className="pro-ful-img">
                   <img src="/user/1.png" alt="" />
                   <h4>
-                    <b>Rn53 themes</b>{" "}
+                    <b>Digital koncept</b>{" "}
                   </h4>
                   <Link
                     href="/profile"
@@ -599,7 +599,7 @@ const page = () => {
                 <div className="pro-ful-img">
                   <img src="/user/1.png" alt="" />
                   <h4>
-                    <b>Rn53 themes</b>{" "}
+                    <b>Digital koncept</b>{" "}
                   </h4>
                   <Link
                     href="/profile"
@@ -788,7 +788,7 @@ const page = () => {
                 <div className="pro-ful-img">
                   <img src="/user/1.png" alt="" />
                   <h4>
-                    <b>Rn53 themes</b>{" "}
+                    <b>Digital koncept</b>{" "}
                   </h4>
                   <Link
                     href="/profile"
@@ -977,7 +977,7 @@ const page = () => {
                 <div className="pro-ful-img">
                   <img src="/user/1.png" alt="" />
                   <h4>
-                    <b>Rn53 themes</b>{" "}
+                    <b>Digital koncept</b>{" "}
                   </h4>
                   <Link
                     href="/profile"

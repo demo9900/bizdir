@@ -8,8 +8,8 @@ const Footer = () => {
     <div className="container">
       <div className="row foot-supp">
         <h2>
-          <span>Free support:</span> +01 5426 24400 &nbsp;&nbsp;|&nbsp;&nbsp;{" "}
-          <span>Email:</span> rn53themes@gmail.com
+          <span>Free support:</span> +919350751751 &nbsp;&nbsp;|&nbsp;&nbsp;{" "}
+          <span>Email:</span> arunaug@gmail.com
         </h2>
       </div>
       <div className="row wed-foot-link">
@@ -168,11 +168,11 @@ const Footer = () => {
             Address: 28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.
           </p>
           <p>
-            Phone: <Link href="/tel:+01 5426 24400">+01 5426 24400</Link>
+            Phone: <Link href="/tel:+919350751751">+919350751751</Link>
           </p>
           <p>
             Email:{" "}
-            <Link href="/mailto:rn53themes@gmail.com">rn53themes@gmail.com</Link>
+            <Link href="/mailto:arunaug@gmail.com">arunaug@gmail.com</Link>
           </p>
         </div>
         <div className="col-md-4 fot-app">
@@ -274,12 +274,12 @@ const Footer = () => {
         <div className="row">
           <p>
             Copyright © 2017-2021{" "}
-            <Link href="/https://rn53themes.net/" target="_blank">
-              Rn53 Themes
+            <Link href="/https://bizdir.in/" target="_blank">
+              Digital koncept
             </Link>
             . Proudly powered by{" "}
-            <Link href="/https://rn53themes.net/" target="_blank">
-              Rn53Themes.net
+            <Link href="/https://bizdir.in/" target="_blank">
+              bizdir.in
             </Link>
           </p>
         </div>

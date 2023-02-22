@@ -149,7 +149,7 @@ const Header = () => {
                 <ul>
                   <li>
                     A few reasons you’ll love Online Business Directory{" "}
-                    <span>Call us on: +01 6214 6548</span>
+                    <span>Call us on: +919350751751</span>
                   </li>
                   <li>
                     <Link
@@ -282,7 +282,7 @@ const Header = () => {
             <img src="https://ik.imagekit.io/rrw4vjgxohv/bizbook/62736rn53themes.png?ik-sdk-version=javascript-1.4.3&updatedAt=1672921816064" alt="" />
             <b>Profile by</b>
             <br />
-            <h4>Rn53 Themes</h4>
+            <h4>Digital koncept</h4>
             <Link href="/dashboard" className="fclick" />
           </div>
           <div className='db-menu duration-500' style={{display:`${isDashboardVisible ? 'block': 'none'}`, transition:'0.3s'}} >
@@ -355,7 +355,7 @@ const Header = () => {
             </div>
             <div className="mv-pro ud-lhs-s1">
               <img src="/user/62736rn53themes.png" alt="" />
-              <h4>Rn53 Themes</h4>
+              <h4>Digital koncept</h4>
               <b>Join on 26, Mar 2021</b>
             </div>
             <div className="mv-pro-menu ud-lhs-s2">

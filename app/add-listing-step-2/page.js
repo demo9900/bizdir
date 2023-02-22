@@ -165,7 +165,7 @@ const page = () => {
                   id="email_id"
                   readOnly=""
                   name="email_id"
-                  defaultValue="rn53themes@gmail.com"
+                  defaultValue="arunaug@gmail.com"
                   required="required"
                   type="hidden"
                   className="validate"

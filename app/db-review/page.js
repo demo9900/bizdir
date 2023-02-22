@@ -22,7 +22,7 @@ const page = () => {
       <div className="ud-lhs">
         <div className="ud-lhs-s1">
           <img src="/user/62736rn53themes.png" alt="" />
-          <h4>Rn53 Themes</h4>
+          <h4>Digital koncept</h4>
           <b>Join on 26, Mar 2021</b>
           <Link className="ud-lhs-view-pro" target="_blank" href="/profile">
             My profile
@@ -622,8 +622,8 @@ const page = () => {
                   <tr>
                     <td>1</td>
                     <td>Rolexo Villas in California</td>
-                    <td>Rn53 Themes</td>
-                    <td>rn53themes@gmail.com</td>
+                    <td>Digital koncept</td>
+                    <td>arunaug@gmail.com</td>
                     <td>5522114422</td>
                     <td />
                     <td>
@@ -663,8 +663,8 @@ const page = () => {
                   <tr>
                     <td>2</td>
                     <td>The Royal Spa Center for Women</td>
-                    <td>Rn53 Themes</td>
-                    <td>rn53themes@gmail.com</td>
+                    <td>Digital koncept</td>
+                    <td>arunaug@gmail.com</td>
                     <td>5522114422</td>
                     <td>Sydney</td>
                     <td>

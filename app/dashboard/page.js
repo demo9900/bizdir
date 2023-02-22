@@ -22,7 +22,7 @@ const page = () => {
       <div className="ud-lhs">
         <div className="ud-lhs-s1">
           <img src="/user/62736rn53themes.png" alt="" />
-          <h4>Rn53 Themes</h4>
+          <h4>Digital koncept</h4>
           <b>Join on 26, Mar 2021</b>
           <Link className="ud-lhs-view-pro" target="_blank" href="/profile">
             My profile
@@ -175,7 +175,7 @@ const page = () => {
         <div className="cd-cen-intr">
           <div className="cd-cen-intr-inn">
             <h2>
-              Welcom back, <b>Rn53 Themes</b>
+              Welcom back, <b>Digital koncept</b>
             </h2>
             <p>
               Stay up to date reports in your listing, products, events and blog
@@ -224,7 +224,7 @@ const page = () => {
               <div className="lis-pro-badg">
                 <div>
                   <img src="/user/62736rn53themes.png" alt="" />
-                  <h4>Rn53 Themes</h4>
+                  <h4>Digital koncept</h4>
                   <p>Member since 26, Mar 2021</p>
                 </div>{" "}
                 <Link href="/profile" className="fclick" target="_blank">
@@ -235,7 +235,7 @@ const page = () => {
             <div className="pay-rhs">
               <ul>
                 <li>
-                  <b>Name : </b> Rn53 Themes
+                  <b>Name : </b> Digital koncept
                 </li>
                 <li>
                   <b>Followers : </b> <span>07</span>
@@ -244,7 +244,7 @@ const page = () => {
                   <b>City : </b> Sydney
                 </li>
                 <li>
-                  <b>Email : </b> rn53themes@gmail.com
+                  <b>Email : </b> arunaug@gmail.com
                 </li>
                 <li className="pro">
                   <input type="text" defaultValue="profile" readOnly="" />
@@ -270,7 +270,7 @@ const page = () => {
               <div className="lis-pro-badg">
                 <div>
                   <img src="/user/39791rn53-themes.png" alt="" />
-                  <h4>Rn53 Themes net</h4>
+                  <h4>Digital koncept net</h4>
                   <p>Member since 26, Mar 2021</p>
                 </div>{" "}
                 <Link
@@ -285,7 +285,7 @@ const page = () => {
             <div className="pay-rhs">
               <ul>
                 <li>
-                  <b>Name : </b> Rn53 Themes net
+                  <b>Name : </b> Digital koncept net
                 </li>
                 <li>
                   <b>Page views : </b> <span>19</span>

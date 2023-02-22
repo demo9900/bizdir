@@ -22,7 +22,7 @@ const page = () => {
       <div className="ud-lhs">
         <div className="ud-lhs-s1">
           <img src="/user/62736rn53themes.png" alt="" />
-          <h4>Rn53 Themes</h4>
+          <h4>Digital koncept</h4>
           <b>Join on 26, Mar 2021</b>
           <Link className="ud-lhs-view-pro" target="_blank" href="/profile">
             My profile
@@ -184,7 +184,7 @@ const page = () => {
             <div className="pay-rhs">
               <ul>
                 <li>
-                  <b>Name : </b> Rn53 Themes
+                  <b>Name : </b> Digital koncept
                 </li>
                 <li>
                   <b>Plan name : </b> Premium Plus
@@ -253,7 +253,7 @@ const page = () => {
                                     type="text"
                                     readOnly="readonly"
                                     className="form-control"
-                                    defaultValue="Rn53 Themes"
+                                    defaultValue="Digital koncept"
                                     placeholder="Full name *"
                                     required=""
                                   />
@@ -426,7 +426,7 @@ const page = () => {
                                     type="text"
                                     readOnly="readonly"
                                     className="form-control"
-                                    defaultValue="Rn53 Themes"
+                                    defaultValue="Digital koncept"
                                     placeholder="Full name *"
                                     required=""
                                   />
@@ -599,7 +599,7 @@ const page = () => {
                                     type="text"
                                     readOnly="readonly"
                                     className="form-control"
-                                    defaultValue="Rn53 Themes"
+                                    defaultValue="Digital koncept"
                                     placeholder="Full name *"
                                     required=""
                                   />
@@ -770,7 +770,7 @@ const page = () => {
                                     type="text"
                                     readOnly="readonly"
                                     className="form-control"
-                                    defaultValue="Rn53 Themes"
+                                    defaultValue="Digital koncept"
                                     placeholder="Full name *"
                                     required=""
                                   />

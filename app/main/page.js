@@ -235,7 +235,7 @@ export default function page() {
               </b>
               <br />
               <h4 className="text[14px] leading-4 whitespace-pre overflow-hidden text-[#fff] mx-0 mb-0 -mt-2">
-                Rn53 Themes
+                Digital koncept
               </h4>
             </div>
 

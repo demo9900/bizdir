@@ -16,9 +16,9 @@ $color_setting_row = getAllCustomCss();
  * Version: v5.3
  * Copyright 2020-2022 rn53themes
  * Last Changes: 1 jan 2021
- * Author: RN53 Themes
- * Email:      rn53themes@gmail.com
- * Website:    www.rn53themes.net
+ * Author: Digital koncept
+ * Email:      arunaug@gmail.com
+ * Website:    www.bizdir.in
  * Website:    www.directoryfinder.net
  -----------------------------------------------*/
 /*-------------------------------------------------

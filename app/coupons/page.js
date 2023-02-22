@@ -62,7 +62,7 @@ const page = () => {
                     Here the code for <b>Reliance fresh </b>
                   </p>{" "}
                   <i>56003</i>
-                  <Link target="_blank" href="/https://rn53themes.net/index">
+                  <Link target="_blank" href="/https://bizdir.in/index">
                     Website
                   </Link>
                   <span className="coup-back">Back</span>
@@ -101,7 +101,7 @@ const page = () => {
                     Here the code for <b>Trends</b>
                   </p>{" "}
                   <i>05468</i>
-                  <Link target="_blank" href="/https://rn53themes.net/index">
+                  <Link target="_blank" href="/https://bizdir.in/index">
                     Website
                   </Link>
                   <span className="coup-back">Back</span>
@@ -116,7 +116,7 @@ const page = () => {
                       <img src="/services/16.jpg" alt="" />
                     </div>
                     <div className="rhs">
-                      <h4>Rn53 Themes Offers</h4>
+                      <h4>Digital koncept Offers</h4>
                     </div>
                   </div>
                   <div className="s2">
@@ -137,10 +137,10 @@ const page = () => {
                 <div className="coup-box-2">
                   <h4>Congratulations!</h4>
                   <p>
-                    Here the code for <b>Rn53 Themes Offers</b>
+                    Here the code for <b>Digital koncept Offers</b>
                   </p>{" "}
                   <i>RN53OFF30%</i>
-                  <Link target="_blank" href="/https://rn53themes.net/index">
+                  <Link target="_blank" href="/https://bizdir.in/index">
                     Website
                   </Link>
                   <span className="coup-back">Back</span>
@@ -179,7 +179,7 @@ const page = () => {
                     Here the code for <b>Bizbook 50% Offer</b>
                   </p>{" "}
                   <i>BIZ50%</i>
-                  <Link target="_blank" href="/https://rn53themes.net/index">
+                  <Link target="_blank" href="/https://bizdir.in/index">
                     Website
                   </Link>
                   <span className="coup-back">Back</span>
@@ -218,7 +218,7 @@ const page = () => {
                     Here the code for <b>Better Coupon</b>
                   </p>{" "}
                   <i>50% off</i>
-                  <Link target="_blank" href="/https://rn53themes.net/index">
+                  <Link target="_blank" href="/https://bizdir.in/index">
                     Website
                   </Link>
                   <span className="coup-back">Back</span>
@@ -257,7 +257,7 @@ const page = () => {
                     Here the code for <b>Awesome Coupon</b>
                   </p>{" "}
                   <i>GET80</i>
-                  <Link target="_blank" href="/https://rn53themes.net/index">
+                  <Link target="_blank" href="/https://bizdir.in/index">
                     Website
                   </Link>
                   <span className="coup-back">Back</span>
@@ -296,7 +296,7 @@ const page = () => {
                     Here the code for <b>New Coupon</b>
                   </p>{" "}
                   <i>50% off</i>
-                  <Link target="_blank" href="/https://rn53themes.net/index">
+                  <Link target="_blank" href="/https://bizdir.in/index">
                     Website
                   </Link>
                   <span className="coup-back">Back</span>
