@@ -58,11 +58,7 @@ const page = () => {
   
   return (
     <>
-    {/* {location && (
-      <p>
-        Your location is: {location.latitude}, {location.longitude}
-      </p>
-    )} */}
+   
     <section>
       <div className="str">
     <div className="hom-head" style={{ backgroundImage: "url(/promo.jpg)" }} >
