@@ -10,7 +10,9 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react';
 
 const page = () => {
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState({});
+  const [loading, setLoading] = useState(true);
+
 
   var settings = {
     infinite: true,
@@ -50,8 +52,25 @@ const page = () => {
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        setLocation(position.coords);
+        const { latitude, longitude } = position.coords;
+        fetch(
+          `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setLocation({
+              city: data.city,
+              country: data.countryName,
+            });
+            setLoading(false);
+          });
       });
+    } else {
+      setLocation({
+        city: "Unknown",
+        country: "Unknown",
+      });
+      setLoading(false);
     }
   }, []);
   
@@ -72,7 +91,7 @@ const page = () => {
           <br />
           Service Experts
         </b>{" "}
-        Restaurants, cafe&apos;s, and bars in New york{" "}
+        Restaurants, cafe&apos;s, and bars in {location.city}, {location.country}{" "}
       </h1>
     </div>
     <div className="ban-search">
