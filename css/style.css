@@ -1319,8 +1319,8 @@ border-radius: 30px;
 .home-tit{
     text-align: center;
     width: 100%;
-    margin-bottom: 40px;
-    padding-top: 30px;
+    margin-bottom: 15px;
+    padding-top: 25px;
 }
 .home-tit h2{
     font-size: 42px;
@@ -1969,7 +1969,7 @@ border-radius: 30px;
 .inte ul li div a{
 }
 .count{
-    padding: 0px 0px 80px 0px;
+    padding: 0px 0px 20px 0px;
     background: #f7fcff;
     background: linear-gradient(to bottom,#ffffff00,#f7fcff 100%);
     float: left;
@@ -2332,10 +2332,10 @@ left: -5px;
     float: left;
     width: 100%;
     margin: 35px 0px 0px 0px;
-    padding-bottom: 80px;
+    padding-bottom: 10px;
 }
 .hom-mpop-main{
-    padding: 0px 0px 70px 0px;
+    padding: 0px 0px 15px 0px;
     float: left;
     width: 100%;
 }
@@ -2512,7 +2512,7 @@ left: -5px;
 /*-------------------------------------------------*/
 .wed-hom-footer{
     /* margin-top: 60px; */
-    padding: 60px 0px 40px 0px;
+    padding: 13px 0px 40px 0px;
     background: #f7fcff;
     background: #191919;
     float: left;
@@ -3432,7 +3432,7 @@ left: -5px;
 .hom-ads .lhs-ads{
     margin: 0px;
 }
-.hom-ads{margin: 15px 0px;}
+.hom-ads{margin: 0px 0px;}
 .ban-ati-com{}
 .ban-ati-com a{}
 .ban-ati-com a img{width: 100%;}
@@ -9844,7 +9844,7 @@ div#pop_enq_success p{color: #106e43;margin:0px;}
 .mob-app{
     float: left;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 30px;
     position: relative;
     z-index: 5;
 }
@@ -13309,7 +13309,7 @@ color: #333;
         display: table;
     }
     .wed-hom-footer{
-        padding: 60px 0px 45px 0px;
+        padding: 13px 0px 45px 0px;
     }
     .land-pack-grid-text h4 {
         padding: 15px 12px;

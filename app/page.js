@@ -7,7 +7,11 @@ import Header from '../component/Header'
 import Footer from '../component/Footer';
 import BottomMenu from '../component/BottomMenu';
 import Link from 'next/link'
+import { useState, useEffect } from 'react';
+
 const page = () => {
+  const [location, setLocation] = useState(null);
+
   var settings = {
     infinite: true,
     speed: 500,
@@ -42,9 +46,23 @@ const page = () => {
       },
   ]
   };
-  console.log(category);
+  
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setLocation(position.coords);
+      });
+    }
+  }, []);
+  
+  
   return (
     <>
+    {/* {location && (
+      <p>
+        Your location is: {location.latitude}, {location.longitude}
+      </p>
+    )} */}
     <section>
       <div className="str">
     <div className="hom-head" style={{ backgroundImage: "url(/promo.jpg)" }} >
@@ -231,7 +249,7 @@ const page = () => {
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
 
         {category.data.map((item)=>{
-       return <div key={item.key} className="product overflow-hidden  bg-white mb-5 rounded-md">
+       return <div key={item.key} className="product overflow-hidden  bg-white mb-2 rounded-md">
 
 <Link href='/' className='no-underline hover:no-underline'>
    <div className='land-pack-grid-img transform transition duration-500 hover:scale-105'>
@@ -1618,7 +1636,7 @@ const page = () => {
 }
 
 .caro-home {
-    margin-top: 90px;
+    margin-top: 24px;
     float: left;
     width: 100%;
 }
