@@ -976,7 +976,7 @@ div#event_detail_enq_success p{
     background-repeat: no-repeat;
     /* animation: animatedBackground 150s linear infinite; */
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     background-size: cover;
 }
 @keyframes animatedBackground {
@@ -1320,7 +1320,7 @@ border-radius: 30px;
     text-align: center;
     width: 100%;
     margin-bottom: 40px;
-    padding-top: 83px;
+    padding-top: 30px;
 }
 .home-tit h2{
     font-size: 42px;

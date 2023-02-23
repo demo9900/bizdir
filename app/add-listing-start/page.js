@@ -4,7 +4,7 @@ import Headertwo from '../../component/Headertwo'
 import Footer from '../../component/Footer';
 import BottomMenu from '../../component/BottomMenu';
 import Link from 'next/link';
-
+// this is index page
 const page = () => {
   return (
     <div>

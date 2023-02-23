@@ -1433,7 +1433,7 @@ const page = () => {
     <i className="material-icons ani-req-clo">close</i>
     <div className="tit">
       <h3>
-        What service do you need? <span>BizBook will help you</span>
+        What service do you need? <span>Bizdir will help you</span>
       </h3>
     </div>
     <div className="hom-col-req">
