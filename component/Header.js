@@ -279,7 +279,7 @@ const Header = () => {
         </div>
         <div className="al duration-500" onMouseEnter={() => setDashboardVisiblity(true)}  onMouseLeave={() => setDashboardVisiblity(false)} >
           <div className="head-pro">
-            <img src="/icon/svg/Icon-400x400.webp" height={36} width={36} alt="" />
+            <img src="/icon/main-logo.png" height={36} width={36} alt="" />
             <b>Profile by</b>
             <br />
             <h4>Digital Koncept</h4>
