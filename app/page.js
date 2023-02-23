@@ -174,7 +174,7 @@ const page = () => {
               type="submit"
               id="filter_submit"
               name="filter_submit"
-              defaultValue="Search"
+              value="Search"
               className="filter_submit"
             />
           </li>
