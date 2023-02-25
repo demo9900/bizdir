@@ -67,3 +67,8 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
+.ban-short-links ul li div:hover {
+    border: 1px solid #8297ff;
+    background: #0d2cc3;
+    box-shadow: 0px 6px 13px 6px #00000042;
+}
