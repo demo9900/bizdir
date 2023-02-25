@@ -200,6 +200,105 @@ const page = () => {
         </ul>
       </form>
     </div>
+    <div className="ban-short-links ani">
+  <ul>
+    <li>
+      <div>
+        <img src="/icon/shop.png" alt="" loading="lazy" />
+        <h4>All Services</h4>
+        <a
+          href="/all-category"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="/icon/expert.png" alt="" loading="lazy" />
+        <h4>Experts</h4>
+        <a
+          href="/service-experts"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="/icon/employee.png" alt="" loading="lazy" />
+        <h4>Jobs</h4>
+        <a
+          href="/jobs"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img
+          src="/places/icons/hot-air-balloon.png"
+          alt=""
+          loading="lazy"
+        />
+        <h4>Travel</h4>
+        <a
+          href="/places"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="/icon/news.png" alt="" loading="lazy" />
+        <h4>News</h4>
+        <a
+          href="/news"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="/icon/calendar.png" alt="" loading="lazy" />
+        <h4>Events</h4>
+        <a
+          href="/events"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="/icon/cart.png" alt="" loading="lazy" />
+        <h4>Products</h4>
+        <a
+          href="/all-products"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="/icon/coupons.png" alt="" loading="lazy" />
+        <h4>Coupons</h4>
+        <a
+          href="/coupons"
+          className="fclick"
+        />
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="/icon/blog1.png" alt="" loading="lazy" />
+        <h4>Blogs</h4>
+        <a
+          href="/blog-posts"
+          className="fclick"
+        />
+      </div>
+    </li>
+  </ul>
+</div>
+
     <div className="ban-ql">
       <ul>
         <li>
@@ -307,7 +406,7 @@ const page = () => {
               <div className="hcity">
                 <div>
                   <img
-                    src="https://bizbookdirectorytemplate.com/images/services/95787pexels-asad-photo-maldives-1450363.jpg"
+                    src="/images/services/95787pexels-asad-photo-maldives-1450363.jpg"
                     alt=""
                   />
                 </div>
@@ -1079,14 +1178,14 @@ const page = () => {
         <div className="carousel-item active">
           <img src="/slider/1.jpg" alt="Los Angeles" />
           <Link
-            href="/https://bizbookdirectorytemplate.com/demo"
+            href="//demo"
             target="_blank"
           />
         </div>
         <div className="carousel-item ">
           <img src="/slider/2.jpg" alt="Los Angeles" />
           <Link
-            href="/https://bizbookdirectorytemplate.com/demo"
+            href="//demo"
             target="_blank"
           />
         </div>
