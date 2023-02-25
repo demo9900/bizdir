@@ -406,7 +406,7 @@ const page = () => {
               <div className="hcity">
                 <div>
                   <img
-                    src="/images/services/95787pexels-asad-photo-maldives-1450363.jpg"
+                    src="/services/10.jpg"
                     alt=""
                   />
                 </div>
