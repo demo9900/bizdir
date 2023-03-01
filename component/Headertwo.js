@@ -23,7 +23,7 @@ const Header = () => {
         {/*<div class="menu">
                           <i class="material-icons mopen">menu</i>
                       </div>*/}
-        <Link href="/index" className="top-log">
+        <Link href="/" className="top-log">
           <img src="https://ik.imagekit.io/rrw4vjgxohv/bizbook/logo-b.png?ik-sdk-version=javascript-1.4.3&updatedAt=1672921621987" alt="" className="ic-logo" />
         </Link>
         <div className="menu" onClick={() => setMenuVisibility(! isMenuVisible)}>

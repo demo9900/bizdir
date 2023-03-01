@@ -370,6 +370,7 @@ const page = () => {
     <img
       className=" cursor-pointer object-cover bg-gray-100"
       src={item.img}
+      alt="service"
     />
     </div>
     <div class="land-pack-grid-text">

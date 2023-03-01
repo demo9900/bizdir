@@ -8,11 +8,11 @@ const page = () => {
   return (
     <div>
         <section>
-  <div className="str">
+      <div className="str">
     <div>
       <Headertwo/>
     </div>
-  </div>
+     </div>
     </section>
     <>
   <section>
@@ -60,7 +60,7 @@ const page = () => {
                     <li>
                       <div className="near-bx">
                         <div className="ne-1">
-                          <img src="/services/1.jpg" />
+                          <img src="/services/1.jpg" alt='service' />
                         </div>
                         <div className="ne-2">
                           <h5>Core real estates</h5>
@@ -79,7 +79,7 @@ const page = () => {
                     <li>
                       <div className="near-bx">
                         <div className="ne-1">
-                          <img src="/services/12.jpeg" />
+                          <img src="/services/12.jpeg" alt='service' />
                         </div>
                         <div className="ne-2">
                           <h5>Rolexo Villas in California</h5>
@@ -98,7 +98,7 @@ const page = () => {
                     <li>
                       <div className="near-bx">
                         <div className="ne-1">
-                          <img src="/services/13.jpg" />
+                          <img src="/services/13.jpg" alt='service' />
                         </div>
                         <div className="ne-2">
                           <h5>Orange pet shop</h5>
@@ -117,7 +117,7 @@ const page = () => {
                     <li>
                       <div className="near-bx">
                         <div className="ne-1">
-                          <img src="/services/14.jpg" />
+                          <img src="/services/14.jpg" alt='service' />
                         </div>
                         <div className="ne-2">
                           <h5>Best villas near you</h5>
@@ -136,7 +136,7 @@ const page = () => {
                     <li>
                       <div className="near-bx">
                         <div className="ne-1">
-                          <img src="/services/20.jpeg" />
+                          <img src="/services/20.jpeg" alt='service' />
                         </div>
                         <div className="ne-2">
                           <h5>Ac services near you</h5>
