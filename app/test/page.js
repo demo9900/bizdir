@@ -871,7 +871,7 @@ const page = () => {
                 <li>Manage your listing, enquiry and reviews</li>
               </ul>
               <span>
-                We'll send you a link, to you below provided email id &amp; open
+                We&quot;ll send you a link, to you below provided email id &amp; open
                 it on your smart phone to download the app
               </span>
               <form>

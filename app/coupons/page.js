@@ -17,7 +17,7 @@ const page = () => {
     <>
   <section className=" coup-sec">
     <div className="coup-sec1">
-      <img src="/coupon-bg.png" />
+      <img src="/coupon-bg.png" alt='coupon' />
     </div>
     <div className="container">
       <div className="row">

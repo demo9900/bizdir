@@ -150,7 +150,7 @@ const page = () => {
             <li>
               <Link href="/how-to" className="" target="_blank">
                 <img src="/icon/dbl17.png" alt="" />
-                How to's
+                How to&apos;s
               </Link>
             </li>
             <li>

@@ -26,7 +26,7 @@ const page = () => {
             <div className="login">
               <h4>How tos</h4>
               <p>
-                Here you can learn about this "Directory Finder Website" and you
+                Here you can learn about this &quot;Directory Finder Website&quot; and you
                 can
                 <br />
                 find the solution for your doubts.

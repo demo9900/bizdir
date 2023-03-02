@@ -150,7 +150,7 @@ const page = () => {
             <li>
               <Link href="/how-to" className="" target="_blank">
                 <img src="/icon/dbl17.png" alt="" />
-                How to's
+                How to&apos;s
               </Link>
             </li>
             <li>
@@ -250,11 +250,11 @@ const page = () => {
           </table>
           <div className="ud-notes">
             <p>
-              <b>Notes:</b> Hi, Before start "Ads Payment" you must know the
-              pricing details and positions and all. You just click the "Pricing
-              and other details" button in this same page and you know the all
+              <b>Notes:</b> Hi, Before start &quot;Ads Payment&quot; you must know the
+              pricing details and positions and all. You just click the &quot;Pricing
+              and other details&quot; button in this same page and you know the all
               details. If your payment done means your invoice automaticall
-              received your "Payment invoice" page and you never stop your Ads
+              received your &quot;Payment invoice&quot; page and you never stop your Ads
               till the end date.
             </p>
           </div>

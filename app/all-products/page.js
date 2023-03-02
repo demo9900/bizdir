@@ -707,7 +707,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/1.jpg" />
+                      <img src="/products/1.jpg" alt='product'  />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -727,7 +727,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/2.jpeg" />
+                      <img src="/products/2.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -747,7 +747,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/4.jpeg" />
+                      <img src="/products/4.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -767,7 +767,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/5.jpeg" />
+                      <img src="/products/5.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -787,7 +787,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/6.jpeg" />
+                      <img src="/products/6.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -807,7 +807,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/7.jpeg" />
+                      <img src="/products/7.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -827,7 +827,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/7.jpg" />
+                      <img src="/products/7.jpg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -847,7 +847,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/8.jpg" />
+                      <img src="/products/8.jpg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -867,7 +867,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/1.jpg" />
+                      <img src="/products/1.jpg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -887,7 +887,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/2.jpeg" />
+                      <img src="/products/2.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -907,7 +907,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/4.jpeg" />
+                      <img src="/products/4.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -927,7 +927,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/5.jpeg" />
+                      <img src="/products/5.jpeg " alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -947,7 +947,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/6.jpeg" />
+                      <img src="/products/6.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -967,7 +967,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/7.jpeg" />
+                      <img src="/products/7.jpeg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -987,7 +987,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/7.jpg" />
+                      <img src="/products/7.jpg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>
@@ -1007,7 +1007,7 @@ const page = () => {
                 <li>
                   <div className="all-pro-box">
                     <div className="all-pro-img">
-                      <img src="/products/8.jpg" />
+                      <img src="/products/8.jpg" alt='product' />
                     </div>
                     <div className="all-pro-txt">
                       <h4>Audi q3</h4>

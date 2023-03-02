@@ -21,7 +21,7 @@ const page = () => {
       {/*LEFT SECTION*/}
       <div className="ud-lhs">
         <div className="ud-lhs-s1">
-          <img src="/user/62736rn53themes.png" alt="" />
+          <img alt="demoimage" src="/user/62736rn53themes.png"  />
           <h4>Digital koncept</h4>
           <b>Join on 26, Mar 2021</b>
           <Link className="ud-lhs-view-pro" target="_blank" href="/profile">
@@ -32,136 +32,136 @@ const page = () => {
           <ul>
             <li>
               <Link href="/dashboard" className="">
-                <img src="/icon/dbl1.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl1.png"  />
                 My Dashboard
               </Link>
             </li>
             <li>
               <Link href="/db-all-listing" className="">
-                <img src="/icon/shop.png" alt="" />
+                <img alt="demoimage" src="/icon/shop.png"  />
                 All Listings
               </Link>
             </li>
             <li>
               <Link href="/add-listing-start">
-                <img src="/icon/dbl3.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl3.png"  />
                 Add New Listing
               </Link>
             </li>
             <li>
               <Link href="/db-enquiry" className="">
-                <img src="/icon/tick.png" alt="" />
+                <img alt="demoimage" src="/icon/tick.png"  />
                 Lead enquiry
               </Link>
             </li>
             <li>
               <Link href="/db-products" className="">
-                <img src="/icon/cart.png" alt="" />
+                <img alt="demoimage" src="/icon/cart.png"  />
                 All Products
               </Link>
             </li>
             <li>
               <Link href="/db-events" className="">
-                <img src="/icon/calendar.png" alt="" />
+                <img alt="demoimage" src="/icon/calendar.png"  />
                 Events
               </Link>
             </li>
             <li>
               <Link href="/db-blog-posts" className="">
-                <img src="/icon/blog1.png" alt="" />
+                <img alt="demoimage" src="/icon/blog1.png"  />
                 Blog posts
               </Link>
             </li>
             <li>
               <Link href="/db-coupons" className="">
-                <img src="/icon/coupons.png" alt="" />
+                <img alt="demoimage" src="/icon/coupons.png"  />
                 Coupons
               </Link>
             </li>
             <li>
               <Link href="/db-promote" className="">
-                <img src="/icon/promotion.png" alt="" />
+                <img alt="demoimage" src="/icon/promotion.png"  />
                 Promotions
               </Link>
             </li>
             <li>
               <Link href="/db-seo" className="">
-                <img src="/icon/seo.png" alt="" />
+                <img alt="demoimage" src="/icon/seo.png"  />
                 SEO
               </Link>
             </li>
             <li>
               <Link href="/db-point-history" className="">
-                <img src="/icon/point.png" alt="" />
+                <img alt="demoimage" src="/icon/point.png"  />
                 Points History
               </Link>
             </li>
             <li>
               <Link href="/db-review" className="">
-                <img src="/icon/dbl13.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl13.png"  />
                 Reviews
               </Link>
             </li>
             {/*<li>
-                  <Link href="/db-message" class=""><img src="/icon/dbl14.png" alt="" />Messages</Link>
+                  <Link href="/db-message" class=""><img alt="demoimage" src="/icon/dbl14.png"  />Messages</Link>
               </li>*/}
             <li>
               <Link href="/db-my-profile" className="">
-                <img src="/icon/dbl6.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl6.png"  />
                 My Profile
               </Link>
             </li>
             <li>
               <Link href="/db-like-listings" className="db-lact">
-                <img src="/icon/dbl15.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl15.png"  />
                 Liked Listings
               </Link>
             </li>
             <li>
               <Link href="/db-followings" className="">
-                <img src="/icon/dbl18.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl18.png"  />
                 Followings
               </Link>
             </li>
             <li>
               <Link href="/db-post-ads" className="">
-                <img src="/icon/dbl11.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl11.png"  />
                 Ad Summary
               </Link>
             </li>
             <li>
               <Link href="/db-payment" className="">
-                <img src="/icon/dbl9.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl9.png"  />
                 Payment &amp; plan
               </Link>
             </li>
             <li>
               <Link href="/db-invoice-all" className="">
-                <img src="/icon/dbl16.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl16.png"  />
                 Payment invoice
               </Link>
             </li>
             <li>
               <Link href="/db-notifications" className="">
-                <img src="/icon/dbl19.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl19.png"  />
                 Notifications
               </Link>
             </li>
             <li>
               <Link href="/how-to" className="" target="_blank">
-                <img src="/icon/dbl17.png" alt="" />
-                How to's
+                <img alt="demoimage" src="/icon/dbl17.png"  />
+                How to&apos;s
               </Link>
             </li>
             <li>
               <Link href="/db-setting" className="">
-                <img src="/icon/dbl210.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl210.png"  />
                 Setting
               </Link>
             </li>
             <li>
               <Link href="/#">
-                <img src="/icon/dbl12.png" alt="" />
+                <img alt="demoimage" src="/icon/dbl12.png"  />
                 Log Out
               </Link>
             </li>
@@ -188,7 +188,7 @@ const page = () => {
               <tr>
                 <td>1</td>
                 <td>
-                  <img src="/listings/41073ser6.jpg" />
+                  <img alt="demoimage" src="/listings/41073ser6.jpg" />
                   The Royal Spa Center for Women <span>08, Dec 2019</span>
                 </td>
                 <td>
@@ -212,7 +212,7 @@ const page = () => {
               <tr>
                 <td>2</td>
                 <td>
-                  <img src="/listings/4797732622rn53themes.png" />
+                  <img alt="demoimage" src="/listings/4797732622rn53themes.png" />
                   Wedding Venues viki <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -236,7 +236,7 @@ const page = () => {
               <tr>
                 <td>3</td>
                 <td>
-                  <img src="/listings/26404cvs-gift-card-476x328.png" />
+                  <img alt="demoimage" src="/listings/26404cvs-gift-card-476x328.png" />
                   asjdklfasd <span>23, Jan 2020</span>
                 </td>
                 <td>
@@ -260,7 +260,7 @@ const page = () => {
               <tr>
                 <td>4</td>
                 <td>
-                  <img src="/listings/56271pexels-photo-713148.jpeg" />
+                  <img alt="demoimage" src="/listings/56271pexels-photo-713148.jpeg" />
                   IPM Business Software <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -284,7 +284,7 @@ const page = () => {
               <tr>
                 <td>5</td>
                 <td>
-                  <img src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />
+                  <img alt="demoimage" src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />
                   Forms hospitals <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -308,7 +308,7 @@ const page = () => {
               <tr>
                 <td>6</td>
                 <td>
-                  <img src="/listings/46980logo2.png" />
+                  <img alt="demoimage" src="/listings/46980logo2.png" />
                   Test mest <span>21, Jan 2020</span>
                 </td>
                 <td>
@@ -332,7 +332,7 @@ const page = () => {
               <tr>
                 <td>7</td>
                 <td>
-                  <img src="/listings/88258blog_off.jpg" />
+                  <img alt="demoimage" src="/listings/88258blog_off.jpg" />
                   New listing 2 <span>20, Jan 2020</span>
                 </td>
                 <td>
@@ -356,7 +356,7 @@ const page = () => {
               <tr>
                 <td>8</td>
                 <td>
-                  <img src="/listings/138331.jpg" />
+                  <img alt="demoimage" src="/listings/138331.jpg" />
                   New listing <span>20, Jan 2020</span>
                 </td>
                 <td>
@@ -380,7 +380,7 @@ const page = () => {
               <tr>
                 <td>9</td>
                 <td>
-                  <img src="/listings/138331.jpg" />
+                  <img alt="demoimage" src="/listings/138331.jpg" />
                   Anicuns Online <span>17, Jan 2020</span>
                 </td>
                 <td>
@@ -404,7 +404,7 @@ const page = () => {
               <tr>
                 <td>10</td>
                 <td>
-                  <img src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />
+                  <img alt="demoimage" src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />
                   lll <span>16, Jan 2020</span>
                 </td>
                 <td>
@@ -428,7 +428,7 @@ const page = () => {
               <tr>
                 <td>11</td>
                 <td>
-                  <img src="/listings/21604photo-of-a-boy-with-curly-hair-2929036.jpg" />
+                  <img alt="demoimage" src="/listings/21604photo-of-a-boy-with-curly-hair-2929036.jpg" />
                   William Chil care Hospital <span>11, Jan 2020</span>
                 </td>
                 <td>
@@ -452,7 +452,7 @@ const page = () => {
               <tr>
                 <td>12</td>
                 <td>
-                  <img src="/listings/73954man-and-child-holding-baby-3279209.jpg" />
+                  <img alt="demoimage" src="/listings/73954man-and-child-holding-baby-3279209.jpg" />
                   Urban Community Hospital <span>11, Jan 2020</span>
                 </td>
                 <td>
@@ -476,7 +476,7 @@ const page = () => {
               <tr>
                 <td>13</td>
                 <td>
-                  <img src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />
+                  <img alt="demoimage" src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />
                   Joseph Multispeciality Hospital <span>11, Jan 2020</span>
                 </td>
                 <td>
@@ -500,7 +500,7 @@ const page = () => {
               <tr>
                 <td>14</td>
                 <td>
-                  <img src="/listings/22386pexels-photo-1157391.jpeg" />
+                  <img alt="demoimage" src="/listings/22386pexels-photo-1157391.jpeg" />
                   Apolloo Hospitals UAE <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -524,7 +524,7 @@ const page = () => {
               <tr>
                 <td>15</td>
                 <td>
-                  <img src="/listings/43032pexels-photo-955793.jpeg" />
+                  <img alt="demoimage" src="/listings/43032pexels-photo-955793.jpeg" />
                   Appers Premium Independent Houses <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -548,7 +548,7 @@ const page = () => {
               <tr>
                 <td>16</td>
                 <td>
-                  <img src="/listings/61191pexels-photo-96444.jpeg" />
+                  <img alt="demoimage" src="/listings/61191pexels-photo-96444.jpeg" />
                   Capital five star hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -572,7 +572,7 @@ const page = () => {
               <tr>
                 <td>17</td>
                 <td>
-                  <img src="/listings/51803pexels-photo-1386168.jpeg" />
+                  <img alt="demoimage" src="/listings/51803pexels-photo-1386168.jpeg" />
                   Hard Rocks Hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -596,7 +596,7 @@ const page = () => {
               <tr>
                 <td>18</td>
                 <td>
-                  <img src="/listings/26318pexels-photo-594077.jpeg" />
+                  <img alt="demoimage" src="/listings/26318pexels-photo-594077.jpeg" />
                   Taaj Five Star Hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -620,7 +620,7 @@ const page = () => {
               <tr>
                 <td>19</td>
                 <td>
-                  <img src="/listings/4103pexels-photo-248547.jpeg" />
+                  <img alt="demoimage" src="/listings/4103pexels-photo-248547.jpeg" />
                   Dial Sports Shops <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -644,7 +644,7 @@ const page = () => {
               <tr>
                 <td>20</td>
                 <td>
-                  <img src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />
+                  <img alt="demoimage" src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />
                   Andree Education and Tuition Center <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -668,7 +668,7 @@ const page = () => {
               <tr>
                 <td>21</td>
                 <td>
-                  <img src="/listings/25918pexels-photo-3217851.jpeg" />
+                  <img alt="demoimage" src="/listings/25918pexels-photo-3217851.jpeg" />
                   TATE Electrical Shops <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -692,7 +692,7 @@ const page = () => {
               <tr>
                 <td>22</td>
                 <td>
-                  <img src="/listings/68725pexels-photo-2747550.jpeg" />
+                  <img alt="demoimage" src="/listings/68725pexels-photo-2747550.jpeg" />
                   Center Automobiles <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -716,7 +716,7 @@ const page = () => {
               <tr>
                 <td>23</td>
                 <td>
-                  <img src="/listings/22862pexels-photo-1250655.jpeg" />
+                  <img alt="demoimage" src="/listings/22862pexels-photo-1250655.jpeg" />
                   Green Healthcare Hospital <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -740,7 +740,7 @@ const page = () => {
               <tr>
                 <td>24</td>
                 <td>
-                  <img src="/listings/9953white-bmw-e46-under-cloudy-skies-707046.jpg" />
+                  <img alt="demoimage" src="/listings/9953white-bmw-e46-under-cloudy-skies-707046.jpg" />
                   Lemoo Cap Services <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -764,7 +764,7 @@ const page = () => {
               <tr>
                 <td>25</td>
                 <td>
-                  <img src="/listings/89971pexels-photo-2096983.jpeg" />
+                  <img alt="demoimage" src="/listings/89971pexels-photo-2096983.jpeg" />
                   Rachel Taj Hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -788,7 +788,7 @@ const page = () => {
               <tr>
                 <td>26</td>
                 <td>
-                  <img src="/listings/88546images-(5).jpg" />
+                  <img alt="demoimage" src="/listings/88546images-(5).jpg" />
                   coffee shop <span>04, Jan 2020</span>
                 </td>
                 <td>
@@ -812,7 +812,7 @@ const page = () => {
               <tr>
                 <td>27</td>
                 <td>
-                  <img src="/listings/47884beautiful-wooden-houses-with-lawns-1643389.jpg" />
+                  <img alt="demoimage" src="/listings/47884beautiful-wooden-houses-with-lawns-1643389.jpg" />
                   Asian Real Estate <span>01, Feb 2020</span>
                 </td>
                 <td>
@@ -836,7 +836,7 @@ const page = () => {
               <tr>
                 <td>28</td>
                 <td>
-                  <img src="/listings/540095e27bfabcc13d.jpg" />
+                  <img alt="demoimage" src="/listings/540095e27bfabcc13d.jpg" />
                   abc ltd <span>19, Feb 2020</span>
                 </td>
                 <td>
@@ -860,7 +860,7 @@ const page = () => {
               <tr>
                 <td>29</td>
                 <td>
-                  <img src="/listings/540095e27bfabcc13d.jpg" />
+                  <img alt="demoimage" src="/listings/540095e27bfabcc13d.jpg" />
                   Home <span>16, Mar 2020</span>
                 </td>
                 <td>
@@ -884,7 +884,7 @@ const page = () => {
               <tr>
                 <td>30</td>
                 <td>
-                  <img src="/listings/6764gettyimages-200066800-001-1.jpg" />
+                  <img alt="demoimage" src="/listings/6764gettyimages-200066800-001-1.jpg" />
                   Royal Real Estates <span>18, Jan 2020</span>
                 </td>
                 <td>
@@ -908,7 +908,7 @@ const page = () => {
               <tr>
                 <td>31</td>
                 <td>
-                  <img src="/listings/67634pexels-photo-208736.jpeg" />
+                  <img alt="demoimage" src="/listings/67634pexels-photo-208736.jpeg" />
                   Della World Premium Properties <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -932,7 +932,7 @@ const page = () => {
               <tr>
                 <td>32</td>
                 <td>
-                  <img src="/listings/32898pexels-photo-1858175.jpeg" />
+                  <img alt="demoimage" src="/listings/32898pexels-photo-1858175.jpeg" />
                   Honey Massage Center <span>30, Mar 2020</span>
                 </td>
                 <td>
@@ -956,7 +956,7 @@ const page = () => {
               <tr>
                 <td>33</td>
                 <td>
-                  <img src="/listings/80274easy-to-install-2.png" />
+                  <img alt="demoimage" src="/listings/80274easy-to-install-2.png" />
                   forms soft tech <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -980,7 +980,7 @@ const page = () => {
               <tr>
                 <td>34</td>
                 <td>
-                  <img src="/listings/66695o.jpg" />
+                  <img alt="demoimage" src="/listings/66695o.jpg" />
                   International Food Bazaar <span>03, Jun 2020</span>
                 </td>
                 <td>
@@ -1004,7 +1004,7 @@ const page = () => {
               <tr>
                 <td>35</td>
                 <td>
-                  <img src="/listings/43340pexels-photo-106399.jpeg" />
+                  <img alt="demoimage" src="/listings/43340pexels-photo-106399.jpeg" />
                   Rolexo Villas in California <span>07, Mar 2021</span>
                 </td>
                 <td>
@@ -1028,7 +1028,7 @@ const page = () => {
               <tr>
                 <td>36</td>
                 <td>
-                  <img src="/listings/40913book_reading.jpg" />
+                  <img alt="demoimage" src="/listings/40913book_reading.jpg" />
                   saadsds <span>04, Jul 2020</span>
                 </td>
                 <td>
@@ -1052,7 +1052,7 @@ const page = () => {
               <tr>
                 <td>37</td>
                 <td>
-                  <img src="/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg" />
+                  <img alt="demoimage" src="/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg" />
                   Hari krishna entrepreneur <span>29, Jul 2020</span>
                 </td>
                 <td>
@@ -1076,7 +1076,7 @@ const page = () => {
               <tr>
                 <td>38</td>
                 <td>
-                  <img src="/listings/79587loewe-technologies-4aqx0r9kucg-unsplash.jpg" />
+                  <img alt="demoimage" src="/listings/79587loewe-technologies-4aqx0r9kucg-unsplash.jpg" />
                   fghdfgfdg <span>05, May 2020</span>
                 </td>
                 <td>
@@ -1640,8 +1640,8 @@ const page = () => {
         {/*            <li>*/}
         {/*                <Link href="/*/}
         {/*">*/}
-        {/*                    <img src="/user/*/}
-        {/*" alt="">*/}
+        {/*                    <img alt="demoimage" src="/user/*/}
+        {/*" >*/}
         {/*                    <h5>*/}
         {/*</h5>*/}
         {/*                    <p>*/}
@@ -1761,84 +1761,84 @@ const page = () => {
               <ul>
                 <li>
                   <Link href="/profile/rachel" target="_blank">
-                    <img
+                    <img alt="demoimage"
                       src="/user/63520pexels-photo-1130626.jpeg"
-                      alt=""
+                      
                     />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/betty-d-friedman" target="_blank">
-                    <img
+                    <img alt="demoimage"
                       src="/user/8766pexels-photo-774909.jpeg"
-                      alt=""
+                      
                     />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/claude-d-dial" target="_blank">
-                    <img
+                    <img alt="demoimage"
                       src="/user/33654pexels-photo-91227.jpeg"
-                      alt=""
+                      
                     />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/kumar" target="_blank">
-                    <img
+                    <img alt="demoimage"
                       src="/user/4913411004989_334444876752279_544839968_n.jpg"
-                      alt=""
+                      
                     />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/deneme" target="_blank">
-                    <img src="/user/475847.jpg" alt="" />
+                    <img alt="demoimage" src="/user/475847.jpg"  />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/clic" target="_blank">
-                    <img src="/user/475847.jpg" alt="" />
+                    <img alt="demoimage" src="/user/475847.jpg"  />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/nawaf-alayli" target="_blank">
-                    <img src="/user/475847.jpg" alt="" />
+                    <img alt="demoimage" src="/user/475847.jpg"  />
                   </Link>
                 </li>
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/2.jpg" alt="">*/}
+                {/*                            <img alt="demoimage" src="/user/2.jpg" >*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/3.jpg" alt="">*/}
+                {/*                            <img alt="demoimage" src="/user/3.jpg" >*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/4.jpg" alt="">*/}
+                {/*                            <img alt="demoimage" src="/user/4.jpg" >*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/5.jpg" alt="">*/}
+                {/*                            <img alt="demoimage" src="/user/5.jpg" >*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/6.jpg" alt="">*/}
+                {/*                            <img alt="demoimage" src="/user/6.jpg" >*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/7.jpg" alt="">*/}
+                {/*                            <img alt="demoimage" src="/user/7.jpg" >*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/8.jpg" alt="">*/}
+                {/*                            <img alt="demoimage" src="/user/8.jpg" >*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
               </ul>
@@ -1996,7 +1996,7 @@ const page = () => {
         <div className="row">
           <div className="bot-book">
             <div className="col-md-2 bb-img">
-              <img src="/idea.png" alt="" />
+              <img alt="demoimage" src="/idea.png"  />
             </div>
             <div className="col-md-7 bb-text">
               <h4>#1 Business Directory and Service Provider</h4>

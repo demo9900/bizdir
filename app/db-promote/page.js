@@ -150,7 +150,7 @@ const page = () => {
             <li>
               <Link href="/how-to" className="" target="_blank">
                 <img src="/icon/dbl17.png" alt="" />
-                How to's
+                How to&apos;s
               </Link>
             </li>
             <li>
@@ -193,7 +193,7 @@ const page = () => {
               <tr>
                 <td>1</td>
                 <td>
-                  <img src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
+                  <img alt="theme" src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
                   dfzhfhd <span>25, Mar 2021</span>
                 </td>
                 {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
@@ -231,7 +231,7 @@ const page = () => {
               <tr>
                 <td>2</td>
                 <td>
-                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
+                  <img alt="theme" src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
                   Iei <span>25, Mar 2021</span>
                 </td>
                 {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
@@ -269,7 +269,7 @@ const page = () => {
               <tr>
                 <td>3</td>
                 <td>
-                  <img src="/listings/2279bike1.jpg" />
+                  <img alt="theme" src="/listings/2279bike1.jpg" />
                   Super bike showroom <span>02, May 2020</span>
                 </td>
                 {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
@@ -307,7 +307,7 @@ const page = () => {
               <tr>
                 <td>4</td>
                 <td>
-                  <img src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
+                  <img alt="theme" src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
                   phoenix mall <span>13, Mar 2021</span>
                 </td>
                 {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
@@ -345,7 +345,7 @@ const page = () => {
               <tr>
                 <td>5</td>
                 <td>
-                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
+                  <img alt="theme" src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
                   Core real estates <span>11, Mar 2021</span>
                 </td>
                 {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
@@ -383,7 +383,7 @@ const page = () => {
               <tr>
                 <td>6</td>
                 <td>
-                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
+                  <img alt="theme" src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
                   Core real estates <span>11, Mar 2021</span>
                 </td>
                 {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}

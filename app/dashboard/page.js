@@ -21,7 +21,7 @@ const page = () => {
       {/*LEFT SECTION*/}
       <div className="ud-lhs">
         <div className="ud-lhs-s1">
-          <img src="/user/62736rn53themes.png" alt="" />
+          <img src="/user/62736rn53themes.png"  alt="theme" />
           <h4>Digital koncept</h4>
           <b>Join on 26, Mar 2021</b>
           <Link className="ud-lhs-view-pro" target="_blank" href="/profile">
@@ -32,136 +32,136 @@ const page = () => {
           <ul>
             <li>
               <Link href="/dashboard" className="db-lact">
-                <img src="/icon/dbl1.png" alt="" />
+                <img src="/icon/dbl1.png" alt="theme" />
                 My Dashboard
               </Link>
             </li>
             <li>
               <Link href="/db-all-listing" className="">
-                <img src="/icon/shop.png" alt="" />
+                <img src="/icon/shop.png" alt="theme" />
                 All Listings
               </Link>
             </li>
             <li>
               <Link href="/add-listing-start">
-                <img src="/icon/dbl3.png" alt="" />
+                <img src="/icon/dbl3.png" alt="theme" />
                 Add New Listing
               </Link>
             </li>
             <li>
               <Link href="/db-enquiry" className="">
-                <img src="/icon/tick.png" alt="" />
+                <img src="/icon/tick.png" alt="theme" />
                 Lead enquiry
               </Link>
             </li>
             <li>
               <Link href="/db-products" className="">
-                <img src="/icon/cart.png" alt="" />
+                <img src="/icon/cart.png" alt="theme" />
                 All Products
               </Link>
             </li>
             <li>
               <Link href="/db-events" className="">
-                <img src="/icon/calendar.png" alt="" />
+                <img src="/icon/calendar.png" alt="theme" />
                 Events
               </Link>
             </li>
             <li>
               <Link href="/db-blog-posts" className="">
-                <img src="/icon/blog1.png" alt="" />
+                <img src="/icon/blog1.png" alt="theme" />
                 Blog posts
               </Link>
             </li>
             <li>
               <Link href="/db-coupons" className="">
-                <img src="/icon/coupons.png" alt="" />
+                <img src="/icon/coupons.png" alt="theme" />
                 Coupons
               </Link>
             </li>
             <li>
               <Link href="/db-promote" className="">
-                <img src="/icon/promotion.png" alt="" />
+                <img src="/icon/promotion.png" alt="theme" />
                 Promotions
               </Link>
             </li>
             <li>
               <Link href="/db-seo" className="">
-                <img src="/icon/seo.png" alt="" />
+                <img src="/icon/seo.png" alt="theme" />
                 SEO
               </Link>
             </li>
             <li>
               <Link href="/db-point-history" className="">
-                <img src="/icon/point.png" alt="" />
+                <img src="/icon/point.png" alt="theme" />
                 Points History
               </Link>
             </li>
             <li>
               <Link href="/db-review" className="">
-                <img src="/icon/dbl13.png" alt="" />
+                <img src="/icon/dbl13.png" alt="theme" />
                 Reviews
               </Link>
             </li>
             {/*<li>
-                  <Link href="/db-message" class=""><img src="/icon/dbl14.png" alt="" />Messages</Link>
+                  <Link href="/db-message" class=""><img src="/icon/dbl14.png" alt="theme" />Messages</Link>
               </li>*/}
             <li>
               <Link href="/db-my-profile" className="">
-                <img src="/icon/dbl6.png" alt="" />
+                <img src="/icon/dbl6.png" alt="theme" />
                 My Profile
               </Link>
             </li>
             <li>
               <Link href="/db-like-listings" className="">
-                <img src="/icon/dbl15.png" alt="" />
+                <img src="/icon/dbl15.png" alt="theme" />
                 Liked Listings
               </Link>
             </li>
             <li>
               <Link href="/db-followings" className="">
-                <img src="/icon/dbl18.png" alt="" />
+                <img src="/icon/dbl18.png" alt="theme" />
                 Followings
               </Link>
             </li>
             <li>
               <Link href="/db-post-ads" className="">
-                <img src="/icon/dbl11.png" alt="" />
+                <img src="/icon/dbl11.png" alt="theme" />
                 Ad Summary
               </Link>
             </li>
             <li>
               <Link href="/db-payment" className="">
-                <img src="/icon/dbl9.png" alt="" />
+                <img src="/icon/dbl9.png" alt="theme" />
                 Payment &amp; plan
               </Link>
             </li>
             <li>
               <Link href="/db-invoice-all" className="">
-                <img src="/icon/dbl16.png" alt="" />
+                <img src="/icon/dbl16.png" alt="theme" />
                 Payment invoice
               </Link>
             </li>
             <li>
               <Link href="/db-notifications" className="">
-                <img src="/icon/dbl19.png" alt="" />
+                <img src="/icon/dbl19.png" alt="theme" />
                 Notifications
               </Link>
             </li>
             <li>
               <Link href="/how-to" className="" target="_blank">
-                <img src="/icon/dbl17.png" alt="" />
-                How to's
+                <img src="/icon/dbl17.png" alt="theme" />
+                How to&apos;s
               </Link>
             </li>
             <li>
               <Link href="/db-setting" className="">
-                <img src="/icon/dbl210.png" alt="" />
+                <img src="/icon/dbl210.png" alt="theme" />
                 Setting
               </Link>
             </li>
             <li>
               <Link href="/#">
-                <img src="/icon/dbl12.png" alt="" />
+                <img src="/icon/dbl12.png" alt="theme" />
                 Log Out
               </Link>
             </li>
@@ -223,7 +223,7 @@ const page = () => {
             <div className="pay-lhs">
               <div className="lis-pro-badg">
                 <div>
-                  <img src="/user/62736rn53themes.png" alt="" />
+                  <img src="/user/62736rn53themes.png" alt="theme" />
                   <h4>Digital koncept</h4>
                   <p>Member since 26, Mar 2021</p>
                 </div>{" "}
@@ -269,7 +269,7 @@ const page = () => {
             <div className="pay-lhs">
               <div className="lis-pro-badg">
                 <div>
-                  <img src="/user/39791rn53-themes.png" alt="" />
+                  <img src="/user/39791rn53-themes.png" alt="theme" />
                   <h4>Digital koncept net</h4>
                   <p>Member since 26, Mar 2021</p>
                 </div>{" "}
@@ -332,7 +332,7 @@ const page = () => {
               <tr>
                 <td>1</td>
                 <td>
-                  <img src="/listings/78776dsc09586.jpg" />
+                  <img src="/listings/78776dsc09586.jpg " alt="theme" />
                   test <span>28, Mar 2021</span>
                 </td>
                 <td>
@@ -374,7 +374,7 @@ const page = () => {
               <tr>
                 <td>2</td>
                 <td>
-                  <img src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
+                  <img src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" alt="theme" />
                   dfzhfhd <span>25, Mar 2021</span>
                 </td>
                 <td>
@@ -416,7 +416,7 @@ const page = () => {
               <tr>
                 <td>3</td>
                 <td>
-                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
+                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" alt="theme" />
                   Iei <span>25, Mar 2021</span>
                 </td>
                 <td>
@@ -458,7 +458,7 @@ const page = () => {
               <tr>
                 <td>4</td>
                 <td>
-                  <img src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
+                  <img src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" alt="theme" />
                   phoenix mall <span>13, Mar 2021</span>
                 </td>
                 <td>
@@ -500,7 +500,7 @@ const page = () => {
               <tr>
                 <td>5</td>
                 <td>
-                  <img src="/listings/45451download-(1).jfif" />
+                  <img src="/listings/45451download-(1).jfif" alt="theme" />
                   Ocha Thai Cuisine <span>12, Mar 2021</span>
                 </td>
                 <td>
@@ -542,7 +542,7 @@ const page = () => {
               <tr>
                 <td>6</td>
                 <td>
-                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
+                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" alt="theme" />
                   Core real estates <span>11, Mar 2021</span>
                 </td>
                 <td>
@@ -584,7 +584,7 @@ const page = () => {
               <tr>
                 <td>7</td>
                 <td>
-                  <img src="/listings/85477capture1.png" />
+                  <img src="/listings/85477capture1.png"  alt="theme" />
                   Gill Automobiles and Services <span>20, Feb 2021</span>
                 </td>
                 <td>
@@ -626,7 +626,7 @@ const page = () => {
               <tr>
                 <td>8</td>
                 <td>
-                  <img src="/listings/64465capture-(1).png" />
+                  <img src="/listings/64465capture-(1).png" alt="theme" />
                   Titan Wedding Hall <span>07, Feb 2021</span>
                 </td>
                 <td>
@@ -668,7 +668,7 @@ const page = () => {
               <tr>
                 <td>9</td>
                 <td>
-                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
+                  <img src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg " alt="theme" />
                   Taj Hotels <span>24, Dec 2020</span>
                 </td>
                 <td>
@@ -710,7 +710,7 @@ const page = () => {
               <tr>
                 <td>10</td>
                 <td>
-                  <img src="/listings/28181houses-on-body-of-water-1724424.jpg" />
+                  <img src="/listings/28181houses-on-body-of-water-1724424.jpg " alt="theme" />
                   ccc <span>29, Sep 2020</span>
                 </td>
                 <td>
@@ -752,7 +752,7 @@ const page = () => {
               <tr>
                 <td>11</td>
                 <td>
-                  <img src="/listings/28181houses-on-body-of-water-1724424.jpg" />
+                  <img src="/listings/28181houses-on-body-of-water-1724424.jpg" alt="theme" />
                   Hello <span>23, Sep 2020</span>
                 </td>
                 <td>
@@ -794,7 +794,7 @@ const page = () => {
               <tr>
                 <td>12</td>
                 <td>
-                  <img src="/listings/56295pexels-photo-3155726.jpeg" />
+                  <img src="/listings/56295pexels-photo-3155726.jpeg" alt="theme" />
                   Premium gardens <span>16, May 2020</span>
                 </td>
                 <td>
@@ -836,7 +836,7 @@ const page = () => {
               <tr>
                 <td>13</td>
                 <td>
-                  <img src="/listings/55800pexels-photo-258154.jpeg" />
+                  <img src="/listings/55800pexels-photo-258154.jpeg" alt="theme" />
                   Beach luxury villa gardens <span>16, May 2020</span>
                 </td>
                 <td>
@@ -878,7 +878,7 @@ const page = () => {
               <tr>
                 <td>14</td>
                 <td>
-                  <img src="/listings/75352house-luxury-villa-swimming-pool-32870.jpg" />
+                  <img src="/listings/75352house-luxury-villa-swimming-pool-32870.jpg" alt="theme" />
                   GOS Villas <span>16, May 2020</span>
                 </td>
                 <td>
@@ -920,7 +920,7 @@ const page = () => {
               <tr>
                 <td>15</td>
                 <td>
-                  <img src="/listings/2279bike1.jpg" />
+                  <img src="/listings/2279bike1.jpg" alt="theme" />
                   Super bike showroom <span>02, May 2020</span>
                 </td>
                 <td>
@@ -962,7 +962,7 @@ const page = () => {
               <tr>
                 <td>16</td>
                 <td>
-                  <img src="/listings/2279bike1.jpg" />
+                  <img src="/listings/2279bike1.jpg" alt="theme" />
                   Benz cars showroom <span>25, Apr 2020</span>
                 </td>
                 <td>
@@ -1004,7 +1004,7 @@ const page = () => {
               <tr>
                 <td>17</td>
                 <td>
-                  <img src="/listings/56300pexels-photo-667838.jpeg" />
+                  <img src="/listings/56300pexels-photo-667838.jpeg" alt="theme" />
                   Smith Luxury Villas <span>19, Mar 2020</span>
                 </td>
                 <td>
@@ -1046,7 +1046,7 @@ const page = () => {
               <tr>
                 <td>18</td>
                 <td>
-                  <img src="/listings/78973104682512.jpg" />
+                  <img src="/listings/78973104682512.jpg" alt="theme" />
                   Ø§Ø¨Ù†Ù‰ Ù…ÙˆÙ‚Ø¹Ùƒ Ù…Ø¹Ù†Ø§ <span>25, Jan 2020</span>
                 </td>
                 <td>
@@ -1088,7 +1088,7 @@ const page = () => {
               <tr>
                 <td>19</td>
                 <td>
-                  <img src="/listings/2060201_preview.jpg" />
+                  <img src="/listings/2060201_preview.jpg" alt="theme" />
                   BizBookBusiness Directory Template <span>24, Jan 2020</span>
                 </td>
                 <td>
@@ -1130,7 +1130,7 @@ const page = () => {
               <tr>
                 <td>20</td>
                 <td>
-                  <img src="/listings/76808tour-travel-html-template.jpg" />
+                  <img src="/listings/76808tour-travel-html-template.jpg" alt="theme" />
                   Tour and Travel html Template <span>29, Dec 2019</span>
                 </td>
                 <td>
@@ -1172,7 +1172,7 @@ const page = () => {
               <tr>
                 <td>21</td>
                 <td>
-                  <img src="/listings/657791_f1cdikgosfn0gg0a96jsdw.png" />
+                  <img src="/listings/657791_f1cdikgosfn0gg0a96jsdw.png" alt="theme" />
                   Smart Digital Products <span>15, Dec 2019</span>
                 </td>
                 <td>
@@ -1225,7 +1225,7 @@ const page = () => {
                 <Link href="/event/champions-of-india-run-ride-walk">
                   <img
                     src="/events/88783banner16130393609bct2.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>CHAMPIONS OF INDIA RUN-RIDE-WALK</h5>
                   <span>Created: 12, Mar 2021</span>
@@ -1237,7 +1237,7 @@ const page = () => {
                 <Link href="/event/india-vs-england">
                   <img
                     src="/events/64903media-desktop-4th-test-india-vs-england-0-2021-2-13-t-22-0-8.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>INDIA VS ENGLAND</h5>
                   <span>Created: 11, Mar 2021</span>
@@ -1247,7 +1247,7 @@ const page = () => {
             <li>
               <div className="db-eve">
                 <Link href="/event/ipl-2021">
-                  <img src="/events/84183jpg.webp" alt="" />
+                  <img src="/events/84183jpg.webp" alt="theme" />
                   <h5>IPL 2021</h5>
                   <span>Created: 21, Feb 2021</span>
                 </Link>
@@ -1258,7 +1258,7 @@ const page = () => {
                 <Link href="/event/27-health-and-nutrition-tips">
                   <img
                     src="/events/51138springfield_illinois.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>27 Health and Nutrition Tips</h5>
                   <span>Created: 09, Apr 2020</span>
@@ -1270,7 +1270,7 @@ const page = () => {
                 <Link href="/event/digital-marketing-seminar-2020">
                   <img
                     src="/events/730182020-google-ideas-to-increase-business-sale-through-digital-marketing.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>Digital Marketing Seminar 2020</h5>
                   <span>Created: 26, Mar 2020</span>
@@ -1290,7 +1290,7 @@ const page = () => {
                 <Link href="/blog/inception">
                   <img
                     src="/blogs/36614hollywood-insider-feature-inception-greatest-movie-of-the-decade-leonardo-dicaprio-tom-hardy-marion-cotillard-joseph-gordon-levitt-michael-caine-christopher-nolan-ken-wantanabe-ellen-paige.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>INCEPTION</h5>
                   <span>Created: 12, Mar 2021</span>
@@ -1302,7 +1302,7 @@ const page = () => {
                 <Link href="/blog/avengers-infinty-war">
                   <img
                     src="/blogs/79119https___blogs-images.forbes.com_scottmendelson_files_2018_04_image001.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>AVENGERS INFINTY WAR</h5>
                   <span>Created: 12, Mar 2021</span>
@@ -1314,7 +1314,7 @@ const page = () => {
                 <Link href="/blog/avengers-end-game1">
                   <img
                     src="/blogs/8325292c8e00b34fcfdeaf605a0647c21adb3.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>AVENGERS END GAME</h5>
                   <span>Created: 11, Mar 2021</span>
@@ -1326,7 +1326,7 @@ const page = () => {
                 <Link href="/blog/captainamerica-the-civil-war">
                   <img
                     src="/blogs/6619940496pexels-photo-248547.jpeg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>captainamerica the civil war</h5>
                   <span>Created: 11, Mar 2021</span>
@@ -1336,7 +1336,7 @@ const page = () => {
             <li>
               <div className="db-eve">
                 <Link href="/blog/samsung-m31-review-">
-                  <img src="/blogs/25287gsmarena_001.jpg" alt="" />
+                  <img src="/blogs/25287gsmarena_001.jpg" alt="theme" />
                   <h5>Samsung M31 Review </h5>
                   <span>Created: 22, Feb 2021</span>
                 </Link>
@@ -1347,7 +1347,7 @@ const page = () => {
                 <Link href="/blog/wizard-of-oz1">
                   <img
                     src="/blogs/71300wizard_of_oz_4k_banner.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>wizard of oz</h5>
                   <span>Created: 21, Feb 2021</span>
@@ -1359,7 +1359,7 @@ const page = () => {
                 <Link href="/blog/wizard-of-oz">
                   <img
                     src="/blogs/19145wizard_of_oz_4k_banner.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>wizard of oz</h5>
                   <span>Created: 21, Feb 2021</span>
@@ -1369,7 +1369,7 @@ const page = () => {
             <li>
               <div className="db-eve">
                 <Link href="/blog/titanic">
-                  <img src="/blogs/79351titanic.jpg" alt="" />
+                  <img src="/blogs/79351titanic.jpg" alt="theme" />
                   <h5>Titanic</h5>
                   <span>Created: 21, Feb 2021</span>
                 </Link>
@@ -1380,7 +1380,7 @@ const page = () => {
                 <Link href="/blog/digital-marketing">
                   <img
                     src="/blogs/131032020-google-ideas-to-increase-business-sale-through-digital-marketing.jpg"
-                    alt=""
+                    alt="theme"
                   />
                   <h5>Digital Marketing</h5>
                   <span>Created: 26, Mar 2020</span>
@@ -1930,7 +1930,7 @@ const page = () => {
         {/*                <Link href="/*/}
         {/*">*/}
         {/*                    <img src="/user/*/}
-        {/*" alt="">*/}
+        {/*" alt="theme">*/}
         {/*                    <h5>*/}
         {/*</h5>*/}
         {/*                    <p>*/}
@@ -2052,7 +2052,7 @@ const page = () => {
                   <Link href="/profile/rachel" target="_blank">
                     <img
                       src="/user/63520pexels-photo-1130626.jpeg"
-                      alt=""
+                      alt="theme"
                     />
                   </Link>
                 </li>
@@ -2060,7 +2060,7 @@ const page = () => {
                   <Link href="/profile/betty-d-friedman" target="_blank">
                     <img
                       src="/user/8766pexels-photo-774909.jpeg"
-                      alt=""
+                      alt="theme"
                     />
                   </Link>
                 </li>
@@ -2068,7 +2068,7 @@ const page = () => {
                   <Link href="/profile/claude-d-dial" target="_blank">
                     <img
                       src="/user/33654pexels-photo-91227.jpeg"
-                      alt=""
+                      alt="theme"
                     />
                   </Link>
                 </li>
@@ -2076,58 +2076,58 @@ const page = () => {
                   <Link href="/profile/kumar" target="_blank">
                     <img
                       src="/user/4913411004989_334444876752279_544839968_n.jpg"
-                      alt=""
+                      alt="theme"
                     />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/deneme" target="_blank">
-                    <img src="/user/475847.jpg" alt="" />
+                    <img src="/user/475847.jpg" alt="theme" />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/clic" target="_blank">
-                    <img src="/user/475847.jpg" alt="" />
+                    <img src="/user/475847.jpg" alt="theme" />
                   </Link>
                 </li>
                 <li>
                   <Link href="/profile/nawaf-alayli" target="_blank">
-                    <img src="/user/475847.jpg" alt="" />
+                    <img src="/user/475847.jpg" alt="theme" />
                   </Link>
                 </li>
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/2.jpg" alt="">*/}
+                {/*                            <img src="/user/2.jpg" alt="theme">*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/3.jpg" alt="">*/}
+                {/*                            <img src="/user/3.jpg" alt="theme">*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/4.jpg" alt="">*/}
+                {/*                            <img src="/user/4.jpg" alt="theme">*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/5.jpg" alt="">*/}
+                {/*                            <img src="/user/5.jpg" alt="theme">*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/6.jpg" alt="">*/}
+                {/*                            <img src="/user/6.jpg" alt="theme">*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/7.jpg" alt="">*/}
+                {/*                            <img src="/user/7.jpg" alt="theme">*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
                 {/*                    <li>*/}
                 {/*                        <Link href="/profile" target="_blank">*/}
-                {/*                            <img src="/user/8.jpg" alt="">*/}
+                {/*                            <img src="/user/8.jpg" alt="theme">*/}
                 {/*                        </Link>*/}
                 {/*                    </li>*/}
               </ul>
@@ -2285,7 +2285,7 @@ const page = () => {
         <div className="row">
           <div className="bot-book">
             <div className="col-md-2 bb-img">
-              <img src="/idea.png" alt="" />
+              <img src="/idea.png" alt="theme" />
             </div>
             <div className="col-md-7 bb-text">
               <h4>#1 Business Directory and Service Provider</h4>

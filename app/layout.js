@@ -4,15 +4,17 @@ import "../css/style.css";
 import "../css/bootstrap.css";
 import "../css/style2.css"
 import Script from "next/script";
-import Head from "next/head";
+
 import Header from "../component/Header";
 
-
+export const metadata = {
+  title: 'bizdir',
+  
+};
 export default function RootLayout({ children }) {
+  
   return (
     <html>
-      <head>
-      </head>
       <body> 
         <div>
        

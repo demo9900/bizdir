@@ -150,7 +150,7 @@ const page = () => {
             <li>
               <Link href="/how-to" className="" target="_blank">
                 <img src="/icon/dbl17.png" alt="" />
-                How to's
+                How to&apos;s
               </Link>
             </li>
             <li>
@@ -406,13 +406,13 @@ const page = () => {
               </li>
               <li>
                 <div>
-                  Thank you for creating for an account in "Biz" portal.
+                  Thank you for creating for an account in &quot;Biz&quot; portal.
                 </div>{" "}
                 <span>8:30 PM on 26, Mar 2021</span>
               </li>
               <li>
                 <div>
-                  We heartily welcome to our global business "Biz" portal.
+                  We heartily welcome to our global business &quot;Biz&quot; portal.
                 </div>{" "}
                 <span>8:30 PM on 26, Mar 2021</span>
               </li>

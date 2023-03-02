@@ -150,7 +150,7 @@ const page = () => {
             <li>
               <Link href="/how-to" className="" target="_blank">
                 <img src="/icon/dbl17.png" alt="" />
-                How to's
+                How to&apos;s
               </Link>
             </li>
             <li>
@@ -201,7 +201,7 @@ const page = () => {
                         <div className="coup-box-1">
                           <div className="s1">
                             <div className="lhs">
-                              <img src="/user/1.png" />
+                              <img src="/user/1.png" alt='demoimage'/>
                             </div>
                             <div className="rhs">
                               <h4>Bizbook 50% Off</h4>
