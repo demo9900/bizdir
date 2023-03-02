@@ -77,10 +77,44 @@ const page = () => {
   
   return (
     <>
-   
+   <style>
+    {`.animation-bg{
+      background: #697e97;
+      background-attachment: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-size: cover;
+      background: linear-gradient(124deg, #5e7dd3, #bb5459);
+
+    }
+    .animation-bg:before {
+      content: '';
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      background-image: url(../../images/bgIcons.png);
+      background-repeat: repeat;
+      opacity: 0.1;
+      background-size: 400px;
+      animation: blogbgani 300s linear 0s infinite both;
+      /* background-color: #1202ff; */
+  }
+  
+  @keyframes blogbgani {
+      0% {
+          background-position: 0px 0px;
+      }
+      100% {
+          background-position: 0px 5000px;
+      }
+  }`}
+   </style>
     <section>
       <div className="str">
-    <div className="hom-head" style={{ backgroundImage: "url(/promo.jpg)" }} >
+    <div className="hom-head animation-bg" >
      <Header/>  
     <div className="container">
     <div className="row">
