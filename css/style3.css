@@ -16459,6 +16459,7 @@ div#pop_enq_success p {
     border-radius: 0px 10px 10px 0px;
     line-height: 24px;
     float: left;
+    background: #0337f4;
 }
 
 .job-sear ul li.sr-btn button i {

@@ -23,7 +23,7 @@ const page = () => {
       <Headertwo/>
     </div>
      </div>
-    </section>
+     </section>
       <style jsx>
       {`
       .hom-head .container{display:none}
