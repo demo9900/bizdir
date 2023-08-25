@@ -54,11 +54,11 @@ const page = () => {
               <div className="filt-com lhs-cate">
                 <h4>Categories</h4>
                 <div className="dropdown">
-                  {/*                                <button id="dLabel" class="dropdown-select" type="button" data-toggle="dropdown"*/}
+                  {/*                                <button id="dLabel" className="dropdown-select" type="button" data-toggle="dropdown"*/}
                   {/*                                        aria-haspopup="true" aria-expanded="false">*/}
                   {/*                                    All categories*/}
                   {/*                                </button>*/}
-                  {/*                                <ul class="dropdown-menu" aria-labelledby="dLabel">*/}
+                  {/*                                <ul className="dropdown-menu" aria-labelledby="dLabel">*/}
                   {/*                                    */}
                   {/*                                    <li>*/}
                   {/*</li>*/}

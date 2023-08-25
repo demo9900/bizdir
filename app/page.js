@@ -3,9 +3,9 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Header from '../component/Header'
-import Footer from '../component/Footer';
-import BottomMenu from '../component/BottomMenu';
+import Header from '@/components/Header'
+import Footer from '@/components/Footer';
+import BottomMenu from '@/components/BottomMenu';
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
 
@@ -77,41 +77,7 @@ const page = () => {
   
   return (
     <>
-   <style>
-    {`.animation-bg{
-      background: #697e97;
-      background-attachment: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background-size: cover;
-      background: linear-gradient(124deg, #5e7dd3, #bb5459);
-
-    }
-    .animation-bg:before {
-      content: '';
-      left: 0px;
-      right: 0px;
-      top: 0px;
-      bottom: 0px;
-      background-image: url(../../images/bgIcons.png);
-      background-repeat: repeat;
-      opacity: 0.1;
-      background-size: 400px;
-      animation: blogbgani 300s linear 0s infinite both;
-      /* background-color: #1202ff; */
-  }
-  
-  @keyframes blogbgani {
-      0% {
-          background-position: 0px 0px;
-      }
-      100% {
-          background-position: 0px 5000px;
-      }
-  }`}
-   </style>
+   
     <section>
       <div className="str">
     <div className="hom-head animation-bg" >
@@ -407,8 +373,8 @@ const page = () => {
       alt="service"
     />
     </div>
-    <div class="land-pack-grid-text">
-			<h4>{item.name} <span class="dir-ho-cat">{item.title}</span></h4>
+    <div className="land-pack-grid-text">
+			<h4>{item.name} <span className="dir-ho-cat">{item.title}</span></h4>
 		</div>
 </Link>
 
@@ -1455,14 +1421,14 @@ const page = () => {
               </ul>
             </div>
           </div>
-          {/*<div class="home-tit">
+          {/*<div className="home-tit">
               <h2><span></span> </h2>
               <p></p>
           </div>
-          <div class="inte">
+          <div className="inte">
               <ul>
                   <li>
-                      <div class="hom-oth">
+                      <div className="hom-oth">
                           <div>
                               <img src="/listings/hot5.jpg" alt="">
                           </div>
@@ -1470,11 +1436,11 @@ const page = () => {
                               <h4>Events</h4>
                               <span>Email configuration</span>
                           </div>
-                          <Link href="/events" class="fclick"></Link>
+                          <Link href="/events" className="fclick"></Link>
                       </div>
                   </li>
                   <li>
-                      <div class="hom-oth">
+                      <div className="hom-oth">
                           <div>
                               <img src="/listings/re1.jpg" alt="">
                           </div>
@@ -1482,11 +1448,11 @@ const page = () => {
                               <h4>Blog posts</h4>
                               <span>Email configuration</span>
                           </div>
-                          <Link href="/blog-posts" class="fclick"></Link>
+                          <Link href="/blog-posts" className="fclick"></Link>
                       </div>
                   </li>
                   <li>
-                      <div class="hom-oth">
+                      <div className="hom-oth">
                           <div>
                               <img src="/listings/spa3.jpg" alt="">
                           </div>
@@ -1494,11 +1460,11 @@ const page = () => {
                               <h4>How it works</h4>
                               <span>Email configuration</span>
                           </div>
-                          <Link href="/how-to" class="fclick"></Link>
+                          <Link href="/how-to" className="fclick"></Link>
                       </div>
                   </li>
                   <li>
-                      <div class="hom-oth">
+                      <div className="hom-oth">
                           <div>
                               <img src="/listings/re5.jpg" alt="">
                           </div>
@@ -1506,14 +1472,14 @@ const page = () => {
                               <h4>Pricing details</h4>
                               <span>Email configuration</span>
                           </div>
-                          <Link href="/pricing-details" class="fclick"></Link>
+                          <Link href="/pricing-details" className="fclick"></Link>
                       </div>
                   </li>
               </ul>
           </div>*/}
-          {/*<div class="country">
-              <div class="country-inn">
-                  <h4>                            <span class="cont2"></span>
+          {/*<div className="country">
+              <div className="country-inn">
+                  <h4>                            <span className="cont2"></span>
                   </h4>
                                           <iframe src="" allowfullscreen=""></iframe>
               </div>

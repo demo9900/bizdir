@@ -103,7 +103,7 @@ const page = () => {
               </Link>
             </li>
             {/*<li>
-                  <Link href="/db-message" class=""><img src="/icon/dbl14.png" alt="" />Messages</Link>
+                  <Link href="/db-message" className=""><img src="/icon/dbl14.png" alt="" />Messages</Link>
               </li>*/}
             <li>
               <Link href="/db-my-profile" className="">
@@ -222,10 +222,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>Perfect service</td>
@@ -251,10 +251,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -281,10 +281,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>gfffff</td>
@@ -310,10 +310,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>One of the best showrooms in the US.</td>
@@ -335,10 +335,10 @@ const page = () => {
                       <label className="rat">
                         {" "}
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>j</td>
@@ -364,10 +364,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -396,10 +396,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -426,10 +426,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -458,10 +458,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -491,10 +491,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -522,10 +522,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -551,10 +551,10 @@ const page = () => {
                         {" "}
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -581,10 +581,10 @@ const page = () => {
                         {" "}
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -634,10 +634,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -674,10 +674,10 @@ const page = () => {
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
                         <i className="material-icons">star</i>
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star</i>*/}
-                        {/*                                            <i class="material-icons">star_half</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star</i>*/}
+                        {/*                                            <i className="material-icons">star_half</i>*/}
                       </label>
                     </td>
                     <td>
@@ -766,9 +766,9 @@ const page = () => {
             <ul>
               {/*                <li>*/}
               {/*                    <span>Premium gardens</span>*/}
-              {/*                    <div class="custom-control custom-switch">*/}
-              {/*                        <input type="checkbox" class="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
-              {/*                        <label class="custom-control-label" for="switch1">&nbsp;</label>*/}
+              {/*                    <div className="custom-control custom-switch">*/}
+              {/*                        <input type="checkbox" className="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
+              {/*                        <label className="custom-control-label" for="switch1">&nbsp;</label>*/}
               {/*                    </div>*/}
               {/*                </li>*/}
               <li>
@@ -1229,7 +1229,7 @@ const page = () => {
             </ul>
           </div>
         </div>
-        {/*    <div class="ud-rhs-sec-2">*/}
+        {/*    <div className="ud-rhs-sec-2">*/}
         {/*        <h4>*/}
         {/*</h4>*/}
         {/*        <ul>*/}

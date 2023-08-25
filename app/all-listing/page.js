@@ -422,7 +422,7 @@ const page = () => {
                     </div>
                   </li>
                   {/*                                    <li>*/}
-                  {/*                                        <div class="ads-box">*/}
+                  {/*                                        <div className="ads-box">*/}
                   {/*                                            */}
                   {/*                                            <Link href="/*/}
                   {/*">*/}
@@ -1346,7 +1346,7 @@ const page = () => {
             <option value={20}>Plots and Lands</option>
           </select>
         </div>
-        {/*        <div class="map-fi-com map-fi-rat">*/}
+        {/*        <div className="map-fi-com map-fi-rat">*/}
         {/*            <select id="rating_check1" name="rating_check">*/}
         {/*                <option value="">Select Rating</option>*/}
         {/*                <option value="5">5 Star</option>*/}

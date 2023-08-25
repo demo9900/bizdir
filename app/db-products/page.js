@@ -103,7 +103,7 @@ const page = () => {
               </Link>
             </li>
             {/*<li>
-                  <Link href="/db-message" class=""><img alt="demoimage" src="/icon/dbl14.png"  />Messages</Link>
+                  <Link href="/db-message" className=""><img alt="demoimage" src="/icon/dbl14.png"  />Messages</Link>
               </li>*/}
             <li>
               <Link href="/db-my-profile" className="">
@@ -198,12 +198,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/3466audi_png1737.png" />
                   Audi q3 <span>26, Mar 2021</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">8</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -234,12 +234,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/20234fp-263d-royal-protton-alpha-steel_interior.png" />
                   WHIRLPOOL FRIDGE <span>12, Mar 2021</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">12</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -270,12 +270,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/6743281s+9npa5ol._ac_ul320_.jpg" />
                   DELL <span>12, Mar 2021</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">9</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -306,12 +306,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/6009download.jfif" />
                   samsung m31 <span>12, Mar 2021</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">11</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -342,12 +342,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/48373ac-hot-n-cold-final.png" />
                   LG AC <span>11, Mar 2021</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">8</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -378,12 +378,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/763861bdef4927c04d3674fa22e88df97ca754db8f83e.jpeg" />
                   lenova yoga 510 <span>21, Feb 2021</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">9</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -414,12 +414,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/74749bizpro.jpeg" />
                   Engineered Shelving Unit <span>27, Apr 2020</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">6</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -450,12 +450,12 @@ const page = () => {
                   <img alt="demoimage" src="/products/101211-ps4-slim-sony-yes-dualshock-4-original-imafmakaeu7xvz6a.jpeg" />
                   8 x 4 Metal Trailer - Exc Tyres <span>11, Apr 2020</span>
                 </td>
-                {/*                        <td><span class="db-product-rat">*/}
+                {/*                        <td><span className="db-product-rat">*/}
                 {/*</span></td>*/}
                 <td>
                   <span className="db-list-rat">0</span>
                 </td>
-                {/*									<td><span class="db-product-ststus">8 June 2020</span></td>*/}
+                {/*									<td><span className="db-product-ststus">8 June 2020</span></td>*/}
                 <td>
                   <span className="db-list-ststus">Active</span>
                 </td>
@@ -553,9 +553,9 @@ const page = () => {
             <ul>
               {/*                <li>*/}
               {/*                    <span>Premium gardens</span>*/}
-              {/*                    <div class="custom-control custom-switch">*/}
-              {/*                        <input type="checkbox" class="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
-              {/*                        <label class="custom-control-label" for="switch1">&nbsp;</label>*/}
+              {/*                    <div className="custom-control custom-switch">*/}
+              {/*                        <input type="checkbox" className="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
+              {/*                        <label className="custom-control-label" for="switch1">&nbsp;</label>*/}
               {/*                    </div>*/}
               {/*                </li>*/}
               <li>
@@ -1016,7 +1016,7 @@ const page = () => {
             </ul>
           </div>
         </div>
-        {/*    <div class="ud-rhs-sec-2">*/}
+        {/*    <div className="ud-rhs-sec-2">*/}
         {/*        <h4>*/}
         {/*</h4>*/}
         {/*        <ul>*/}

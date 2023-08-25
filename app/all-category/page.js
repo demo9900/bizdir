@@ -510,12 +510,12 @@ const page = () => {
           {/*                    <ul>*/}
           {/*                        */}
           {/*                            <li>*/}
-          {/*                                <div class="sh-all-scat-box">*/}
-          {/*                                    <div class="lhs">*/}
+          {/*                                <div className="sh-all-scat-box">*/}
+          {/*                                    <div className="lhs">*/}
           {/*                                        <img src="/services/*/}
           {/*" alt="">*/}
           {/*                                    </div>*/}
-          {/*                                    <div class="rhs">*/}
+          {/*                                    <div className="rhs">*/}
           {/*                                        <h4>*/}
           {/* <span>40</span></h4>*/}
           {/*                                        <ol>*/}

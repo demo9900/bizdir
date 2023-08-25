@@ -15,16 +15,16 @@ const Header = () => {
   return (
     <>
     
-    <div className={`${scrollPosition > 0 ? 'hom-top dmact': 'hom-top'}`}>
+    <div className="hom-top dmact">
   <div className="container">
     <div className="row">
       <div className="hom-nav  db-open ">
         {/*MOBILE MENU*/}
-        {/*<div class="menu">
-                          <i class="material-icons mopen">menu</i>
+        {/*<div className="menu">
+                          <i className="material-icons mopen">menu</i>
                       </div>*/}
-        <Link href="/index" className="top-log">
-          <img src="/Logo-W-200x45.webp" alt="" className="ic-logo" />
+        <Link href="/" className="top-log">
+          <img src="https://ik.imagekit.io/rrw4vjgxohv/bizbook/logo-b.png?ik-sdk-version=javascript-1.4.3&updatedAt=1672921621987" alt="" className="ic-logo" />
         </Link>
         <div className="menu" onClick={() => setMenuVisibility(! isMenuVisible)}>
           <h4>All Category</h4>
@@ -180,7 +180,7 @@ const Header = () => {
             <ul>
               <li className="sr-sea">
                 {/*                                            <input type="text"  id="*/}
-                {/*" class="autocomplete"*/}
+                {/*" className="autocomplete"*/}
                 {/*                                                   placeholder="*/}
                 {/*">*/}
                 <input
@@ -279,10 +279,10 @@ const Header = () => {
         </div>
         <div className="al duration-500" onMouseEnter={() => setDashboardVisiblity(true)}  onMouseLeave={() => setDashboardVisiblity(false)} >
           <div className="head-pro">
-            <img src="/icon/main-logo.png" height={36} width={36} alt="" />
+            <img src="https://ik.imagekit.io/rrw4vjgxohv/bizbook/62736rn53themes.png?ik-sdk-version=javascript-1.4.3&updatedAt=1672921816064" alt="" />
             <b>Profile by</b>
             <br />
-            <h4>Digital Koncept</h4>
+            <h4>Digital koncept</h4>
             <Link href="/dashboard" className="fclick" />
           </div>
           <div className='db-menu duration-500' style={{display:`${isDashboardVisible ? 'block': 'none'}`, transition:'0.3s'}} >

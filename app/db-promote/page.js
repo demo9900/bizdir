@@ -103,7 +103,7 @@ const page = () => {
               </Link>
             </li>
             {/*<li>
-                  <Link href="/db-message" class=""><img src="/icon/dbl14.png" alt="" />Messages</Link>
+                  <Link href="/db-message" className=""><img src="/icon/dbl14.png" alt="" />Messages</Link>
               </li>*/}
             <li>
               <Link href="/db-my-profile" className="">
@@ -196,7 +196,7 @@ const page = () => {
                   <img alt="theme" src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
                   dfzhfhd <span>25, Mar 2021</span>
                 </td>
-                {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
+                {/*                            <td><span className="db-list-ststus">Listing</span></td>*/}
                 <td>29, Mar 2021</td>
                 <td>31, Mar 2021</td>
                 <td>2 Days</td>
@@ -234,7 +234,7 @@ const page = () => {
                   <img alt="theme" src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
                   Iei <span>25, Mar 2021</span>
                 </td>
-                {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
+                {/*                            <td><span className="db-list-ststus">Listing</span></td>*/}
                 <td>25, Mar 2021</td>
                 <td>31, Mar 2021</td>
                 <td>6 Days</td>
@@ -272,7 +272,7 @@ const page = () => {
                   <img alt="theme" src="/listings/2279bike1.jpg" />
                   Super bike showroom <span>02, May 2020</span>
                 </td>
-                {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
+                {/*                            <td><span className="db-list-ststus">Listing</span></td>*/}
                 <td>26, Mar 2021</td>
                 <td>31, Mar 2021</td>
                 <td>5 Days</td>
@@ -310,7 +310,7 @@ const page = () => {
                   <img alt="theme" src="/listings/432063dffe1d6-e6c7-4bc8-a563-0e5687c5fe12.jpeg" />
                   phoenix mall <span>13, Mar 2021</span>
                 </td>
-                {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
+                {/*                            <td><span className="db-list-ststus">Listing</span></td>*/}
                 <td>26, Mar 2021</td>
                 <td>27, Mar 2021</td>
                 <td>1 Days</td>
@@ -348,7 +348,7 @@ const page = () => {
                   <img alt="theme" src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
                   Core real estates <span>11, Mar 2021</span>
                 </td>
-                {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
+                {/*                            <td><span className="db-list-ststus">Listing</span></td>*/}
                 <td>11, Mar 2021</td>
                 <td>29, Mar 2021</td>
                 <td>18 Days</td>
@@ -386,7 +386,7 @@ const page = () => {
                   <img alt="theme" src="/listings/72048pexels-francesco-ungaro-96444-(1).jpg" />
                   Core real estates <span>11, Mar 2021</span>
                 </td>
-                {/*                            <td><span class="db-list-ststus">Listing</span></td>*/}
+                {/*                            <td><span className="db-list-ststus">Listing</span></td>*/}
                 <td>11, Mar 2021</td>
                 <td>19, Mar 2021</td>
                 <td>8 Days</td>
@@ -491,9 +491,9 @@ const page = () => {
             <ul>
               {/*                <li>*/}
               {/*                    <span>Premium gardens</span>*/}
-              {/*                    <div class="custom-control custom-switch">*/}
-              {/*                        <input type="checkbox" class="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
-              {/*                        <label class="custom-control-label" for="switch1">&nbsp;</label>*/}
+              {/*                    <div className="custom-control custom-switch">*/}
+              {/*                        <input type="checkbox" className="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
+              {/*                        <label className="custom-control-label" for="switch1">&nbsp;</label>*/}
               {/*                    </div>*/}
               {/*                </li>*/}
               <li>
@@ -954,7 +954,7 @@ const page = () => {
             </ul>
           </div>
         </div>
-        {/*    <div class="ud-rhs-sec-2">*/}
+        {/*    <div className="ud-rhs-sec-2">*/}
         {/*        <h4>*/}
         {/*</h4>*/}
         {/*        <ul>*/}

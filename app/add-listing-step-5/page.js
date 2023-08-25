@@ -130,41 +130,20 @@ const page = () => {
                   </li>
                   {/*FILED START*/}
                   {/*                                    <li>*/}
-                  {/*                                    <div class="row">*/}
-                  {/*                                        <div class="col-md-5">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <input type="text" name="listing_info_question[]" class="form-control" placeholder="Parking">*/}
+                  {/*                                    <div className="row">*/}
+                  {/*                                        <div className="col-md-5">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <input type="text" name="listing_info_question[]" className="form-control" placeholder="Parking">*/}
                   {/*                                            </div>*/}
                   {/*                                        </div>*/}
-                  {/*										<div class="col-md-2">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <i class="material-icons">arrow_forward</i>*/}
+                  {/*										<div className="col-md-2">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <i className="material-icons">arrow_forward</i>*/}
                   {/*                                            </div>*/}
                   {/*                                        </div>*/}
-                  {/*                                        <div class="col-md-5">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <input type="text" name="listing_info_answer[]" class="form-control" placeholder="yes">*/}
-                  {/*                                            </div>*/}
-                  {/*                                        </div>*/}
-                  {/*                                    </div>*/}
-                  {/*                                    </li>*/}
-                  {/*FILED END*/}
-                  {/*FILED START*/}
-                  {/*                                    <li>*/}
-                  {/*                                    <div class="row">*/}
-                  {/*                                        <div class="col-md-5">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <input type="text" name="listing_info_question[]" class="form-control" placeholder="Smoking">*/}
-                  {/*                                            </div>*/}
-                  {/*                                        </div>*/}
-                  {/*										<div class="col-md-2">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <i class="material-icons">arrow_forward</i>*/}
-                  {/*                                            </div>*/}
-                  {/*                                        </div>*/}
-                  {/*                                        <div class="col-md-5">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <input type="text" name="listing_info_answer[]" class="form-control" placeholder="yes">*/}
+                  {/*                                        <div className="col-md-5">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <input type="text" name="listing_info_answer[]" className="form-control" placeholder="yes">*/}
                   {/*                                            </div>*/}
                   {/*                                        </div>*/}
                   {/*                                    </div>*/}
@@ -172,20 +151,41 @@ const page = () => {
                   {/*FILED END*/}
                   {/*FILED START*/}
                   {/*                                    <li>*/}
-                  {/*                                    <div class="row">*/}
-                  {/*                                        <div class="col-md-5">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <input type="text" name="listing_info_question[]" class="form-control" placeholder="Take Out">*/}
+                  {/*                                    <div className="row">*/}
+                  {/*                                        <div className="col-md-5">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <input type="text" name="listing_info_question[]" className="form-control" placeholder="Smoking">*/}
                   {/*                                            </div>*/}
                   {/*                                        </div>*/}
-                  {/*										<div class="col-md-2">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <i class="material-icons">arrow_forward</i>*/}
+                  {/*										<div className="col-md-2">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <i className="material-icons">arrow_forward</i>*/}
                   {/*                                            </div>*/}
                   {/*                                        </div>*/}
-                  {/*                                        <div class="col-md-5">*/}
-                  {/*                                            <div class="form-group">*/}
-                  {/*                                              <input type="text" name="listing_info_answer[]" class="form-control" placeholder="yes">*/}
+                  {/*                                        <div className="col-md-5">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <input type="text" name="listing_info_answer[]" className="form-control" placeholder="yes">*/}
+                  {/*                                            </div>*/}
+                  {/*                                        </div>*/}
+                  {/*                                    </div>*/}
+                  {/*                                    </li>*/}
+                  {/*FILED END*/}
+                  {/*FILED START*/}
+                  {/*                                    <li>*/}
+                  {/*                                    <div className="row">*/}
+                  {/*                                        <div className="col-md-5">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <input type="text" name="listing_info_question[]" className="form-control" placeholder="Take Out">*/}
+                  {/*                                            </div>*/}
+                  {/*                                        </div>*/}
+                  {/*										<div className="col-md-2">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <i className="material-icons">arrow_forward</i>*/}
+                  {/*                                            </div>*/}
+                  {/*                                        </div>*/}
+                  {/*                                        <div className="col-md-5">*/}
+                  {/*                                            <div className="form-group">*/}
+                  {/*                                              <input type="text" name="listing_info_answer[]" className="form-control" placeholder="yes">*/}
                   {/*                                            </div>*/}
                   {/*                                        </div>*/}
                   {/*                                    </div>*/}
@@ -210,8 +210,8 @@ const page = () => {
                       Finish
                     </button>
                   </div>
-                  {/*                                        <div class="col-md-12">*/}
-                  {/*                                            <Link href="/add-listing-step-6" class="skip">Skip this >></Link>*/}
+                  {/*                                        <div className="col-md-12">*/}
+                  {/*                                            <Link href="/add-listing-step-6" className="skip">Skip this >></Link>*/}
                   {/*                                        </div>*/}
                 </div>
                 {/*FILED END*/}

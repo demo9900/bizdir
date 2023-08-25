@@ -103,7 +103,7 @@ const page = () => {
               </Link>
             </li>
             {/*<li>
-                  <Link href="/db-message" class=""><img alt="demo-image" src="/icon/dbl14.png"  />Messages</Link>
+                  <Link href="/db-message" className=""><img alt="demo-image" src="/icon/dbl14.png"  />Messages</Link>
               </li>*/}
             <li>
               <Link href="/db-my-profile" className="">
@@ -207,7 +207,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">1</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -228,7 +228,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -252,7 +252,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">7</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -273,7 +273,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -297,7 +297,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">15</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -318,7 +318,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -342,7 +342,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">10</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -363,7 +363,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -387,7 +387,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">9</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -408,7 +408,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -432,7 +432,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">18</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -453,7 +453,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -477,7 +477,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">30</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -498,7 +498,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -522,7 +522,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">27</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -543,7 +543,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -567,7 +567,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">16</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -588,7 +588,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -612,7 +612,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">10</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -633,7 +633,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -657,7 +657,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">10</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -678,7 +678,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -702,7 +702,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">9</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -723,7 +723,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -747,7 +747,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">14</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -768,7 +768,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -792,7 +792,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">10</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -813,7 +813,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -837,7 +837,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">9</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -858,7 +858,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -882,7 +882,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">12</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -903,7 +903,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -927,7 +927,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">9</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -948,7 +948,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -972,7 +972,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">9</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -993,7 +993,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -1017,7 +1017,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">9</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -1038,7 +1038,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -1062,7 +1062,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">12</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -1083,7 +1083,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -1107,7 +1107,7 @@ const page = () => {
                   <td>
                     <span className="db-list-rat">8</span>
                   </td>
-                  {/*									<td><span class="db-list-ststus">8 June 2020</span></td>*/}
+                  {/*									<td><span className="db-list-ststus">8 June 2020</span></td>*/}
                   <td>
                     <span className="db-list-ststus">Active</span>
                   </td>
@@ -1128,7 +1128,7 @@ const page = () => {
                     </Link>
                   </td>
                   {/*									<td><Link href="/promote-business?code=*/}
-                  {/*&&type=listing" class="db-list-edit">*/}
+                  {/*&&type=listing" className="db-list-edit">*/}
                   {/*</Link></td>*/}
                   <td>
                     <Link
@@ -1214,9 +1214,9 @@ const page = () => {
             <ul>
               {/*                <li>*/}
               {/*                    <span>Premium gardens</span>*/}
-              {/*                    <div class="custom-control custom-switch">*/}
-              {/*                        <input type="checkbox" class="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
-              {/*                        <label class="custom-control-label" for="switch1">&nbsp;</label>*/}
+              {/*                    <div className="custom-control custom-switch">*/}
+              {/*                        <input type="checkbox" className="listing_open_close_switch custom-control-input" id="switch1" checked>*/}
+              {/*                        <label className="custom-control-label" for="switch1">&nbsp;</label>*/}
               {/*                    </div>*/}
               {/*                </li>*/}
               <li>
@@ -1677,7 +1677,7 @@ const page = () => {
             </ul>
           </div>
         </div>
-        {/*    <div class="ud-rhs-sec-2">*/}
+        {/*    <div className="ud-rhs-sec-2">*/}
         {/*        <h4>*/}
         {/*</h4>*/}
         {/*        <ul>*/}

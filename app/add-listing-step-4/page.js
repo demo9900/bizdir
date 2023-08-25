@@ -255,37 +255,37 @@ const page = () => {
                       />
                     </div>
                   </div>
-                  {/*                                <div class="col-md-6">*/}
-                  {/*                                    <div class="form-group">*/}
-                  {/*                                        <input type="file" name="gallery_image[]" class="form-control">*/}
+                  {/*                                <div className="col-md-6">*/}
+                  {/*                                    <div className="form-group">*/}
+                  {/*                                        <input type="file" name="gallery_image[]" className="form-control">*/}
                   {/*                                    </div>*/}
                   {/*                                </div>*/}
                 </div>
                 {/*FILED END*/}
                 {/*FILED START*/}
-                {/*                            <div class="row">*/}
-                {/*                                <div class="col-md-6">*/}
-                {/*                                    <div class="form-group">*/}
-                {/*                                        <input type="file" name="gallery_image[]" class="form-control">*/}
+                {/*                            <div className="row">*/}
+                {/*                                <div className="col-md-6">*/}
+                {/*                                    <div className="form-group">*/}
+                {/*                                        <input type="file" name="gallery_image[]" className="form-control">*/}
                 {/*                                    </div>*/}
                 {/*                                </div>*/}
-                {/*                                <div class="col-md-6">*/}
-                {/*                                    <div class="form-group">*/}
-                {/*                                        <input type="file" name="gallery_image[]" class="form-control">*/}
+                {/*                                <div className="col-md-6">*/}
+                {/*                                    <div className="form-group">*/}
+                {/*                                        <input type="file" name="gallery_image[]" className="form-control">*/}
                 {/*                                    </div>*/}
                 {/*                                </div>*/}
                 {/*                            </div>*/}
                 {/*FILED END*/}
                 {/*FILED START*/}
-                {/*                            <div class="row">*/}
-                {/*                                <div class="col-md-6">*/}
-                {/*                                    <div class="form-group">*/}
-                {/*                                        <input type="file" name="gallery_image[]" class="form-control">*/}
+                {/*                            <div className="row">*/}
+                {/*                                <div className="col-md-6">*/}
+                {/*                                    <div className="form-group">*/}
+                {/*                                        <input type="file" name="gallery_image[]" className="form-control">*/}
                 {/*                                    </div>*/}
                 {/*                                </div>*/}
-                {/*                                <div class="col-md-6">*/}
-                {/*                                    <div class="form-group">*/}
-                {/*                                        <input type="file" name="gallery_image[]" class="form-control">*/}
+                {/*                                <div className="col-md-6">*/}
+                {/*                                    <div className="form-group">*/}
+                {/*                                        <input type="file" name="gallery_image[]" className="form-control">*/}
                 {/*                                    </div>*/}
                 {/*                                </div>*/}
                 {/*                            </div>*/}

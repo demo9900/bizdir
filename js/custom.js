@@ -168,7 +168,7 @@ $(document).ready(function() {
     });
     //SERVICES LIST ADD - APPEND
     $(".lis-ser-add-btn").on('click', function() {
-        $(".add-list-ser ul li:last-child").after('<li><div class="row"> <div class="col-md-6"> <div class="form-group"> <label>Service name :</label>  <input type="text" name="service_id[]" class="form-control" placeholder="Ex: Plumbile"> </div> </div> <div class="col-md-6"> <div class="form-group"><div class="fil-img-uplo"> <span class="dumfil">Service Image</span> <input type="file" name="service_image[]" accept="image/*,.jpg,.jpeg,.png" class="form-control"> </div></div> </div> </div></li>');
+        $(".add-list-ser ul li:last-child").after('<li><div className="row"> <div className="col-md-6"> <div className="form-group"> <label>Service name :</label>  <input type="text" name="service_id[]" className="form-control" placeholder="Ex: Plumbile"> </div> </div> <div className="col-md-6"> <div className="form-group"><div className="fil-img-uplo"> <span className="dumfil">Service Image</span> <input type="file" name="service_image[]" accept="image/*,.jpg,.jpeg,.png" className="form-control"> </div></div> </div> </div></li>');
     });
     //SERVICES OFFER LIST REMOVE - APPEND
     $(".lis-ser-rem-btn").on('click', function() {
@@ -181,7 +181,7 @@ $(document).ready(function() {
     });
     //SPECIAL OFFER LIST ADD - APPEND
     $(".lis-add-off").click(function() {
-        $(".add-list-off ul li:last-child").after('<li><div class="row"> <div class="col-md-6"> <div class="form-group"> <input type="text" name="service_1_name[]" class="form-control" placeholder="Offer name *"> </div> </div> <div class="col-md-6"> <div class="form-group"> <input type="text" class="form-control" name="service_1_price[]" onkeypress="return isNumber(event)" placeholder="Price"> </div> </div> </div><div class="row"> <div class="col-md-12"> <div class="form-group"> <textarea class="form-control" name="service_1_detail[]" placeholder="Details about this offer"></textarea> </div> </div> </div><div class="row"> <div class="col-md-12"> <div class="form-group"><div class="fil-img-uplo"> <span class="dumfil">Choose offer image</span> <input type="file" name="service_1_image[]" accept="image/*,.jpg,.jpeg,.png" class="form-control"> </div></div> </div> </div><div class="row"> <div class="col-md-12"> <div class="form-group"> <input type="text" name="service_1_view_more[]" class="form-control" placeholder="View More Link"></div></div></div></li>');
+        $(".add-list-off ul li:last-child").after('<li><div className="row"> <div className="col-md-6"> <div className="form-group"> <input type="text" name="service_1_name[]" className="form-control" placeholder="Offer name *"> </div> </div> <div className="col-md-6"> <div className="form-group"> <input type="text" className="form-control" name="service_1_price[]" onkeypress="return isNumber(event)" placeholder="Price"> </div> </div> </div><div className="row"> <div className="col-md-12"> <div className="form-group"> <textarea className="form-control" name="service_1_detail[]" placeholder="Details about this offer"></textarea> </div> </div> </div><div className="row"> <div className="col-md-12"> <div className="form-group"><div className="fil-img-uplo"> <span className="dumfil">Choose offer image</span> <input type="file" name="service_1_image[]" accept="image/*,.jpg,.jpeg,.png" className="form-control"> </div></div> </div> </div><div className="row"> <div className="col-md-12"> <div className="form-group"> <input type="text" name="service_1_view_more[]" className="form-control" placeholder="View More Link"></div></div></div></li>');
     });
     //SPECIAL OFFER LIST REMOVE - APPEND
     $(".lis-add-rem").on('click', function() {
@@ -194,7 +194,7 @@ $(document).ready(function() {
     });
     //SPECIAL OFFER LIST ADD - APPEND
     $(".lis-add-oad").on('click', function() {
-        $(".add-lis-oth ul li:last-child").after('<li> <div class="row"> <div class="col-md-5"> <div class="form-group"> <input type="text" name="listing_info_question[]" class="form-control" placeholder="Type your information"> </div> </div><div class="col-md-2"> <div class="form-group"> <i class="material-icons">arrow_forward</i> </div> </div> <div class="col-md-5"> <div class="form-group"> <input type="text" name="listing_info_answer[]" class="form-control" placeholder="yes"> </div> </div> </div> </li>');
+        $(".add-lis-oth ul li:last-child").after('<li> <div className="row"> <div className="col-md-5"> <div className="form-group"> <input type="text" name="listing_info_question[]" className="form-control" placeholder="Type your information"> </div> </div><div className="col-md-2"> <div className="form-group"> <i className="material-icons">arrow_forward</i> </div> </div> <div className="col-md-5"> <div className="form-group"> <input type="text" name="listing_info_answer[]" className="form-control" placeholder="yes"> </div> </div> </div> </li>');
     });
     //SPECIAL OFFER LIST REMOVE - APPEND
     $(".lis-add-ore").on('click', function() {
@@ -214,7 +214,7 @@ $(document).ready(function() {
 
     //PRODUCT SPECIFICATION LIST ADD - APPEND
     $(".prod-add-oad").on('click', function() {
-        $(".add-prod-oth ul li:last-child").after('<li> <div class="row"> <div class="col-md-5"> <div class="form-group"> <input type="text" name="product_info_question[]" class="form-control" placeholder="Type your information"> </div> </div><div class="col-md-2"> <div class="form-group"> <i class="material-icons">arrow_forward</i> </div> </div> <div class="col-md-5"> <div class="form-group"> <input type="text" name="product_info_answer[]" class="form-control" placeholder="yes"> </div> </div> </div> </li>');
+        $(".add-prod-oth ul li:last-child").after('<li> <div className="row"> <div className="col-md-5"> <div className="form-group"> <input type="text" name="product_info_question[]" className="form-control" placeholder="Type your information"> </div> </div><div className="col-md-2"> <div className="form-group"> <i className="material-icons">arrow_forward</i> </div> </div> <div className="col-md-5"> <div className="form-group"> <input type="text" name="product_info_answer[]" className="form-control" placeholder="yes"> </div> </div> </div> </li>');
     });
     //PRODUCT SPECIFICATION LIST REMOVE - APPEND
     $(".prod-add-ore").on('click', function() {
@@ -228,7 +228,7 @@ $(document).ready(function() {
 
     //PRODUCT HIGHLIGHTS LIST ADD - APPEND
     $(".prod-add-high-oad").on('click', function() {
-        $(".add-prod-high-oth ul li:last-child").after('<li> <div class="row"> <div class="col-md-12"> <div class="form-group"> <input type="text" name="product_highlights[]" class="form-control" placeholder="Type your highlights"> </div> </div> </div> </li>');
+        $(".add-prod-high-oth ul li:last-child").after('<li> <div className="row"> <div className="col-md-12"> <div className="form-group"> <input type="text" name="product_highlights[]" className="form-control" placeholder="Type your highlights"> </div> </div> </div> </li>');
     });
     //PRODUCT HIGHLIGHTS LIST REMOVE - APPEND
     $(".prod-add-high-ore").on('click', function() {
@@ -243,7 +243,7 @@ $(document).ready(function() {
 
     //VIDEO LIST ADD - APPEND
     $(".lis-add-oadvideo").on('click', function() {
-        $(".add-list-map ul li:last-child").after('<li> <div class="row"> <div class="col-md-12"> <div class="form-group"> <textarea id="listing_video" name="listing_video[]" class="form-control" placeholder="Paste Your Youtube Url here"></textarea> </div> </div> </div> </li>');
+        $(".add-list-map ul li:last-child").after('<li> <div className="row"> <div className="col-md-12"> <div className="form-group"> <textarea id="listing_video" name="listing_video[]" className="form-control" placeholder="Paste Your Youtube Url here"></textarea> </div> </div> </div> </li>');
     });
     //VIDEO LIST REMOVE - APPEND
     $(".lis-add-orevideo").on('click', function() {
@@ -357,15 +357,15 @@ $(document).ready(function() {
     });
 
     //BIZBOOK EDITOR
-    $(".bixedtr-tools").html("<div class='fore-wrapper'><i class='material-icons' style='color:#10a5ef;'>format_color_text</i> <div class='fore-palette'> </div> </div> <div class='back-wrapper'><i class='material-icons' style='background:#cbeeff;'>format_color_text</i> <div class='back-palette'> </div> </div> <a href='javascript:void(0)' data-command='bold'><i class='material-icons'>format_bold</i></a> <a href='javascript:void(0)' data-command='italic'><i class='material-icons'>format_italic</i></a> <a href='javascript:void(0)' data-command='underline'><i class='material-icons'>format_underlined</i></a> <a href='javascript:void(0)' data-command='justifyLeft'><i class='material-icons'>format_align_left</i></a> <a href='javascript:void(0)' data-command='justifyCenter'><i class='material-icons'>format_align_center</i></a> <a href='javascript:void(0)' data-command='justifyRight'><i class='material-icons'>format_align_right</i></a> <a href='javascript:void(0)' data-command='justifyFull'><i class='material-icons'>format_align_justify</i></a> <a href='javascript:void(0)' data-command='indent'><i class='material-icons'>format_indent_increase</i></a> <a href='javascript:void(0)' data-command='outdent'><i class='material-icons'>format_indent_decrease</i></a> <a href='javascript:void(0)' data-command='insertUnorderedList'><i class='material-icons'>format_list_bulleted</i></a> <a href='javascript:void(0)' data-command='insertOrderedList'><i class='material-icons'>format_list_numbered</i></a> <a href='javascript:void(0)' data-command='h2'>H2</a> <a href='javascript:void(0)' data-command='h4'>H4</a> <a href='javascript:void(0)' data-command='createlink'><i class='material-icons'>insert_link</i></a> <a href='javascript:void(0)' data-command='unlink'><i class='material-icons'>leak_remove</i></a><a href='javascript:void(0)' data-command='p'>P</a>");
+    $(".bixedtr-tools").html("<div className='fore-wrapper'><i className='material-icons' style='color:#10a5ef;'>format_color_text</i> <div className='fore-palette'> </div> </div> <div className='back-wrapper'><i className='material-icons' style='background:#cbeeff;'>format_color_text</i> <div className='back-palette'> </div> </div> <a href='javascript:void(0)' data-command='bold'><i className='material-icons'>format_bold</i></a> <a href='javascript:void(0)' data-command='italic'><i className='material-icons'>format_italic</i></a> <a href='javascript:void(0)' data-command='underline'><i className='material-icons'>format_underlined</i></a> <a href='javascript:void(0)' data-command='justifyLeft'><i className='material-icons'>format_align_left</i></a> <a href='javascript:void(0)' data-command='justifyCenter'><i className='material-icons'>format_align_center</i></a> <a href='javascript:void(0)' data-command='justifyRight'><i className='material-icons'>format_align_right</i></a> <a href='javascript:void(0)' data-command='justifyFull'><i className='material-icons'>format_align_justify</i></a> <a href='javascript:void(0)' data-command='indent'><i className='material-icons'>format_indent_increase</i></a> <a href='javascript:void(0)' data-command='outdent'><i className='material-icons'>format_indent_decrease</i></a> <a href='javascript:void(0)' data-command='insertUnorderedList'><i className='material-icons'>format_list_bulleted</i></a> <a href='javascript:void(0)' data-command='insertOrderedList'><i className='material-icons'>format_list_numbered</i></a> <a href='javascript:void(0)' data-command='h2'>H2</a> <a href='javascript:void(0)' data-command='h4'>H4</a> <a href='javascript:void(0)' data-command='createlink'><i className='material-icons'>insert_link</i></a> <a href='javascript:void(0)' data-command='unlink'><i className='material-icons'>leak_remove</i></a><a href='javascript:void(0)' data-command='p'>P</a>");
 
     var colorPalette = ['000000', 'FF9966', '6699FF', '99FF66', 'CC0000', '00CC00', '0000CC', '333333', '0066FF', 'FFFFFF', '004fff'];
     var forePalette = $('.fore-palette');
     var backPalette = $('.back-palette');
 
     for (var i = 0; i < colorPalette.length; i++) {
-        forePalette.append('<a href="#" data-command="forecolor" data-value="' + '#' + colorPalette[i] + '" style="background-color:' + '#' + colorPalette[i] + ';" class="palette-item"></a>');
-        backPalette.append('<a href="#" data-command="backcolor" data-value="' + '#' + colorPalette[i] + '" style="background-color:' + '#' + colorPalette[i] + ';" class="palette-item"></a>');
+        forePalette.append('<a href="#" data-command="forecolor" data-value="' + '#' + colorPalette[i] + '" style="background-color:' + '#' + colorPalette[i] + ';" className="palette-item"></a>');
+        backPalette.append('<a href="#" data-command="backcolor" data-value="' + '#' + colorPalette[i] + '" style="background-color:' + '#' + colorPalette[i] + ';" className="palette-item"></a>');
     }
 
     $('.biz-toolbar a').click(function(e) {

@@ -217,13 +217,13 @@ const page = () => {
                 </div>
                 {/*FILED END*/}
                 {/*FILED START*/}
-                {/*                            <div class="row">*/}
-                {/*                                <div class="col-md-12">*/}
-                {/*                                    <div class="form-group">*/}
+                {/*                            <div className="row">*/}
+                {/*                                <div className="col-md-12">*/}
+                {/*                                    <div className="form-group">*/}
                 {/*                                        <input id="select-city" name="city_id" required="required" type="text"*/}
                 {/*                                               value="*/}
                 {/*"*/}
-                {/*                                               class="autocomplete form-control" placeholder="City name">*/}
+                {/*                                               className="autocomplete form-control" placeholder="City name">*/}
                 {/*                                    </div>*/}
                 {/*                                </div>*/}
                 {/*                            </div>*/}
