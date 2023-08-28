@@ -1,17 +1,21 @@
 import React from 'react'
 
-const TopNav = () => {
+const TopNav = ({toggleCart,showadMenu}) => {
+  console.log(" topnav icon value",showadMenu)
   return (
     <section>
   <div className="ad-head">
     <div className="head-s1">
       <div className="menu">
         {" "}
-        <i className="material-icons mopen">menu</i>
-        <i className="material-icons mclose">close</i>
+        {showadMenu ? (<i onClick={toggleCart} className="material-icons ">close</i>):(
+          <i onClick={toggleCart} className="material-icons ">menu</i>
+        )}
+        
+        
       </div>
       <div className="logo">
-        <img src="images/logo-b.png" />
+        <img src="/logo-b.png" />
       </div>
     </div>
     <div className="head-s2">
