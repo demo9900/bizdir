@@ -1174,7 +1174,7 @@ const page = () => {
       className="carousel slide cate-sli caro-home"
       data-ride="carousel"
     >
-      <div className="carousel-inner">
+      <div className="carousel-inner container">
       <Slider {...settings}>
         <div className="carousel-item active">
           <img src="/slider/1.jpg" alt="Los Angeles" />
