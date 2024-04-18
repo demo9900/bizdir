@@ -11,7 +11,7 @@ const LeftSidebar = () => {
       <div className="ud-lhs-pro-bio">
         <h4>Rn53</h4>
         <b>Join on 15, Apr 2024</b>
-        <a className="ud-lhs-view-pro" target="_blank" href="https://bizbookdirectorytemplate.com/profile/rn53">My Profile</a>
+        <a className="ud-lhs-view-pro" target="_blank" href="/account">My Profile</a>
   </div>
     </div>
 
