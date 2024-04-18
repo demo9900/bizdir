@@ -258,7 +258,7 @@ const page = () => {
                         <option value={50}>Democratic Republic Of The Congo</option>
                         <option value={51}>Cook Islands</option>
                         <option value={52}>Costa Rica</option>
-                        <option value={53}>Cote D'Ivoire (Ivory Coast)</option>
+                        <option value={53}>Cote D&apos;Ivoire (Ivory Coast)</option>
                         <option value={54}>Croatia (Hrvatska)</option>
                         <option value={55}>Cuba</option>
                         <option value={56}>Cyprus</option>

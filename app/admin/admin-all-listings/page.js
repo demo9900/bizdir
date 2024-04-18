@@ -31,7 +31,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/listings/82551rn53.png" />qwerqw                                    <span>09, Apr 2021</span></td>
+                <td><img src="../images/listings/82551rn53.png" alt="" />qwerqw                                    <span>09, Apr 2021</span></td>
                 <td><span className="db-list-rat">0</span></td>
                 <td><span className="db-list-rat">0</span>
                 </td>

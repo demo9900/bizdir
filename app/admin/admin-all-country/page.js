@@ -420,7 +420,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>50</td>
-                <td><b className="db-list-rat">Cote D'Ivoire (Ivory Coast)</b></td>
+                <td><b className="db-list-rat">Cote D&apos;Ivoire (Ivory Coast)</b></td>
                 <td>08, Oct 2019</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">0</span></td>
                 <td><a href="admin-country-edit.html?row=53" className="db-list-edit">Edit</a></td>

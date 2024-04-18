@@ -81,7 +81,7 @@ const page = () => {
                             <tr>
                               <td>Salon</td>
                               <td>[1] 416 966 6703</td>
-                              <td>DEBBIE'S STYLE N PLACE</td>
+                              <td>DEBBIE&apos;S STYLE N PLACE</td>
                               <td>26 Cumberland St</td>
                               <td>HANOVER</td>
                               <td>ON</td>

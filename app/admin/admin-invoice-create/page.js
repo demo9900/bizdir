@@ -73,7 +73,7 @@ const page = () => {
           {/*                    </div>*/}
           <div className="ud-notes">
             <p><b>Notes:</b> Hi, here you can able to edit all text and title also. You just click the text
-              and change it and click "Click to download pdf" button to generate your invoice.</p>
+              and change it and click &quot;Click to download pdf&quot; button to generate your invoice.</p>
           </div>
         </div>
       </div>

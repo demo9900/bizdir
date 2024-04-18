@@ -1256,7 +1256,7 @@ const page = () => {
                 <td>a@gmail.com</td>
                 <td>9876543210</td>
                 <td>Sydney</td>
-                <td>discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum</td>
+                <td>discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum</td>
                 <td>
                   <label className="rat">
                     {/*                                            <i class="material-icons">star</i>*/}
@@ -1276,7 +1276,7 @@ const page = () => {
                 <td>a@gmail.com</td>
                 <td>9876543210</td>
                 <td>Chennai</td>
-                <td>discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum</td>
+                <td>discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum</td>
                 <td>
                   <label className="rat">
                     {/*                                            <i class="material-icons">star</i>*/}

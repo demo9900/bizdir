@@ -63,7 +63,7 @@ console.log(userEmail)
         <div className="log log-2">
            <div className="login">
              <h4>Create an account</h4>
-             <p>Don't have an account? Create your account. It's take less then a minutes</p>
+             <p>Don&apos;t have an account? Create your account. It&apos;s take less then a minutes</p>
              <form onSubmit={create}  name="register_form" id="register_form">
                <input type="hidden" autoComplete="off" name="trap_box" id="trap_box" className="validate" />
                <input type="hidden" autoComplete="off" name="mode_path" defaultValue="XeFrOnT_MoDeX_PATHXHU" id="mode_path" className="validate" />

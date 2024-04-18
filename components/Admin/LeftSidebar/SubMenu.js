@@ -23,7 +23,7 @@ const SubMenu = ({item}) => {
             <ol>
             {subnav &&
         item.subNav.map((subItem, index) => {
-          return  (  <li>
+          return  (  <li key={index}>
                     {" "}
                     <Link className={pathname == subItem.path && "s-act"}  href={subItem.path}>{subItem.name}</Link>
                   </li>);

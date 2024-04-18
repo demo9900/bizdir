@@ -29,7 +29,7 @@ const page = () => {
                     <button type="submit" name="country_submit" className="btn btn-primary">Submit</button>
                   </form>
                   <div className="ud-notes">
-                    <p><b>Notes:</b> You can get <b>Google AdSense</b> code from <b>Google</b> and paste above the box. Once you update the Google Ads means Ads start showing all Ads positions. If you updated any <b>custom banner Ads</b> in any other position means <b>Google Ads can't showing the particular positions</b>.</p>
+                    <p><b>Notes:</b> You can get <b>Google AdSense</b> code from <b>Google</b> and paste above the box. Once you update the Google Ads means Ads start showing all Ads positions. If you updated any <b>custom banner Ads</b> in any other position means <b>Google Ads can&apos;t showing the particular positions</b>.</p>
                   </div>
                 </div>
               </div>

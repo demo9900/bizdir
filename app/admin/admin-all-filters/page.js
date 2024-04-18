@@ -105,7 +105,7 @@ const page = () => {
             </table>
           </form>
           <div className="ud-notes">
-            <p><b>Notes:</b> Hi, here we show 6 types of filters in All Listing pages. If you don't want any filter means you can just change the <b>Status</b> like <b>Active or De-Active</b> once you change the status like <b>De-Active</b> means the filter can't show in All Listing</p>
+            <p><b>Notes:</b> Hi, here we show 6 types of filters in All Listing pages. If you don&apos;t want any filter means you can just change the <b>Status</b> like <b>Active or De-Active</b> once you change the status like <b>De-Active</b> means the filter can&apos;t show in All Listing</p>
           </div>
         </div>
       </div>

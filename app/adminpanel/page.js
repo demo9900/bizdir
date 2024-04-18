@@ -552,8 +552,8 @@ const page = () => {
                 <i className="material-icons">priority_high</i>
                 <div>
                   Copy and paste your Google Analytics here... You can get code
-                  from Google. This can helps "tracks and reports website
-                  traffic".
+                  from Google. This can helps &quot;tracks and reports website
+                  traffic&quot;.
                 </div>
               </div>
               {/* END */}
@@ -575,7 +575,7 @@ const page = () => {
                 <div>
                   This allows search engines to crawl the site more efficiently
                   and to find URLs that may be isolated from the rest of the
-                  site's content.{" "}
+                  site&quot;s content.{" "}
                 </div>
               </div>
               {/* END */}
@@ -593,9 +593,9 @@ const page = () => {
               <div className="ttip-com">
                 <i className="material-icons">priority_high</i>
                 <div>
-                  Meta tags are snippets of text that describe a page's content;
-                  the meta tags don't appear on the page itself, but only in the
-                  page's source code. Meta tags are essentially little content
+                  Meta tags are snippets of text that describe a page&apos;s content;
+                  the meta tags don&apos;t appear on the page itself, but only in the
+                  page&apos;s source code. Meta tags are essentially little content
                   descriptors that help tell search engines what a web page is
                   about
                 </div>
@@ -665,7 +665,7 @@ const page = () => {
                   Drog and drop to arrange your search orders. You can change
                   this order depends on seasons.(Ex: School admission seasons
                   means you can set education related listings or targetting
-                  pages in first position.) It's hels you to getting more leads,
+                  pages in first position.) It&apos;s hels you to getting more leads,
                   user friendly, end user get accurate results and more.
                 </div>
               </div>
