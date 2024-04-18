@@ -11,10 +11,7 @@ import { SessionProvider } from "next-auth/react"
 import Script from "next/script";
 
 
-export const metadata = { 
-  title: 'bizdir',
-  
-};
+
 export default function RootLayout({ children,session }) {
   
   return (
