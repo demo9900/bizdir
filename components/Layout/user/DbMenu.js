@@ -18,7 +18,7 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
             <div className={`db-menu ${dashboardvisiblity ? 'act' : ''}`} >
                 <span className="material-icons db-menu-clo" onClick={()=> setDashboardVisiblity(!dashboardvisiblity)}>close</span>
                 <div className="ud-lhs-s1">
-                    <img src="/user/62736rn53themes.png" alt />
+                    <img src="/user/62736rn53themes.png" alt="user-profile" />
                     <div className="ud-lhs-pro-bio">
                         <h4>{session?.user?.name}</h4>
                         <b>Join on 15, Apr 2024</b>

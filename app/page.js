@@ -207,7 +207,7 @@ const page = () => {
   <ul>
     <li>
       <div>
-        <img src="/icon/shop.png" alt="" loading="lazy" />
+        <img src="/icon/shop.png" alt="bizdir" loading="lazy" />
         <h4>All Services</h4>
         <a
           href="/all-category"
@@ -217,7 +217,7 @@ const page = () => {
     </li>
     <li>
       <div>
-        <img src="/icon/expert.png" alt="" loading="lazy" />
+        <img src="/icon/expert.png" alt="bizdir" loading="lazy" />
         <h4>Experts</h4>
         <a
           href="/service-experts"
@@ -227,7 +227,7 @@ const page = () => {
     </li>
     <li>
       <div>
-        <img src="/icon/employee.png" alt="" loading="lazy" />
+        <img src="/icon/employee.png" alt="bizdir" loading="lazy" />
         <h4>Jobs</h4>
         <a
           href="/jobs"
@@ -239,7 +239,7 @@ const page = () => {
       <div>
         <img
           src="/places/icons/hot-air-balloon.png"
-          alt=""
+          alt="bizdir"
           loading="lazy"
         />
         <h4>Travel</h4>
@@ -251,7 +251,7 @@ const page = () => {
     </li>
     <li>
       <div>
-        <img src="/icon/news.png" alt="" loading="lazy" />
+        <img src="/icon/news.png" alt="bizdir" loading="lazy" />
         <h4>News</h4>
         <a
           href="/news"
@@ -261,7 +261,7 @@ const page = () => {
     </li>
     <li>
       <div>
-        <img src="/icon/calendar.png" alt="" loading="lazy" />
+        <img src="/icon/calendar.png" alt="bizdir" loading="lazy" />
         <h4>Events</h4>
         <a
           href="/events"
@@ -271,7 +271,7 @@ const page = () => {
     </li>
     <li>
       <div>
-        <img src="/icon/cart.png" alt="" loading="lazy" />
+        <img src="/icon/cart.png" alt="bizdir" loading="lazy" />
         <h4>Products</h4>
         <a
           href="/all-products"
@@ -281,7 +281,7 @@ const page = () => {
     </li>
     <li>
       <div>
-        <img src="/icon/coupons.png" alt="" loading="lazy" />
+        <img src="/icon/coupons.png" alt="bizdir" loading="lazy" />
         <h4>Coupons</h4>
         <a
           href="/coupons"
@@ -291,7 +291,7 @@ const page = () => {
     </li>
     <li>
       <div>
-        <img src="/icon/blog1.png" alt="" loading="lazy" />
+        <img src="/icon/blog1.png" alt="bizdir" loading="lazy" />
         <h4>Blogs</h4>
         <a
           href="/blog-posts"
@@ -306,7 +306,7 @@ const page = () => {
       <ul>
         <li>
           <div>
-            <img src="/icon/1.png" alt="" />
+            <img src="/icon/1.png" alt="bizdir" />
             <h4>24 Million Business</h4>
             <p>
               Choose from a collection of handpicked luxury villas &amp;
@@ -317,7 +317,7 @@ const page = () => {
         </li>
         <li>
           <div>
-            <img src="/icon/2.png" alt="" />
+            <img src="/icon/2.png" alt="bizdir" />
             <h4>1,200 Services Offered</h4>
             <p>
               Choose from a collection of handpicked luxury villas &amp;
@@ -328,7 +328,7 @@ const page = () => {
         </li>
         <li>
           <div>
-            <img src="/icon/3.png" alt="" />
+            <img src="/icon/3.png" alt="bizdir" />
             <h4>05 Million Visitors</h4>
             <p>
               Choose from a collection of handpicked luxury villas &amp;
@@ -339,7 +339,7 @@ const page = () => {
         </li>
         <li>
           <div>
-            <img src="/icon/4.png" alt="" />
+            <img src="/icon/4.png" alt="bizdir" />
             <h4>2k+ Premium Users</h4>
             <p>
               Choose from a collection of handpicked luxury villas &amp;
@@ -535,11 +535,11 @@ const page = () => {
                 <div>
                   <img
                     src="/services/10.jpg"
-                    alt=""
+                    alt="bizdir"
                   />
                 </div>
                 <div>
-                  <img src="/services/1.jpg" alt="" />
+                  <img src="/services/1.jpg" alt="bizdir" />
                   <h4>Hotels And Resorts</h4>
                   <div className="list-rat-all">
                     {" "}
@@ -564,10 +564,10 @@ const page = () => {
             <li>
               <div className="hcity">
                 <div>
-                  <img src="/services/9.png" alt="" />
+                  <img src="/services/9.png" alt="bizdir" />
                 </div>
                 <div>
-                  <img src="/services/20356s7.jpeg" alt="" />
+                  <img src="/services/20356s7.jpeg" alt="bizdir" />
                   <h4>Automobiles</h4>
                   <div className="list-rat-all">
                     {" "}
@@ -592,10 +592,10 @@ const page = () => {
             <li>
               <div className="hcity">
                 <div>
-                  <img src="/services/19.jpg" alt="" />
+                  <img src="/services/19.jpg" alt="bizdir" />
                 </div>
                 <div>
-                  <img src="/services/20356s7.jpeg" alt="" />
+                  <img src="/services/20356s7.jpeg" alt="bizdir" />
                   <h4>Wedding halls</h4>
                   <div className="list-rat-all">
                     {" "}
@@ -620,10 +620,10 @@ const page = () => {
             <li>
               <div className="hcity">
                 <div>
-                  <img src="/services/8.jpg" alt="" />
+                  <img src="/services/8.jpg" alt="bizdir" />
                 </div>
                 <div>
-                  <img src="/services/445234.jpg" alt="" />
+                  <img src="/services/445234.jpg" alt="bizdir" />
                   <h4>Digital products</h4>
                   <div className="list-rat-all">
                     {" "}
@@ -648,10 +648,10 @@ const page = () => {
             <li>
               <div className="hcity">
                 <div>
-                  <img src="/services/2.jpeg" alt="" />
+                  <img src="/services/2.jpeg" alt="bizdir" />
                 </div>
                 <div>
-                  <img src="/services/20356s7.jpeg" alt="" />
+                  <img src="/services/20356s7.jpeg" alt="bizdir" />
                   <h4>Real Estate</h4>
                   <div className="list-rat-all">
                     {" "}
@@ -698,7 +698,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/1.jpg" alt="" />
+                <img src="/listings/1.jpg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -713,7 +713,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/2.jpg" alt="" />
+                <img src="/listings/2.jpg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -726,7 +726,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/3.jpeg" alt="" />
+                <img src="/listings/3.jpeg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -743,7 +743,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/4.jpg" alt="" />
+                <img src="/listings/4.jpg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -762,7 +762,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/5.jpeg" alt="" />
+                <img src="/listings/5.jpeg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -776,7 +776,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/6.jpg" alt="" />
+                <img src="/listings/6.jpg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -791,7 +791,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/7.jpg" alt="" />
+                <img src="/listings/7.jpg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -805,7 +805,7 @@ const page = () => {
             <div className="hom-mpop">
               {/*POPULAR LISTINGS IMAGE*/}
               <div className="col-md-3">
-                <img src="/listings/8.jpeg" alt="" />
+                <img src="/listings/8.jpeg" alt="bizdir" />
               </div>
               {/*POPULAR LISTINGS: CONTENT*/}
               <div className="col-md-9">
@@ -831,7 +831,7 @@ const page = () => {
             </p>
             <ul>
               <li>
-                <img src="/icon/blog.png" alt="" />
+                <img src="/icon/blog.png" alt="bizdir" />
                 <div>
                   <h5>Tell us more about your requirements</h5>
                   <p>
@@ -841,7 +841,7 @@ const page = () => {
                 </div>
               </li>
               <li>
-                <img src="/icon/shield.png" alt="" />
+                <img src="/icon/shield.png" alt="bizdir" />
                 <div>
                   <h5>We connect with right service provider</h5>
                   <p>
@@ -851,7 +851,7 @@ const page = () => {
                 </div>
               </li>
               <li>
-                <img src="/icon/general.png" alt="" />
+                <img src="/icon/general.png" alt="bizdir" />
                 <div>
                   <h5>Happy with our service</h5>
                   <p>
@@ -1028,7 +1028,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/1.jpg" alt="" />
+                      <img src="/services/1.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Royal Real Estates</h5>
@@ -1042,7 +1042,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/2.jpeg" alt="" />
+                      <img src="/services/2.jpeg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Smith Luxury Villas</h5>
@@ -1060,7 +1060,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/3.jpg" alt="" />
+                      <img src="/services/3.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Appers Premium Independent Houses</h5>
@@ -1078,7 +1078,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/4.jpg" alt="" />
+                      <img src="/services/4.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Asian Real Estate</h5>
@@ -1092,7 +1092,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/5.jpeg" alt="" />
+                      <img src="/services/5.jpeg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>jj</h5>
@@ -1117,7 +1117,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/6.jpeg" alt="" />
+                      <img src="/services/6.jpeg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>BizBookBusiness Directory Template</h5>
@@ -1131,7 +1131,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/7.jpeg" alt="" />
+                      <img src="/services/7.jpeg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Sony Music</h5>
@@ -1145,7 +1145,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/8.jpg" alt="" />
+                      <img src="/services/8.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>IPM Business Software</h5>
@@ -1159,7 +1159,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/9.png" alt="" />
+                      <img src="/services/9.png" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Tour and Travel html Template</h5>
@@ -1177,7 +1177,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/10.jpg" alt="" />
+                      <img src="/services/10.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Smart Digital Products</h5>
@@ -1206,7 +1206,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/11.jpg" alt="" />
+                      <img src="/services/11.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>William Chil care Hospital</h5>
@@ -1220,7 +1220,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/12.jpeg" alt="" />
+                      <img src="/services/12.jpeg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Urban Community Hospital</h5>
@@ -1238,7 +1238,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/13.jpg" alt="" />
+                      <img src="/services/13.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Joseph Multispeciality Hospital</h5>
@@ -1252,7 +1252,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/14.jpg" alt="" />
+                      <img src="/services/14.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Apolloo Hospitals UAE</h5>
@@ -1270,7 +1270,7 @@ const page = () => {
                   {/*LISTINGS*/}
                   <li>
                     <div className="hot-page2-hom-pre-1">
-                      <img src="/services/16.jpg" alt="" />
+                      <img src="/services/16.jpg" alt="bizdir" />
                     </div>
                     <div className="hot-page2-hom-pre-2">
                       <h5>Green Healthcare Hospital</h5>
@@ -1316,7 +1316,7 @@ const page = () => {
                 <div className="eve-box">
                   <div>
                     <Link href="/event-details">
-                      <img src="/events/1.png" alt="" />
+                      <img src="/events/1.png" alt="bizdir" />
                       <span>
                         <b>Dec 31</b>
                       </span>
@@ -1331,7 +1331,7 @@ const page = () => {
                   </div>
                   <div>
                     <div className="auth">
-                      <img src="/user/1.png" alt="" /> <b>Hosted by</b>
+                      <img src="/user/1.png" alt="bizdir" /> <b>Hosted by</b>
                       <br />
                       <h4>Directory Finder</h4>
                       <Link
@@ -1347,7 +1347,7 @@ const page = () => {
                 <div className="eve-box">
                   <div>
                     <Link href="/event-details">
-                      <img src="/events/2.jpg" alt="" />
+                      <img src="/events/2.jpg" alt="bizdir" />
                       <span>
                         <b>Dec 31</b>
                       </span>
@@ -1362,7 +1362,7 @@ const page = () => {
                   </div>
                   <div>
                     <div className="auth">
-                      <img src="/user/2.jpeg" alt="" /> <b>Hosted by</b>
+                      <img src="/user/2.jpeg" alt="bizdir" /> <b>Hosted by</b>
                       <br />
                       <h4>Chris moris</h4>
                       <Link
@@ -1378,7 +1378,7 @@ const page = () => {
                 <ul>
                   <li>
                     <div className="eve-box-list">
-                      <img src="/events/3.jpeg" alt="" />
+                      <img src="/events/3.jpeg" alt="bizdir" />
                       <h4 title="Lunar New Year 2020">Lunar New Year 2020</h4>
                       <p>
                         Celebrate as the sights, sounds and aromas of A
@@ -1391,7 +1391,7 @@ const page = () => {
                   </li>
                   <li>
                     <div className="eve-box-list">
-                      <img src="/events/4.jpg" alt="" />
+                      <img src="/events/4.jpg" alt="bizdir" />
                       <h4 title="Car Fest 2020">Car Fest 2020</h4>
                       <p>
                         Celebrate as the sights, sounds and aromas of A
@@ -1404,7 +1404,7 @@ const page = () => {
                   </li>
                   <li>
                     <div className="eve-box-list">
-                      <img src="/events/5.jpg" alt="" />
+                      <img src="/events/5.jpg" alt="bizdir" />
                       <h4 title="Poway Winter Festival">
                         Poway Winter Festival
                       </h4>
@@ -1417,7 +1417,7 @@ const page = () => {
                   </li>
                   <li>
                     <div className="eve-box-list">
-                      <img src="/events/6.jpg" alt="" />
+                      <img src="/events/6.jpg" alt="bizdir" />
                       <h4 title="Toyota Cars 20% Offer">
                         Toyota Cars 20% Offer
                       </h4>
@@ -1430,7 +1430,7 @@ const page = () => {
                   </li>
                   <li>
                     <div className="eve-box-list">
-                      <img src="/events/7.jpg" alt="" />
+                      <img src="/events/7.jpg" alt="bizdir" />
                       <h4 title="Electrical Energy Saving Methods">
                         Electrical Energy Saving Methods
                       </h4>
@@ -1443,7 +1443,7 @@ const page = () => {
                   </li>
                   <li>
                     <div className="eve-box-list">
-                      <img src="/events/8.jpeg" alt="" />
+                      <img src="/events/8.jpeg" alt="bizdir" />
                       <h4 title="Food eating challenge">
                         Food eating challenge
                       </h4>
@@ -1475,7 +1475,7 @@ const page = () => {
                   <div>
                     {" "}
                     <span>1</span>
-                    <img src="/icon/how1.png" alt="" />
+                    <img src="/icon/how1.png" alt="bizdir" />
                     <h4>Create an account</h4>
                     <p>
                       Fusce imperdiet ullamcorper metus eu fringilla. from
@@ -1487,7 +1487,7 @@ const page = () => {
                   <div>
                     {" "}
                     <span>2</span>
-                    <img src="/icon/how2.png" alt="" />
+                    <img src="/icon/how2.png" alt="bizdir" />
                     <h4>Add your business</h4>
                     <p>
                       Fusce imperdiet ullamcorper metus eu fringilla. from
@@ -1499,7 +1499,7 @@ const page = () => {
                   <div>
                     {" "}
                     <span>3</span>
-                    <img src="/icon/how3.png" alt="" />
+                    <img src="/icon/how3.png" alt="bizdir" />
                     <h4>Get more leads</h4>
                     <p>
                       Fusce imperdiet ullamcorper metus eu fringilla. from
@@ -1511,7 +1511,7 @@ const page = () => {
                   <div>
                     {" "}
                     <span>4</span>
-                    <img src="/icon/how4.png" alt="" />
+                    <img src="/icon/how4.png" alt="bizdir" />
                     <h4>Archive goles</h4>
                     <p>
                       Fusce imperdiet ullamcorper metus eu fringilla. from
@@ -1531,7 +1531,7 @@ const page = () => {
                   <li>
                       <div className="hom-oth">
                           <div>
-                              <img src="/listings/hot5.jpg" alt="">
+                              <img src="/listings/hot5.jpg" alt="bizdir">
                           </div>
                           <div>
                               <h4>Events</h4>
@@ -1543,7 +1543,7 @@ const page = () => {
                   <li>
                       <div className="hom-oth">
                           <div>
-                              <img src="/listings/re1.jpg" alt="">
+                              <img src="/listings/re1.jpg" alt="bizdir">
                           </div>
                           <div>
                               <h4>Blog posts</h4>
@@ -1555,7 +1555,7 @@ const page = () => {
                   <li>
                       <div className="hom-oth">
                           <div>
-                              <img src="/listings/spa3.jpg" alt="">
+                              <img src="/listings/spa3.jpg" alt="bizdir">
                           </div>
                           <div>
                               <h4>How it works</h4>
@@ -1567,7 +1567,7 @@ const page = () => {
                   <li>
                       <div className="hom-oth">
                           <div>
-                              <img src="/listings/re5.jpg" alt="">
+                              <img src="/listings/re5.jpg" alt="bizdir">
                           </div>
                           <div>
                               <h4>Pricing details</h4>
@@ -1587,7 +1587,7 @@ const page = () => {
           </div>*/}
           <div className="mob-app">
             <div className="lhs">
-              <img src="/mobile.png" alt="" />
+              <img src="/mobile.png" alt="bizdir" />
             </div>
             <div className="rhs">
               <h2>
@@ -1618,10 +1618,10 @@ const page = () => {
                 </ul>
               </form>
               <Link href="/#">
-                <img src="/android.png" alt="" />
+                <img src="/android.png" alt="bizdir" />
               </Link>
               <Link href="/#">
-                <img src="/apple.png" alt="" />
+                <img src="/apple.png" alt="bizdir" />
               </Link>
             </div>
           </div>
@@ -1640,7 +1640,7 @@ const page = () => {
               <Link href="/">
                 {" "}
                 <span>Ad</span>
-                <img src="/ads/ads2.jpg" alt="" />
+                <img src="/ads/ads2.jpg" alt="bizdir" />
               </Link>
             </div>
           </div>
@@ -1656,7 +1656,7 @@ const page = () => {
       <p>We connect you to service experts.</p> <span>Get experts</span>
     </div>
     <div className="ani-q2">
-      <img src="/quote.png" alt="" />
+      <img src="/quote.png" alt="bizdir" />
     </div>
   </div>
   {/* END */}
@@ -1807,7 +1807,7 @@ const page = () => {
         <div className="row">
           <div className="bot-book">
             <div className="col-md-2 bb-img">
-              <img src="/idea.png" alt="" />
+              <img src="/idea.png" alt="bizdir" />
             </div>
             <div className="col-md-7 bb-text">
               <h4>#1 Business Directory and Service Provider</h4>
