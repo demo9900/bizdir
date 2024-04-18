@@ -1,9 +1,24 @@
 import React from 'react'
+import { useRef,useEffect } from 'react'
 import { SidebarData } from './SidebarData'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
+    const dashboardRef = useRef(null);
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (dashboardRef.current && !dashboardRef.current.contains(event.target)) {
+                setDashboardVisiblity(false);
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [dashboardRef]);
     console.log(dashboardvisiblity)
     const pathname = usePathname();
     return (
@@ -15,7 +30,7 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
                 <h4>{session?.user?.name}</h4>
                 <span onClick={() => setDashboardVisiblity(!dashboardvisiblity)} className="fclick"></span>
             </div>
-            <div className={`db-menu ${dashboardvisiblity ? 'act' : ''}`} >
+            <div ref={dashboardRef} className={`db-menu ${dashboardvisiblity ? 'act' : ''}`} >
                 <span className="material-icons db-menu-clo" onClick={()=> setDashboardVisiblity(!dashboardvisiblity)}>close</span>
                 <div className="ud-lhs-s1">
                     <img src="/user/62736rn53themes.png" alt="user-profile" />
