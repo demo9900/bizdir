@@ -1,8 +1,8 @@
 'use client';
 import React from 'react'
-import Headertwo from '../../component/Headertwo'
-import Footer from '../../component/Footer';
-import BottomMenu from '../../component/BottomMenu';
+import Headertwo from '@/components/Headertwo'
+import Footer from '@/components/Footer';
+import BottomMenu from '@/components/BottomMenu';
 import Link from 'next/link';
 
 const page = () => {
@@ -43,7 +43,7 @@ const page = () => {
               </Link>
             </li>
             <li>
-              <Link href="/add-listing-start">
+              <Link href="/account/add-listing-start">
                 <img src="/icon/dbl3.png" alt="" />
                 Add New Listing
               </Link>

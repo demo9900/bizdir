@@ -1,9 +1,9 @@
 'use client'
 import React,{useState,useContext} from 'react'
-import useAuth from '@/context/useAuth'
 import Link from 'next/link'
-import {account} from "@/appwrite/appwrite"
-import  appwriteService  from '@/appwrite/appwrite'
+import { signIn } from 'next-auth/react'
+import axios  from 'axios'
+import { useEffect } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Headertwo from "@/components/Headertwo"
 import {  toast } from "react-toastify";
@@ -13,107 +13,58 @@ const page = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    name: "",
 })
-const [loginForm, setLoginForm] = useState({
-  email: "",
-  password: "",
-})
-const [userEmail, setuserEmail] = useState("");
-console.log(userEmail)
-    const [error, setError] = useState("")
-    const {setAuthStatus,authStatus,jwtToken,setJwtToken} = useAuth();
   const searchParams = useSearchParams()
-    const login = searchParams.get('login')
-    console.log("auth status is ",authStatus)
-    
-  const [activeForm, setActiveForm] = useState(login? login :'login');
-  const handleFormChange = (formName) => {
-        setActiveForm(formName);
-    };
-    const create = async (e) => {
-      console.log("function running correctly")
-      e.preventDefault()
+  const token = searchParams.get('token')
+  const email = searchParams.get('email')
+  useEffect(() => {
+    console.log(token,email)
+    const verifyUser = async () => {
       try {
-          const userData = await appwriteService.createUserAccount(formData);
-          if (userData) {
-              setAuthStatus(true)
-              router.push("/login?login=login")
-          }
-      } catch (error) {
-          setError(error.message)
-          console.log(error)
-      }
-  }
-
-  const loginUser = async (e) => {
-    e.preventDefault()
-    try {
-        const session = await appwriteService.login(loginForm);
-        const jwt = await account.createJWT()
-        if (session) {
-            setAuthStatus(true)
-            setJwtToken(jwt.jwt);
-            console.log(jwt)
-            router.push("/")
+        const response = await axios.post(`http://localhost:8080/api/auth/verify/?token=${token}&email=${email}`);
+        if (response.status === 200) {
+          toast.success('Successfully verified!');
+          router.push('/login')
+          // Redirect to login page or any other page
         }
-            
-        
-    } catch (error) {
-        setError(error.message)
+      } catch (error) {
+        toast.error('Failed to verify user');
+        console.error('Error verifying user:', error.message);
+        // Redirect to error page or handle error accordingly
+      }
+    };
+    if(token && email){
+      verifyUser();
     }
-}
+  }, [token,email]);
 
-const googleAuth = (e) => {
-  e.preventDefault();
 
-  try {
-    account.createOAuth2Session(
-      "google",
-      `${process.env.NEXT_APP_FRONTEND_URL}`,
-      `${process.env.NEXT_APP_FRONTEND_URL}/login`
-    );
-  } catch (e) {
-    toast.error(`${e.message}`);
-  }
-};
-const microsoftAuth = (e) => {
-  e.preventDefault();
-
-  try {
-    account.createOAuth2Session(
-      "microsoft",
-      "http://localhost:3000/",
-      "http://localhost:3000/login"
-    );
-  } catch (e) {
-    toast.error(`${e.message}`);
-  }
-};
-const forgetPassword = async (e) => {
-  e.preventDefault();
-  if (userEmail && userEmail.includes('@')) {
-   const req = await appwriteService.forgotPassword(userEmail)
-   if(req){
-    toast.success(`Email has been sent!`);
-   }
-  } else {
-    toast.error(`Please enter your email!`);
-  }
-};
-
-// if (authStatus) {
-//   router.replace("/dashboard");
-//   return <></>;
-// }
-
+    const [error, setError] = useState("")
+    async function handleSubmit(event) {
+      event.preventDefault()
+      const email = formData.email;
+      const password = formData.password;
+      const result = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      })
   
+      if (result.error) {
+        alert(result.error)
+        console.log(result.error)
+      } else {
+        router.push('/')
+      }
+    }
+
+
   return (
     <>
      <section>
-		<div class="str">
+		<div className="str">
 			<div>
-      <Headertwo handleFormChange={handleFormChange} setActiveForm={setActiveForm} />
+      <Headertwo  />
       </div>
       </div>
       </section>
@@ -121,32 +72,31 @@ const forgetPassword = async (e) => {
   <div className="container">
     <div className="row">
       <div className="login-main">
-        <div className="log-bor">&nbsp;</div>
-        {activeForm === 'login' && (
+        <div className="log-bor">&nbsp;</div>    
           <div className="log log-1">
           <div className="login">
             <h4>Member Login</h4>
-            <form onSubmit={loginUser} id="login_form" name="login_form">
+            <form onSubmit={handleSubmit} id="login_form" name="login_form">
               <div className="form-group">
                 <input type="email"  autoComplete="off"
                  name="email" id="email_id" className="form-control"
-                 value={loginForm.email}
+                 value={formData.email}
                  onChange={(e) =>
-                     setLoginForm((prev) => ({ ...prev, email: e.target.value }))
+                     setFormData((prev) => ({ ...prev, email: e.target.value }))
                  }
-                  placeholder="Enter email*" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" title="Enter email address" defaultValue="rn53themes@gmail.com" required />
+                  placeholder="Enter email*" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" title="Enter email address" required />
               </div>
               <div className="form-group">
                 <input type="password" name="password"
                  id="password" className="form-control"
-                 value={loginForm.password}
+                 value={formData.password}
                  onChange={(e) =>
-                     setLoginForm((prev) => ({
+                     setFormData((prev) => ({
                          ...prev,
                          password: e.target.value,
                      }))
                  }
-                  placeholder="Enter password*" required defaultValue="passwor" />
+                  placeholder="Enter password*" required  />
               </div>
               <button type="submit" name="login_submit" value="submit" className="btn btn-primary">Sign in</button>
             </form>
@@ -154,14 +104,14 @@ const forgetPassword = async (e) => {
             <div className="soc-log">
              <ul>
                 <li>
-                  <div classname="g-signin2" data-onsuccess="onSignIn">
+                  <div className="g-signin2" data-onsuccess="onSignIn">
                   </div></li>
                 <li>
-                  <Link href="javascript:void(0);"  onClick={(e) => googleAuth(e)} className="login-goog"><img src="/images/icon/seo.png" />Continue
+                  <Link href=""  onClick={(e) => googleAuth(e)} className="login-goog"><img src="/images/icon/seo.png" />Continue
                     with Google</Link>
                 </li> 
                 <li>
-                  <Link href="javascript:void(0);" onClick={(e) =>microsoftAuth(e)} classname="login-micro">
+                  <Link href="" onClick={(e) =>microsoftAuth(e)} className="login-micro">
                     <img src="/icon/microsoft.svg" />Continue with Microsoft</Link>
                 </li>
               </ul>
@@ -169,109 +119,23 @@ const forgetPassword = async (e) => {
             {/* END SOCIAL MEDIA LOGIN */}
           </div>
         </div>
-        )}
-        {activeForm === 'signup' && (
-           <div className="log log-2">
-           <div className="login">
-             <h4>Create an account</h4>
-             <p>Don't have an account? Create your account. It's take less then a minutes</p>
-             <form onSubmit={create}  name="register_form" id="register_form">
-               <input type="hidden" autoComplete="off" name="trap_box" id="trap_box" className="validate" />
-               <input type="hidden" autoComplete="off" name="mode_path" defaultValue="XeFrOnT_MoDeX_PATHXHU" id="mode_path" className="validate" />
-               <div className="form-group">
-                 <input type="text" 
-                 autoComplete="off" value={formData.name}  onChange={(e) =>  setFormData((prev) => ({ ...prev, name: e.target.value })) } 
-                 name="name" id="name" className="form-control" placeholder="Name" />
-               </div>
-               <div className="form-group">
-                 <input type="email" autoComplete="off"
-                   value={formData.email}
-                   onChange={(e) =>
-                       setFormData((prev) => ({ ...prev, email: e.target.value }))
-                   }
-                  name="email" id="email" className="form-control" placeholder="Email id*" required />
-               </div>
-               <div className="form-group">
-                 <input type="password" name="password"
-                  value={formData.password}
-                  onChange={(e) =>
-                      setFormData((prev) => ({
-                          ...prev,
-                          password: e.target.value,
-                      }))
-                  }
-                  id="password" className="form-control" placeholder="Password*" required />
-               </div>
-               {/* <div className="form-group">
-                 <input type="text" onkeypress="return isNumber(event)" autoComplete="off" name="mobile_number" id="mobile_number" className="form-control" placeholder="Phone" />
-               </div> */}
-               {/* <div className="form-group ca-sh-user">
-                 <select name="user_type" id="user_type" className="form-control ca-check-plan">
-                   <option value>User type</option>
-                   <option value="General">General user</option>
-                   <option value="Service provider">Service provider</option>
-                 </select> <a href="user-type" className="frmtip" target="_blank">User options</a>
-               </div> */}
-               {/* <div className="form-group ca-sh-plan">
-                 <select name="user_plan" id="user_plan" className="form-control">
-                   <option value disabled="disabled" selected="selected">Choose your plan</option>
-                   <option value={1}>Free</option>
-                   <option value={2}>Standard - $9/year</option>
-                   <option value={3}>Premium - $19/year</option>
-                   <option value={4}>Premium Plus - $20/year</option>
-                  
-                 </select> <a href="pricing-details.html" className="frmtip" target="_blank">Plan details</a>
-               </div> */}
-               <button type="submit" name="register_submit" className="btn btn-primary">Register Now</button>
-             </form>
-             {/* SOCIAL MEDIA LOGIN */}
-             <div className="soc-log">
-               <ul>
-                 <li>
-                   <div className="g-signin2" data-onsuccess="onSignIn" />
-                 </li>
-                 {/*                                        <li>*/}
-                 {/*                                            <a href="google_login.html" class="login-goog"><img*/}
-                 {/*                                                    src="images/icon/seo.png">Continue*/}
-                 {/*                                                with Google</a>*/}
-                 {/*                                        </li>*/}
-                 <li>
-                   <a href="javascript:void(0);" onclick="fbLogin();" className="login-fb">
-                     <img src="images/icon/facebook.png" />Continue with Facebook</a>
-                 </li>
-               </ul>
-             </div>
-             {/* END SOCIAL MEDIA LOGIN */}
-           </div>
-         </div>
-        )}
-       {activeForm === 'forgotPassword' && (
-         <div className="log log-3">
-         <div className="login">
-           <h4>Forgot password</h4>
-           <form id="forget_form" name="forget_form" method="post" action="forgot_process.html">
-             <div className="form-group">
-               <input type="email" name="email" autoComplete="off"
-                onChange={(e) => {
-                  setuserEmail(e.target.value);
-                }}
-                id="email_id" className="form-control"
-                 placeholder="Enter email*" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" title="Invalid email address" required />
-             </div>
-             <button type="submit" name="forgot_submit"  onClick={(e) => forgetPassword(e)} className="btn btn-primary">Submit</button>
-           </form>
-         </div>
-       </div>
-       )}
-       
        
         <div className="log-bot">
           <ul>
-            <li> <span onClick={() => handleFormChange('login')} className="ll-1">Login?</span>
+            <li>
+                <Link href={'/login'}>
+                 <span  className="ll-1">Login?</span>
+                </Link>
             </li>
-            <li> <span onClick={() => handleFormChange('signup')} className="ll-2">Create an account?</span>
+            <li>
+                <Link href={'/register'}>
+                 <span  className="ll-2">Create an account?</span>
+                </Link>
             </li>
-            <li> <span onClick={() => handleFormChange('forgotPassword')} className="ll-3">Forgot password?</span>
+            <li>
+                <Link href={'/signup'}>
+                 <span  className="ll-3">Forgot password?</span>
+                </Link>
             </li>
           </ul>
         </div>
@@ -297,10 +161,10 @@ const forgetPassword = async (e) => {
         <p>You cannot make enquiry on your own listing</p>
       </div>
       <form name="home_slide_enquiry_form" id="home_slide_enquiry_form" method="post" encType="multipart/form-data">
-        <input type="hidden" className="form-control" name="listing_id" defaultValue={0} placeholder required />
-        <input type="hidden" className="form-control" name="listing_user_id" defaultValue={0} placeholder required />
-        <input type="hidden" className="form-control" name="enquiry_sender_id" defaultValue placeholder required />
-        <input type="hidden" className="form-control" name="enquiry_source" defaultValue="Website" placeholder required />
+        <input type="hidden" className="form-control" name="listing_id" defaultValue={0}  required />
+        <input type="hidden" className="form-control" name="listing_user_id" defaultValue={0}  required />
+        <input type="hidden" className="form-control" name="enquiry_sender_id" defaultValue  required />
+        <input type="hidden" className="form-control" name="enquiry_source" defaultValue="Website"  required />
         <div className="form-group">
           <input type="text" name="enquiry_name" defaultValue required="required" className="form-control" placeholder="Enter name*" />
         </div>
@@ -344,7 +208,7 @@ const forgetPassword = async (e) => {
         <div className="row">
           <div className="bot-book">
             <div className="col-md-2 bb-img">
-              <img src="images/idea.png" alt />
+              <img src="images/idea.png" alt="idea" />
             </div>
             <div className="col-md-7 bb-text">
               <h4>#1 Business Directory and Service Provider</h4>

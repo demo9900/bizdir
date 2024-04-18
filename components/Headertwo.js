@@ -300,7 +300,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/add-listing-start" className="tz-lma">
+                <Link href="/account/add-listing-start" className="tz-lma">
                   <img src="/icon/dbl3.png" alt="" />
                   Add New Listing
                 </Link>
@@ -373,7 +373,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/add-listing-start">
+                  <Link href="/account/add-listing-start">
                     <img src="/icon/dbl3.png" alt="" />
                     Add New Listing
                   </Link>

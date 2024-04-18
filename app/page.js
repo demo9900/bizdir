@@ -2,6 +2,8 @@
 import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useSession } from "next-auth/react"
+import Service_Slider from '@/components/Slider/Service_Slider';
 import Slider from "react-slick";
 import Header from '@/components/Header'
 import Footer from '@/components/Footer';
@@ -12,7 +14,8 @@ import { useState, useEffect } from 'react';
 const page = () => {
   const [location, setLocation] = useState({});
   const [loading, setLoading] = useState(true);
-
+  const { data: session, status } = useSession();
+  console.log("user session",session)
 
   var settings = {
     infinite: true,
@@ -360,34 +363,158 @@ const page = () => {
 						<h2><span>Popular Services</span> near you</h2>
 						<p>lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu fringilla.</p>
 					</div>
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+         <div className="plac-hom-all-pla">
+            <ul>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/69336spa1.jpg" className="b-lazy b-loaded" alt />
+                    <h4>Spa and Facial</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/spa-and-facial" className="fclick" />
+                </div>
+              </li>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/1280613.jpg" className="b-lazy b-loaded" alt />
+                    <h4>Hospitals</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/hospitals" className="fclick" />
+                </div>
+              </li>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/83881.jpeg" className="b-lazy b-loaded" alt />
+                    <h4>Transportation</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/transportation" className="fclick" />
+                </div>
+              </li>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/63205tr1.jpg" className="b-lazy b-loaded" alt />
+                    <h4>Automobiles</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/automobiles" className="fclick" />
+                </div>
+              </li>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/414416.jpeg" className="b-lazy b-loaded" alt />
+                    <h4>Electricals</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/electricals" className="fclick" />
+                </div>
+              </li>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/4734716.jpeg" className="b-lazy b-loaded" alt />
+                    <h4>Education</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/education" className="fclick" />
+                </div>
+              </li>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/780168.jpeg" className="b-lazy b-loaded" alt />
+                    <h4>Sports</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/sports" className="fclick" />
+                </div>
+              </li>
+              <li>
+                <div className="plac-hom-box">
+                  <div className="plac-hom-box-im">
+                    <img src="https://utilitypages.in/images/services/50723s9.jpeg" className="b-lazy b-loaded" alt />
+                    <h4>Real Estate</h4>
+                  </div>
+                  <div className="rel-list-txt-box">
+                    <span className="dir-ho-cat">Show All (00                                                    )</span>
+                    <span className="rat-more-cta-ic">More details</span>
+                  </div>
+                  <a href="https://utilitypages.in/all-listing/real-estate" className="fclick" />
+                </div>
+              </li>
+            </ul>
+          </div>
 
-        {category.data.map((item)=>{
-       return <div key={item.key} className="product overflow-hidden  bg-white mb-2 rounded-md">
-
-<Link href='/' className='no-underline hover:no-underline'>
-   <div className='land-pack-grid-img transform transition duration-500 hover:scale-105'>
-    <img
-      className=" cursor-pointer object-cover bg-gray-100"
-      src={item.img}
-      alt="service"
-    />
-    </div>
-    <div className="land-pack-grid-text">
-			<h4>{item.name} <span className="dir-ho-cat">{item.title}</span></h4>
-		</div>
-</Link>
-
-
-        </div>})}
-				</div>
         <Link href="/all-category" className="more">View all services</Link>
 			  </div>
         
         </div>
       </div>
     </section>
-
+    <section>
+    <div
+      id="demo"
+      className="carousel slide cate-sli caro-home"
+      data-ride="carousel"
+    >
+      <div className="carousel-inner container">
+        <Slider {...settings}>
+        <div className="carousel-item active">
+          <img src="/slider/1.jpg" alt="Los Angeles" />
+          <Link
+            href="//demo"
+            target="_blank"
+          />
+        </div>
+        <div className="carousel-item ">
+          <img src="/slider/2.jpg" alt="Los Angeles" />
+          <Link
+            href="//demo"
+            target="_blank"
+          />
+        </div>
+        </Slider>
+      </div>
+     
+    </div>
+  </section>
+  <div class="plac-hom-bd">
+    <div class="container">
+        <div class="row">
+            <div class="plac-det-tit-inn">
+                <h2 className='font-bold'>Explore our more Services</h2>
+            </div>
+            <Service_Slider/>
+        </div>
+    </div>
+</div>
     <section>
   <div className="str">
     <div className="container">
@@ -1168,33 +1295,7 @@ const page = () => {
     </div>
   </section>
   {/* END */}
-  <section>
-    <div
-      id="demo"
-      className="carousel slide cate-sli caro-home"
-      data-ride="carousel"
-    >
-      <div className="carousel-inner container">
-      <Slider {...settings}>
-        <div className="carousel-item active">
-          <img src="/slider/1.jpg" alt="Los Angeles" />
-          <Link
-            href="//demo"
-            target="_blank"
-          />
-        </div>
-        <div className="carousel-item ">
-          <img src="/slider/2.jpg" alt="Los Angeles" />
-          <Link
-            href="//demo"
-            target="_blank"
-          />
-        </div>
-        </Slider>
-      </div>
-     
-    </div>
-  </section>
+ 
   {/* START */}
   <section>
     <div className="str count">
