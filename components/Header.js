@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import $ from "jquery";
 import DbMenu from './Layout/user/DbMenu';
-const Header = () => {
+const Header = ({transparent}) => {
   const { data: session, status } = useSession();
   const [ isMenuVisible, setMenuVisibility ] = useState(false);
   const [ isMobMenuVisible, setMobMenuVisibility ] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
     
-    <div className={`${scrollPosition > 0 ? 'hom-top dmact': 'hom-top'}`}>
+    <div className={`${(scrollPosition > 0 || transparent === false) ? 'hom-top dmact': 'hom-top'}`}>
     <div className="container">
       <div className="row">
         <div className="hom-nav  db-open ">

@@ -87,7 +87,7 @@ const page = () => {
     <section>
       <div className="str">
     <div className="hom-head animation-bg" >
-     <Header/>  
+     <Header transparent={true}/>
     <div className="container">
     <div className="row">
     <div className="ban-tit">

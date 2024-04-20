@@ -3,6 +3,8 @@ import { WhatsApp } from "@mui/icons-material";
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
+
+
 const page = () => {
   const [formData, setFormData] = useState({
     user_name: "test_user",
@@ -260,14 +262,14 @@ const page = () => {
                                 id="city_id"
                                 multiple
                                 required="required"
-                                className="chosen-select form-control"
+                                className="chosen-select form-control "
                                 style={{ display: "none" }}
                               >
                                 <option value={48042}>Chennai</option>
                                 <option value={48043}>Chennai 2</option>
                               </select>
                               <div
-                                className="chosen-container chosen-container-multi"
+                                className="chosen-container chosen-container-multi chosen-with-drop chosen-container-active"
                                 title
                                 id="city_id_chosen"
                                 style={{ width: 640 }}

@@ -6597,6 +6597,7 @@ background: #F44336;
 .db-menu{
     position: fixed;
     background: #fff;
+    z-index: 999;
     right:-300px;
     width: 280px;
     height: 100%;
@@ -14533,7 +14534,7 @@ color: #333;
 .hom-top.demo .hom-nav .ic-logo{margin-left:0px;}
 .chosen-select{width:100%}
 .chosen-select-deselect{width:100%}
-.chosen-container{display:inline-block;font-size:14px;position:relative;vertical-align:middle;height: 44px;border: 2px solid #000;border-radius:3px;width:100%!important}
+.chosen-container{display:inline-block;font-size:14px;position:relative;vertical-align:middle;height:42px;border:1px solid #dfdfdf;border-radius:3px;width:100%!important}
 .ban-search ul li:before{margin:17px 0 0 15px;z-index:1;color:#8592c1}
 .ban-search li select,.ban-search li .chosen-container{height:58px;border:0}
 .ban-search li .chosen-container .chosen-single{height:58px;border-radius:0}
