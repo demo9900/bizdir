@@ -10,6 +10,9 @@ import Footer from '@/components/Footer';
 import BottomMenu from '@/components/BottomMenu';
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
+import Search_Service from '@/components/Layout/Search_Service';
+import Select_Search from '@/components/Select_Search'
+import Listing_Filter from '@/components/Listing_Filter';
 
 const page = () => {
   const [location, setLocation] = useState({});
@@ -97,112 +100,7 @@ const page = () => {
         Restaurants, cafe&apos;s, and bars in {location.city}, {location.country}{" "}
       </h1>
     </div>
-    <div className="ban-search">
-      <form name="filter_form" id="filter_form" className="filter_form">
-        <ul>
-          <li className="sr-cit">
-            <input
-              type="text"
-              id="select-city"
-              name="select-city"
-              className="autocomplete"
-              placeholder="City"
-            />
-          </li>
-          <li className="sr-sea">
-            {/*<input type="text" id="select-search" className="autocomplete"
-                                         placeholder="">*/}
-            <input
-              type="text"
-              autoComplete="off"
-              id="select-search"
-              placeholder="Search for services and business..."
-              className="search-field"
-            />
-            <ul id="tser-res" className="tser-res tser-res1">
-              <li>
-                <div>
-                  <h4>The Royal Spa Center For Womens</h4>
-                  <span>No:2, 4th Avenue, Newyork, USA, Near to Airport</span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Real estate</h4>
-                  <span>Chennai, India</span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Education</h4>
-                  <span>
-                    Schools, university, colleges, online classes, tution
-                    centers, distance education..
-                  </span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Hotel and resort booking</h4>
-                  <span>
-                    hotel booking online, hotel reservation, holiday room
-                    booking
-                  </span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Import and export</h4>
-                  <span>Import and export to other countrys with low cost</span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Properties in Illunois</h4>
-                  <span>Villas, Plots, House rent and buy</span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Schools in Adyar</h4>
-                  <span>schools, adyar, education, </span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Laptop services near you</h4>
-                  <span>laptop services, computer services</span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <h4>Hospital and medical services near you</h4>
-                  <span>Hospital and medical services near you</span>
-                  <Link href="/all-listing" />
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li className="sr-btn">
-            <input
-              type="submit"
-              id="filter_submit"
-              name="filter_submit"
-              value="Search"
-              className="filter_submit"
-            />
-          </li>
-        </ul>
-      </form>
-    </div>
+  <Listing_Filter/>
     <div className="ban-short-links ani">
   <ul>
     <li>

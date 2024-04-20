@@ -1,7 +1,6 @@
 import React from 'react'
 
 const TopNav = ({toggleCart,showadMenu}) => {
-  console.log(" topnav icon value",showadMenu)
   return (
     <section>
   <div className="ad-head">

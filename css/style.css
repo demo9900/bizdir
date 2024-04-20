@@ -16,6 +16,7 @@ li{
     list-style-type: none;
 }
 *{box-sizing: border-box;}
+*{font-family:'Noto Sans',sans-serif;}
 /* fallback */
 @font-face{font-family:'Material Icons';font-weight:400;font-style:normal;font-display: swap;unicode-range: U+000-5FF;src:url(icon.woff2) format("woff2")}
 .material-icons {
@@ -335,11 +336,22 @@ div#event_detail_enq_success p{
     position:relative;
 }
 
-.ser-head .ban-search{
+.ser-head{
     width: 55%;
     padding: 0px;
     background: none;
 }
+.ban-search{margin:0 auto;display:table;width:55%;position:relative;box-shadow: 0 12px 19px 0 #00000017;z-index:7}
+.ban-search.ban-sear-all li.sr-cate{width:200px}
+.ban-search.ban-sear-all li.sr-cit{display:block;width:200px}
+.ban-search.ban-sear-all li.sr-sea{display:none}
+.ban-search.ban-sear-all li.sr-nor{width:calc(100% - 550px)}
+.ban-search.ban-sear-all li.sr-btn{width:150px}
+.ban-search ul li.sr-cate:before{content:'layers'}
+.ban-search ul li.sr-time:before{content:'access_time'}
+.ban-search ul li.sr-cit:before{content:'location_searching'}
+.ban-search ul li.sr-nor:before{content:'search';font-size:22px;margin:14px 0 0 15px}
+.ban-search.ban-sear-all{width:85%;background:#00000059;padding:20px;border-radius:10px;box-shadow:0 4px 14px 0 #0000003d}
 .ser-head .ban-search ul li.sr-sea{
     width: 100%;
     margin: 0px;
@@ -1190,18 +1202,7 @@ div#event_detail_enq_success p{
     box-shadow: 0px 7px 20px -5px rgba(150, 150, 150, 0.29);
     border-radius: 2px;
 }
-.ban-search ul li input[type="submit"]{
-    color: #fff;
-    border: 0px solid #005ba2;
-    padding: 0px 25px 0px 25px;
-    text-align: center;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.5s ease;
-    background: #ff6454;
-    /* background: linear-gradient(to bottom,#3384ff, #2170e8); */
-}
+.ban-search ul li input[type="submit"]{color:#fff;border:0 solid #005ba2;padding:0 25px;text-align:center;font-size:15px;text-transform:uppercase;letter-spacing:1px;transition:all .5s ease;border-radius:0 10px 10px 0;background:#0070d2;}
 .ban-search ul li input[type="submit"]:hover{
     transition: all 0.5s ease;
     /* background: linear-gradient(to bottom,#3384ff, #155fcf); */
@@ -14532,16 +14533,21 @@ color: #333;
 .hom-top.demo .hom-nav .ic-logo{margin-left:0px;}
 .chosen-select{width:100%}
 .chosen-select-deselect{width:100%}
-.chosen-container{display:inline-block;font-size:14px;position:relative;vertical-align:middle;height: 51px;border: 1px solid #f1eae5;}
-.chosen-container .chosen-drop{background:#fff;border:1px solid #ccc;border-bottom-right-radius:4px;border-bottom-left-radius:4px;-webkit-box-shadow:0 8px 8px rgba(0,0,0,.25);box-shadow:0 8px 8px rgba(0,0,0,.25);margin-top:-1px;position:absolute;top:100%;left:-9000px;z-index:1060}
-.chosen-container.chosen-with-drop .chosen-drop{left:0;right:0}
+.chosen-container{display:inline-block;font-size:14px;position:relative;vertical-align:middle;height: 44px;border: 2px solid #000;border-radius:3px;width:100%!important}
+.ban-search ul li:before{margin:17px 0 0 15px;z-index:1;color:#8592c1}
+.ban-search li select,.ban-search li .chosen-container{height:58px;border:0}
+.ban-search li .chosen-container .chosen-single{height:58px;border-radius:0}
+.ban-search li .chosen-container .chosen-single span{height:58px;line-height:56px;font-weight:600;color:#252733;padding-left:28px;font-size:15px}
+.chosen-container .chosen-drop{background:#fff;border:1px solid #ccc;border-bottom-right-radius:4px;border-bottom-left-radius:4px;-webkit-box-shadow:0 8px 8px rgba(0,0,0,.25);box-shadow:0 8px 8px rgba(0,0,0,.25);margin-top:-1px;position:absolute;top:100%;left:-9000px;z-index:1060;padding:6px;}
+.chosen-container.chosen-with-drop .chosen-drop{left:-2px;right:-2px}
 .chosen-container .chosen-results{color:#555;margin:0 4px 4px 0;max-height:240px;padding:0 0 0 4px;position:relative;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .chosen-container .chosen-results li{display:none;line-height:1.42857143;list-style:none;margin:0;padding:5px 6px}
 .chosen-container .chosen-results li em{background:#feffde;font-style:normal}
 .chosen-container .chosen-results li.group-result{display:list-item;cursor:default;color:#999;font-weight:700}
 .chosen-container .chosen-results li.group-option{padding-left:15px}
-.chosen-container .chosen-results li.active-result{cursor:pointer;display:list-item}
-.chosen-container .chosen-results li.highlighted{background-color:#428bca;background-image:none;color:#fff}
+.chosen-container .chosen-results li.active-result{cursor:pointer;display:list-item;width:100%;font-size: 14px;font-weight:600;color: #333;border: 1px solid #e0dfe6;border-bottom: 0;border-radius:0;padding: 10px 10px 10px 15px;transition:all .3s ease;background: none;}
+.chosen-container .chosen-results li.highlighted{background-color:#e7fbe8;background-image:none;color:#2d8632}
+.chosen-container .chosen-results li:hover{background-color:#e7fbe8;background-image:none;color:#2d8632}
 .chosen-container .chosen-results li.highlighted em{background:transparent}
 .chosen-container .chosen-results li.disabled-result{display:list-item;color:#777}
 .chosen-container .chosen-results .no-results{background:#eee;display:list-item}
@@ -14550,7 +14556,8 @@ color: #333;
 .chosen-container .chosen-results-scroll-down{bottom:0}
 .chosen-container .chosen-results-scroll-down span{background:url('../public/chosen-sprite.png') no-repeat -4px -3px}
 .chosen-container .chosen-results-scroll-up span{background:url('../public/chosen-sprite.png') no-repeat -22px -3px}
-.chosen-container-single .chosen-single{background-color:#fff;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;/* border:1px solid #ccc; */border-top-right-radius:4px;border-top-left-radius:4px;border-bottom-right-radius:4px;border-bottom-left-radius:4px;/* -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075); *//* box-shadow:inset 0 1px 1px rgba(0,0,0,.075); */color:#555;display:block;height: 48px;overflow:hidden;line-height:34px;padding: 9px 5px 0 12px;position:relative;text-decoration:none;white-space:nowrap;}
+.chosen-container-single .chosen-single{background-color:#fff;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;border-top-right-radius:4px;border-top-left-radius:4px;border-bottom-right-radius:4px;border-bottom-left-radius:4px;color:#555;display:block;height:40px;overflow:hidden;line-height:34px;padding:3px 5px 0 12px;position:relative;text-decoration:none;white-space:nowrap}
+.chosen-container-single .chosen-single span{display:block;margin-right:26px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight: 600;font-size: 14px;}
 .chosen-container-single .chosen-single span{display:block;margin-right:26px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .chosen-container-single .chosen-single abbr{background:url('../public/chosen-sprite.png') right top no-repeat;display:block;font-size:1px;height:10px;position:absolute;right:26px;top:12px;width:12px}
 .chosen-container-single .chosen-single abbr:hover{background-position:right -11px}
@@ -14614,7 +14621,7 @@ color: #333;
     top: 0;
     bottom: 0;
     background-size: cover;
-    background: linear-gradient(124deg, #5e7dd3, #bb5459);
+    background: linear-gradient(124deg, #4a63e4, #9a13ba);
 
   }
   .animation-bg:before {
@@ -14705,6 +14712,9 @@ color: #333;
     .plac-hom-all-pla ul li{width:50%;padding:10px}
     .plac-hom-tit-ic-sugg span{position:relative;display:inline-block;top:auto;right:auto;margin-top:20px}
     .plac-hom-tit-ic-sugg h2{font-size:16px}
+    .ban-search.ban-sear-all{width:100%}
+    .ban-search.ban-sear-all li.sr-cate,.ban-search.ban-sear-all li.sr-cit,.ban-search.ban-sear-all.ser-oly-place li.sr-nor,.ban-search.ban-sear-all.ser-oly-event li.sr-nor,.ban-search.ban-sear-all.ser-oly-blog li.sr-nor,.ban-search.ban-sear-all.ser-oly-product li.sr-nor{width:50%}
+    .ban-search.ban-sear-all li,.ban-search.ban-sear-all li.sr-nor,.ban-search.ban-sear-all li.sr-btn{width:100%;margin-bottom:10px}
     .plac-det-ban-im img{height:230px}
     .plac-det-tit h1{font-size:30px}
     .plac-det-tit h4{font-size:18px}
