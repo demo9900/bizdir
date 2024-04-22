@@ -1,364 +1,779 @@
 'use client';
 import React from 'react'
-import Headertwo from '@/components/Headertwo'
-import Footer from '@/components/Footer';
-import BottomMenu from '@/components/BottomMenu';
-import Link from 'next/link';
+import Location_Filter from "@/components/Location_Filter";
+import axios from "axios";
+import { useState } from "react";
 const page = () => {
+  const [formData, setFormData] = useState({
+    user_name: "test_user",
+    listing_name: "",
+    phone_number: "",
+    email: "",
+    whatsapp_number: "",
+    website: "",
+    shop_address: "",
+    country: "",
+    cities: [],
+    category: "",
+    listing_detail: "",
+    listing_profile: "",
+    listing_cover: "",
+    service_location: "",
+    service_name: "",
+    service_image: "",
+    youtubelink: "",
+    map_url: "",
+  });
+  console.log(process.env.BACKEND_URL);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === "service_name") {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        service_name: value,
+        services: [{ name: value, image: prevFormData.service_image }],
+      }));
+    } else if (name === "cities") {
+      const selectedOptions = event.target.selectedOptions;
+      const selectedCities = Array.from(selectedOptions).map(
+        (option) => option.value
+      );
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        cities: [
+          ...prevFormData.cities,
+          ...selectedCities.filter(
+            (city) => !prevFormData.cities.includes(city)
+          ),
+        ],
+      }));
+      console.log(formData.cities);
+    } else {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value,
+      }));
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      // Send POST request to /api/listing endpoint with formData
+      const response = await axios.post(
+        `${process.env.BACKEND_URL}/api/listing `,
+        formData
+      );
+      console.log(response.data); // Handle response from server
+      // Optionally, you can reset the form data after successful submission
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Handle error
+    }
+  };
   return (
-        <section className=" login-reg">
+    <section>
+    <div className="ad-com">
+      <div className="ad-dash leftpadd">
+        <div className="login-reg">
           <div className="container">
-            <div className="row">
-              <div className="add-list-ste">
-                <div className="add-list-ste-inn">
-                  <ul>
-                    <li>
-                      <Link href="/account/add-listing-step-1" className="act">
-                        {" "}
-                        <span>Step 1</span>
-                        <b>Basic Info</b>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/account/add-listing-step-2">
-                        {" "}
-                        <span>Step 2</span>
-                        <b>Services</b>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/account/add-listing-step-3">
-                        {" "}
-                        <span>Step 3</span>
-                        <b>offers</b>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/account/add-listing-step-4">
-                        {" "}
-                        <span>Step 4</span>
-                        <b>map</b>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/account/add-listing-step-5">
-                        {" "}
-                        <span>Step 5</span>
-                        <b>Other</b>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/account/add-listing-step-6">
-                        {" "}
-                        <span>Step 6</span>
-                        <b>done</b>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="login-main add-list">
-                <div className="log-bor">&nbsp;</div>{" "}
-                <span className="steps">Step 1</span>
-                <div className="log">
-                  <div className="login">
-                    <h4>Listing Details</h4>
-                    <form
-                      action="add-listing-step-2"
-                      className="listing_form_1"
-                      id="listing_form_1"
-                      name="listing_form_1"
-                      method="post"
-                      encType="multipart/form-data"
-                    >
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <input
-                              id="listing_name"
-                              name="listing_name"
-                              type="text"
-                              required="required"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Listing Name*"
-                            />
+          <form onSubmit={handleSubmit}
+              className="listing_form"
+              id="listing_form"
+              name="listing_form">
+                        <div className="row">
+                          <div className="login-main add-list posr">
+                            <div className="log-bor">&nbsp;</div>
+                            <span className="udb-inst">step 1</span>
+                            <div className="log log-1">
+                              <div className="login">
+                                <h4>Listing Details</h4>
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <input
+                                        id="listing_name"
+                                        value={formData.listing_name}
+                                        onChange={handleInputChange}
+                                        name="listing_name"
+                                        type="text"
+                                        required="required"
+                                        className="form-control"
+                                        placeholder="Listing name *"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="text"
+                                        value={formData.phone_number}
+                                        onChange={handleInputChange}
+                                        name="phone_number"
+                                        className="form-control"
+                                        placeholder="Phone number"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="text"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        name="email"
+                                        className="form-control"
+                                        placeholder="Email id"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <input
+                                        type="text"
+                                        value={formData.whatsapp_number}
+                                        onChange={handleInputChange}
+                                        name="whatsapp_number"
+                                        className="form-control"
+                                        placeholder="Whatsapp Number"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <input
+                                        type="text"
+                                        value={formData.website}
+                                        onChange={handleInputChange}
+                                        name="website"
+                                        className="form-control"
+                                        placeholder="Webiste(www.rn53themes.net)"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <input
+                                        type="text"
+                                        value={formData.shop_address}
+                                        onChange={handleInputChange}
+                                        name="shop_address"
+                                        required="required"
+                                        className="form-control"
+                                        placeholder="Shop address"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="text"
+                                        name="listing_lat"
+                                        className="form-control"
+                                        placeholder="Latitude i.e 40.730610"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="text"
+                                        name="listing_lng"
+                                        className="form-control"
+                                        placeholder="Longitude i.e -73.935242"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                              <Location_Filter />
+                                
+                                </div>
+                                {/*FILED END*/}
+                              
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <textarea
+                                        value={formData.listing_detail}
+                                        onChange={handleInputChange}
+                                        className="form-control"
+                                        id="listing_description"
+                                        name="listing_detail"
+                                        placeholder="Details about your listing"
+                                        defaultValue={""}
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row px-4">
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Choose profile image</label>
+                                      <input
+                                        type="file"
+                                        name="profile_image"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Choose cover image</label>
+                                      <input
+                                        type="file"
+                                        name="cover_image"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <textarea
+                                        value={formData.service_location}
+                                        onChange={handleInputChange}
+                                        className="form-control"
+                                        id="service_locations"
+                                        name="service_location"
+                                        placeholder="Enter your service locations... 
+        (i.e) London, Dallas, Wall Street, Opera House"
+                                        defaultValue={""}
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                              </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                          <div className="login-main add-list add-list-ser">
+                            <div className="log-bor">&nbsp;</div>
+                            <span className="steps">Step 2</span>
+                            <div className="log">
+                              <div className="login">
+                                <h4>Services provide</h4>
+                                <span
+                                  className="add-list-add-btn lis-ser-add-btn"
+                                  title="add new offer"
+                                >
+                                  +
+                                </span>
+                                <span
+                                  className="add-list-rem-btn lis-ser-rem-btn"
+                                  title="remove offer"
+                                >
+                                  -
+                                </span>
+                                <ul>
+                                  <li>
+                                    {/*FILED START*/}
+                                    <div className="row">
+                                      <div className="col-md-6">
+                                        <div className="form-group">
+                                          <label>Service name:</label>
+                                          <input
+                                            type="text"
+                                            onChange={handleInputChange}
+                                            value={formData.service_name}
+                                            name="service_name"
+                                            className="form-control"
+                                            placeholder="Ex: Plumbile"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="col-md-6">
+                                        <div className="form-group">
+                                          <label>Choose profile image</label>
+                                          <input
+                                            type="file"
+                                            name="service_image[]"
+                                            className="form-control"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/*FILED END*/}
+                                  </li>
+                                  <li>
+                                    {/*FILED START*/}
+                                    <div className="row">
+                                      <div className="col-md-6">
+                                        <div className="form-group">
+                                          <label>Service name:</label>
+                                          <input
+                                            type="text"
+                                            name="service_id[]"
+                                            className="form-control"
+                                            placeholder="Ex: bike service"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="col-md-6">
+                                        <div className="form-group">
+                                          <label>Choose profile image</label>
+                                          <input
+                                            type="file"
+                                            name="service_image[]"
+                                            className="form-control"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/*FILED END*/}
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="listing_mobile"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Phone number"
-                            />
+                        <div className="row">
+                          <div className="login-main add-list">
+                            <div className="log-bor">&nbsp;</div>
+                            <span className="steps">Step 3</span>
+                            <div className="log">
+                              <div className="login add-list-off">
+                                <h4>Special offers</h4>
+                                <span
+                                  className="add-list-add-btn lis-add-off"
+                                  title="add new offer"
+                                >
+                                  +
+                                </span>
+                                <span
+                                  className="add-list-rem-btn lis-add-rem"
+                                  title="remove offer"
+                                >
+                                  -
+                                </span>
+                                <ul>
+                                  <li>
+                                    {/*FILED START*/}
+                                    <div className="row">
+                                      <div className="col-md-6">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="service_1_name[]"
+                                            className="form-control"
+                                            placeholder="Offer name *"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="col-md-6">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="service_1_price[]"
+                                            className="form-control"
+                                            onkeypress="return isNumber(event)"
+                                            placeholder="Price"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/*FILED END*/}
+                                    {/*FILED START*/}
+                                    <div className="row">
+                                      <div className="col-md-12">
+                                        <div className="form-group">
+                                          <textarea
+                                            className="form-control"
+                                            name="service_1_detail[]"
+                                            placeholder="Details about this offer"
+                                            defaultValue={""}
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/*FILED END*/}
+                                    {/*FILED START*/}
+                                    <div className="row">
+                                      <div className="col-md-12">
+                                        <div className="form-group">
+                                          <label>Choose offer image</label>
+                                          <input
+                                            type="file"
+                                            name="service_1_image[]"
+                                            className="form-control"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/*FILED END*/}
+                                    {/*FILED START*/}
+                                    <div className="row">
+                                      <div className="col-md-12">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="service_1_view_more[]"
+                                            className="form-control"
+                                            placeholder="View More Link"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/*FILED END*/}
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="listing_email"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Email Id"
-                            />
+                        <div className="row">
+                          <div className="login-main add-list">
+                            <div className="log-bor">&nbsp;</div>
+                            <span className="steps">Step 4</span>
+                            <div className="log add-list-map">
+                              <div className="login add-list-map">
+                                <h4>Video Gallery</h4>
+                                <ul>
+                                  <span
+                                    className="add-list-add-btn lis-add-oadvideo"
+                                    title="add new video"
+                                  >
+                                    +
+                                  </span>
+                                  <span
+                                    className="add-list-rem-btn lis-add-orevideo"
+                                    title="remove video"
+                                  >
+                                    -
+                                  </span>
+                                  <li>
+                                    <div className="row">
+                                      <div className="col-md-12">
+                                        <div className="form-group">
+                                          <textarea
+                                            id="listing_video"
+                                            value={formData.youtubelink}
+                                            onChange={handleInputChange}
+                                            name="youtubelink"
+                                            className="form-control"
+                                            placeholder="Paste Your Youtube Url here"
+                                            defaultValue={""}
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                                <h4>Map and 360 view</h4>
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <textarea
+                                        value={formData.map_url}
+                                        className="form-control"
+                                        name="map_url"
+                                        placeholder="Shop location"
+                                        defaultValue={""}
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <textarea
+                                        className="form-control"
+                                        name="360_view"
+                                        placeholder="360 view"
+                                        defaultValue={""}
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                <h4 className="pt30">Photo gallery</h4>
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="file"
+                                        name="gallery_image[]"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="file"
+                                        name="gallery_image[]"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="file"
+                                        name="gallery_image[]"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="file"
+                                        name="gallery_image[]"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                                {/*FILED START*/}
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="file"
+                                        name="gallery_image[]"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <input
+                                        type="file"
+                                        name="gallery_image[]"
+                                        className="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="listing_whatsapp"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Whatsapp Number (e.g. +919876543210)"
-                            />
+                        <div className="row">
+                          <div className="login-main add-list">
+                            <div className="log-bor">&nbsp;</div>
+                            <span className="steps">Step 5</span>
+                            <div className="log">
+                              <div className="login add-lis-oth">
+                                <h4>Other informations</h4>
+                                <span
+                                  className="add-list-add-btn lis-add-oad"
+                                  title="add new offer"
+                                >
+                                  +
+                                </span>
+                                <span
+                                  className="add-list-rem-btn lis-add-ore"
+                                  title="remove offer"
+                                >
+                                  -
+                                </span>
+                                <ul>
+                                  <li>
+                                    {/*FILED START*/}
+                                    <div className="row">
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_question[]"
+                                            className="form-control"
+                                            placeholder="Experience"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="col-md-2">
+                                        <div className="form-group">
+                                          <i className="material-icons">
+                                            arrow_forward
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_answer[]"
+                                            className="form-control"
+                                            placeholder="20 years"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/*FILED END*/}
+                                  </li>
+                                  {/*FILED START*/}
+                                  <li>
+                                    <div className="row">
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_question[]"
+                                            className="form-control"
+                                            placeholder="Parking"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="col-md-2">
+                                        <div className="form-group">
+                                          <i className="material-icons">
+                                            arrow_forward
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_answer[]"
+                                            className="form-control"
+                                            placeholder="yes"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  {/*FILED END*/}
+                                  {/*FILED START*/}
+                                  <li>
+                                    <div className="row">
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_question[]"
+                                            className="form-control"
+                                            placeholder="Smoking"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="col-md-2">
+                                        <div className="form-group">
+                                          <i className="material-icons">
+                                            arrow_forward
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_answer[]"
+                                            className="form-control"
+                                            placeholder="yes"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  {/*FILED END*/}
+                                  {/*FILED START*/}
+                                  <li>
+                                    <div className="row">
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_question[]"
+                                            className="form-control"
+                                            placeholder="Take Out"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="col-md-2">
+                                        <div className="form-group">
+                                          <i className="material-icons">
+                                            arrow_forward
+                                          </i>
+                                        </div>
+                                      </div>
+                                      <div className="col-md-5">
+                                        <div className="form-group">
+                                          <input
+                                            type="text"
+                                            name="listing_info_answer[]"
+                                            className="form-control"
+                                            placeholder="yes"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  {/*FILED END*/}
+                                </ul>
+                                {/*FILED START*/}
+                                <div className="row">
+                                  {/*                                        <div class="col-md-6">*/}
+                                  {/*                                            <button type="submit" class="btn btn-primary">Previous</button>*/}
+                                  {/*                                        </div>*/}
+                                  <div className="col-md-12">
+                                    <button
+                                      type="submit"
+                                      name="listing_submit"
+                                      className="btn btn-primary"
+                                    >
+                                      Submit Listing
+                                    </button>
+                                  </div>
+                                  <div className="col-md-12">
+                                    <a href="profile.html" className="skip">
+                                      Go to Dashboard &gt;&gt;
+                                    </a>
+                                  </div>
+                                </div>
+                                {/*FILED END*/}
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="listing_website"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Website(www.bizdir.in)"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="listing_address"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Shop address"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="listing_lat"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Latitude i.e 40.730610"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="listing_lng"
-                              className="form-control"
-                              defaultValue=""
-                              placeholder="Longitude i.e -73.935242"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <select
-                              onchange="getCities(this.value);"
-                              name="country_id"
-                              required="required"
-                              id="country_id"
-                              className="chosen-select form-control"
-                            >
-                              <option value="">Select your Country</option>
-                              <option value={101}>India</option>
-                              <option value={230}>United Kingdom</option>
-                              <option value={231}>United States</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      {/*                            <div className="row">*/}
-                      {/*                                <div className="col-md-12">*/}
-                      {/*                                    <div className="form-group">*/}
-                      {/*                                        <input id="select-city" name="city_id" required="required" type="text"*/}
-                      {/*                                               value="*/}
-                      {/*"*/}
-                      {/*                                               className="autocomplete form-control" placeholder="City name">*/}
-                      {/*                                    </div>*/}
-                      {/*                                </div>*/}
-                      {/*                            </div>*/}
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <select
-                              data-placeholder="Select your Cities"
-                              name="city_id[]"
-                              id="city_id"
-                              multiple=""
-                              required="required"
-                              className="chosen-select form-control"
-                            >
-                              <option value="">Select your Cities</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <select
-                              onchange="getSubCategory(this.value);"
-                              name="category_id"
-                              id="category_id"
-                              className="chosen-select form-control"
-                            >
-                              <option value="">Select Category</option>
-                              <option value={19}>Wedding halls</option>
-                              <option value={18}>Hotel &amp; Food</option>
-                              <option value={17}>Pet shop</option>
-                              <option value={16}>Digital Products</option>
-                              <option value={15}>Spa and Facial</option>
-                              <option value={10}>Real Estate</option>
-                              <option value={8}>Sports</option>
-                              <option value={7}>Education</option>
-                              <option value={6}>Electricals</option>
-                              <option value={5}>Automobiles</option>
-                              <option value={3}>Transportation</option>
-                              <option value={2}>Hospitals</option>
-                              <option value={1}>Hotels And Resorts</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <select
-                              data-placeholder="Select Sub Category"
-                              name="sub_category_id[]"
-                              id="sub_category_id"
-                              multiple=""
-                              className="chosen-select form-control"
-                            >
-                              <option value="">Select Sub Category</option>
-                              {/*                                            */}
-                              {/*                                                <option */}
-                              {/*                                                    value="*/}
-                              {/*">*/}
-                              {/*</option>*/}
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <textarea
-                              className="form-control"
-                              id="listing_description"
-                              name="listing_description"
-                              placeholder="Details about your listing"
-                              defaultValue={""}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label>Choose profile image</label>
-                            <input
-                              type="file"
-                              required="required"
-                              name="profile_image"
-                              className="form-control"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <label>Choose cover image</label>
-                            <input
-                              type="file"
-                              required="required"
-                              name="cover_image"
-                              className="form-control"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      {/*FILED START*/}
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <textarea
-                              className="form-control"
-                              id="service_locations"
-                              name="service_locations"
-                              placeholder="Enter your service locations... 
-(i.e) London, Dallas, Wall Street, Opera House"
-                              defaultValue={""}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      {/*FILED END*/}
-                      <button
-                        type="submit"
-                        name="listing_submit"
-                        className="btn btn-primary"
-                      >
-                        Next
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
       )
 }
 
