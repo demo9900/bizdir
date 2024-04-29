@@ -9,7 +9,7 @@ import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Headertwo from "@/components/Headertwo"
 import {  toast } from "react-toastify";
 import Footer from '@/components/Footer'
-const page = () => {
+function Page() {
   const router = useRouter()
   const [formData, setFormData] = useState({
     email: "",
@@ -61,7 +61,7 @@ const page = () => {
 
 
   return (
-    <Suspense>
+    <>
      <section>
 		<div className="str">
 			<div>
@@ -224,9 +224,13 @@ const page = () => {
   </section>
 
 <Footer/>
-  </Suspense>
+  </>
 
   )
 }
 
-export default page
+export function Login(){
+  <Suspense>
+    <Page />
+  </Suspense>
+}
