@@ -2,6 +2,7 @@
 import React,{useState,useContext} from 'react'
 import Link from 'next/link'
 import axios from 'axios';
+import { Suspense } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Headertwo from "@/components/Headertwo"
 import {  toast } from "react-toastify";
@@ -48,6 +49,7 @@ console.log(userEmail)
 
   return (
     <>
+    <Suspense>
      <section>
 		<div className="str">
 			<div>
@@ -232,6 +234,7 @@ console.log(userEmail)
   </section>
 
 <Footer/>
+</Suspense>
     </>
 
   )

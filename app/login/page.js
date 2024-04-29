@@ -2,6 +2,7 @@
 import React,{useState,useContext} from 'react'
 import Link from 'next/link'
 import { signIn } from 'next-auth/react'
+import { Suspense } from 'react'
 import axios  from 'axios'
 import { useEffect } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
@@ -61,6 +62,7 @@ const page = () => {
 
   return (
     <>
+    <Suspense>
      <section>
 		<div className="str">
 			<div>
@@ -223,6 +225,7 @@ const page = () => {
   </section>
 
 <Footer/>
+</Suspense>
     </>
 
   )
