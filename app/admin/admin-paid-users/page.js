@@ -33,7 +33,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt />Directory Finder<span>a@gmail.com</span> <span>Join: 07, Dec 2019</span>
+                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt=""/>Directory Finder<span>a@gmail.com</span> <span>Join: 07, Dec 2019</span>
                 </td>
                 <td>USER035 </td>
                 <td><span className="db-list-rat">Premium Plus</span></td>

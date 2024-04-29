@@ -28,7 +28,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/listings/36458bean.jpg" />test vikiiiyi <span>20, Feb 2021</span></td>
+                <td><img src="../images/listings/36458bean.jpg" alt="" />test vikiiiyi <span>20, Feb 2021</span></td>
                 <td><span className="db-list-rat">20, Feb 2021</span></td>
                 <td><span className="db-list-rat">20, Feb 2021</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/rn53-themes" className="db-list-ststus" target="_blank">Rn53 Themes</a></td>
@@ -39,7 +39,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>2</td>
-                <td><img src="../images/listings/89549bean.jpg" />test vikiiiii <span>20, Feb 2021</span></td>
+                <td><img src="../images/listings/89549bean.jpg" alt="" />test vikiiiii <span>20, Feb 2021</span></td>
                 <td><span className="db-list-rat">20, Feb 2021</span></td>
                 <td><span className="db-list-rat">20, Feb 2021</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/rn53-themes" className="db-list-ststus" target="_blank">Rn53 Themes</a></td>
@@ -50,7 +50,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td><img src="../images/listings/28181houses-on-body-of-water-1724424.jpg" />111313213 <span>03, Oct 2020</span></td>
+                <td><img src="../images/listings/28181houses-on-body-of-water-1724424.jpg" alt="" />111313213 <span>03, Oct 2020</span></td>
                 <td><span className="db-list-rat">03, Oct 2020</span></td>
                 <td><span className="db-list-rat">03, Jan 2021</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/rn53-themes" className="db-list-ststus" target="_blank">Rn53 Themes</a></td>
@@ -61,7 +61,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>4</td>
-                <td><img src="../images/listings/522441.jpg" />ewft <span>22, Sep 2020</span></td>
+                <td><img src="../images/listings/522441.jpg" alt="" />ewft <span>22, Sep 2020</span></td>
                 <td><span className="db-list-rat">22, Sep 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/simarjit-bajwa" className="db-list-ststus" target="_blank">Simarjit Bajwa</a></td>
@@ -72,7 +72,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>5</td>
-                <td><img src="../images/listings/92033cuyahoga-valley-national-park-1.jpg" />shoes <span>22, Sep 2020</span></td>
+                <td><img src="../images/listings/92033cuyahoga-valley-national-park-1.jpg" alt="" />shoes <span>22, Sep 2020</span></td>
                 <td><span className="db-list-rat">22, Sep 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/rn53-themes" className="db-list-ststus" target="_blank">Rn53 Themes</a></td>
@@ -83,7 +83,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>6</td>
-                <td><img src="../images/listings/55714screenshot_20200911_175508_com.android.chrome.jpg" />RK Medical Store <span>15, Sep 2020</span></td>
+                <td><img src="../images/listings/55714screenshot_20200911_175508_com.android.chrome.jpg" alt="" />RK Medical Store <span>15, Sep 2020</span></td>
                 <td><span className="db-list-rat">15, Sep 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/srikanth" className="db-list-ststus" target="_blank">Srikanth</a></td>
@@ -94,7 +94,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>7</td>
-                <td><img src="../images/listings/74367untitled.png" />fgfd <span>13, Sep 2020</span></td>
+                <td><img src="../images/listings/74367untitled.png" alt="" />fgfd <span>13, Sep 2020</span></td>
                 <td><span className="db-list-rat">13, Sep 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/mat" className="db-list-ststus" target="_blank">mat</a></td>
@@ -105,7 +105,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>8</td>
-                <td><img src="../images/listings/74367untitled.png" />pizza admin <span>02, Sep 2020</span></td>
+                <td><img src="../images/listings/74367untitled.png" alt="" />pizza admin <span>02, Sep 2020</span></td>
                 <td><span className="db-list-rat">02, Sep 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/kaan" className="db-list-ststus" target="_blank">Kaan</a></td>
@@ -116,7 +116,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>9</td>
-                <td><img src="../images/listings/74367untitled.png" />pizza <span>02, Sep 2020</span></td>
+                <td><img src="../images/listings/74367untitled.png" alt="" />pizza <span>02, Sep 2020</span></td>
                 <td><span className="db-list-rat">02, Sep 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/kvin" className="db-list-ststus" target="_blank">kvin</a></td>
@@ -127,7 +127,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>10</td>
-                <td><img src="../images/listings/93247timeline_25630708_134134.jpg" />???? <span>30, Aug 2020</span></td>
+                <td><img src="../images/listings/93247timeline_25630708_134134.jpg" alt="" />???? <span>30, Aug 2020</span></td>
                 <td><span className="db-list-rat">30, Aug 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/yassine-ben-brahim" className="db-list-ststus" target="_blank">yassine ben brahim</a></td>
@@ -138,7 +138,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>11</td>
-                <td><img src="../images/listings/28229mc.jpeg" />Hari Mohan <span>30, Aug 2020</span></td>
+                <td><img src="../images/listings/28229mc.jpeg" alt="" />Hari Mohan <span>30, Aug 2020</span></td>
                 <td><span className="db-list-rat">30, Aug 2020</span></td>
                 <td><span className="db-list-rat">08, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -149,7 +149,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>12</td>
-                <td><img src="../images/listings/28229mc.jpeg" />test wini <span>20, Aug 2020</span></td>
+                <td><img src="../images/listings/28229mc.jpeg" alt="" />test wini <span>20, Aug 2020</span></td>
                 <td><span className="db-list-rat">20, Aug 2020</span></td>
                 <td><span className="db-list-rat">30, Aug 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -160,7 +160,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>13</td>
-                <td><img src="../images/listings/95378botoks1.jpg" />test <span>20, Aug 2020</span></td>
+                <td><img src="../images/listings/95378botoks1.jpg" alt="" />test <span>20, Aug 2020</span></td>
                 <td><span className="db-list-rat">20, Aug 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/ufuk-g--ven--" className="db-list-ststus" target="_blank">UFUK GÜVENÇ</a></td>
@@ -171,7 +171,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>14</td>
-                <td><img src="../images/listings/14295auto.jpeg" />sudesh <span>18, Aug 2020</span></td>
+                <td><img src="../images/listings/14295auto.jpeg" alt="" />sudesh <span>18, Aug 2020</span></td>
                 <td><span className="db-list-rat">18, Aug 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -182,7 +182,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>15</td>
-                <td><img src="../images/listings/4156324691logo-b.png" />test <span>16, Aug 2020</span></td>
+                <td><img src="../images/listings/4156324691logo-b.png" alt="" />test <span>16, Aug 2020</span></td>
                 <td><span className="db-list-rat">16, Aug 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -193,7 +193,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>16</td>
-                <td><img src="../images/listings/88731campaign-banner-i-toy.jpg" />12it <span>10, Aug 2020</span></td>
+                <td><img src="../images/listings/88731campaign-banner-i-toy.jpg" alt="" />12it <span>10, Aug 2020</span></td>
                 <td><span className="db-list-rat">10, Aug 2020</span></td>
                 <td><span className="db-list-rat">10, Aug 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -204,7 +204,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>17</td>
-                <td><img src="../images/listings/36300flag-india-.jpg" />gf <span>10, Aug 2020</span></td>
+                <td><img src="../images/listings/36300flag-india-.jpg" alt="" />gf <span>10, Aug 2020</span></td>
                 <td><span className="db-list-rat">10, Aug 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/john1" className="db-list-ststus" target="_blank">John</a></td>
@@ -215,7 +215,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>18</td>
-                <td><img src="../images/listings/14295auto.jpeg" />g <span>05, Aug 2020</span></td>
+                <td><img src="../images/listings/14295auto.jpeg" alt="" />g <span>05, Aug 2020</span></td>
                 <td><span className="db-list-rat">05, Aug 2020</span></td>
                 <td><span className="db-list-rat">23, Sep 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -226,7 +226,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>19</td>
-                <td><img src="../images/listings/54420img_4088.jpg" />theglobalmodel <span>24, Jul 2020</span></td>
+                <td><img src="../images/listings/54420img_4088.jpg" alt="" />theglobalmodel <span>24, Jul 2020</span></td>
                 <td><span className="db-list-rat">24, Jul 2020</span></td>
                 <td><span className="db-list-rat">24, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/kailash-chandna" className="db-list-ststus" target="_blank">KAILASH CHANDNA</a></td>
@@ -237,7 +237,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>20</td>
-                <td><img src="../images/listings/383525670765e-b536-4c62-b499-82174e2874eb.jpg" />eeeeeee <span>24, Jul 2020</span></td>
+                <td><img src="../images/listings/383525670765e-b536-4c62-b499-82174e2874eb.jpg" alt="" />eeeeeee <span>24, Jul 2020</span></td>
                 <td><span className="db-list-rat">24, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -248,7 +248,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>21</td>
-                <td><img src="../images/listings/54616kissclipart-advertising-clipart-logo-classified-advertising-59762386f91d2d59.png" />ABC <span>24, Jul 2020</span></td>
+                <td><img src="../images/listings/54616kissclipart-advertising-clipart-logo-classified-advertising-59762386f91d2d59.png" alt="" />ABC <span>24, Jul 2020</span></td>
                 <td><span className="db-list-rat">24, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -259,7 +259,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>22</td>
-                <td><img src="../images/listings/52701screenshot-2020-07-20-at-22.41.49.png" />I Phone 7 Plus <span>22, Jul 2020</span></td>
+                <td><img src="../images/listings/52701screenshot-2020-07-20-at-22.41.49.png" alt="" />I Phone 7 Plus <span>22, Jul 2020</span></td>
                 <td><span className="db-list-rat">22, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -270,7 +270,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>23</td>
-                <td><img src="../images/listings/62427imagedetail_6b00dd74-a774-4595-bfa4-ec281d7af54c_large.jpg" />Gizzard  <span>22, Jul 2020</span></td>
+                <td><img src="../images/listings/62427imagedetail_6b00dd74-a774-4595-bfa4-ec281d7af54c_large.jpg" alt="" />Gizzard  <span>22, Jul 2020</span></td>
                 <td><span className="db-list-rat">22, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -281,7 +281,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>24</td>
-                <td><img src="../images/listings/453905ba4f53e584111537537342.jpeg" />Test From South Africa <span>21, Jul 2020</span></td>
+                <td><img src="../images/listings/453905ba4f53e584111537537342.jpeg" alt="" />Test From South Africa <span>21, Jul 2020</span></td>
                 <td><span className="db-list-rat">21, Jul 2020</span></td>
                 <td><span className="db-list-rat">22, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -292,7 +292,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>25</td>
-                <td><img src="../images/listings/385982.jpg" />This <span>20, Jul 2020</span></td>
+                <td><img src="../images/listings/385982.jpg" alt="" />This <span>20, Jul 2020</span></td>
                 <td><span className="db-list-rat">20, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -303,7 +303,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>26</td>
-                <td><img src="../images/listings/5299investing-strategy-news-favicon-better.png" />lskdfj; asjkf <span>17, Jul 2020</span></td>
+                <td><img src="../images/listings/5299investing-strategy-news-favicon-better.png" alt="" />lskdfj; asjkf <span>17, Jul 2020</span></td>
                 <td><span className="db-list-rat">17, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -314,7 +314,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>27</td>
-                <td><img src="../images/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg" />hau hau <span>15, Jul 2020</span></td>
+                <td><img src="../images/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg" alt="" />hau hau <span>15, Jul 2020</span></td>
                 <td><span className="db-list-rat">15, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -325,7 +325,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>28</td>
-                <td><img src="../images/listings/314877061b168-ca0f-4198-9b70-16cad218b548.jpeg" />222 <span>15, Jul 2020</span></td>
+                <td><img src="../images/listings/314877061b168-ca0f-4198-9b70-16cad218b548.jpeg" alt="" />222 <span>15, Jul 2020</span></td>
                 <td><span className="db-list-rat">15, Jul 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -336,7 +336,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>29</td>
-                <td><img src="../images/listings/830975ec5077e45496.jpeg" />sgaeg <span>10, Jul 2020</span></td>
+                <td><img src="../images/listings/830975ec5077e45496.jpeg" alt="" />sgaeg <span>10, Jul 2020</span></td>
                 <td><span className="db-list-rat">10, Jul 2020</span></td>
                 <td><span className="db-list-rat">10, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -347,7 +347,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>30</td>
-                <td><img src="../images/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg" />kkk <span>13, Jun 2020</span></td>
+                <td><img src="../images/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg" alt="" />kkk <span>13, Jun 2020</span></td>
                 <td><span className="db-list-rat">13, Jun 2020</span></td>
                 <td><span className="db-list-rat">28, Jul 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -358,7 +358,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>31</td>
-                <td><img src="../images/listings/33690713t5bmnwdl._sl1500_.jpg" />fdg <span>12, Jun 2020</span></td>
+                <td><img src="../images/listings/33690713t5bmnwdl._sl1500_.jpg" alt="" />fdg <span>12, Jun 2020</span></td>
                 <td><span className="db-list-rat">12, Jun 2020</span></td>
                 <td><span className="db-list-rat">13, Jun 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -369,7 +369,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>32</td>
-                <td><img src="../images/listings/93166alzahra2.jpg" />ooo <span>12, Jun 2020</span></td>
+                <td><img src="../images/listings/93166alzahra2.jpg" alt="" />ooo <span>12, Jun 2020</span></td>
                 <td><span className="db-list-rat">12, Jun 2020</span></td>
                 <td><span className="db-list-rat">13, Jun 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -380,7 +380,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>33</td>
-                <td><img src="../images/listings/78141828643.png" />promart <span>03, Jun 2020</span></td>
+                <td><img src="../images/listings/78141828643.png" alt="" />promart <span>03, Jun 2020</span></td>
                 <td><span className="db-list-rat">03, Jun 2020</span></td>
                 <td><span className="db-list-rat">03, Jun 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/johnny" className="db-list-ststus" target="_blank">johnny</a></td>
@@ -391,7 +391,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>34</td>
-                <td><img src="../images/listings/93166alzahra2.jpg" />eee <span>03, Jun 2020</span></td>
+                <td><img src="../images/listings/93166alzahra2.jpg" alt="" />eee <span>03, Jun 2020</span></td>
                 <td><span className="db-list-rat">03, Jun 2020</span></td>
                 <td><span className="db-list-rat">08, Aug 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -402,7 +402,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>35</td>
-                <td><img src="../images/listings/603895ec5077e45496.jpeg" />dasfads <span>23, May 2020</span></td>
+                <td><img src="../images/listings/603895ec5077e45496.jpeg" alt="" />dasfads <span>23, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -413,7 +413,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>36</td>
-                <td><img src="../images/listings/77441jonathan-petersson-aru18gpf6qq-unsplash.jpg" />Name <span>23, May 2020</span></td>
+                <td><img src="../images/listings/77441jonathan-petersson-aru18gpf6qq-unsplash.jpg" alt="" />Name <span>23, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -424,7 +424,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>37</td>
-                <td><img src="../images/listings/48413bizbooktry.png" />Sri Chaitanya Techno School <span>22, May 2020</span></td>
+                <td><img src="../images/listings/48413bizbooktry.png" alt="" />Sri Chaitanya Techno School <span>22, May 2020</span></td>
                 <td><span className="db-list-rat">22, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -435,7 +435,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>38</td>
-                <td><img src="../images/listings/74540183d32b8b006b33429eba61505bbf79f.jpg" />test2 <span>22, May 2020</span></td>
+                <td><img src="../images/listings/74540183d32b8b006b33429eba61505bbf79f.jpg" alt="" />test2 <span>22, May 2020</span></td>
                 <td><span className="db-list-rat">22, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -446,7 +446,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>39</td>
-                <td><img src="../images/listings/45985fb_img_1583506764678.jpg" />Magic Secure <span>20, May 2020</span></td>
+                <td><img src="../images/listings/45985fb_img_1583506764678.jpg" alt="" />Magic Secure <span>20, May 2020</span></td>
                 <td><span className="db-list-rat">20, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -457,7 +457,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>40</td>
-                <td><img src="../images/listings/87423untitled.png" />54754 <span>19, May 2020</span></td>
+                <td><img src="../images/listings/87423untitled.png" alt="" />54754 <span>19, May 2020</span></td>
                 <td><span className="db-list-rat">19, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -468,7 +468,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>41</td>
-                <td><img src="../images/listings/56533whatsapp-image-2019-06-19-at-06.32.16.jpeg" />Xyz <span>18, May 2020</span></td>
+                <td><img src="../images/listings/56533whatsapp-image-2019-06-19-at-06.32.16.jpeg" alt="" />Xyz <span>18, May 2020</span></td>
                 <td><span className="db-list-rat">18, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -479,7 +479,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>42</td>
-                <td><img src="../images/listings/3611671ajrgw4t4l._sl1500_.jpg" />n,n <span>18, May 2020</span></td>
+                <td><img src="../images/listings/3611671ajrgw4t4l._sl1500_.jpg" alt="" />n,n <span>18, May 2020</span></td>
                 <td><span className="db-list-rat">18, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -490,7 +490,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>43</td>
-                <td><img src="../images/listings/3611671ajrgw4t4l._sl1500_.jpg" />Magic Secure <span>17, May 2020</span></td>
+                <td><img src="../images/listings/3611671ajrgw4t4l._sl1500_.jpg" alt="" />Magic Secure <span>17, May 2020</span></td>
                 <td><span className="db-list-rat">17, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -501,7 +501,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>44</td>
-                <td><img src="../images/listings/9838874589265_109792690500281_619333201751441408_o.jpg" />ddfgsd <span>17, May 2020</span></td>
+                <td><img src="../images/listings/9838874589265_109792690500281_619333201751441408_o.jpg" alt="" />ddfgsd <span>17, May 2020</span></td>
                 <td><span className="db-list-rat">17, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -512,7 +512,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>45</td>
-                <td><img src="../images/listings/48413bizbooktry.png" />New Business <span>16, May 2020</span></td>
+                <td><img src="../images/listings/48413bizbooktry.png" alt="" />New Business <span>16, May 2020</span></td>
                 <td><span className="db-list-rat">16, May 2020</span></td>
                 <td><span className="db-list-rat">23, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -523,7 +523,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>46</td>
-                <td><img src="../images/listings/85391ad2.png" />Ruscommedia <span>10, May 2020</span></td>
+                <td><img src="../images/listings/85391ad2.png" alt="" />Ruscommedia <span>10, May 2020</span></td>
                 <td><span className="db-list-rat">10, May 2020</span></td>
                 <td><span className="db-list-rat">10, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/oabale" className="db-list-ststus" target="_blank">Oabale</a></td>
@@ -534,7 +534,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>47</td>
-                <td><img src="../images/listings/89146us-map.jpg" />Test Listing Biz <span>08, May 2020</span></td>
+                <td><img src="../images/listings/89146us-map.jpg" alt="" />Test Listing Biz <span>08, May 2020</span></td>
                 <td><span className="db-list-rat">08, May 2020</span></td>
                 <td><span className="db-list-rat">10, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -545,7 +545,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>48</td>
-                <td><img src="../images/listings/63792woman-lying-on-blue-textile-3997993.jpg" />Test Listening <span>03, May 2020</span></td>
+                <td><img src="../images/listings/63792woman-lying-on-blue-textile-3997993.jpg" alt="" />Test Listening <span>03, May 2020</span></td>
                 <td><span className="db-list-rat">03, May 2020</span></td>
                 <td><span className="db-list-rat">03, May 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -556,7 +556,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>49</td>
-                <td><img src="../images/listings/72957000005.jpg" />Test photo <span>29, Apr 2020</span></td>
+                <td><img src="../images/listings/72957000005.jpg" alt="" />Test photo <span>29, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -567,7 +567,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>50</td>
-                <td><img src="../images/listings/45640main-qimg-e087be79d6f151781c3d418c5810be87.jpg" />Testing <span>29, Apr 2020</span></td>
+                <td><img src="../images/listings/45640main-qimg-e087be79d6f151781c3d418c5810be87.jpg" alt="" />Testing <span>29, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -578,7 +578,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>51</td>
-                <td><img src="../images/listings/479314.png--copy.png" />kmk <span>28, Apr 2020</span></td>
+                <td><img src="../images/listings/479314.png--copy.png" alt="" />kmk <span>28, Apr 2020</span></td>
                 <td><span className="db-list-rat">28, Apr 2020</span></td>
                 <td><span className="db-list-rat">28, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -589,7 +589,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>52</td>
-                <td><img src="../images/listings/61769namasteyogaunichiralogo.jpg" />demo2 <span>26, Apr 2020</span></td>
+                <td><img src="../images/listings/61769namasteyogaunichiralogo.jpg" alt="" />demo2 <span>26, Apr 2020</span></td>
                 <td><span className="db-list-rat">26, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -600,7 +600,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>53</td>
-                <td><img src="../images/listings/46069iconfinder_ic_local_car_wash_48px_352495.png" />demo2 <span>26, Apr 2020</span></td>
+                <td><img src="../images/listings/46069iconfinder_ic_local_car_wash_48px_352495.png" alt="" />demo2 <span>26, Apr 2020</span></td>
                 <td><span className="db-list-rat">26, Apr 2020</span></td>
                 <td><span className="db-list-rat">26, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -611,7 +611,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>54</td>
-                <td><img src="../images/listings/23770starbucks=.png" />Starbucks Wahid <span>25, Apr 2020</span></td>
+                <td><img src="../images/listings/23770starbucks=.png" alt="" />Starbucks Wahid <span>25, Apr 2020</span></td>
                 <td><span className="db-list-rat">25, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/ahmet" className="db-list-ststus" target="_blank">ahmet</a></td>
@@ -622,7 +622,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>55</td>
-                <td><img src="../images/listings/46069iconfinder_ic_local_car_wash_48px_352495.png" />test <span>24, Apr 2020</span></td>
+                <td><img src="../images/listings/46069iconfinder_ic_local_car_wash_48px_352495.png" alt="" />test <span>24, Apr 2020</span></td>
                 <td><span className="db-list-rat">24, Apr 2020</span></td>
                 <td><span className="db-list-rat">26, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -633,7 +633,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>56</td>
-                <td><img src="../images/listings/46069iconfinder_ic_local_car_wash_48px_352495.png" />dasdsad <span>24, Apr 2020</span></td>
+                <td><img src="../images/listings/46069iconfinder_ic_local_car_wash_48px_352495.png" alt="" />dasdsad <span>24, Apr 2020</span></td>
                 <td><span className="db-list-rat">24, Apr 2020</span></td>
                 <td><span className="db-list-rat">26, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -644,7 +644,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>57</td>
-                <td><img src="../images/listings/32097photo-1494253109108-2e30c049369b.jpg" />Dr Saab <span>19, Apr 2020</span></td>
+                <td><img src="../images/listings/32097photo-1494253109108-2e30c049369b.jpg" alt="" />Dr Saab <span>19, Apr 2020</span></td>
                 <td><span className="db-list-rat">19, Apr 2020</span></td>
                 <td><span className="db-list-rat">19, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -655,7 +655,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>58</td>
-                <td><img src="../images/listings/32097photo-1494253109108-2e30c049369b.jpg" />Test <span>18, Apr 2020</span></td>
+                <td><img src="../images/listings/32097photo-1494253109108-2e30c049369b.jpg" alt="" />Test <span>18, Apr 2020</span></td>
                 <td><span className="db-list-rat">18, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/ramesh" className="db-list-ststus" target="_blank">Ramesh</a></td>
@@ -666,7 +666,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>59</td>
-                <td><img src="../images/listings/39876combo-offers-label-or-sticker-vector-22418508.jpg" />asdad <span>17, Apr 2020</span></td>
+                <td><img src="../images/listings/39876combo-offers-label-or-sticker-vector-22418508.jpg" alt="" />asdad <span>17, Apr 2020</span></td>
                 <td><span className="db-list-rat">17, Apr 2020</span></td>
                 <td><span className="db-list-rat">17, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -677,7 +677,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>60</td>
-                <td><img src="../images/listings/7336logo-sort.png" />dfgdg <span>16, Apr 2020</span></td>
+                <td><img src="../images/listings/7336logo-sort.png" alt="" />dfgdg <span>16, Apr 2020</span></td>
                 <td><span className="db-list-rat">16, Apr 2020</span></td>
                 <td><span className="db-list-rat">18, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -688,7 +688,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>61</td>
-                <td><img src="../images/listings/32097photo-1494253109108-2e30c049369b.jpg" />Property listing <span>15, Apr 2020</span></td>
+                <td><img src="../images/listings/32097photo-1494253109108-2e30c049369b.jpg" alt="" />Property listing <span>15, Apr 2020</span></td>
                 <td><span className="db-list-rat">15, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -699,7 +699,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>62</td>
-                <td><img src="../images/listings/96970avatar-01.png" />cxzb <span>12, Apr 2020</span></td>
+                <td><img src="../images/listings/96970avatar-01.png" alt="" />cxzb <span>12, Apr 2020</span></td>
                 <td><span className="db-list-rat">12, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -710,7 +710,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>63</td>
-                <td><img src="../images/listings/42454no_foto.jpg" />sdfsdfsdf <span>11, Apr 2020</span></td>
+                <td><img src="../images/listings/42454no_foto.jpg" alt="" />sdfsdfsdf <span>11, Apr 2020</span></td>
                 <td><span className="db-list-rat">11, Apr 2020</span></td>
                 <td><span className="db-list-rat">11, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -721,7 +721,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>64</td>
-                <td><img src="../images/listings/52318combo-offers-label-or-sticker-vector-22418508.jpg" />hoa <span>11, Apr 2020</span></td>
+                <td><img src="../images/listings/52318combo-offers-label-or-sticker-vector-22418508.jpg" alt="" />hoa <span>11, Apr 2020</span></td>
                 <td><span className="db-list-rat">11, Apr 2020</span></td>
                 <td><span className="db-list-rat">11, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -732,7 +732,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>65</td>
-                <td><img src="../images/listings/10484morning-1789903_1920.jpg" />eee <span>10, Apr 2020</span></td>
+                <td><img src="../images/listings/10484morning-1789903_1920.jpg" alt="" />eee <span>10, Apr 2020</span></td>
                 <td><span className="db-list-rat">10, Apr 2020</span></td>
                 <td><span className="db-list-rat">11, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -743,7 +743,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>66</td>
-                <td><img src="../images/listings/86943d-black-background.jpg" />dgdfg <span>08, Apr 2020</span></td>
+                <td><img src="../images/listings/86943d-black-background.jpg" alt="" />dgdfg <span>08, Apr 2020</span></td>
                 <td><span className="db-list-rat">08, Apr 2020</span></td>
                 <td><span className="db-list-rat">11, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -754,7 +754,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>67</td>
-                <td><img src="../images/listings/52318combo-offers-label-or-sticker-vector-22418508.jpg" />ggfggh <span>08, Apr 2020</span></td>
+                <td><img src="../images/listings/52318combo-offers-label-or-sticker-vector-22418508.jpg" alt="" />ggfggh <span>08, Apr 2020</span></td>
                 <td><span className="db-list-rat">08, Apr 2020</span></td>
                 <td><span className="db-list-rat">11, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -765,7 +765,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>68</td>
-                <td><img src="../images/listings/185152917.jpeg" />gdfgdfg <span>07, Apr 2020</span></td>
+                <td><img src="../images/listings/185152917.jpeg" alt="" />gdfgdfg <span>07, Apr 2020</span></td>
                 <td><span className="db-list-rat">07, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -776,7 +776,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>69</td>
-                <td><img src="../images/listings/42454no_foto.jpg" />Jorge <span>07, Apr 2020</span></td>
+                <td><img src="../images/listings/42454no_foto.jpg" alt="" />Jorge <span>07, Apr 2020</span></td>
                 <td><span className="db-list-rat">07, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -787,7 +787,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>70</td>
-                <td><img src="../images/listings/25918pexels-photo-3217851.jpeg" />casas <span>06, Apr 2020</span></td>
+                <td><img src="../images/listings/25918pexels-photo-3217851.jpeg" alt="" />casas <span>06, Apr 2020</span></td>
                 <td><span className="db-list-rat">06, Apr 2020</span></td>
                 <td><span className="db-list-rat">07, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -798,7 +798,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>71</td>
-                <td><img src="../images/listings/74009500_f_174960009_pzgzj0f5z3px4lqymn2wo7lppxwhrifh.jpg" />gdhghg <span>02, Apr 2020</span></td>
+                <td><img src="../images/listings/74009500_f_174960009_pzgzj0f5z3px4lqymn2wo7lppxwhrifh.jpg" alt="" />gdhghg <span>02, Apr 2020</span></td>
                 <td><span className="db-list-rat">02, Apr 2020</span></td>
                 <td><span className="db-list-rat">29, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -809,7 +809,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>72</td>
-                <td><img src="../images/listings/54775bw.jpg" />Vijay <span>31, Mar 2020</span></td>
+                <td><img src="../images/listings/54775bw.jpg" alt="" />Vijay <span>31, Mar 2020</span></td>
                 <td><span className="db-list-rat">31, Mar 2020</span></td>
                 <td><span className="db-list-rat">02, Apr 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -820,7 +820,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>73</td>
-                <td><img src="../images/listings/41073ser6.jpg" />hello <span>22, Mar 2020</span></td>
+                <td><img src="../images/listings/41073ser6.jpg" alt="" />hello <span>22, Mar 2020</span></td>
                 <td><span className="db-list-rat">22, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/vijay" className="db-list-ststus" target="_blank">vijay</a></td>
@@ -831,7 +831,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>74</td>
-                <td><img src="../images/listings/76594pp.jpg" />14213245 <span>22, Mar 2020</span></td>
+                <td><img src="../images/listings/76594pp.jpg" alt="" />14213245 <span>22, Mar 2020</span></td>
                 <td><span className="db-list-rat">22, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -842,7 +842,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>75</td>
-                <td><img src="../images/listings/2459886173774_1029321004107550_2730892076840386560_n.png" />Androsign <span>19, Mar 2020</span></td>
+                <td><img src="../images/listings/2459886173774_1029321004107550_2730892076840386560_n.png" alt="" />Androsign <span>19, Mar 2020</span></td>
                 <td><span className="db-list-rat">19, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -853,7 +853,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>76</td>
-                <td><img src="../images/listings/540095e27bfabcc13d.jpg" />Home <span>16, Mar 2020</span></td>
+                <td><img src="../images/listings/540095e27bfabcc13d.jpg" alt="" />Home <span>16, Mar 2020</span></td>
                 <td><span className="db-list-rat">16, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -864,7 +864,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>77</td>
-                <td><img src="../images/listings/85372confetti_png87033.png" />aa <span>15, Mar 2020</span></td>
+                <td><img src="../images/listings/85372confetti_png87033.png" alt="" />aa <span>15, Mar 2020</span></td>
                 <td><span className="db-list-rat">15, Mar 2020</span></td>
                 <td><span className="db-list-rat">18, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -875,7 +875,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>78</td>
-                <td><img src="../images/listings/25729android15.jpg" />wsa <span>14, Mar 2020</span></td>
+                <td><img src="../images/listings/25729android15.jpg" alt="" />wsa <span>14, Mar 2020</span></td>
                 <td><span className="db-list-rat">14, Mar 2020</span></td>
                 <td><span className="db-list-rat">18, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/dharm" className="db-list-ststus" target="_blank">dharm</a></td>
@@ -886,7 +886,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>79</td>
-                <td><img src="../images/listings/46875logo.png" />Test <span>14, Mar 2020</span></td>
+                <td><img src="../images/listings/46875logo.png" alt="" />Test <span>14, Mar 2020</span></td>
                 <td><span className="db-list-rat">14, Mar 2020</span></td>
                 <td><span className="db-list-rat">19, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -897,7 +897,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>80</td>
-                <td><img src="../images/listings/92012download.jpg" />gdfdfgfdg <span>14, Mar 2020</span></td>
+                <td><img src="../images/listings/92012download.jpg" alt="" />gdfdfgfdg <span>14, Mar 2020</span></td>
                 <td><span className="db-list-rat">14, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -908,7 +908,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>81</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />shaks <span>08, Mar 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />shaks <span>08, Mar 2020</span></td>
                 <td><span className="db-list-rat">08, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -919,7 +919,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>82</td>
-                <td><img src="../images/listings/25918pexels-photo-3217851.jpeg" />sdd <span>06, Mar 2020</span></td>
+                <td><img src="../images/listings/25918pexels-photo-3217851.jpeg" alt="" />sdd <span>06, Mar 2020</span></td>
                 <td><span className="db-list-rat">06, Mar 2020</span></td>
                 <td><span className="db-list-rat">19, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -930,7 +930,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>83</td>
-                <td><img src="../images/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />hjfgljkl. <span>06, Mar 2020</span></td>
+                <td><img src="../images/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" alt="" />hjfgljkl. <span>06, Mar 2020</span></td>
                 <td><span className="db-list-rat">06, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/conrad" className="db-list-ststus" target="_blank">CONRAD</a></td>
@@ -941,10 +941,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>84</td>
-                <td><img src="../images/listings/11457guia-de-turismo-chile.jpg" />rge <span>01, Mar 2020</span></td>
+                <td><img src="../images/listings/11457guia-de-turismo-chile.jpg" alt="" />rge <span>01, Mar 2020</span></td>
                 <td><span className="db-list-rat">01, Mar 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST196" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST196&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST196&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -952,7 +952,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>85</td>
-                <td><img src="../images/listings/84235filepreview.jpg" />sadasd <span>28, Feb 2020</span></td>
+                <td><img src="../images/listings/84235filepreview.jpg" alt="" />sadasd <span>28, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -963,7 +963,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>86</td>
-                <td><img src="../images/listings/2893toxiques.jpg" />Test <span>27, Feb 2020</span></td>
+                <td><img src="../images/listings/2893toxiques.jpg" alt="" />Test <span>27, Feb 2020</span></td>
                 <td><span className="db-list-rat">27, Feb 2020</span></td>
                 <td><span className="db-list-rat">27, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -974,7 +974,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>87</td>
-                <td><img src="../images/listings/70771fujifilm-x-a3.jpg" />lkze <span>27, Feb 2020</span></td>
+                <td><img src="../images/listings/70771fujifilm-x-a3.jpg" alt="" />lkze <span>27, Feb 2020</span></td>
                 <td><span className="db-list-rat">27, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/sarath" className="db-list-ststus" target="_blank">sarath</a></td>
@@ -985,7 +985,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>88</td>
-                <td><img src="../images/listings/70771fujifilm-x-a3.jpg" />Building Constructions <span>26, Feb 2020</span></td>
+                <td><img src="../images/listings/70771fujifilm-x-a3.jpg" alt="" />Building Constructions <span>26, Feb 2020</span></td>
                 <td><span className="db-list-rat">26, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -996,7 +996,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>89</td>
-                <td><img src="../images/listings/75224img_e0180410d775-1.jpeg" />rolex <span>26, Feb 2020</span></td>
+                <td><img src="../images/listings/75224img_e0180410d775-1.jpeg" alt="" />rolex <span>26, Feb 2020</span></td>
                 <td><span className="db-list-rat">26, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1007,7 +1007,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>90</td>
-                <td><img src="../images/listings/487671543931523-5f6e614e22d1fca6db48e4e77f463d3f.jpeg" />ÐšÑƒÐ½Ð´Ð°Ð»Ð¸Ð½Ð¸ Ð¹Ð¾Ð³Ð° <span>26, Feb 2020</span></td>
+                <td><img src="../images/listings/487671543931523-5f6e614e22d1fca6db48e4e77f463d3f.jpeg" alt="" />ÐšÑƒÐ½Ð´Ð°Ð»Ð¸Ð½Ð¸ Ð¹Ð¾Ð³Ð° <span>26, Feb 2020</span></td>
                 <td><span className="db-list-rat">26, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1018,7 +1018,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>91</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />test me <span>22, Feb 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />test me <span>22, Feb 2020</span></td>
                 <td><span className="db-list-rat">22, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1029,7 +1029,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>92</td>
-                <td><img src="../images/listings/540095e27bfabcc13d.jpg" />abc ltd <span>19, Feb 2020</span></td>
+                <td><img src="../images/listings/540095e27bfabcc13d.jpg" alt="" />abc ltd <span>19, Feb 2020</span></td>
                 <td><span className="db-list-rat">19, Feb 2020</span></td>
                 <td><span className="db-list-rat">30, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1040,7 +1040,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>93</td>
-                <td><img src="../images/listings/25918pexels-photo-3217851.jpeg" />New Nme <span>18, Feb 2020</span></td>
+                <td><img src="../images/listings/25918pexels-photo-3217851.jpeg" alt="" />New Nme <span>18, Feb 2020</span></td>
                 <td><span className="db-list-rat">18, Feb 2020</span></td>
                 <td><span className="db-list-rat">19, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1051,7 +1051,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>94</td>
-                <td><img src="../images/listings/68275bluding.png" />vhnvnbv <span>18, Feb 2020</span></td>
+                <td><img src="../images/listings/68275bluding.png" alt="" />vhnvnbv <span>18, Feb 2020</span></td>
                 <td><span className="db-list-rat">18, Feb 2020</span></td>
                 <td><span className="db-list-rat">19, Mar 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1062,7 +1062,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>95</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />swdwedwedw <span>16, Feb 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />swdwedwedw <span>16, Feb 2020</span></td>
                 <td><span className="db-list-rat">16, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1073,7 +1073,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>96</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />testtest <span>13, Feb 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />testtest <span>13, Feb 2020</span></td>
                 <td><span className="db-list-rat">13, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1084,7 +1084,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>97</td>
-                <td><img src="../images/listings/78270launcher.exe" />sdfsdf <span>10, Feb 2020</span></td>
+                <td><img src="../images/listings/78270launcher.exe" alt="" />sdfsdf <span>10, Feb 2020</span></td>
                 <td><span className="db-list-rat">10, Feb 2020</span></td>
                 <td><span className="db-list-rat">11, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1095,7 +1095,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>98</td>
-                <td><img src="../images/listings/24525x.txt" />xcxc <span>09, Feb 2020</span></td>
+                <td><img src="../images/listings/24525x.txt" alt="" />xcxc <span>09, Feb 2020</span></td>
                 <td><span className="db-list-rat">09, Feb 2020</span></td>
                 <td><span className="db-list-rat">11, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1106,7 +1106,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>99</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />asaa <span>04, Feb 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />asaa <span>04, Feb 2020</span></td>
                 <td><span className="db-list-rat">04, Feb 2020</span></td>
                 <td><span className="db-list-rat">11, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1117,10 +1117,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>100</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />wscvf <span>04, Feb 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />wscvf <span>04, Feb 2020</span></td>
                 <td><span className="db-list-rat">04, Feb 2020</span></td>
                 <td><span className="db-list-rat">28, Feb 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST176" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST176&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST176&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1128,7 +1128,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>101</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />test listing <span>04, Feb 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />test listing <span>04, Feb 2020</span></td>
                 <td><span className="db-list-rat">04, Feb 2020</span></td>
                 <td><span className="db-list-rat">11, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1139,7 +1139,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>102</td>
-                <td><img src="../images/listings/47884beautiful-wooden-houses-with-lawns-1643389.jpg" />test viki <span>01, Feb 2020</span></td>
+                <td><img src="../images/listings/47884beautiful-wooden-houses-with-lawns-1643389.jpg" alt="" />test viki <span>01, Feb 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/directory-finder" className="db-list-ststus" target="_blank">Directory Finder</a></td>
@@ -1150,7 +1150,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>103</td>
-                <td><img src="../images/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />Wedding palace <span>01, Feb 2020</span></td>
+                <td><img src="../images/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" alt="" />Wedding palace <span>01, Feb 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/directory-finder" className="db-list-ststus" target="_blank">Directory Finder</a></td>
@@ -1161,7 +1161,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>104</td>
-                <td><img src="../images/listings/138331.jpg" />Welcome <span>31, Jan 2020</span></td>
+                <td><img src="../images/listings/138331.jpg" alt="" />Welcome <span>31, Jan 2020</span></td>
                 <td><span className="db-list-rat">31, Jan 2020</span></td>
                 <td><span className="db-list-rat">31, Jan 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1172,7 +1172,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>105</td>
-                <td><img src="../images/listings/95995login.png" />sasdd <span>30, Jan 2020</span></td>
+                <td><img src="../images/listings/95995login.png" alt="" />sasdd <span>30, Jan 2020</span></td>
                 <td><span className="db-list-rat">30, Jan 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1183,7 +1183,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>106</td>
-                <td><img src="../images/listings/99319mahadev-photo-gallery.jpg" />dfgdfg <span>28, Jan 2020</span></td>
+                <td><img src="../images/listings/99319mahadev-photo-gallery.jpg" alt="" />dfgdfg <span>28, Jan 2020</span></td>
                 <td><span className="db-list-rat">28, Jan 2020</span></td>
                 <td><span className="db-list-rat">29, Jan 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1194,7 +1194,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>107</td>
-                <td><img src="../images/listings/138331.jpg" />test <span>27, Jan 2020</span></td>
+                <td><img src="../images/listings/138331.jpg" alt="" />test <span>27, Jan 2020</span></td>
                 <td><span className="db-list-rat">27, Jan 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1205,7 +1205,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>108</td>
-                <td><img src="../images/listings/58390beautiful-new-york-city-hd-wallpapers.jpg" />sfdsfsd <span>27, Jan 2020</span></td>
+                <td><img src="../images/listings/58390beautiful-new-york-city-hd-wallpapers.jpg" alt="" />sfdsfsd <span>27, Jan 2020</span></td>
                 <td><span className="db-list-rat">27, Jan 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1216,7 +1216,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>109</td>
-                <td><img src="../images/listings/46980logo2.png" />Test mest <span>21, Jan 2020</span></td>
+                <td><img src="../images/listings/46980logo2.png" alt="" />Test mest <span>21, Jan 2020</span></td>
                 <td><span className="db-list-rat">21, Jan 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1227,7 +1227,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>110</td>
-                <td><img src="../images/listings/88258blog_off.jpg" />New listing 2 <span>20, Jan 2020</span></td>
+                <td><img src="../images/listings/88258blog_off.jpg" alt="" />New listing 2 <span>20, Jan 2020</span></td>
                 <td><span className="db-list-rat">20, Jan 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1238,7 +1238,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>111</td>
-                <td><img src="../images/listings/138331.jpg" />New listing <span>20, Jan 2020</span></td>
+                <td><img src="../images/listings/138331.jpg" alt="" />New listing <span>20, Jan 2020</span></td>
                 <td><span className="db-list-rat">20, Jan 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1249,7 +1249,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>112</td>
-                <td><img src="../images/listings/138331.jpg" />Anicuns Online <span>17, Jan 2020</span></td>
+                <td><img src="../images/listings/138331.jpg" alt="" />Anicuns Online <span>17, Jan 2020</span></td>
                 <td><span className="db-list-rat">17, Jan 2020</span></td>
                 <td><span className="db-list-rat">01, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1260,7 +1260,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>113</td>
-                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />lll <span>16, Jan 2020</span></td>
+                <td><img src="../images/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" alt="" />lll <span>16, Jan 2020</span></td>
                 <td><span className="db-list-rat">16, Jan 2020</span></td>
                 <td><span className="db-list-rat">11, Feb 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1271,7 +1271,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>114</td>
-                <td><img src="../images/listings/12263icon-shop.jpg" />icon tech <span>15, Jan 2020</span></td>
+                <td><img src="../images/listings/12263icon-shop.jpg" alt="" />icon tech <span>15, Jan 2020</span></td>
                 <td><span className="db-list-rat">15, Jan 2020</span></td>
                 <td><span className="db-list-rat">15, Jan 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/leland-k-cotter" className="db-list-ststus" target="_blank">Leland K Cotter</a></td>
@@ -1282,7 +1282,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>115</td>
-                <td><img src="../images/listings/41073ser6.jpg" />my test <span>08, Jan 2020</span></td>
+                <td><img src="../images/listings/41073ser6.jpg" alt="" />my test <span>08, Jan 2020</span></td>
                 <td><span className="db-list-rat">08, Jan 2020</span></td>
                 <td><span className="db-list-rat">08, Jan 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/directory-finder" className="db-list-ststus" target="_blank">Directory Finder</a></td>
@@ -1293,7 +1293,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>116</td>
-                <td><img src="../images/listings/67634pexels-photo-208736.jpeg" />Della World Premium Properties <span>07, Jan 2020</span></td>
+                <td><img src="../images/listings/67634pexels-photo-208736.jpeg" alt="" />Della World Premium Properties <span>07, Jan 2020</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
                 <td><span className="db-list-rat">11, Jun 2020</span></td>
                 <td><a href="http://localhost/directory/bizbook/profile/claude-d-dial" className="db-list-ststus" target="_blank">Claude D Dial</a></td>
@@ -1304,10 +1304,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>117</td>
-                <td><img src="../images/listings/469162.jpg" />Losleya Spa and Facial Center <span>05, Dec 2019</span></td>
+                <td><img src="../images/listings/469162.jpg" alt="" />Losleya Spa and Facial Center <span>05, Dec 2019</span></td>
                 <td><span className="db-list-rat">05, Dec 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST127" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST127&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST127&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1315,10 +1315,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>118</td>
-                <td><img src="../images/listings/6757979323.jpg" />Taj Hotels <span>04, Dec 2019</span></td>
+                <td><img src="../images/listings/6757979323.jpg" alt="" />Taj Hotels <span>04, Dec 2019</span></td>
                 <td><span className="db-list-rat">04, Dec 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST126" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST126&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST126&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1326,10 +1326,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>119</td>
-                <td><img src="../images/listings/6757979323.jpg" />Hotel Vasanta Bhavan1 <span>14, Nov 2019</span></td>
+                <td><img src="../images/listings/6757979323.jpg" alt="" />Hotel Vasanta Bhavan1 <span>14, Nov 2019</span></td>
                 <td><span className="db-list-rat">14, Nov 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST125" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST125&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST125&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1337,10 +1337,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>120</td>
-                <td><img src="../images/listings/3101679323.jpg" />Wedding Venues other <span>08, Nov 2019</span></td>
+                <td><img src="../images/listings/3101679323.jpg" alt="" />Wedding Venues other <span>08, Nov 2019</span></td>
                 <td><span className="db-list-rat">08, Nov 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST123" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST123&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST123&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1348,10 +1348,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>121</td>
-                <td><img src="../images/listings/3101679323.jpg" />Wedding Venues dup <span>08, Nov 2019</span></td>
+                <td><img src="../images/listings/3101679323.jpg" alt="" />Wedding Venues dup <span>08, Nov 2019</span></td>
                 <td><span className="db-list-rat">08, Nov 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST122" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST122&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST122&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1359,10 +1359,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>122</td>
-                <td><img src="../images/listings/3101679323.jpg" />first scratch <span>06, Nov 2019</span></td>
+                <td><img src="../images/listings/3101679323.jpg" alt="" />first scratch <span>06, Nov 2019</span></td>
                 <td><span className="db-list-rat">06, Nov 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST121" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST121&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST121&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1370,10 +1370,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>123</td>
-                <td><img src="../images/listings/3101679323.jpg" />Wedding Venues <span>26, Oct 2019</span></td>
+                <td><img src="../images/listings/3101679323.jpg" alt="" />Wedding Venues <span>26, Oct 2019</span></td>
                 <td><span className="db-list-rat">26, Oct 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST120" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST120&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST120&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1381,10 +1381,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>124</td>
-                <td><img src="../images/listings/hot4.jpg" />Viki Pub crawl <span>19, Oct 2019</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Viki Pub crawl <span>19, Oct 2019</span></td>
                 <td><span className="db-list-rat">19, Oct 2019</span></td>
                 <td><span className="db-list-rat">22, Oct 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST119" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST119&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST119&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1392,10 +1392,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>125</td>
-                <td><img src="../images/listings/hot4.jpg" />Nain-Amm <span>07, Apr 2019</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Nain-Amm <span>07, Apr 2019</span></td>
                 <td><span className="db-list-rat">07, Apr 2019</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST117" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST117&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST117&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1403,10 +1403,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>126</td>
-                <td><img src="../images/listings/hot4.jpg" />Viki test123 <span>21, Oct 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Viki test123 <span>21, Oct 2018</span></td>
                 <td><span className="db-list-rat">21, Oct 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST115" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST115&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST115&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1414,10 +1414,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>127</td>
-                <td><img src="../images/listings/hot4.jpg" />Viki test123 <span>21, Oct 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Viki test123 <span>21, Oct 2018</span></td>
                 <td><span className="db-list-rat">21, Oct 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST114" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST114&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST114&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1425,10 +1425,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>128</td>
-                <td><img src="../images/listings/hot4.jpg" />Viki test <span>21, Oct 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Viki test <span>21, Oct 2018</span></td>
                 <td><span className="db-list-rat">21, Oct 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST113" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST113&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST113&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1436,10 +1436,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>129</td>
-                <td><img src="../images/listings/hot4.jpg" />Viki test <span>19, Oct 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Viki test <span>19, Oct 2018</span></td>
                 <td><span className="db-list-rat">19, Oct 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST112" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST112&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST112&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1447,10 +1447,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>130</td>
-                <td><img src="../images/listings/hot4.jpg" />Viki test <span>19, Oct 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Viki test <span>19, Oct 2018</span></td>
                 <td><span className="db-list-rat">19, Oct 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST111" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST111&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST111&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1458,10 +1458,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>131</td>
-                <td><img src="../images/listings/hot4.jpg" />Sports center <span>30, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Sports center <span>30, Jun 2018</span></td>
                 <td><span className="db-list-rat">30, Jun 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST110" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST110&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST110&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1469,10 +1469,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>132</td>
-                <td><img src="../images/listings/hot4.jpg" />Hello1 <span>15, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Hello1 <span>15, Jun 2018</span></td>
                 <td><span className="db-list-rat">15, Jun 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST109" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST109&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST109&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1480,10 +1480,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>133</td>
-                <td><img src="../images/listings/hot4.jpg" />The outstanding service  <span>06, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />The outstanding service  <span>06, Jun 2018</span></td>
                 <td><span className="db-list-rat">06, Jun 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST108" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST108&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST108&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1491,10 +1491,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>134</td>
-                <td><img src="../images/listings/hot4.jpg" />listing 2 <span>05, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />listing 2 <span>05, Jun 2018</span></td>
                 <td><span className="db-list-rat">05, Jun 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST107" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST107&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST107&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1502,10 +1502,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>135</td>
-                <td><img src="../images/listings/hot4.jpg" />Titre listing <span>05, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Titre listing <span>05, Jun 2018</span></td>
                 <td><span className="db-list-rat">05, Jun 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST106" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST106&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST106&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1513,10 +1513,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>136</td>
-                <td><img src="../images/listings/hot4.jpg" />Best <span>05, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Best <span>05, Jun 2018</span></td>
                 <td><span className="db-list-rat">05, Jun 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST105" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST105&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST105&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1524,10 +1524,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>137</td>
-                <td><img src="../images/listings/hot4.jpg" />Global Tech  <span>03, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Global Tech  <span>03, Jun 2018</span></td>
                 <td><span className="db-list-rat">03, Jun 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST104" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST104&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST104&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1535,10 +1535,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>138</td>
-                <td><img src="../images/listings/hot4.jpg" />Global techno <span>03, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Global techno <span>03, Jun 2018</span></td>
                 <td><span className="db-list-rat">03, Jun 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST103" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST103&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST103&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1546,10 +1546,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>139</td>
-                <td><img src="../images/listings/hot4.jpg" />Global techno <span>03, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Global techno <span>03, Jun 2018</span></td>
                 <td><span className="db-list-rat">03, Jun 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST102" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST102&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST102&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1557,10 +1557,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>140</td>
-                <td><img src="../images/listings/hot4.jpg" />Rn53 Themes <span>03, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Rn53 Themes <span>03, Jun 2018</span></td>
                 <td><span className="db-list-rat">03, Jun 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST101" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST101&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST101&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1568,10 +1568,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>141</td>
-                <td><img src="../images/listings/hot4.jpg" />Demo listing <span>03, Jun 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Demo listing <span>03, Jun 2018</span></td>
                 <td><span className="db-list-rat">03, Jun 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST100" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST100&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST100&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1579,10 +1579,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>142</td>
-                <td><img src="../images/listings/hot4.jpg" />ABC Plumbing <span>27, May 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />ABC Plumbing <span>27, May 2018</span></td>
                 <td><span className="db-list-rat">27, May 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST099" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST099&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST099&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1590,10 +1590,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>143</td>
-                <td><img src="../images/listings/hot4.jpg" />Fotoshine <span>29, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Fotoshine <span>29, Mar 2018</span></td>
                 <td><span className="db-list-rat">29, Mar 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST098" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST098&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST098&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1601,10 +1601,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>144</td>
-                <td><img src="../images/listings/hot4.jpg" />Apple Iphone <span>25, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Apple Iphone <span>25, Mar 2018</span></td>
                 <td><span className="db-list-rat">25, Mar 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST097" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST097&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST097&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1612,10 +1612,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>145</td>
-                <td><img src="../images/listings/hot4.jpg" />Test listing 4 <span>25, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Test listing 4 <span>25, Mar 2018</span></td>
                 <td><span className="db-list-rat">25, Mar 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST096" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST096&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST096&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1623,10 +1623,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>146</td>
-                <td><img src="../images/listings/hot4.jpg" />vikiiiiii_testttt_finalll <span>25, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />vikiiiiii_testttt_finalll <span>25, Mar 2018</span></td>
                 <td><span className="db-list-rat">25, Mar 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST093" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST093&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST093&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1634,10 +1634,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>147</td>
-                <td><img src="../images/listings/hot4.jpg" />viki_full_test <span>25, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />viki_full_test <span>25, Mar 2018</span></td>
                 <td><span className="db-list-rat">25, Mar 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST092" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST092&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST092&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1645,10 +1645,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>148</td>
-                <td><img src="../images/listings/hot4.jpg" />test_viki <span>25, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />test_viki <span>25, Mar 2018</span></td>
                 <td><span className="db-list-rat">25, Mar 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST091" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST091&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST091&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1656,10 +1656,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>149</td>
-                <td><img src="../images/listings/hot4.jpg" />test <span>18, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />test <span>18, Mar 2018</span></td>
                 <td><span className="db-list-rat">18, Mar 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST090" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST090&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST090&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1667,10 +1667,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>150</td>
-                <td><img src="../images/listings/hot4.jpg" />ABCDEF <span>11, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />ABCDEF <span>11, Mar 2018</span></td>
                 <td><span className="db-list-rat">11, Mar 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST089" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST089&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST089&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1678,10 +1678,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>151</td>
-                <td><img src="../images/listings/hot4.jpg" />Rn53themes <span>11, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Rn53themes <span>11, Mar 2018</span></td>
                 <td><span className="db-list-rat">11, Mar 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST088" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST088&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST088&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1689,10 +1689,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>152</td>
-                <td><img src="../images/listings/hot4.jpg" />Rn53themes <span>03, Mar 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Rn53themes <span>03, Mar 2018</span></td>
                 <td><span className="db-list-rat">03, Mar 2018</span></td>
                 <td><span className="db-list-rat">30, Nov -0001</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST087" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST087&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST087&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1700,10 +1700,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>153</td>
-                <td><img src="../images/listings/hot4.jpg" />Îµ-ÏƒÎ¸Ï€Ï€Î¿Ï <span>27, Feb 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Îµ-ÏƒÎ¸Ï€Ï€Î¿Ï <span>27, Feb 2018</span></td>
                 <td><span className="db-list-rat">27, Feb 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST086" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST086&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST086&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1711,10 +1711,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>154</td>
-                <td><img src="../images/listings/hot4.jpg" />fggkdfjlk <span>26, Feb 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />fggkdfjlk <span>26, Feb 2018</span></td>
                 <td><span className="db-list-rat">26, Feb 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST085" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST085&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST085&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1722,10 +1722,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>155</td>
-                <td><img src="../images/listings/hot4.jpg" />GP INSURANCE <span>26, Feb 2018</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />GP INSURANCE <span>26, Feb 2018</span></td>
                 <td><span className="db-list-rat">26, Feb 2018</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST084" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST084&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST084&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1733,10 +1733,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>156</td>
-                <td><img src="../images/listings/hot4.jpg" />Pearl Perfumes <span>20, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Pearl Perfumes <span>20, Dec 2017</span></td>
                 <td><span className="db-list-rat">20, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST020" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST020&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST020&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1744,10 +1744,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>157</td>
-                <td><img src="../images/listings/hot4.jpg" />NHS Hospital <span>11, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />NHS Hospital <span>11, Dec 2017</span></td>
                 <td><span className="db-list-rat">11, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST017" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST017&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST017&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1755,10 +1755,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>158</td>
-                <td><img src="../images/listings/hot4.jpg" />Goman Travels  <span>11, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Goman Travels  <span>11, Dec 2017</span></td>
                 <td><span className="db-list-rat">11, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST016" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST016&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST016&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1766,10 +1766,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>159</td>
-                <td><img src="../images/listings/hot4.jpg" />Ted Car  ltd. (BMW) <span>11, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Ted Car  ltd. (BMW) <span>11, Dec 2017</span></td>
                 <td><span className="db-list-rat">11, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST015" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST015&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST015&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1777,10 +1777,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>160</td>
-                <td><img src="../images/listings/hot4.jpg" />William Watt Electricals <span>11, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />William Watt Electricals <span>11, Dec 2017</span></td>
                 <td><span className="db-list-rat">11, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST014" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST014&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST014&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1788,10 +1788,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>161</td>
-                <td><img src="../images/listings/hot4.jpg" />Jb Montesari School <span>11, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Jb Montesari School <span>11, Dec 2017</span></td>
                 <td><span className="db-list-rat">11, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST013" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST013&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST013&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1799,10 +1799,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>162</td>
-                <td><img src="../images/listings/hot4.jpg" />La Palace Clubd <span>10, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />La Palace Clubd <span>10, Dec 2017</span></td>
                 <td><span className="db-list-rat">10, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Jan 2020</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST012" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST012&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST012&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1810,10 +1810,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>163</td>
-                <td><img src="../images/listings/hot4.jpg" />Ramsey Wine Corner <span>10, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Ramsey Wine Corner <span>10, Dec 2017</span></td>
                 <td><span className="db-list-rat">10, Dec 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST011" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST011&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST011&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1821,10 +1821,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>164</td>
-                <td><img src="../images/listings/hot4.jpg" />AGH Tyres <span>01, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />AGH Tyres <span>01, Dec 2017</span></td>
                 <td><span className="db-list-rat">01, Dec 2017</span></td>
                 <td><span className="db-list-rat">04, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST010" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST010&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST010&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1832,10 +1832,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>165</td>
-                <td><img src="../images/listings/hot4.jpg" />HangOver Plaza <span>10, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />HangOver Plaza <span>10, Dec 2017</span></td>
                 <td><span className="db-list-rat">10, Dec 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST008" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST008&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST008&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1843,10 +1843,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>166</td>
-                <td><img src="../images/listings/hot4.jpg" />Pub Crawl <span>10, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Pub Crawl <span>10, Dec 2017</span></td>
                 <td><span className="db-list-rat">10, Dec 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST006" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST006&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST006&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1854,10 +1854,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>167</td>
-                <td><img src="../images/listings/hot4.jpg" />Quick Fix Tyres <span>09, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Quick Fix Tyres <span>09, Dec 2017</span></td>
                 <td><span className="db-list-rat">09, Dec 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST005" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST005&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST005&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1865,10 +1865,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>168</td>
-                <td><img src="../images/listings/hot4.jpg" />National Auto Care <span>09, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />National Auto Care <span>09, Dec 2017</span></td>
                 <td><span className="db-list-rat">09, Dec 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST004" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST004&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST004&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1876,10 +1876,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>169</td>
-                <td><img src="../images/listings/hot4.jpg" />Motto Corp Vehicle Service <span>07, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Motto Corp Vehicle Service <span>07, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Dec 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST003" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST003&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST003&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1887,10 +1887,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>170</td>
-                <td><img src="../images/listings/hot4.jpg" />FootLocker Sport Shop <span>07, Dec 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />FootLocker Sport Shop <span>07, Dec 2017</span></td>
                 <td><span className="db-list-rat">07, Dec 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST002" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST002&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST002&path=trash" className="db-list-edit">Delete Permanently</a></td>
@@ -1898,10 +1898,10 @@ const page = () => {
               </tr>
               <tr>
                 <td>171</td>
-                <td><img src="../images/listings/hot4.jpg" />Hotel Saravana Bhavan <span>30, Nov 2017</span></td>
+                <td><img src="../images/listings/hot4.jpg" alt="" />Hotel Saravana Bhavan <span>30, Nov 2017</span></td>
                 <td><span className="db-list-rat">30, Nov 2017</span></td>
                 <td><span className="db-list-rat">15, Dec 2019</span></td>
-                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" /></td>
+                <td><a href="http://localhost/directory/bizbook/profile/" className="db-list-ststus" target="_blank" alt="" /></td>
                 <td><a href="admin-edit-listings.html?code=LIST001" className="db-list-edit">Edit</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST001&path=restore" className="db-list-edit">Restore</a></td>
                 <td><a href="admin-delete-listings.html?code=LIST001&path=trash" className="db-list-edit">Delete Permanently</a></td>

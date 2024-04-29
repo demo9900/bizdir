@@ -32,7 +32,7 @@ const page = () => {
               <tr>
                 <td>1</td>
                 <td><b className="db-list-rat">Health</b></td>
-                <td><img src="../images/services/72061bizpro2.jpeg" alt /></td>
+                <td><img src="../images/services/72061bizpro2.jpeg" alt=""/></td>
                 <td>27, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">1</span></td>
                 <td><span className="db-list-ststus">4</span></td>
@@ -43,7 +43,7 @@ const page = () => {
               <tr>
                 <td>2</td>
                 <td><b className="db-list-rat">Mens</b></td>
-                <td><img src="../images/services/88694springfield_illinois.jpg" alt /></td>
+                <td><img src="../images/services/88694springfield_illinois.jpg" alt=""/></td>
                 <td>11, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">3</span></td>
                 <td><span className="db-list-ststus">2</span></td>
@@ -54,7 +54,7 @@ const page = () => {
               <tr>
                 <td>3</td>
                 <td><b className="db-list-rat">Fruits</b></td>
-                <td><img src="../images/services/10484veggie-reu_l.jpg" alt /></td>
+                <td><img src="../images/services/10484veggie-reu_l.jpg" alt=""/></td>
                 <td>10, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">2</span></td>
                 <td><span className="db-list-ststus">3</span></td>
@@ -65,7 +65,7 @@ const page = () => {
               <tr>
                 <td>4</td>
                 <td><b className="db-list-rat">Baby care</b></td>
-                <td><img src="../images/services/6317210084pexels-photo-414807.jpeg" alt /></td>
+                <td><img src="../images/services/6317210084pexels-photo-414807.jpeg" alt=""/></td>
                 <td>10, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">0</span></td>
                 <td><span className="db-list-ststus">0</span></td>
@@ -76,7 +76,7 @@ const page = () => {
               <tr>
                 <td>5</td>
                 <td><b className="db-list-rat">Toys</b></td>
-                <td><img src="../images/services/5303511503pexels-photo-2608517.jpeg" alt /></td>
+                <td><img src="../images/services/5303511503pexels-photo-2608517.jpeg" alt=""/></td>
                 <td>10, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">2</span></td>
                 <td><span className="db-list-ststus">8</span></td>
@@ -87,7 +87,7 @@ const page = () => {
               <tr>
                 <td>6</td>
                 <td><b className="db-list-rat">Jewellery</b></td>
-                <td><img src="../images/services/1548318945man-with-fireworks-769525.jpg" alt /></td>
+                <td><img src="../images/services/1548318945man-with-fireworks-769525.jpg" alt=""/></td>
                 <td>10, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">0</span></td>
                 <td><span className="db-list-ststus">0</span></td>
@@ -98,7 +98,7 @@ const page = () => {
               <tr>
                 <td>7</td>
                 <td><b className="db-list-rat">Shoes</b></td>
-                <td><img src="../images/services/4151018945man-with-fireworks-769525.jpg" alt /></td>
+                <td><img src="../images/services/4151018945man-with-fireworks-769525.jpg" alt=""/></td>
                 <td>10, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">3</span></td>
                 <td><span className="db-list-ststus">3</span></td>
@@ -109,7 +109,7 @@ const page = () => {
               <tr>
                 <td>8</td>
                 <td><b className="db-list-rat">Footwear</b></td>
-                <td><img src="../images/services/7638818945man-with-fireworks-769525.jpg" alt /></td>
+                <td><img src="../images/services/7638818945man-with-fireworks-769525.jpg" alt=""/></td>
                 <td>10, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">0</span></td>
                 <td><span className="db-list-ststus">0</span></td>
@@ -120,7 +120,7 @@ const page = () => {
               <tr>
                 <td>9</td>
                 <td><b className="db-list-rat">Clothings</b></td>
-                <td><img src="../images/services/6528218945man-with-fireworks-769525.jpg" alt /></td>
+                <td><img src="../images/services/6528218945man-with-fireworks-769525.jpg" alt=""/></td>
                 <td>10, Apr 2020</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">0</span></td>
                 <td><span className="db-list-ststus">3</span></td>
@@ -131,7 +131,7 @@ const page = () => {
               <tr>
                 <td>10</td>
                 <td><b className="db-list-rat">Sports</b></td>
-                <td><img src="../images/services/2.jpg" alt /></td>
+                <td><img src="../images/services/2.jpg" alt=""/></td>
                 <td>29, Sep 2017</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">0</span></td>
                 <td><span className="db-list-ststus">0</span></td>
@@ -142,7 +142,7 @@ const page = () => {
               <tr>
                 <td>11</td>
                 <td><b className="db-list-rat">Education</b></td>
-                <td><img src="../images/services/6.jpg" alt /></td>
+                <td><img src="../images/services/6.jpg" alt=""/></td>
                 <td>29, Sep 2017</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">3</span></td>
                 <td><span className="db-list-ststus">3</span></td>
@@ -153,7 +153,7 @@ const page = () => {
               <tr>
                 <td>12</td>
                 <td><b className="db-list-rat">Electricals</b></td>
-                <td><img src="../images/services/5.jpg" alt /></td>
+                <td><img src="../images/services/5.jpg" alt=""/></td>
                 <td>29, Sep 2017</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">8</span></td>
                 <td><span className="db-list-ststus">11</span></td>
@@ -164,7 +164,7 @@ const page = () => {
               <tr>
                 <td>13</td>
                 <td><b className="db-list-rat">Automobilers</b></td>
-                <td><img src="../images/services/4.jpg" alt /></td>
+                <td><img src="../images/services/4.jpg" alt=""/></td>
                 <td>29, Sep 2017</td>
                 <td><span className="db-list-ststus" data-toggle="tooltip" title="Total listings in this category">2</span></td>
                 <td><span className="db-list-ststus">0</span></td>

@@ -33,7 +33,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/user/1980us4.jpg" alt />Abhinav <span>sonic@gmail.com</span><span>Join: 13, Mar 2021</span>
+                <td><img src="../images/user/1980us4.jpg" alt=""/>Abhinav <span>sonic@gmail.com</span><span>Join: 13, Mar 2021</span>
                 </td>
                 <td>USER334 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -47,7 +47,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>2</td>
-                <td><img src="../images/user/36078us5.jpg" alt />abhinav <span>abhinavkumar@142010.gmail.com</span><span>Join: 13, Mar 2021</span>
+                <td><img src="../images/user/36078us5.jpg" alt=""/>abhinav <span>abhinavkumar@142010.gmail.com</span><span>Join: 13, Mar 2021</span>
                 </td>
                 <td>USER333 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -61,7 +61,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td><img src="../images/user/1.jpg" alt />Srikanth <span>srikanth.aeroz@gmail.com</span><span>Join: 15, Sep 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>Srikanth <span>srikanth.aeroz@gmail.com</span><span>Join: 15, Sep 2020</span>
                 </td>
                 <td>USER302 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -75,7 +75,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>4</td>
-                <td><img src="../images/user/1.jpg" alt />admin <span>admin@demo.com</span><span>Join: 11, Sep 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>admin <span>admin@demo.com</span><span>Join: 11, Sep 2020</span>
                 </td>
                 <td>USER297 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -89,7 +89,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>5</td>
-                <td><img src="../images/user/26250ecommerce.png" alt />Banwari <span>banwarigarhwal1@gmail.com</span><span>Join: 26, Jul 2020</span>
+                <td><img src="../images/user/26250ecommerce.png" alt=""/>Banwari <span>banwarigarhwal1@gmail.com</span><span>Join: 26, Jul 2020</span>
                 </td>
                 <td>USER258 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -103,7 +103,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>6</td>
-                <td><img src="../images/user/1.jpg" alt />aklsdjf <span>paul_anthonyr@hotmail.com</span><span>Join: 25, Jul 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>aklsdjf <span>paul_anthonyr@hotmail.com</span><span>Join: 25, Jul 2020</span>
                 </td>
                 <td>USER257 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -117,7 +117,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>7</td>
-                <td><img src="../images/user/1.jpg" alt />Test Hector <span>fhfghfgrt@dnawr.com</span><span>Join: 21, Jul 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>Test Hector <span>fhfghfgrt@dnawr.com</span><span>Join: 21, Jul 2020</span>
                 </td>
                 <td>USER254 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -131,7 +131,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>8</td>
-                <td><img src="../images/user/1.jpg" alt />ahmad <span>ahmad@favista.com</span><span>Join: 26, Jun 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>ahmad <span>ahmad@favista.com</span><span>Join: 26, Jun 2020</span>
                 </td>
                 <td>USER234 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -145,7 +145,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>9</td>
-                <td><img src="../images/user/1.jpg" alt />Sarvar Djuraev <span>yunirgataullin@gmail.com</span><span>Join: 22, May 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>Sarvar Djuraev <span>yunirgataullin@gmail.com</span><span>Join: 22, May 2020</span>
                 </td>
                 <td>USER196 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -159,7 +159,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>10</td>
-                <td><img src="../images/user/1.jpg" alt />Bahroz <span>b7114@yahoo.com</span><span>Join: 16, May 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>Bahroz <span>b7114@yahoo.com</span><span>Join: 16, May 2020</span>
                 </td>
                 <td>USER187 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -173,7 +173,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>11</td>
-                <td><img src="../images/user/1.jpg" alt />Fuad <span>fuadma@outlook.com</span><span>Join: 13, May 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>Fuad <span>fuadma@outlook.com</span><span>Join: 13, May 2020</span>
                 </td>
                 <td>USER186 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -187,7 +187,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>12</td>
-                <td><img src="../images/user/51118barranquilla.jpg" alt />maria clara <span>maclavr@yahoo.com</span><span>Join: 29, Apr 2020</span>
+                <td><img src="../images/user/51118barranquilla.jpg" alt=""/>maria clara <span>maclavr@yahoo.com</span><span>Join: 29, Apr 2020</span>
                 </td>
                 <td>USER164 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -201,7 +201,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>13</td>
-                <td><img src="../images/user/1.jpg" alt />ninjacoder1 <span>vtswork19@gmail.com</span><span>Join: 21, Mar 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>ninjacoder1 <span>vtswork19@gmail.com</span><span>Join: 21, Mar 2020</span>
                 </td>
                 <td>USER129 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -215,7 +215,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>14</td>
-                <td><img src="../images/user/1.jpg" alt />Rhobos <span>admin@rhobositsolutions.com</span><span>Join: 27, Feb 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>Rhobos <span>admin@rhobositsolutions.com</span><span>Join: 27, Feb 2020</span>
                 </td>
                 <td>USER104 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -229,7 +229,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>15</td>
-                <td><img src="../images/user/1.jpg" alt />eee <span>eee@gmail.com</span><span>Join: 07, Feb 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>eee <span>eee@gmail.com</span><span>Join: 07, Feb 2020</span>
                 </td>
                 <td>USER085 </td>
                 <td><span className="db-list-rat">Standard</span></td>
@@ -243,7 +243,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>16</td>
-                <td><img src="../images/user/1.jpg" alt />AB <span>jali@jali.com</span><span>Join: 25, Jan 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>AB <span>jali@jali.com</span><span>Join: 25, Jan 2020</span>
                 </td>
                 <td>USER071 </td>
                 <td><span className="db-list-rat">Standard</span></td>

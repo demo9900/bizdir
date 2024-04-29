@@ -24,7 +24,7 @@ const page = () => {
               <tr>
                 <td>1</td>
                 <td>
-                  <img src="../images/slider/90890557952.jpg" alt />
+                  <img src="../images/slider/90890557952.jpg" alt=""/>
                 </td>
                 <td>https://bizbookdirectorytemplate.com/demo.html</td>
                 <td><a href="admin-slider-edit.html?row=10" className="db-list-edit">Edit</a></td>
@@ -33,7 +33,7 @@ const page = () => {
               <tr>
                 <td>2</td>
                 <td>
-                  <img src="../images/slider/27459517111.jpg" alt />
+                  <img src="../images/slider/27459517111.jpg" alt=""/>
                 </td>
                 <td>https://bizbookdirectorytemplate.com/demo.html</td>
                 <td><a href="admin-slider-edit.html?row=9" className="db-list-edit">Edit</a></td>

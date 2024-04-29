@@ -7,7 +7,7 @@ const page = () => {
   const handleCityChange = (event) => {
     const selectedOptions = event.target.selectedOptions;
     const selectedCities = Array.from(selectedOptions).map(option => option.value);
-    setCities(prevCities => {
+    setCities(prevCities => { 
       const newCities = [...prevCities];
       selectedCities.forEach(city => {
         if (!newCities.includes(city)) {

@@ -19,7 +19,6 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [dashboardRef]);
-    console.log(dashboardvisiblity)
     const pathname = usePathname();
     return (
         <div className={`al duration-500 ${session?.user ? 'block' : 'hidden'}`}   >

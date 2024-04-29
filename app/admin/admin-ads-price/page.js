@@ -27,7 +27,7 @@ const page = () => {
                 <td>1</td>
                 <td>Home page Bottom</td>
                 <td>
-                  <img src="../images/ads/ad-size.png" alt />
+                  <img src="../images/ads/ad-size.png" alt=""/>
                 </td>
                 <td>728 X 90 px</td>
                 <td>70$</td>
@@ -38,7 +38,7 @@ const page = () => {
                 <td>2</td>
                 <td>All listing page Top</td>
                 <td>
-                  <img src="../images/ads/ad-size.png" alt />
+                  <img src="../images/ads/ad-size.png" alt=""/>
                 </td>
                 <td>728 X 90 px</td>
                 <td>50$</td>
@@ -49,7 +49,7 @@ const page = () => {
                 <td>3</td>
                 <td>All listing page Bottom</td>
                 <td>
-                  <img src="../images/ads/ad-size.png" alt />
+                  <img src="../images/ads/ad-size.png" alt=""/>
                 </td>
                 <td>728 X 90 px</td>
                 <td>20$</td>
@@ -60,7 +60,7 @@ const page = () => {
                 <td>4</td>
                 <td>All listing page Left</td>
                 <td>
-                  <img src="../images/ads/ad-size.png" alt />
+                  <img src="../images/ads/ad-size.png" alt=""/>
                 </td>
                 <td>300 X 300 px</td>
                 <td>70$</td>
@@ -71,7 +71,7 @@ const page = () => {
                 <td>5</td>
                 <td>Listing detail page Right</td>
                 <td>
-                  <img src="../images/ads/ad-size.png" alt />
+                  <img src="../images/ads/ad-size.png" alt=""/>
                 </td>
                 <td>300 X 300 px</td>
                 <td>20$</td>
@@ -82,7 +82,7 @@ const page = () => {
                 <td>6</td>
                 <td>Listing detail page Bottom</td>
                 <td>
-                  <img src="../images/ads/ad-size.png" alt />
+                  <img src="../images/ads/ad-size.png" alt=""/>
                 </td>
                 <td>728 X 90 px</td>
                 <td>40$</td>

@@ -7,7 +7,7 @@ const LeftSidebar = () => {
   return (
     <div className="ud-lhs">
     <div className="ud-lhs-s1">
-      <img src="/user/62736rn53themes.png" alt />
+      <img src="/user/62736rn53themes.png" alt=""/>
       <div className="ud-lhs-pro-bio">
         <h4>Rn53</h4>
         <b>Join on 15, Apr 2024</b>

@@ -24,7 +24,7 @@ const page = () => {
                 <td>1</td>
                 <td>24 Million Business</td>
                 <td>
-                  <img src="../images/icon/1.png" alt />
+                  <img src="../images/icon/1.png" alt=""/>
                 </td>
                 <td><a href="admin-home-top-section-edit.html?row=1" className="db-list-edit">Edit</a></td>
               </tr>
@@ -32,7 +32,7 @@ const page = () => {
                 <td>2</td>
                 <td>1,200 Services Offered</td>
                 <td>
-                  <img src="../images/icon/2.png" alt />
+                  <img src="../images/icon/2.png" alt=""/>
                 </td>
                 <td><a href="admin-home-top-section-edit.html?row=2" className="db-list-edit">Edit</a></td>
               </tr>
@@ -40,7 +40,7 @@ const page = () => {
                 <td>3</td>
                 <td>05 Million Visitors</td>
                 <td>
-                  <img src="../images/icon/3.png" alt />
+                  <img src="../images/icon/3.png" alt=""/>
                 </td>
                 <td><a href="admin-home-top-section-edit.html?row=3" className="db-list-edit">Edit</a></td>
               </tr>
@@ -48,7 +48,7 @@ const page = () => {
                 <td>4</td>
                 <td>2k+ Premium Users</td>
                 <td>
-                  <img src="../images/icon/4.png" alt />
+                  <img src="../images/icon/4.png" alt=""/>
                 </td>
                 <td><a href="admin-home-top-section-edit.html?row=4" className="db-list-edit">Edit</a></td>
               </tr>

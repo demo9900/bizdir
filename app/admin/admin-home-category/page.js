@@ -24,7 +24,7 @@ const page = () => {
                 <td>1</td>
                 <td>Spa and Facial</td>
                 <td>
-                  <img src="../images/services/60622ser6.jpg" alt />
+                  <img src="../images/services/60622ser6.jpg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=1" className="db-list-edit">Edit</a></td>
               </tr>
@@ -32,7 +32,7 @@ const page = () => {
                 <td>2</td>
                 <td>Hospitals</td>
                 <td>
-                  <img src="../images/services/8253813.jpg" alt />
+                  <img src="../images/services/8253813.jpg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=2" className="db-list-edit">Edit</a></td>
               </tr>
@@ -40,7 +40,7 @@ const page = () => {
                 <td>3</td>
                 <td>Transportation</td>
                 <td>
-                  <img src="../images/services/930359.jpg" alt />
+                  <img src="../images/services/930359.jpg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=3" className="db-list-edit">Edit</a></td>
               </tr>
@@ -48,7 +48,7 @@ const page = () => {
                 <td>4</td>
                 <td>Automobiles</td>
                 <td>
-                  <img src="../images/services/17259tr1.jpg" alt />
+                  <img src="../images/services/17259tr1.jpg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=4" className="db-list-edit">Edit</a></td>
               </tr>
@@ -56,7 +56,7 @@ const page = () => {
                 <td>5</td>
                 <td>Electricals</td>
                 <td>
-                  <img src="../images/services/909906.jpeg" alt />
+                  <img src="../images/services/909906.jpeg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=5" className="db-list-edit">Edit</a></td>
               </tr>
@@ -64,7 +64,7 @@ const page = () => {
                 <td>6</td>
                 <td>Education</td>
                 <td>
-                  <img src="../images/services/1792516.jpeg" alt />
+                  <img src="../images/services/1792516.jpeg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=6" className="db-list-edit">Edit</a></td>
               </tr>
@@ -72,7 +72,7 @@ const page = () => {
                 <td>7</td>
                 <td>Sports</td>
                 <td>
-                  <img src="../images/services/451308.jpeg" alt />
+                  <img src="../images/services/451308.jpeg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=7" className="db-list-edit">Edit</a></td>
               </tr>
@@ -80,7 +80,7 @@ const page = () => {
                 <td>8</td>
                 <td>Real Estate</td>
                 <td>
-                  <img src="../images/services/5464514.jpeg" alt />
+                  <img src="../images/services/5464514.jpeg" alt=""/>
                 </td>
                 <td><a href="admin-home-category-edit.html?row=8" className="db-list-edit">Edit</a></td>
               </tr>

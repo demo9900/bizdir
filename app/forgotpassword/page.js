@@ -149,7 +149,7 @@ const forgetPassword = async (e) => {
         <div className="row">
           <div className="bot-book">
             <div className="col-md-2 bb-img">
-              <img src="images/idea.png" alt />
+              <img src="images/idea.png" alt=""/>
             </div>
             <div className="col-md-7 bb-text">
               <h4>#1 Business Directory and Service Provider</h4>
