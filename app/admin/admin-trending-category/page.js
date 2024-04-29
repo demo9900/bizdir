@@ -25,10 +25,10 @@ const page = () => {
                 <td>1</td>
                 <td>Hotels And Resorts</td>
                 <td>
-                  <img src="../images/services/95787pexels-asad-photo-maldives-1450363.jpg" alt />
+                  <img src="../images/services/95787pexels-asad-photo-maldives-1450363.jpg" alt=""/>
                 </td>
                 <td>
-                  <img src="../images/services/1.jpg" alt />
+                  <img src="../images/services/1.jpg" alt=""/>
                 </td>
                 <td><a href="admin-trending-category-edit.html?row=1" className="db-list-edit">Edit</a></td>
               </tr>
@@ -36,10 +36,10 @@ const page = () => {
                 <td>2</td>
                 <td>Automobiles</td>
                 <td>
-                  <img src="../images/services/40693capture4.png" alt />
+                  <img src="../images/services/40693capture4.png" alt=""/>
                 </td>
                 <td>
-                  <img src="../images/services/5896413.jpg" alt />
+                  <img src="../images/services/5896413.jpg" alt=""/>
                 </td>
                 <td><a href="admin-trending-category-edit.html?row=2" className="db-list-edit">Edit</a></td>
               </tr>
@@ -47,10 +47,10 @@ const page = () => {
                 <td>3</td>
                 <td>Wedding halls</td>
                 <td>
-                  <img src="../images/services/47049ser4.jpg" alt />
+                  <img src="../images/services/47049ser4.jpg" alt=""/>
                 </td>
                 <td>
-                  <img src="../images/services/20356s7.jpeg" alt />
+                  <img src="../images/services/20356s7.jpeg" alt=""/>
                 </td>
                 <td><a href="admin-trending-category-edit.html?row=3" className="db-list-edit">Edit</a></td>
               </tr>
@@ -58,10 +58,10 @@ const page = () => {
                 <td>4</td>
                 <td>Digital Products</td>
                 <td>
-                  <img src="../images/services/87731pexels-pixabay-461064.jpg" alt />
+                  <img src="../images/services/87731pexels-pixabay-461064.jpg" alt=""/>
                 </td>
                 <td>
-                  <img src="../images/services/88878hangouts-800x391.jpg" alt />
+                  <img src="../images/services/88878hangouts-800x391.jpg" alt=""/>
                 </td>
                 <td><a href="admin-trending-category-edit.html?row=4" className="db-list-edit">Edit</a></td>
               </tr>
@@ -69,10 +69,10 @@ const page = () => {
                 <td>5</td>
                 <td>Real Estate</td>
                 <td>
-                  <img src="../images/services/32555capture2.png" alt />
+                  <img src="../images/services/32555capture2.png" alt=""/>
                 </td>
                 <td>
-                  <img src="../images/services/20356s7.jpeg" alt />
+                  <img src="../images/services/20356s7.jpeg" alt=""/>
                 </td>
                 <td><a href="admin-trending-category-edit.html?row=5" className="db-list-edit">Edit</a></td>
               </tr>

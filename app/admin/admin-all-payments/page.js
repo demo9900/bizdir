@@ -30,7 +30,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/user/475847.jpg" alt />test<span>regedi5408@mado34.com</span><span>Join:22, Jul 2020</span>
+                <td><img src="../images/user/475847.jpg" alt=""/>test<span>regedi5408@mado34.com</span><span>Join:22, Jul 2020</span>
                 </td>
                 <td>Standard Plan</td>
                 <td>250 USD</td>
@@ -42,7 +42,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>2</td>
-                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt />Leland K Cotter<span>cotter@business.com</span><span>Join:30, Aug 2020</span>
+                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt=""/>Leland K Cotter<span>cotter@business.com</span><span>Join:30, Aug 2020</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>15 USD</td>
@@ -54,7 +54,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt />Leland K Cotter<span>cotter@business.com</span><span>Join:30, Aug 2020</span>
+                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt=""/>Leland K Cotter<span>cotter@business.com</span><span>Join:30, Aug 2020</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>120 USD</td>
@@ -66,7 +66,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>4</td>
-                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt />Leland K Cotter<span>cotter@business.com</span><span>Join:30, Aug 2020</span>
+                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt=""/>Leland K Cotter<span>cotter@business.com</span><span>Join:30, Aug 2020</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>150 USD</td>
@@ -78,7 +78,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>5</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>15 USD</td>
@@ -90,7 +90,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>6</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>120 USD</td>
@@ -102,7 +102,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>7</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>50 USD</td>
@@ -114,7 +114,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>8</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes<span>rn53themes@gmail.com</span><span>Join:26, Mar 2021</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>150 USD</td>
@@ -126,7 +126,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>9</td>
-                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt />Directory Finder<span>a@gmail.com</span><span>Join:07, Dec 2019</span>
+                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt=""/>Directory Finder<span>a@gmail.com</span><span>Join:07, Dec 2019</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>1000 USD</td>
@@ -138,7 +138,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>10</td>
-                <td><img src="../images/user/475847.jpg" alt /><span /><span>Join:01, Jan 1970</span>
+                <td><img src="../images/user/475847.jpg" alt=""/><span /><span>Join:01, Jan 1970</span>
                 </td>
                 <td>Standard Plan</td>
                 <td>500 USD</td>
@@ -150,7 +150,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>11</td>
-                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt />Directory Finder<span>a@gmail.com</span><span>Join:07, Dec 2019</span>
+                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt=""/>Directory Finder<span>a@gmail.com</span><span>Join:07, Dec 2019</span>
                 </td>
                 <td>Premium Plus Plan</td>
                 <td>4000 USD</td>
@@ -162,7 +162,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>12</td>
-                <td><img src="../images/user/475847.jpg" alt /><span /><span>Join:01, Jan 1970</span>
+                <td><img src="../images/user/475847.jpg" alt=""/><span /><span>Join:01, Jan 1970</span>
                 </td>
                 <td>Standard Plan</td>
                 <td>10 USD</td>
@@ -174,7 +174,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>13</td>
-                <td><img src="../images/user/475847.jpg" alt /><span /><span>Join:01, Jan 1970</span>
+                <td><img src="../images/user/475847.jpg" alt=""/><span /><span>Join:01, Jan 1970</span>
                 </td>
                 <td>Premium Plan</td>
                 <td>4000 CND</td>

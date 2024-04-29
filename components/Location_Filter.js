@@ -198,8 +198,8 @@ const filteredsubcat = subcategory.filter(option =>
           <div className="form-group">
             <select name="country" required="required" onChange={InputChange}  className="form-control">
               <option value>Select your Country</option>
-              {country.map(option=>(
-                <option  value={option}>{option}</option>
+              {country.map((option,index)=>(
+                <option key={index}  value={option}>{option}</option>
               ))}
               
             </select>
@@ -249,8 +249,8 @@ const filteredsubcat = subcategory.filter(option =>
               </ul>
               <div className="chosen-drop">
                 <ul className="chosen-results">
-                  {filteredcity.map(option=>(
-                  <li className="active-result" key={option}  onClick={() => handleOptionClick(option,1)} data-option-array-index={0}>
+                  {filteredcity.map((option,index)=>(
+                  <li  className="active-result" key={index}  onClick={() => handleOptionClick(option,1)} data-option-array-index={0}>
                     {option}
                   </li>
                   ))}

@@ -33,7 +33,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/user/83462us3.jpg" alt />Vj<span>vj@gmail.com</span> <span>Join: 25, Mar 2021</span>
+                <td><img src="../images/user/83462us3.jpg" alt=""/>Vj<span>vj@gmail.com</span> <span>Join: 25, Mar 2021</span>
                 </td>
                 <td>USER335 </td>
                 <td><span className="db-list-rat">Premium</span></td>
@@ -47,7 +47,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>2</td>
-                <td><img src="../images/user/72816us7.jpg" alt />abhinav<span>abhinav@gmail.com</span> <span>Join: 12, Mar 2021</span>
+                <td><img src="../images/user/72816us7.jpg" alt=""/>abhinav<span>abhinav@gmail.com</span> <span>Join: 12, Mar 2021</span>
                 </td>
                 <td>USER332 </td>
                 <td><span className="db-list-rat">Premium</span></td>
@@ -61,7 +61,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td><img src="../images/user/1.jpg" alt />UFUK GÜVENÇ<span>ufukguvenc06@gmail.com</span> <span>Join: 20, Aug 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>UFUK GÜVENÇ<span>ufukguvenc06@gmail.com</span> <span>Join: 20, Aug 2020</span>
                 </td>
                 <td>USER288 </td>
                 <td><span className="db-list-rat">Premium</span></td>
@@ -75,7 +75,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>4</td>
-                <td><img src="../images/user/1.jpg" alt />gan.test2019@gmail.com<span>gan.test2019@gmail.com</span> <span>Join: 22, Feb 2020</span>
+                <td><img src="../images/user/1.jpg" alt=""/>gan.test2019@gmail.com<span>gan.test2019@gmail.com</span> <span>Join: 22, Feb 2020</span>
                 </td>
                 <td>USER097 </td>
                 <td><span className="db-list-rat">Premium</span></td>

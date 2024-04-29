@@ -42,7 +42,7 @@ function Service_Slider() {
     <Slider {...settings}>
           <div className="plac-hom-box">
             <div className="plac-hom-box-im">
-              <img src="/user/3.jpg" className="b-lazy" alt />
+              <img src="/user/3.jpg" className="b-lazy" alt=""/>
               <div className="inn-text">
                 <h4>Explore your travel destination</h4>
                 <a href="places/" tabIndex={-1}>Explore Travel <i className="material-icons">arrow_forward</i></a>
@@ -51,7 +51,7 @@ function Service_Slider() {
           </div>
           <div className="plac-hom-box">
             <div className="plac-hom-box-im">
-              <img src="/user/expert1.jpg" className="b-lazy" alt />
+              <img src="/user/expert1.jpg" className="b-lazy" alt=""/>
               <div className="inn-text">
                 <h4>Find your service experts for your needs</h4>
                 <a href="service-experts/" tabIndex={-1}>Book Expert Now <i className="material-icons">arrow_forward</i></a>
@@ -60,7 +60,7 @@ function Service_Slider() {
           </div>
           <div className="plac-hom-box">
             <div className="plac-hom-box-im">
-              <img src="/user/209891.jpg" className="b-lazy" alt />
+              <img src="/user/209891.jpg" className="b-lazy" alt=""/>
               <div className="inn-text">
                 <h4>All news updates in one place</h4>
                 <a href="news/" tabIndex={-1}>News &amp; Magazines <i className="material-icons">arrow_forward</i></a>
@@ -69,7 +69,7 @@ function Service_Slider() {
           </div>
           <div className="plac-hom-box">
             <div className="plac-hom-box-im">
-              <img src="/user/11588home2-hand.jpg" className="b-lazy b-loaded" alt />
+              <img src="/user/11588home2-hand.jpg" className="b-lazy b-loaded" alt=""/>
               <div className="inn-text">
                 <h4>Start finding your dream job now</h4>
                 <a href="jobs/" tabIndex={-1}>Start finding <i className="material-icons">arrow_forward</i></a>
@@ -78,7 +78,7 @@ function Service_Slider() {
           </div>
           <div className="plac-hom-box">
             <div className="plac-hom-box-im">
-              <img src="/user/start-selling.jpg" className="b-lazy b-loaded" alt />
+              <img src="/user/start-selling.jpg" className="b-lazy b-loaded" alt=""/>
               <div className="inn-text">
                 <h4>Start selling your products online</h4>
                 <a href="all-products" tabIndex={0}>Start selling <i className="material-icons">arrow_forward</i></a>
@@ -87,7 +87,7 @@ function Service_Slider() {
           </div>
           <div className="plac-hom-box">
             <div className="plac-hom-box-im">
-              <img src="/user/coupon-deals.jpg" className="b-lazy b-loaded" alt />
+              <img src="/user/coupon-deals.jpg" className="b-lazy b-loaded" alt=""/>
               <div className="inn-text">
                 <h4>Coupon and deals for your shopping</h4>
                 <a href="coupons" tabIndex={0}>Coupons <i className="material-icons">arrow_forward</i></a>

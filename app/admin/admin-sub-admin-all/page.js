@@ -26,7 +26,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/user/6.jpg" alt />bizbook                                    <span>08, Jan 2020</span></td>
+                <td><img src="../images/user/6.jpg" alt=""/>bizbook                                    <span>08, Jan 2020</span></td>
                 <td>bizbook</td>
                 <td>**********</td>
                 <td><a href="admin-sub-admin-edit.html?row=7" className="db-list-edit">Edit</a></td>

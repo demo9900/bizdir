@@ -26,7 +26,7 @@ const page = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td><img src="../images/user/475847.jpg" alt />test <span>Send on: 11, Sep 2020</span></td>
+                <td><img src="../images/user/475847.jpg" alt=""/>test <span>Send on: 11, Sep 2020</span></td>
                 <td><span className="db-list-rat">Standard</span></td>
                 <td><span className="db-list-rat">$250</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -35,7 +35,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>2</td>
-                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt />Leland K Cotter <span>Send on: 11, Feb 2020</span></td>
+                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt=""/>Leland K Cotter <span>Send on: 11, Feb 2020</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$15</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -44,7 +44,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt />Leland K Cotter <span>Send on: 13, Jan 2020</span></td>
+                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt=""/>Leland K Cotter <span>Send on: 13, Jan 2020</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$120</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -53,7 +53,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>4</td>
-                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt />Leland K Cotter <span>Send on: 13, Jan 2020</span></td>
+                <td><img src="../images/user/9546049785pexels-photo-1130625.jpeg" alt=""/>Leland K Cotter <span>Send on: 13, Jan 2020</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$150</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -62,7 +62,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>5</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes <span>Send on: 29, Dec 2019</span></td>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes <span>Send on: 29, Dec 2019</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$15</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -71,7 +71,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>6</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes <span>Send on: 28, Dec 2019</span></td>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes <span>Send on: 28, Dec 2019</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$120</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -80,7 +80,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>7</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes <span>Send on: 28, Dec 2019</span></td>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes <span>Send on: 28, Dec 2019</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$50</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -89,7 +89,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>8</td>
-                <td><img src="../images/user/62736rn53themes.png" alt />Rn53 Themes <span>Send on: 28, Dec 2019</span></td>
+                <td><img src="../images/user/62736rn53themes.png" alt=""/>Rn53 Themes <span>Send on: 28, Dec 2019</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$150</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -98,7 +98,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>9</td>
-                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt />Directory Finder <span>Send on: 19, Dec 2019</span></td>
+                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt=""/>Directory Finder <span>Send on: 19, Dec 2019</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$1000</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -107,7 +107,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>10</td>
-                <td><img src="../images/user/475847.jpg" alt /> <span>Send on: 18, Dec 2019</span></td>
+                <td><img src="../images/user/475847.jpg" alt=""/> <span>Send on: 18, Dec 2019</span></td>
                 <td><span className="db-list-rat">Standard</span></td>
                 <td><span className="db-list-rat">$500</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -116,7 +116,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>11</td>
-                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt />Directory Finder <span>Send on: 08, Dec 2019</span></td>
+                <td><img src="../images/user/74755pexels-photo-1130626.jpeg" alt=""/>Directory Finder <span>Send on: 08, Dec 2019</span></td>
                 <td><span className="db-list-rat">Premium Plus</span></td>
                 <td><span className="db-list-rat">$4000</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -125,7 +125,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>12</td>
-                <td><img src="../images/user/475847.jpg" alt /> <span>Send on: 23, Nov 2019</span></td>
+                <td><img src="../images/user/475847.jpg" alt=""/> <span>Send on: 23, Nov 2019</span></td>
                 <td><span className="db-list-rat">Standard</span></td>
                 <td><span className="db-list-rat">$10</span></td>
                 {/*                                    <td>*/}{/*</td>*/}
@@ -134,7 +134,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>13</td>
-                <td><img src="../images/user/475847.jpg" alt /> <span>Send on: 08, Nov 2019</span></td>
+                <td><img src="../images/user/475847.jpg" alt=""/> <span>Send on: 08, Nov 2019</span></td>
                 <td><span className="db-list-rat">Premium</span></td>
                 <td><span className="db-list-rat">$4000</span></td>
                 {/*                                    <td>*/}{/*</td>*/}

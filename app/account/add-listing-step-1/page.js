@@ -85,7 +85,7 @@ const page = () => {
           <div className="add-list-ste-inn">
             <ul>
             {[1, 2, 3, 4, 5].map((step,index) => (
-           <li>
+           <li key={index}>
            <Link href="" className={`${index === currentStep ? 'act':''}`} onClick={() => handleStepClick(step)}>
              {" "}
              <span key={step}  >Step {index +1}</span>
