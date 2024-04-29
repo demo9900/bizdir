@@ -2,14 +2,13 @@
 import React,{useState,useContext} from 'react'
 import Link from 'next/link'
 import { signIn } from 'next-auth/react'
-import { Suspense } from 'react'
 import axios  from 'axios'
 import { useEffect } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Headertwo from "@/components/Headertwo"
 import {  toast } from "react-toastify";
 import Footer from '@/components/Footer'
-function Page() {
+const page = () => {
   const router = useRouter()
   const [formData, setFormData] = useState({
     email: "",
@@ -224,13 +223,9 @@ function Page() {
   </section>
 
 <Footer/>
-  </>
+    </>
 
   )
 }
 
-export function Login(){
-  <Suspense>
-    <Page />
-  </Suspense>
-}
+export default page

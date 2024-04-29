@@ -2,12 +2,11 @@
 import React,{useState,useContext} from 'react'
 import Link from 'next/link'
 import axios from 'axios';
-import { Suspense } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Headertwo from "@/components/Headertwo"
 import {  toast } from "react-toastify";
 import Footer from '@/components/Footer'
-function Page() {
+const page = () => {
   const router = useRouter()
   const [formData, setFormData] = useState({
     email: "",
@@ -45,6 +44,8 @@ console.log(userEmail)
       }
     }
   };
+
+
   return (
     <>
      <section>
@@ -231,14 +232,9 @@ console.log(userEmail)
   </section>
 
 <Footer/>
-  </>
-   
+    </>
 
   )
 }
 
-export function register() {
-  <Suspense>
-    <Page/>
-  </Suspense>
-}
+export default page
