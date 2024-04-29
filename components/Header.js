@@ -26,7 +26,7 @@ const Header = ({transparent}) => {
           {/*<div className="menu">
                             <i className="material-icons mopen">menu</i>
                         </div>*/}
-          <Link href="/index" className="top-log">
+          <Link href="/" className="top-log">
             <img src="/Logo-W-200x45.webp" alt="" className="ic-logo" />
           </Link>
           <div className="menu" onClick={() => setMenuVisibility(! isMenuVisible)}>

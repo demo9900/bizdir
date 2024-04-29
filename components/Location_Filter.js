@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const Location_Filter = () => {
+const Location_Filter = ({formData,InputChange,setFormData}) => {
   const divRef1 = useRef(null);
   const divRef2 = useRef(null);
   const divRef3 = useRef(null);
@@ -54,7 +54,7 @@ const Location_Filter = () => {
   });
   const [searchCat, setSearchCat] = useState({
     keyword:'',
-    value:null
+    value:''
   });
   const [searchSubCat, setSearchSubCat] = useState({
     keyword:'',
@@ -94,18 +94,35 @@ const Location_Filter = () => {
     if(number=== 1){
       setSearchCity(prevState =>({
         ...prevState,
-        value: [...prevState.value, option]
+        value: [...prevState.value, option],
+        keyword:''
     }));
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      ["cities"]:searchCity.value,
+      
+    }));
+    
     console.log(searchCity)
     }else if(number === 2){
       setSearchCat(prevState =>({
         ...prevState,
-        value:[option]
+        value:option
+    }));
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      ["category"]:searchCat.value,
+      
     }));
     } else if (number === 3){
       setSearchSubCat(prevState =>({
         ...prevState,
-        value: [...prevState.value, option]
+        value: [...prevState.value, option],
+        keyword:''
+    }));
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      ["sub_category"]: searchSubCat.value,
     }));
     }
   
@@ -179,10 +196,10 @@ const filteredsubcat = subcategory.filter(option =>
       <div className="row">
         <div className="col-md-6">
           <div className="form-group">
-            <select name="country" required="required" className="form-control">
+            <select name="country" required="required" onChange={InputChange}  className="form-control">
               <option value>Select your Country</option>
               {country.map(option=>(
-                <option value={option}>{option}</option>
+                <option  value={option}>{option}</option>
               ))}
               
             </select>
@@ -258,7 +275,7 @@ const filteredsubcat = subcategory.filter(option =>
               style={{ width: 305 }}
             >
               <a className="chosen-single" onClick={() => handleClick(2)}>
-              <span>{searchCat?.value?.length > 0 ? searchCat.value[0]:'Select Category' }</span>
+              <span>{searchCat?.value?.length > 0 ? searchCat.value:'Select Category' }</span>
                 <div>
                   <b />
                 </div>
