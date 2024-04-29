@@ -61,7 +61,6 @@ const page = () => {
 
 
   return (
-    <>
     <Suspense>
      <section>
 		<div className="str">
@@ -225,8 +224,7 @@ const page = () => {
   </section>
 
 <Footer/>
-</Suspense>
-    </>
+  </Suspense>
 
   )
 }

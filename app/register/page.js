@@ -48,7 +48,7 @@ console.log(userEmail)
 
 
   return (
-    <>
+    
     <Suspense>
      <section>
 		<div className="str">
@@ -234,8 +234,8 @@ console.log(userEmail)
   </section>
 
 <Footer/>
-</Suspense>
-    </>
+  </Suspense>
+   
 
   )
 }
