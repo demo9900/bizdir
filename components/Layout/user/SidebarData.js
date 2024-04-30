@@ -91,11 +91,7 @@ export const SidebarData = [
         path: '/account/db-setting',
         icon: '/icon/dbl210.png'
     },
-    {   
-        title: 'Log Out',
-        path: '/account/#',
-        icon: '/icon/dbl12.png'
-    }
+  
 ];
 
 

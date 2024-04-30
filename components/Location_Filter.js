@@ -196,7 +196,7 @@ const filteredsubcat = subcategory.filter(option =>
       <div className="row">
         <div className="col-md-6">
           <div className="form-group">
-            <select name="country" required="required" onChange={InputChange}  className="form-control">
+            <select name="country" required="required" onChange={InputChange} value={formData.country}  className="form-control">
               <option value>Select your Country</option>
               {country.map((option,index)=>(
                 <option key={index}  value={option}>{option}</option>

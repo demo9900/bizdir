@@ -22,11 +22,14 @@ const LeftSidebar = () => {
         {item.heading && <h4>{item.heading}</h4> }
         <Link href={item.path} className={pathname == item.path && 'db-lact'}>
           <img src={item.icon} alt="theme" />
-          {item.title}
+          {item.title} 
         </Link>
       </li>
       })}
-      
+      <Link href="">
+          <img src="/icon/dbl12.png" alt="theme" />
+          Log Out 
+        </Link>
     </ul>
   </div>
   </div>
