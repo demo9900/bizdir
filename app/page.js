@@ -14,7 +14,7 @@ import Search_Service from "@/components/Layout/Search_Service";
 import Select_Search from "@/components/Select_Search";
 import Listing_Filter from "@/components/Listing_Filter";
 
-import { loginUserDetails } from "lib/features/auth/auth";
+import { loginUserDetails, logoutUser } from "lib/features/auth/auth";
 import { useAppSelector, useAppDispatch } from "lib/hook";
 const page = () => {
     const [location, setLocation] = useState({});
@@ -25,13 +25,9 @@ const page = () => {
     const userdata = useAppSelector((state) => state.auth);
     const dispatch = useAppDispatch();
 
-    console.log("for redux", userdata);
-    console.log(status);
     if (status === "authenticated") {
         dispatch(loginUserDetails(session));
-
-        console.log("data in redux", userdata);
-    }
+    } else dispatch(logoutUser());
 
     var settings = {
         infinite: true,
