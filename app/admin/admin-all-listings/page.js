@@ -1,35 +1,7 @@
 "use client";
-import axios from "axios";
-import { useAppSelector } from "lib/hook";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const page = () => {
-    const [listingData, setListingData] = useState([1, 2, 3, 4, 5]);
-    const jwt = useAppSelector((state) => state.auth.token);
-
-    useEffect(() => {
-        // const getListingData = async () => {
-        //     const data = await axios.get(
-        //         process.env.BACKEND_URL + "/api/listing",
-        //         {
-        //             headers: {
-        //                 Authorization: "Bearer" + jwt,
-        //             },
-        //         }
-        //     );
-        // };
-    }, []);
-
-    const deleteListing = async (id) => {
-        // const data = await axios.delete(process.env.BACKEND_URL = "/api/listing/" + id);
-        const data = await axios({
-            method: "delete",
-            url: process.env.BACKEND_URL + "/api/listing/" + id,
-            headers: {
-                Authorization: "Bearer" + jwt,
-            },
-        });
-    };
     return (
         <section>
             <div className="ad-com">

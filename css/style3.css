@@ -19694,7 +19694,7 @@ button.blu-upp {
     color: #54575f;
 }
 
-.db-coup-rhs ol li a {
+.db-coup-rhs ol li a, .db-coup-rhs ol li button {
     border: 1px solid #007bff;
     padding: 1px 8px;
     border-radius: 3px;
