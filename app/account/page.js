@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useAppSelector } from "@/lib/hook";
 
 const page = () => {
-    const userdata = useAppSelector((state) => state.auth);
-    console.log("redux data ", userdata);
+   
+    
     return (
         <div className="ud-main-inn">
             <div className="ud-cen ">

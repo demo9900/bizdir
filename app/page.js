@@ -14,20 +14,13 @@ import Search_Service from "@/components/Layout/Search_Service";
 import Select_Search from "@/components/Select_Search";
 import Listing_Filter from "@/components/Listing_Filter";
 
-import { loginUserDetails, logoutUser } from "lib/features/auth/auth";
-import { useAppSelector, useAppDispatch } from "lib/hook";
 const page = () => {
     const [location, setLocation] = useState({});
     const [loading, setLoading] = useState(true);
     const { data: session, status } = useSession();
     console.log("user session", session);
 
-    const userdata = useAppSelector((state) => state.auth);
-    const dispatch = useAppDispatch();
 
-    if (status === "authenticated") {
-        dispatch(loginUserDetails(session));
-    } else dispatch(logoutUser());
 
     var settings = {
         infinite: true,
@@ -355,12 +348,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/69336spa1.jpg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
-                                                    alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
+                                                    alt=""  />
                                                 <h4>Spa and Facial</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -383,12 +371,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/1280613.jpg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
-                                                    alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
+                                         alt=""  />
                                                 <h4>Hospitals</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -411,12 +394,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/83881.jpeg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
                                                     alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Transportation</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -439,12 +417,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/63205tr1.jpg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
                                                     alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Automobiles</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -467,12 +440,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/414416.jpeg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
                                                     alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Electricals</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -495,12 +463,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/4734716.jpeg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
-                                                    alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
+                                             alt=""                                                />
                                                 <h4>Education</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -523,12 +486,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/780168.jpeg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
                                                     alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Sports</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -551,12 +509,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/50723s9.jpeg"
                                                     className="b-lazy b-loaded"
-<<<<<<< HEAD
                                                     alt=""                                                />
-=======
-                                                    alt=""
-                                                />
->>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Real Estate</h4>
                                             </div>
                                             <div className="rel-list-txt-box">

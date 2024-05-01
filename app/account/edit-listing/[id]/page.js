@@ -12,26 +12,6 @@ import Step5 from "@/components/Layout/user/Listing/Step5";
 
 const page = ({params}) => {
   const { data: session } = useSession();
-  const getListing = async () => {
-    try {
-        console.log("inside getlisting", session.jwt);
-        const res = await fetch(process.env.BACKEND_URL + `/api/listing/${params.id}`);
-
-        const data = await res.json();
-
-        console.log(data);
-        // setListingData(data);
-        console.log("listing function running")
-    } catch (error) {
-        console.error(error);
-    }
-};
-
-useEffect(() => {
-    getListing();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [session]);
-  console.log('listing id =', params.id)
   const [formData, setFormData] = useState({
     user_name: "test_user",
     listing_name: "",
@@ -49,11 +29,48 @@ useEffect(() => {
     listing_cover: "",
     service_location: [],
     service_provided:[],
-    youtubelink: "",
+    youtube_link: "",
     map_url: "",
   });
-  console.log(process.env.BACKEND_URL);
+  const getListing = async () => {
+    try {
+        console.log("inside getlisting", session.jwt);
+        const res = await fetch(process.env.BACKEND_URL + `/api/listing/${params.id}`);
 
+        const data = await res.json();
+        console.log(data);
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            listing_name: data.listing_name,
+            phone_number:data.phone_number,
+            email:data.email,
+            whatsapp_number:data.whatsapp_number,
+            website:data.website,
+            shop_address:data.shop_address,
+            country:data.country,
+            cities:data.cities,
+            category:data.category,
+            sub_category:data.sub_category,
+            listing_detail:data.listing_detail,
+            service_location:data.service_location,
+            service_provided:data.service_provided,
+            youtube_link:data.youtube_link,
+            map_url:data.map_url,
+            // Update other fields as needed
+        }));
+        console.log("listing function running")
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+useEffect(() => {
+    getListing();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [session]);
+  console.log('listing id =', params.id)
+  
+  
   const handleInputChange = (event,index) => {
     const { name, value } = event.target;
     if(name=== 'service_location'){

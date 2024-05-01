@@ -31,7 +31,7 @@ const page = () => {
     listing_cover: "",
     service_location: [],
     service_provided:[],
-    youtubelink: "",
+    youtube_link: "",
     map_url: "",
   });
   console.log(process.env.BACKEND_URL);
@@ -47,12 +47,25 @@ const page = () => {
        }));
        
     }else if(name=== 'service_provided') {
-      const ServiceProvided = [...formData.service_provided];
-    ServiceProvided[index] = event.target.value;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      service_provided: ServiceProvided,
-    }));
+      const updatedServiceProvided = [...formData.service_provided];
+
+      // If the index exceeds the length of the updatedServiceProvided array,
+      // it means a new service object needs to be added
+      if (index >= updatedServiceProvided.length) {
+          updatedServiceProvided.push({ name: "", image: "" });
+      }
+  
+      // Update the corresponding field (name or image) of the service object at the specified index
+      updatedServiceProvided[index] = {
+          ...updatedServiceProvided[index],
+          name: value
+      };
+  
+      // Update the formData state with the modified service_provided array
+      setFormData(prevFormData => ({
+          ...prevFormData,
+          service_provided: updatedServiceProvided
+      }));
     } else{
       setFormData((prevFormData) => ({
         ...prevFormData,

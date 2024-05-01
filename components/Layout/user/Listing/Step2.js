@@ -51,7 +51,7 @@ const Step2 = ({formData,handleInputChange,handleStepClick,setFormData}) => {
                                         <label>Service name:</label>
                                         <input
                                           type="text"
-                                          value={formData.service_provided[index] || ""}
+                                          value={formData.service_provided[index]?.name || ""}
                                           onChange={(e) => handleInputChange(e, index)}
                                           name="service_provided"
                                           className="form-control"

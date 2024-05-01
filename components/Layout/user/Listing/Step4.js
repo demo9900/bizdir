@@ -28,12 +28,11 @@ const Step4 = ({formData,handleInputChange,handleStepClick}) => {
                                         <div className="form-group">
                                           <textarea
                                             id="listing_video"
-                                            value={formData.youtubelink}
+                                            value={formData.youtube_link}
                                             onChange={handleInputChange}
-                                            name="youtubelink"
+                                            name="youtube_link"
                                             className="form-control"
                                             placeholder="Paste Your Youtube Url here"
-                                            defaultValue={""}
                                           />
                                         </div>
                                       </div>
@@ -49,26 +48,15 @@ const Step4 = ({formData,handleInputChange,handleStepClick}) => {
                                         value={formData.map_url}
                                         className="form-control"
                                         name="map_url"
-                                        placeholder="Shop location"
-                                        defaultValue={""}
+                                        onChange={handleInputChange}
+                                        placeholder="map location"
                                       />
                                     </div>
                                   </div>
                                 </div>
                                 {/*FILED END*/}
                                 {/*FILED START*/}
-                                <div className="row">
-                                  <div className="col-md-12">
-                                    <div className="form-group">
-                                      <textarea
-                                        className="form-control"
-                                        name="360_view"
-                                        placeholder="360 view"
-                                        defaultValue={""}
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
+                              
                                 {/*FILED END*/}
                                 <h4 className="pt30">Photo gallery</h4>
                                 {/*FILED START*/}
