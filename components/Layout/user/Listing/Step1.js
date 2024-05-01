@@ -139,7 +139,6 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                   id="listing_description"
                   name="listing_detail"
                   placeholder="Details about your listing"
-                  defaultValue={""}
                 />
               </div>
             </div>
@@ -172,13 +171,13 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
           <div className="row bor-box">
           <div className="col-md-12">
             <div className="form-group">
-              <label htmlFor>Enter your service locations... 
+              <label >Enter your service locations... 
                 (i.e) London, Dallas, Wall Street, Opera House</label>
               <textarea
                 value={formData.service_location}
                 onChange={handleInputChange}
                className="form-control valid" id="service_locations" name="service_location" placeholder="Enter your service locations... 
-        (i.e) London, Dallas, Wall Street, Opera House" defaultValue={"laxmi nagar"} />
+        (i.e) London, Dallas, Wall Street, Opera House"  />
             </div>
           </div>
         </div>

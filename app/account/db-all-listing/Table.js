@@ -1,6 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Table = () => {
     const [listingData, setListingData] = useState([]);
@@ -22,7 +23,7 @@ const Table = () => {
 
             console.log(data);
             setListingData(data);
-
+            console.log("listing function running")
             setLoading(false);
         } catch (error) {
             console.error(error);
@@ -45,10 +46,11 @@ const Table = () => {
                     method: "DELETE",
                 }
             );
-            const data = await res.json();
-
-            console.log(res.status, data.status);
-            getListingData();
+           
+            if (res.status === 204) {
+                // Call getListingData to update the listing data
+                getListingData();
+            }
         } catch (error) {
             console.error(error);
         }
@@ -122,13 +124,11 @@ const Table = () => {
                                     ></a>
                                 </td> */}
                                 <td>
-                                    <button
-                                        onClick={() =>
-                                            updateListing(listing._id)
-                                        }
-                                    >
+                                    <Link href={`/account/edit-listing/${listing._id}`}>
+                                    <button>
                                         Edit
                                     </button>
+                                    </Link>
                                 </td>
                                 <td>
                                     <button

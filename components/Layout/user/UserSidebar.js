@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { SidebarData } from './SidebarData'
+import { signOut } from "next-auth/react"
 import { usePathname } from 'next/navigation'
 const LeftSidebar = () => {
   const pathname = usePathname();
@@ -26,10 +27,12 @@ const LeftSidebar = () => {
         </Link>
       </li>
       })}
-      <Link href="">
+      <li>
+      <Link onClick={() => signOut()} href="">
           <img src="/icon/dbl12.png" alt="theme" />
           Log Out 
         </Link>
+      </li>
     </ul>
   </div>
   </div>

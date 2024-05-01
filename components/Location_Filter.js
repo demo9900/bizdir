@@ -180,7 +180,7 @@ const filteredsubcat = subcategory.filter(option =>
                   : ""
               } chosen-container-active`}
               ref={divRef1}
-              title
+              alt=""
               id="city_id_chosen"
               style={{ width: 640 }}
             >
@@ -235,7 +235,7 @@ const filteredsubcat = subcategory.filter(option =>
                   ? "chosen-with-drop"
                   : ""
               } chosen-container-active`}
-              title
+              alt=""
               ref={divRef2}
               id="category_id_chosen"
               style={{ width: 305 }}
@@ -279,7 +279,7 @@ const filteredsubcat = subcategory.filter(option =>
                   ? "chosen-with-drop"
                   : ""
               } chosen-container-active`}
-              title
+              alt=""
               ref={divRef3}
               id="city_id_chosen"
               style={{ width: 640 }}

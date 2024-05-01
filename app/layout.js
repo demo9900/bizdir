@@ -10,8 +10,7 @@ import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SessionProvider } from "next-auth/react";
-import Script from "next/script";
-import StoreProvider from "./StoreProvider";
+
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -21,9 +20,9 @@ const poppins = Poppins({
 
 export default function RootLayout({ children, session }) {
     return (
-        <StoreProvider>
+        
             <SessionProvider session={session}>
-                <html className={poppins.className}>
+                <html >
                     <Head>
                     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
                     </Head>
@@ -35,6 +34,6 @@ export default function RootLayout({ children, session }) {
                     </body>
                 </html>
             </SessionProvider>
-        </StoreProvider>
+
     );
 }

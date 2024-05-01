@@ -11,7 +11,8 @@ export default function DashboardLayout({
     children, // will be a page or nested layout
   }) {
     const pathname = usePathname()
-    const path = ['/account/add-listing-start','/account/add-listing-step-1','/account/add-listing-step-2','/account/add-listing-step-3','/account/add-listing-step-4','/account/add-listing-step-5','/account/add-listing-step-6']
+    const path = ['/account/add-listing-start','/account/add-listing-step-1','/account/add-listing-step-2','/account/add-listing-step-3','/account/add-listing-step-4','/account/add-listing-step-5','/account/add-listing-step-6','/account/edit-listing']
+    const hideSidebar = path.some(path => pathname.startsWith(path));
   console.log(pathname)
     return (
         <div>
@@ -23,7 +24,7 @@ export default function DashboardLayout({
   </div>
     </section>
     <>
-   {!path.includes(pathname)? ( <section className=" ud">
+   {!hideSidebar? ( <section className=" ud">
     <div className="ud-inn">
       {/*LEFT SECTION*/}
      
