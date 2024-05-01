@@ -16,20 +16,8 @@ const page = () => {
                     <Link href="/create-new-event" className="db-tit-btn">
                         Add new Event
                     </Link>
-                    <table className="responsive-table bordered">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Event Name</th>
-                                <th>Event Date</th>
-                                <th>Views</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                                <th>Preview</th>
-                            </tr>
-                        </thead>
-                        <EventList />
-                    </table>
+
+                    <EventList />
                 </div>
             </div>
         </div>

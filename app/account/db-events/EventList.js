@@ -11,7 +11,6 @@ const EventList = () => {
     const getEventData = async () => {
         try {
             setLoading(true);
-            console.log("inside getevent", session.jwt);
             const res = await fetch(process.env.BACKEND_URL + "/api/event", {
                 headers: {
                     authorization: "Bearer " + session.jwt,
@@ -29,7 +28,7 @@ const EventList = () => {
     };
 
     useEffect(() => {
-        getEventData();
+        if (status === "authenticated") getEventData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [session]);
 
@@ -40,18 +39,10 @@ const EventList = () => {
                 {
                     headers: {
                         authorization: "Bearer " + session.jwt,
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Methods":
-                            "GET, POST, PUT, DELETE, OPTIONS",
-                        "Access-Control-Allow-Headers":
-                            "Content-Type, Authorization",
                     },
                     method: "DELETE",
                 }
             );
-            const data = await res.json();
-
-            console.log(res.status, data.status);
 
             getEventData();
         } catch (error) {
@@ -59,43 +50,56 @@ const EventList = () => {
         }
     };
 
-    if (loading) return <>Loading</>;
+    if (loading) return <>Loading...</>;
 
     return (
-        <tbody>
-            {eventData.map((event, idx) => (
-                <tr key={event._id}>
-                    <td>{idx + 1}</td>
-                    <td>
-                        CHAMPIONS OF INDIA RUN-RIDE-WALK
-                        <span>12, Mar 2021</span>
-                    </td>
-                    <td>21, Mar 2021</td>
-                    <td>
-                        <span className="db-list-rat">8</span>
-                    </td>
-                    <td>
-                        <Link href="/edit-event" className="db-list-edit">
-                            Edit
-                        </Link>
-                    </td>
-                    <td>
-                        <Link href="/#" className="db-list-edit">
-                            Delete
-                        </Link>
-                    </td>
-                    <td>
-                        <Link
-                            href="/event-details"
-                            className="db-list-edit"
-                            target="_blank"
-                        >
-                            Preview
-                        </Link>
-                    </td>
+        <table className="responsive-table bordered">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Event Name</th>
+                    <th>Event Date</th>
+                    <th>Views</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>Preview</th>
                 </tr>
-            ))}
-        </tbody>
+            </thead>
+            <tbody>
+                {eventData.map((event, idx) => (
+                    <tr key={event._id}>
+                        <td>{idx + 1}</td>
+                        <td>
+                            CHAMPIONS OF INDIA RUN-RIDE-WALK
+                            <span>12, Mar 2021</span>
+                        </td>
+                        <td>21, Mar 2021</td>
+                        <td>
+                            <span className="db-list-rat">8</span>
+                        </td>
+                        <td>
+                            <Link href="/edit-event" className="db-list-edit">
+                                Edit
+                            </Link>
+                        </td>
+                        <td>
+                            <Link href="/#" className="db-list-edit">
+                                Delete
+                            </Link>
+                        </td>
+                        <td>
+                            <Link
+                                href="/event-details"
+                                className="db-list-edit"
+                                target="_blank"
+                            >
+                                Preview
+                            </Link>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
     );
 };
 
