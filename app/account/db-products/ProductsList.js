@@ -103,12 +103,11 @@ const ProductsList = () => {
                                 </Link>
                             </td>
                             <td>
-                                <Link
-                                    href="/#"
+                                <button
                                     onClick={() => deleteProduct(product._id)}
                                 >
                                     Delete
-                                </Link>
+                                </button>
                             </td>
                             <td>
                                 <Link

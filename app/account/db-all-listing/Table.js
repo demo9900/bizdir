@@ -56,16 +56,6 @@ const Table = () => {
         }
     };
 
-    const updateListing = async (id) => {
-        try {
-            console.log("updated");
-
-            getListingData();
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
     if (loading) return <>Loading</>;
 
     console.log(listingData);

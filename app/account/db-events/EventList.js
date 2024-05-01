@@ -83,9 +83,12 @@ const EventList = () => {
                             </Link>
                         </td>
                         <td>
-                            <Link href="/#" className="db-list-edit">
+                            <button
+                                className="db-list-edit"
+                                onClick={() => deleteEvent(event._id)}
+                            >
                                 Delete
-                            </Link>
+                            </button>
                         </td>
                         <td>
                             <Link
