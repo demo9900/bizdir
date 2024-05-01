@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import Headertwo from "@/components/Headertwo";
-import Footer from "@/components/Footer";
-import BottomMenu from "@/components/BottomMenu";
+// import Headertwo from "@/components/Headertwo";
+// import Footer from "@/components/Footer";
+// import BottomMenu from "@/components/BottomMenu";
 import Link from "next/link";
 
 const page = () => {

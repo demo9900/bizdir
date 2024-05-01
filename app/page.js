@@ -355,7 +355,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/69336spa1.jpg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Spa and Facial</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -378,7 +383,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/1280613.jpg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Hospitals</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -401,7 +411,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/83881.jpeg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Transportation</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -424,7 +439,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/63205tr1.jpg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Automobiles</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -447,7 +467,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/414416.jpeg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Electricals</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -470,7 +495,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/4734716.jpeg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Education</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -493,7 +523,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/780168.jpeg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Sports</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -516,7 +551,12 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/50723s9.jpeg"
                                                     className="b-lazy b-loaded"
+<<<<<<< HEAD
                                                     alt=""                                                />
+=======
+                                                    alt=""
+                                                />
+>>>>>>> 1b80bec6d3e82d51b42b452a4d9865004e6b77a3
                                                 <h4>Real Estate</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -563,10 +603,10 @@ const page = () => {
                     </div>
                 </div>
             </section>
-            <div class="plac-hom-bd">
-                <div class="container">
-                    <div class="row">
-                        <div class="plac-det-tit-inn">
+            <div className="plac-hom-bd">
+                <div className="container">
+                    <div className="row">
+                        <div className="plac-det-tit-inn">
                             <h2 className="font-bold">
                                 Explore our more Services
                             </h2>
