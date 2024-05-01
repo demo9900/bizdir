@@ -23,7 +23,7 @@ const Table = () => {
 
             console.log(data);
             setListingData(data);
-            console.log("listing function running")
+            console.log("listing function running");
             setLoading(false);
         } catch (error) {
             console.error(error);
@@ -31,7 +31,7 @@ const Table = () => {
     };
 
     useEffect(() => {
-        getListingData();
+        if (status === "authenticated") getListingData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [session]);
 
@@ -46,7 +46,7 @@ const Table = () => {
                     method: "DELETE",
                 }
             );
-           
+
             if (res.status === 204) {
                 // Call getListingData to update the listing data
                 getListingData();
@@ -124,10 +124,10 @@ const Table = () => {
                                     ></a>
                                 </td> */}
                                 <td>
-                                    <Link href={`/account/edit-listing/${listing._id}`}>
-                                    <button>
-                                        Edit
-                                    </button>
+                                    <Link
+                                        href={`/account/edit-listing/${listing._id}`}
+                                    >
+                                        <button>Edit</button>
                                     </Link>
                                 </td>
                                 <td>

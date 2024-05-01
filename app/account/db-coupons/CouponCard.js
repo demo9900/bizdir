@@ -30,7 +30,7 @@ const CouponCard = () => {
     };
 
     useEffect(() => {
-        getCouponData();
+        if (status === "authenticated") getCouponData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [session]);
 
