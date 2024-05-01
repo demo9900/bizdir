@@ -2,7 +2,6 @@
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-// import axios from "axios";
 
 const CouponCard = () => {
     const [couponData, setCouponData] = useState([]);
@@ -30,7 +29,7 @@ const CouponCard = () => {
     };
 
     useEffect(() => {
-        getCouponData();
+        if (status === "authenticated") getCouponData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [session]);
 
@@ -41,39 +40,10 @@ const CouponCard = () => {
                 {
                     headers: {
                         authorization: "Bearer " + session.jwt,
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Methods":
-                            "GET, POST, PUT, DELETE, OPTIONS",
-                        "Access-Control-Allow-Headers":
-                            "Content-Type, Authorization",
                     },
                     method: "DELETE",
                 }
             );
-            const data = await res.json();
-
-            console.log(res.status, data.status);
-
-            // const data = await axios.delete(
-            //     process.env.BACKEND_URL + "/api/coupon/" + id,
-            //     {
-            //         headers: {
-            //             authorization: "Bearer " + session.jwt,
-            //             "Access-Control-Allow-Origin": "http://localhost:3000",
-            //         },
-            //     }
-            // );
-
-            // console.log(data);
-            getCouponData();
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    const updateCoupon = async (id) => {
-        try {
-            console.log("updated");
 
             getCouponData();
         } catch (error) {

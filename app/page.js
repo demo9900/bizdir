@@ -348,7 +348,7 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/69336spa1.jpg"
                                                     className="b-lazy b-loaded"
-                                                    alt=""  />
+                                             alt=""  />
                                                 <h4>Spa and Facial</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -394,7 +394,8 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/83881.jpeg"
                                                     className="b-lazy b-loaded"
-                                                    alt=""                                                />
+                                             alt=""
+                                                />
                                                 <h4>Transportation</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -417,7 +418,8 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/63205tr1.jpg"
                                                     className="b-lazy b-loaded"
-                                                    alt=""                                                />
+                                                    alt=""
+                                                />
                                                 <h4>Automobiles</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -440,7 +442,8 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/414416.jpeg"
                                                     className="b-lazy b-loaded"
-                                                    alt=""                                                />
+                                             alt=""
+                                                />
                                                 <h4>Electricals</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -463,7 +466,8 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/4734716.jpeg"
                                                     className="b-lazy b-loaded"
-                                             alt=""                                                />
+                                                    alt=""
+                                                />
                                                 <h4>Education</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
@@ -486,7 +490,8 @@ const page = () => {
                                                 <img
                                                     src="https://utilitypages.in/images/services/780168.jpeg"
                                                     className="b-lazy b-loaded"
-                                                    alt=""                                                />
+                                             alt=""
+                                                />
                                                 <h4>Sports</h4>
                                             </div>
                                             <div className="rel-list-txt-box">
