@@ -48,18 +48,9 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
     isVisible: false
   });
 
-   const [searchCity, setSearchCity] = useState({
-    keyword:'',
-    value:[]
-  });
-  const [searchCat, setSearchCat] = useState({
-    keyword:'',
-    value:''
-  });
-  const [searchSubCat, setSearchSubCat] = useState({
-    keyword:'',
-    value:[]
-  });
+   const [searchCity, setSearchCity] = useState('');
+  const [searchCat, setSearchCat] = useState('');
+  const [searchSubCat, setSearchSubCat] = useState('');
   const handleClick = (num) => {
     setSelect((prevState) => ({
       num: num,
@@ -68,21 +59,13 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
     
   };
   const handleInputChange = (e,number) => {
-    if(number === 1){
-      setSearchCity(prevState =>({
-        ...prevState,
-        keyword:e.target.value
-      })); 
-    }else if(number === 2){
-      setSearchCat(prevState =>({
-        ...prevState,
-        keyword:e.target.value
-      })); 
+    if (number === 1) {
+      setSearchCity(e.target.value);
+    }
+    else if(number === 2){
+      setSearchCat(e.target.value);
     } else if (number === 3){
-      setSearchSubCat(prevState =>({
-        ...prevState,
-        keyword:e.target.value
-      })); 
+      setSearchSubCat(e.target.value); 
     }
     setSelect((prevState) => ({
         ...prevState,
@@ -92,38 +75,21 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
   };
   const handleOptionClick = (option,number) => {
     if(number=== 1){
-      setSearchCity(prevState =>({
-        ...prevState,
-        value: [...prevState.value, option],
-        keyword:''
-    }));
     setFormData((prevFormData) => ({
       ...prevFormData,
-      ["cities"]:searchCity.value,
-      
+      cities:[...prevFormData.cities,option],
     }));
-    
     console.log(searchCity)
     }else if(number === 2){
-      setSearchCat(prevState =>({
+      setFormData(prevState =>({
         ...prevState,
-        value:option
-    }));
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      ["category"]:searchCat.value,
-      
+        category:option
     }));
     } else if (number === 3){
-      setSearchSubCat(prevState =>({
-        ...prevState,
-        value: [...prevState.value, option],
-        keyword:''
-    }));
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      ["sub_category"]: searchSubCat.value,
-    }));
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        sub_category:[...prevFormData.sub_category,option],
+      }));
     }
   
     setSelect((prevState) => ({
@@ -134,43 +100,43 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
   const cityRef = useRef(null);
   const subcategoryRef = useRef(null);
   useEffect(() => {
-    if (searchCity.value.length > 0) {
+    if (formData.cities.length > 0) {
       cityRef.current.focus();
-    } else if (searchSubCat.value.length > 0) {
+    } else if (formData.sub_category.length > 0) {
       subcategoryRef.current.focus();
     }
-  }, [searchCity.value,searchSubCat.value]);
+  }, [formData.cities,formData.sub_category]);
   const handleKeyPress = (e,number) => {
-    if (number === 1 && e.key === "Backspace" && searchCity.keyword === "") {
-      setSearchCity(prevState => ({
+    if (number === 1 && e.key === "Backspace" && searchCity === "") {
+      setFormData(prevState => ({
         ...prevState,
-        value: prevState.value.slice(0, -1) // Remove the last index value
+        cities: prevState.cities.slice(0, -1) // Remove the last index value
       }));
-    } else if (number === 2 && e.key === "Backspace" && searchSubCat.keyword === "") {
-      setSearchSubCat(prevState => ({
+    } else if (number === 2 && e.key === "Backspace" && searchSubCat === "") {
+      setFormData(prevState => ({
         ...prevState,
-        value: prevState.value.slice(0, -1) // Remove the last index value
+        sub_category: prevState.sub_category.slice(0, -1) // Remove the last index value
       }));
     }
   };
 
   const handleRemove = (index, number) => {
     if (number === 1) {
-      setSearchCity((prevState) => {
-        const updatedValue = [...prevState.value]; // Create a copy of the current array
+      setFormData((prevState) => {
+        const updatedValue = [...prevState.cities]; // Create a copy of the current array
         updatedValue.splice(index, 1); // Remove the item at the specified index
         return {
           ...prevState,
-          value: updatedValue, // Update the state with the modified array
+          cities: updatedValue, // Update the state with the modified array
         };
       });
     } else if (number === 3) {
-      setSearchSubCat((prevState) => {
-        const updatedValue = [...prevState.value]; // Create a copy of the current array
+      setFormData((prevState) => {
+        const updatedValue = [...prevState.sub_category]; // Create a copy of the current array
         updatedValue.splice(index, 1); // Remove the item at the specified index
         return {
           ...prevState,
-          value: updatedValue, // Update the state with the modified array
+          sub_category: updatedValue, // Update the state with the modified array
         };
       });
     }
@@ -178,17 +144,17 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
   
   
   const filteredcity = cities.filter(option =>
-    option.toLowerCase().includes(searchCity.keyword.toLowerCase())
+    option.toLowerCase().includes(searchCity.toLowerCase())
   ).filter(option =>
-    !searchCity.value.includes(option)
+    !formData.cities.includes(option)
   );
   const filteredcat = category.filter(option =>
-    option.toLowerCase().includes(searchCat.keyword.toLowerCase())
+    option.toLowerCase().includes(searchCat.toLowerCase())
 );
 const filteredsubcat = subcategory.filter(option =>
-  option.toLowerCase().includes(searchSubCat.keyword.toLowerCase())
+  option.toLowerCase().includes(searchSubCat.toLowerCase())
 ).filter(option =>
-  !searchSubCat.value.includes(option)
+  !formData.sub_category.includes(option)
 );
 
   return (
@@ -196,7 +162,7 @@ const filteredsubcat = subcategory.filter(option =>
       <div className="row">
         <div className="col-md-6">
           <div className="form-group">
-            <select name="country" required="required" onChange={InputChange}  className="form-control">
+            <select name="country" required="required" onChange={InputChange} value={formData.country}  className="form-control">
               <option value>Select your Country</option>
               {country.map((option,index)=>(
                 <option key={index}  value={option}>{option}</option>
@@ -220,8 +186,8 @@ const filteredsubcat = subcategory.filter(option =>
             >
               <ul className="chosen-choices">
 
-              {searchCity.value.length > 0 &&
-                searchCity.value.map((option, index) => {
+              {formData.cities.length > 0 &&
+                formData.cities.map((option, index) => {
                   return (
                     <li key={index} className="search-choice">
                       <span>{option}</span>
@@ -238,9 +204,9 @@ const filteredsubcat = subcategory.filter(option =>
                     className="chosen-search-input default"
                     onChange={(e)=>handleInputChange(e,1)}
                     style={{
-                      width: searchCity.value.length > 0 ? "33px!important" : "137.062px"
+                      width: formData.cities.length > 0 ? "33px!important" : "137.062px"
                     }}
-                    value={searchCity.keyword}
+                    value={searchCity}
                     type="text"
                     autoComplete="off"
                     placeholder="Select your Cities"
@@ -275,7 +241,7 @@ const filteredsubcat = subcategory.filter(option =>
               style={{ width: 305 }}
             >
               <a className="chosen-single" onClick={() => handleClick(2)}>
-              <span>{searchCat?.value?.length > 0 ? searchCat.value:'Select Category' }</span>
+              <span>{formData?.category?.length > 0 ? formData.category:'Select Category' }</span>
                 <div>
                   <b />
                 </div>
@@ -286,7 +252,7 @@ const filteredsubcat = subcategory.filter(option =>
                     className="chosen-search-input valid"
                     type="text"
                     autoComplete="off"
-                    value={searchCat.keyword}
+                    value={searchCat}
                     onChange={(e)=>handleInputChange(e,2)}
                   />
                 </div>
@@ -319,8 +285,8 @@ const filteredsubcat = subcategory.filter(option =>
               style={{ width: 640 }}
             >
               <ul className="chosen-choices">
-              {searchSubCat.value.length > 0 &&
-                searchSubCat.value.map((option, index) => {
+              {formData?.sub_category.length > 0 &&
+                formData?.sub_category.map((option, index) => {
                   return (
                     <li key={index} className="search-choice">
                       <span>{option}</span>
@@ -337,9 +303,9 @@ const filteredsubcat = subcategory.filter(option =>
                     onClick={() => handleClick(3)}
                     onChange={(e)=>handleInputChange(e,3)}
                     style={{
-                      width: searchCity.value.length > 0 ? "33px!important" : "137.062px"
+                      width: formData.sub_category.length > 0 ? "33px!important" : "137.062px"
                     }}
-                    value={searchSubCat.keyword}
+                    value={searchSubCat}
                     autoComplete="off"
                     placeholder="select sub category"
                   />

@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Quicksand:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+*{font-family:'Noto Sans',sans-serif;}
 p, a, span, li, label, tr, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, summary, input, textarea, select{
     font-family: 'poppins', sans-serif;
 }
@@ -16,7 +18,7 @@ li{
     list-style-type: none;
 }
 *{box-sizing: border-box;}
-*{font-family:'Noto Sans',sans-serif;}
+
 /* fallback */
 @font-face{font-family:'Material Icons';font-weight:400;font-style:normal;font-display: swap;unicode-range: U+000-5FF;src:url(icon.woff2) format("woff2")}
 .material-icons {
@@ -2842,6 +2844,7 @@ left: -5px;
 .all-listing:before{
 }
 .all-listing .row{/* box-shadow: 0px 0px 25px 0px rgba(42, 42, 42, 0.13); */box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.22);}
+.add-list-ser ul li,.add-list-off ul li,.bor-box{border:1px solid #d3d7e7;margin-bottom:25px;padding:30px 25px 15px;border-radius:10px;background:#f5f7ff}
 .all-listing .all-list-bre .row{box-shadow: none;}
 .all-listing .col-md-3{
     padding: 0px 0px 30px 0px;
@@ -6223,7 +6226,7 @@ background: #F44336;
 }
 .log div button.btn{
     width: 100%;
-    background: #51c0ff;
+    background: #0070d2;
     border: 0px;
     font-weight: 600;
     font-size: 17px;
@@ -6299,13 +6302,12 @@ background: #F44336;
 .add-list .log div input, .add-list .log div select{
     font-size:14px;
 }
-.add-list textarea{
-    height: 120px!important;
-    border: 1px solid #f1eae5;    font-size: 13px
-}
-.add-list label{
-    font-size:14px;
-}
+.fil-img-uplo{float:left;width:100%;margin:0 0 15px;position:relative}
+.fil-img-uplo .dumfil{background:#fff;color:#426a8a;border-radius:5px;padding:10px 25px 9px 42px;font-weight:500;outline:none;position:relative;font-size:12px;text-align:left;width:100%;display:block;text-overflow:ellipsis;white-space:pre;overflow:hidden;cursor:pointer;border: 2px solid #000;transition:all .4s ease}
+.fil-img-uplo .dumfil:before{content:'file_upload';left:20px;top:6px;letter-spacing:0;color:#567492;transition:all .4s ease}
+.fil-img-uplo input[type="file"]{z-index:7;position:absolute;top:0;left:0;right:0;opacity:0;cursor:pointer}
+.add-list textarea{height:120px!important;border: 2px solid #000;font-size: 14px;font-weight: 500;}
+.add-list label{font-size:13.5px;font-weight:600;color:#454858;text-transform:uppercase}
 .add-list .chbox input[type="checkbox"]{
     height:auto;
 }
@@ -14565,7 +14567,7 @@ color: #333;
 .chosen-container-single .chosen-search input[type="text"]{background:url('../public/chosen-sprite.png') no-repeat 100% -20px,#fff;border:1px solid #ccc;border-top-right-radius:4px;border-top-left-radius:4px;border-bottom-right-radius:4px;border-bottom-left-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);margin:1px 0;padding:4px 20px 4px 4px;width:100%;height: 40px;}
 .chosen-container-single .chosen-drop{margin-top:-1px;border-bottom-right-radius:4px;border-bottom-left-radius:4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box}
 .chosen-container-single-nosearch .chosen-search input{position:absolute;left:-9000px}
-.chosen-container-multi .chosen-choices{background-color:#fff;border-top-right-radius:4px;border-top-left-radius:4px;border-bottom-right-radius:4px;border-bottom-left-radius:4px;cursor:text;margin:0;overflow:hidden;padding:3px 5px 0;position:relative;height:40px;font-size:15px;font-weight:500}
+.chosen-container-multi .chosen-choices{background-color:#fff;border-top-right-radius:4px;border-top-left-radius:4px;border-bottom-right-radius:4px;border-bottom-left-radius:4px;cursor:text;margin:0;overflow-y:scroll;padding:3px 5px 0;position:relative;height:40px;font-size:15px;font-weight:500}
 .chosen-container-multi .chosen-choices li{float:left;list-style:none}
 .chosen-container-multi .chosen-choices .search-field{margin:0;padding:0;white-space:nowrap}
 .chosen-container-multi .chosen-choices .search-field input[type="text"]{background:transparent!important;border:0!important;-webkit-box-shadow:none;box-shadow:none;color:#555;height:32px;margin:0;padding:4px;outline:0}

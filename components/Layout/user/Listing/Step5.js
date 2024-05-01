@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Step5 = ({formData,handleInputChange}) => {
+const Step5 = ({formData,handleInputChange,handleStepClick}) => {
   return (
     <div className="row">
                           <div className="login-main add-list">
@@ -156,25 +156,14 @@ const Step5 = ({formData,handleInputChange}) => {
                                   {/*FILED END*/}
                                 </ul>
                                 {/*FILED START*/}
-                                <div className="row">
-                                  {/*                                        <div class="col-md-6">*/}
-                                  {/*                                            <button type="submit" class="btn btn-primary">Previous</button>*/}
-                                  {/*                                        </div>*/}
-                                  <div className="col-md-12">
-                                    <button
-                                      type="submit"
-                                      name="listing_submit"
-                                      className="btn btn-primary"
-                                    >
-                                      Submit Listing
-                                    </button>
-                                  </div>
-                                  <div className="col-md-12">
-                                    <a href="profile.html" className="skip">
-                                      Go to Dashboard &gt;&gt;
-                                    </a>
-                                  </div>
+                                <div class="row">
+                                <div className="col-md-6">
+                                    <button onClick={()=>handleStepClick(4)} type='button'  className="btn btn-primary">Previous</button>
                                 </div>
+                                <div className="col-md-6">
+                                  <button  type='submit'   className="btn btn-primary">Submit Listing</button>
+                                </div>
+                              </div>
                                 {/*FILED END*/}
                               </div>
                             </div>

@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import "@/css/style.css";
 import "@/css/bootstrap.css";
 import "@/css/style2.css";
+import Head from "next/head";
 import { Poppins } from "next/font/google";
 // import "../styles/admin-style.css"
 import { ToastContainer } from "react-toastify";
@@ -23,6 +24,9 @@ export default function RootLayout({ children, session }) {
         <StoreProvider>
             <SessionProvider session={session}>
                 <html className={poppins.className}>
+                    <Head>
+                    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+                    </Head>
                     <body>
                         <div>
                             {children}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Location_Filter from '@/components/Location_Filter'
-const Step1 = ({formData,handleInputChange,setFormData}) => {
+const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
   return (
     <div className="row">
     <div className="login-main add-list posr">
@@ -81,7 +81,7 @@ const Step1 = ({formData,handleInputChange,setFormData}) => {
                   onChange={handleInputChange}
                   name="website"
                   className="form-control"
-                  placeholder="Webiste(www.rn53themes.net)"
+                  placeholder="Enter Website"
                 />
               </div>
             </div>
@@ -129,12 +129,7 @@ const Step1 = ({formData,handleInputChange,setFormData}) => {
           </div>
           
         <Location_Filter formData={formData} InputChange={handleInputChange} setFormData={setFormData} />
-          
-          </div>
-          {/*FILED END*/}
-        
-          {/*FILED START*/}
-          <div className="row">
+        <div className="row">
             <div className="col-md-12">
               <div className="form-group">
                 <textarea
@@ -155,42 +150,41 @@ const Step1 = ({formData,handleInputChange,setFormData}) => {
             <div className="col-md-6">
               <div className="form-group">
                 <label>Choose profile image</label>
-                <input
-                  type="file"
-                  name="profile_image"
-                  className="form-control"
-                />
+                <div className="fil-img-uplo">
+                <span className="dumfil">Upload a file</span>
+                <input type="file" name="profile_image" accept="image/*,.jpg,.jpeg,.png" className="form-control valid" />
+              </div>
               </div>
             </div>
             <div className="col-md-6">
               <div className="form-group">
                 <label>Choose cover image</label>
-                <input
-                  type="file"
-                  name="cover_image"
-                  className="form-control"
-                />
+                <div className="fil-img-uplo">
+                <span className="dumfil">Upload a file</span>
+                <input type="file" name="cover_image" accept="image/*,.jpg,.jpeg,.png" className="form-control valid" />
+              </div>
               </div>
             </div>
           </div>
           {/*FILED END*/}
           {/*FILED START*/}
-          <div className="row">
-            <div className="col-md-12">
-              <div className="form-group">
-                <textarea
-                  value={formData.service_location}
-                  onChange={handleInputChange}
-                  className="form-control"
-                  id="service_locations"
-                  name="service_location"
-                  placeholder="Enter your service locations... 
-(i.e) London, Dallas, Wall Street, Opera House"
-                  defaultValue={""}
-                />
-              </div>
+         
+          <div className="row bor-box">
+          <div className="col-md-12">
+            <div className="form-group">
+              <label htmlFor>Enter your service locations... 
+                (i.e) London, Dallas, Wall Street, Opera House</label>
+              <textarea
+                value={formData.service_location}
+                onChange={handleInputChange}
+               className="form-control valid" id="service_locations" name="service_location" placeholder="Enter your service locations... 
+        (i.e) London, Dallas, Wall Street, Opera House" defaultValue={"laxmi nagar"} />
             </div>
           </div>
+        </div>
+        <button type="submit" onClick={()=>handleStepClick(2)} name="listing_submit" className="btn btn-primary">Next</button>
+
+        </div>
           {/*FILED END*/}
         </div>
       </div>
