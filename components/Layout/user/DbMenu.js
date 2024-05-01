@@ -4,9 +4,7 @@ import { SidebarData } from "./SidebarData";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
 const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
-   ;
     const dashboardRef = useRef(null);
     useEffect(() => {
         function handleClickOutside(event) {
@@ -76,7 +74,9 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
                                 <Link
                                     href={item.path}
                                     className={
-                                        pathname == item.path && "db-lact"
+                                        pathname === item.path
+                                            ? "db-lact"
+                                            : undefined
                                     }
                                 >
                                     <img src={item.icon} alt="theme" />
