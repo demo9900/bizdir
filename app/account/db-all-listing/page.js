@@ -19,7 +19,6 @@ const page = () => {
                     >
                         Add New Listing
                     </Link>
-
                     <Table />
                 </div>
             </div>
