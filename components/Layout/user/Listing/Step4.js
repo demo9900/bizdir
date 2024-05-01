@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Step4 = ({formData,handleInputChange}) => {
+const Step4 = ({formData,handleInputChange,handleStepClick}) => {
   return (
     <div className="row">
                           <div className="login-main add-list">
@@ -136,6 +136,14 @@ const Step4 = ({formData,handleInputChange}) => {
                                     </div>
                                   </div>
                                 </div>
+                                <div class="row">
+                                <div className="col-md-6">
+                                    <button onClick={()=>handleStepClick(3)} type='button'  className="btn btn-primary">Previous</button>
+                                </div>
+                                <div className="col-md-6">
+                                  <button onClick={()=>handleStepClick(5)} type='button'   className="btn btn-primary">Next</button>
+                                </div>
+                              </div>
                                 {/*FILED END*/}
                               </div>
                             </div>

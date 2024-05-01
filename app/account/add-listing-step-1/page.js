@@ -29,20 +29,36 @@ const page = () => {
     listing_detail: "",
     listing_profile: "",
     listing_cover: "",
-    service_location: "",
-    service_name: "",
-    service_image: "",
+    service_location: [],
+    service_provided:[],
     youtubelink: "",
     map_url: "",
   });
   console.log(process.env.BACKEND_URL);
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event,index) => {
     const { name, value } = event.target;
+    if(name=== 'service_location'){
+       // Update service_location with the array of locations
+       const locationsArray = value.split(',');
+       setFormData((prevFormData) => ({
+         ...prevFormData,
+         [name]: locationsArray, // Update service_location with the array of locations
+       }));
+       
+    }else if(name=== 'service_provided') {
+      const ServiceProvided = [...formData.service_provided];
+    ServiceProvided[index] = event.target.value;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      service_provided: ServiceProvided,
     }));
+    } else{
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value,
+      }));
+    }
     console.log(formData);
   };
 
@@ -69,21 +85,23 @@ const page = () => {
   };
 
   const [currentStep, setCurrentStep] = useState(0);
+  const handleStepClick = (step) => {
+    setCurrentStep(step - 1);
+  };
   const steps = [
     <Step1 key="1"
       formData={formData}
       setFormData={setFormData}
       handleInputChange={handleInputChange}
+      handleStepClick={handleStepClick}
     />,
-    <Step2 key="2" formData={formData} handleInputChange={handleInputChange} />,
-    <Step3 key="3" formData={formData} handleInputChange={handleInputChange} />,
-    <Step4 key="4" formData={formData} handleInputChange={handleInputChange} />,
-    <Step5 key="5" formData={formData} handleInputChange={handleInputChange} />,
+    <Step2 key="2" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />,
+    <Step3 key="3" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />,
+    <Step4 key="4" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />,
+    <Step5 key="5" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />,
   ];
   const stepNames = ["Besic Info", "Services", "Offers", "Gallery", "Others"];
-  const handleStepClick = (step) => {
-    setCurrentStep(step - 1);
-  };
+  
 
   return (
     <section>

@@ -164,7 +164,7 @@ const page = () => {
                                           onChange={handleInputChange}
                                           name="website"
                                           className="form-control"
-                                          placeholder="Webiste(www.rn53themes.net)"
+                                          placeholder="Enter Website"
                                         />
                                       </div>
                                     </div>

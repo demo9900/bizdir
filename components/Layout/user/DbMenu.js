@@ -4,7 +4,9 @@ import { SidebarData } from './SidebarData'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+
 const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
+   ;
     const dashboardRef = useRef(null);
     useEffect(() => {
         function handleClickOutside(event) {
