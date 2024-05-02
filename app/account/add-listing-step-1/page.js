@@ -34,7 +34,6 @@ const page = () => {
     youtube_link: "",
     map_url: "",
   });
-  console.log(process.env.BACKEND_URL);
 
   const handleInputChange = (event,index) => {
     const { name, value } = event.target;

@@ -6174,14 +6174,18 @@ background: #F44336;
 .pri-box .c5 a:hover{background: #19a75c;}
 .login-reg{
     padding: 130px 0 180px 0;
-    background: url('/face.jpg') #edf6fd;
     position: relative;
+    background: linear-gradient(124deg, rgba(74,99,228,0.5) 0%, rgba(154,19,186,0.5) 100%);
+    background-repeat: no-repeat;
+    width: 100%;
     background-size: 380px;
 }
 .login-reg:before{
     content: '';
     position: absolute;
-   
+    background: url('../public/bgIcons.png');
+    animation: blogbgani 300s linear 0s infinite both;
+    background-size: 400px;
     top: 0px;
     bottom: 0px;
     left: 0px;
