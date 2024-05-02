@@ -75,7 +75,7 @@ const page = () => {
         <section>
           <div className="str">
             <div>
-              <Header tratransparent={false} />
+              <Header transparent={false} />
             </div>
           </div>
         </section>

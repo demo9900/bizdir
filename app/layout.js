@@ -10,7 +10,7 @@ import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SessionProvider } from "next-auth/react";
-import Auth from "@/components/Auth";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,7 +20,7 @@ const poppins = Poppins({
 
 export default function RootLayout({ children, session }) {
   return (
-    <Auth>
+   
       <SessionProvider session={session}>
         <html>
           <Head>
@@ -37,6 +37,6 @@ export default function RootLayout({ children, session }) {
           </body>
         </html>
       </SessionProvider>
-    </Auth>
+    
   );
 }
