@@ -28,20 +28,20 @@ const page = () => {
                     <div className="container">
                         <div className="row">
                             <div className="login-main add-list">
-                                <div className="log-bor">&nbsp;</div>{" "}
+                                <div className="log-bor">&nbsp;</div>
                                 <span className="steps">Create new</span>
                                 <div className="log">
                                     <div className="login">
                                         <h4>Add New Listing</h4>
                                         <div className="row cre-dup">
                                             <div className="col-md-6">
-                                                {" "}
-                                                <Link href="/account/add-listing-step-1">
+                                                
+                                                <Link href="/account/add-listing-step">
                                                     Create listing from scratch
                                                 </Link>
                                             </div>
                                             <div className="col-md-6">
-                                                {" "}
+                                                
                                                 <span className="cre-dup-btn">
                                                     Create duplicate listing
                                                 </span>
@@ -176,7 +176,7 @@ const page = () => {
                                             </button>
                                         </form>
                                         <div className="col-md-12">
-                                            {" "}
+                                            
                                             <Link
                                                 href="/dashboard"
                                                 className="skip"
@@ -194,11 +194,11 @@ const page = () => {
                 {/* START */}
                 <span className="btn-ser-need-ani">Help &amp; Support</span>
                 <div className="ani-quo-form">
-                    {" "}
+                    
                     <i className="material-icons ani-req-clo">close</i>
                     <div className="tit">
                         <h3>
-                            What service do you need?{" "}
+                            What service do you need?
                             <span>BizBook will help you</span>
                         </h3>
                     </div>
@@ -365,7 +365,7 @@ const page = () => {
                                         </p>
                                     </div>
                                     <div className="col-md-3 bb-link">
-                                        {" "}
+                                        
                                         <Link href="/pricing-details">
                                             Add my business
                                         </Link>
