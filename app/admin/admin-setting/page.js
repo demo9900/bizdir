@@ -55,7 +55,7 @@ const page = () => {
                   <td>Name</td>
                   <td>
                     <div className="form-group">
-                      <input type="text" className="form-control" required="required" name="admin_name" defaultValue="Bizbook Directory Template" placeholder="Name" />
+                      <input type="text" className="form-control" required="required" name="admin_name" defaultValue="BUSINESS DIRECTORY" placeholder="Name" />
                     </div>
                   </td>
                 </tr>
@@ -87,7 +87,7 @@ const page = () => {
                   <td>SEO Title</td>
                   <td>
                     <div className="form-group">
-                      <input type="text" className="form-control" required="required" name="admin_seo_title" defaultValue="BizBook Directory Template by Rn53Themes.net" placeholder="SEO Title for whole website" />
+                      <input type="text" className="form-control" required="required" name="admin_seo_title" defaultValue="BUSINESS DIRECTORY by Rn53Themes.net" placeholder="SEO Title for whole website" />
                     </div>
                   </td>
                 </tr>
@@ -95,7 +95,7 @@ const page = () => {
                   <td>SEO Description</td>
                   <td>
                     <div className="form-group">
-                      <textarea className="form-control" required="required" name="admin_seo_description" defaultValue={"Kick start your online directory with BizBook Directory Template. Its comes with ultimate features like listings, events, blog, community. Try Bizbook directory now!"} />
+                      <textarea className="form-control" required="required" name="admin_seo_description" defaultValue={"Kick start your online directory with BUSINESS DIRECTORY. Its comes with ultimate features like listings, events, blog, community. Try BUSINESS DIRECTORY now!"} />
                     </div>
                   </td>
                 </tr>
@@ -103,7 +103,7 @@ const page = () => {
                   <td>SEO Keywords</td>
                   <td>
                     <div className="form-group">
-                      <input type="text" className="form-control" required="required" name="admin_seo_keywords" defaultValue="bizbook directory, bizbook directory template, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template" placeholder="Enter SEO Keywords (i.e) Best Template in the world,Themes,User friendly" />
+                      <input type="text" className="form-control" required="required" name="admin_seo_keywords" defaultValue="BUSINESS DIRECTORY, BUSINESS DIRECTORY, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template" placeholder="Enter SEO Keywords (i.e) Best Template in the world,Themes,User friendly" />
                     </div>
                   </td>
                 </tr>

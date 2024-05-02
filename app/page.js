@@ -330,7 +330,7 @@ const page = () => {
             <section>
                 <div className="str">
                     <div className="container">
-                        <div className="products land-pack container mx-auto my-10 px-4 xl:px-0">
+                        <div className="products row mx-auto">
                             <div className="home-tit">
                                 <h2>
                                     <span>Popular Services</span> near you
@@ -1040,7 +1040,7 @@ const page = () => {
                                 <div className="hom-cre-acc-left">
                                     <h3>
                                         What service do you need?{" "}
-                                        <span>BizBook Directory</span>
+                                        <span>BUSINESS DIRECTORY</span>
                                     </h3>
                                     <p>
                                         Tell us more about your requirements so

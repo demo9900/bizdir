@@ -430,7 +430,7 @@ const page = () => {
       <div className="head-pro">
         <img src="/user/3.jpg" alt="" /> <b>Profile by</b>
         <br />
-        <h4>Bizbook Directory Template</h4>
+        <h4>BUSINESS DIRECTORY</h4>
         <a href="admin-setting.html" className="fclick" />
       </div>
     </div>
@@ -1313,7 +1313,7 @@ const page = () => {
       <div className="ad-dash-s1">
         <div className="cd-cen-intr-inn">
           <h2>
-            Hi Welcome <b>Bizbook Directory Template</b>
+            Hi Welcome <b>BUSINESS DIRECTORY</b>
           </h2>
           <p>
             Stay up to date reports in your listing, products, events and blog

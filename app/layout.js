@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-head-element */
 "use client";
-import "@/styles/globals.css";
 import "@/css/style.css";
+import "@/styles/globals.css";
 import "@/css/bootstrap.css";
 import "@/css/style2.css";
 import Head from "next/head";

@@ -119,7 +119,7 @@ const page = () => {
     <section>
       <div className="ad-com">
         <div className="ad-dash leftpadd">
-          <div className="login-reg">
+          <div className="login-reg animation-bg">
             <div className="container">
               <div className="row">
                 <div className="add-list-ste">

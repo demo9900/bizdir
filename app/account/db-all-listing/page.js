@@ -14,7 +14,7 @@ const page = () => {
                 <div className="ud-cen-s2">
                     <h2>Listing Details</h2>
                     <Link
-                        href="/account/add-listing-start"
+                        href="/account/add-listing"
                         className="db-tit-btn"
                     >
                         Add New Listing

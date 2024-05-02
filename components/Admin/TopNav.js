@@ -428,7 +428,7 @@ const TopNav = ({toggleCart,showadMenu}) => {
       <div className="head-pro">
         <img src="/user/3.jpg" alt="" /> <b>Profile by</b>
         <br />
-        <h4>Bizbook Directory Template</h4>
+        <h4>BUSINESS DIRECTORY</h4>
         <a href="admin-setting.html" className="fclick" />
       </div>
     </div>

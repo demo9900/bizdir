@@ -15,7 +15,7 @@ const page = () => {
       {/*User Welcome Div ends */}
       <div className="biz-updates">
         <div className="ud-notes">
-          <p><b>Notes:</b> Enter your purchase code to the below box and activate your Bizbook Directory
+          <p><b>Notes:</b> Enter your purchase code to the below box and activate your BUSINESS DIRECTORY
             template. Once you use your purchase code for your domain means you can't use the same purchase
             code to another domain. Your purchase code only for one domain not for multi-domain use.</p>
         </div>

@@ -82,7 +82,7 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
           })}
           <li>
             <Link
-              href="" onClick={() => signOut()}
+              href="" onClick={() => signOut({ callbackUrl: '/', redirect:true })}
             >
               <img src="/icon/dbl12.png" alt="theme" />
               Log Out
