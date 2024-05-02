@@ -5,11 +5,11 @@ import { signIn, useSession } from "next-auth/react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import Headertwo from "@/components/Headertwo";
+import Header from "@/components/Header";
 import { toast } from "react-toastify";
 import Footer from "@/components/Footer";
-import { useDispatch } from "react-redux";
-import { loginUserDetails } from "lib/features/auth/auth";
+
+
 
 const page = () => {
     const router = useRouter();
@@ -20,7 +20,7 @@ const page = () => {
     const searchParams = useSearchParams();
     const token = searchParams.get("token");
     const email = searchParams.get("email");
-    const dispatch = useDispatch();
+
 
     const { data: session, status } = useSession();
     console.log("user session from login", session);
@@ -76,7 +76,7 @@ const page = () => {
             <section>
                 <div className="str">
                     <div>
-                        <Headertwo />
+                        <Header tratransparent={false} />
                     </div>
                 </div>
             </section>

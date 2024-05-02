@@ -102,8 +102,8 @@ useEffect(() => {
     const jwt = session.jwt;
     try {
       // Send POST request to /api/listing endpoint with formData
-      const response = await axios.post(
-        `${process.env.BACKEND_URL}/api/listing `,
+      const response = await axios.patch(
+        `${process.env.BACKEND_URL}/api/listing/${params.id} `,
         formData,
         {
           headers: {

@@ -6211,7 +6211,7 @@ background: #F44336;
     text-align: center;
     color: #81898d;
 }
-.log div input,.log div select{height: 43px;border: 2px solid #000;font-size: 14px;font-weight: 600;color:#1c1b24}
+.log div input,.log div select{height: 43px;font-size: 14px;font-weight: 600;color:#1c1b24}
 .form-control option{
     font-size:13px;
     font-weight:500;
@@ -6228,6 +6228,7 @@ background: #F44336;
     width: 100%;
     background: #0070d2;
     border: 0px;
+    margin-top:10px;
     font-weight: 600;
     font-size: 17px;
     padding: 10px 0px;
