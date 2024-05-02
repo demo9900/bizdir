@@ -124,7 +124,7 @@ console.log(userEmail)
                  {/*                                        </li>*/}
                  <li>
                    <a href="#"  className="login-fb">
-                     <img src="images/icon/facebook.png" />Continue with Facebook</a>
+                     <img src="images/icon/facebook.png" alt =""/>Continue with Facebook</a>
                  </li>
                </ul>
              </div>
