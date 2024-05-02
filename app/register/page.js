@@ -3,7 +3,7 @@ import React,{useState,useContext} from 'react'
 import Link from 'next/link'
 import axios from 'axios';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-import Headertwo from "@/components/Headertwo"
+import Header from '@/components/Header';
 import {  toast } from "react-toastify";
 import Footer from '@/components/Footer'
 const page = () => {
@@ -51,7 +51,7 @@ console.log(userEmail)
      <section>
 		<div className="str">
 			<div>
-      <Headertwo  />
+      <Header transparent={false}  />
       </div>
       </div>
       </section>
