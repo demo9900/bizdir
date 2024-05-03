@@ -1,16 +1,16 @@
 'use client';
 import React from 'react'
-import Headertwo from '@/components/Headertwo'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer';
 import BottomMenu from '@/components/BottomMenu';
 import Link from 'next/link';
 const page = () => {
   return (
     <div>
-        <section>
+        <section> 
       <div className="str">
     <div>
-      <Headertwo/>
+      <Header transparent={false}/>
     </div>
      </div>
     </section>

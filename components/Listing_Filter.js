@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-
+import { useRouter } from "next/navigation";
 const Listing_Filter = () => {
     const divRef1 = useRef(null);
     const divRef2 = useRef(null);
@@ -25,6 +25,27 @@ const Listing_Filter = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+    const [city,setCity] = useState();
+    useEffect(() => {
+        const fetchCity = async () => {
+          try {
+            const response = await fetch('https://bizdir-backend.vercel.app/api/area/city/all');
+            if (!response.ok) {
+              throw new Error('Failed to fetch pincode data');
+            }
+            const data = await response.json();
+            const cityNames = await data.map(city => city.name);
+            setCity(cityNames);
+          } catch (error) {
+            console.error('Error fetching pincode data:', error);
+          }
+        };
+    
+        fetchCity();
+      }, []);
+      console.log(city)
+      console.log(typeof city)
+
     const category = [
         "All Services",
         "Service Experts",
@@ -45,6 +66,8 @@ const Listing_Filter = () => {
         "Chennai",
         "Chennai 2",
     ];
+    console.log(location)
+    console.log(typeof location)
     const services = [
         "What are you looking for?",
         "Automobiles",
@@ -138,17 +161,22 @@ const Listing_Filter = () => {
     const filteredcat = category.filter((option) =>
         option.toLowerCase().includes(searchCat.keyword.toLowerCase())
     );
-    const filteredlocation = location.filter((option) =>
+    const filteredlocation = city?.filter((option) =>
         option.toLowerCase().includes(searchLocation.keyword.toLowerCase())
     );
 
     const filteredServices = services.filter((option) =>
         option.toLowerCase().includes(searchService.keyword.toLowerCase())
     );
-
+    const router = useRouter();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Redirect user to the desired route
+        router.push(`/all-listing?category=${encodeURIComponent(searchService.value)}&city=${encodeURIComponent(searchLocation.value)}`);
+      };
     return (
         <div className="ban-search ban-sear-all">
-            <form name="filter_form" id="filter_form" className="filter_form">
+            <form onSubmit={handleSubmit} name="filter_form" id="filter_form" className="filter_form">
                 <ul>
                     <li className="sr-cit">
                         <div
@@ -191,7 +219,7 @@ const Listing_Filter = () => {
                                     />
                                 </div>
                                 <ul className="chosen-results">
-                                    {filteredlocation.map((option) => (
+                                    {filteredlocation?.map((option) => (
                                         <li
                                             key={option}
                                             onClick={() =>

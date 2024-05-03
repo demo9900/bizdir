@@ -61,10 +61,6 @@ const page = () => {
       alert(result.error);
       console.log(result.error);
     } else {
-      if (status === "authenticated") {
-        dispatch(loginUserDetails(session));
-      }
-      console.log("in handleSubmit", status);
       router.push("/");
     }
   }
