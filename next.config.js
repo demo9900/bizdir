@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental:{
     appDir: true,
-    missingSuspenseWithCSRBailout: false,
+    // missingSuspenseWithCSRBailout: false,
   },
   env: {
     BACKEND_URL:process.env.BACKEND_URL,
