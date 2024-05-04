@@ -70,6 +70,7 @@ const Table = () => {
                         <th>Views</th>
                         <th>Created by</th>
                         {/*<th>Promote</th>*/}
+                        <th>Status</th>
                         <th>Edit</th>
                         <th>Delete</th>
                         <th>Preview</th>
@@ -113,6 +114,9 @@ const Table = () => {
                                         class="db-list-edit"
                                     ></a>
                                 </td> */}
+                                <td className={`${listing.approval=== 'approved'?'approve':'reject'} relative`}>{listing.approval}
+                                <span className="tooltip" data-text={`${listing.approval_by.message}`}></span>
+                                </td>
                                 <td>
                                     <Link
                                         href={`/account/edit-listing/${listing._id}`}
