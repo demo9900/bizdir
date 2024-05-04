@@ -114,8 +114,8 @@ const Table = () => {
                                         class="db-list-edit"
                                     ></a>
                                 </td> */}
-                                <td className={`${listing.approval=== 'approved'?'approve':'reject'} relative`}>{listing.approval}
-                                <span className="tooltip" data-text={`${listing.approval_by.message}`}></span>
+                                <td className={`${listing.approval=== 'approved'?'approve':'reject'} relative`}>{listing?.approval}
+                                <span className="tooltip" data-text={`${listing.approval_by?.message}`}></span>
                                 </td>
                                 <td>
                                     <Link
