@@ -344,10 +344,10 @@ div#event_detail_enq_success p{
     background: none;
 }
 .ban-search{margin:0 auto;display:table;width:55%;position:relative;box-shadow: 0 12px 19px 0 #00000017;z-index:7}
-.ban-search.ban-sear-all li.sr-cate{width:200px}
-.ban-search.ban-sear-all li.sr-cit{display:block;width:200px}
-.ban-search.ban-sear-all li.sr-sea{display:none}
-.ban-search.ban-sear-all li.sr-nor{width:calc(100% - 550px)}
+.ban-search.ban-sear-all li.sr-state{width:180px}
+.ban-search.ban-sear-all li.sr-cit{display:block;width:180px}
+.ban-search.ban-sear-all li.sr-area{display:180px}
+.ban-search.ban-sear-all li.sr-nor{width:250px}
 .ban-search.ban-sear-all li.sr-btn{width:150px}
 .ban-search ul li.sr-cate:before{content:'layers'}
 .ban-search ul li.sr-time:before{content:'access_time'}

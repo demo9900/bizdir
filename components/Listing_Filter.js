@@ -4,13 +4,16 @@ const Listing_Filter = () => {
     const divRef1 = useRef(null);
     const divRef2 = useRef(null);
     const divRef3 = useRef(null);
+    const divRef4 = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
                 !divRef1.current.contains(event.target) &&
                 !divRef2.current.contains(event.target) &&
-                !divRef3.current.contains(event.target)
+                !divRef3.current.contains(event.target) && 
+                !divRef4.current.contains(event.target)
+
             ) {
                 setSelect((prevState) => ({
                     ...prevState,
@@ -25,27 +28,38 @@ const Listing_Filter = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+    const [state,setState] = useState();
     const [city,setCity] = useState();
-    useEffect(() => {
-        const fetchCity = async () => {
-          try {
-            const response = await fetch('https://bizdir-backend.vercel.app/api/area/city/all');
-            if (!response.ok) {
-              throw new Error('Failed to fetch pincode data');
-            }
-            const data = await response.json();
-            const cityNames = await data.map(city => city.name);
-            setCity(cityNames);
-          } catch (error) {
-            console.error('Error fetching pincode data:', error);
+    const [area,setArea] = useState();
+
+    const fetchCity = async () => {
+        try {
+          const res1 = await fetch('https://bizdir-backend.vercel.app/api/state/');
+          const res2 = await fetch('https://bizdir-backend.vercel.app/api/city/');
+          const res3 = await fetch('https://bizdir-backend.vercel.app/api/area/');
+          if (!res1.ok && !res2.ok && !res3.ok ) {
+            throw new Error('Failed to fetch pincode data');
           }
-        };
-    
+          const data1 = await res1.json();
+          const data2 = await res2.json();
+          const data3 = await res3.json();
+          const stateName = await data1.map(state => state.name);
+          const cityNames = await data2.map(city => city.name);
+          const areaName = await data3.map(area => area.name);
+          setState(stateName)
+          setCity(cityNames);
+          setArea(areaName)
+
+        } catch (error) {
+          console.error('Error fetching pincode data:', error);
+        }
+      };
+    useEffect(() => {
+        
         fetchCity();
       }, []);
       console.log(city)
       console.log(typeof city)
-
     const category = [
         "All Services",
         "Service Experts",
@@ -57,17 +71,6 @@ const Listing_Filter = () => {
         "Coupon & deals",
         "Blogs",
     ];
-    const location = [
-        "Select City",
-        "New York",
-        "Illunois city",
-        "Seattle",
-        "Atlanta",
-        "Chennai",
-        "Chennai 2",
-    ];
-    console.log(location)
-    console.log(typeof location)
     const services = [
         "What are you looking for?",
         "Automobiles",
@@ -83,19 +86,24 @@ const Listing_Filter = () => {
         "Spa and Facial",
         "Transportation",
     ];
-
+    
     const [select, setSelect] = useState({
         num: null,
         isVisible: false,
     });
-    const [searchCat, setSearchCat] = useState({
+    const [searchState, setSearchState] = useState({
         keyword: "",
         value: null,
     });
-    const [searchLocation, setSearchLocation] = useState({
+    const [searchCity, setSearchCity] = useState({
         keyword: "",
         value: null,
     });
+    const [seachArea, setSearchArea] = useState({
+        keyword: "",
+        value: null,
+    });
+   
     const [searchService, setSearchService] = useState({
         keyword: "",
         value: null,
@@ -113,12 +121,12 @@ const Listing_Filter = () => {
 
     const handleInputChange = (e, number) => {
         if (number === 1) {
-            setSearchLocation((prevState) => ({
+            setSearchCity((prevState) => ({
                 ...prevState,
                 keyword: e.target.value,
             }));
         } else if (number === 2) {
-            setSearchCat((prevState) => ({
+            setSearchArea((prevState) => ({
                 ...prevState,
                 keyword: e.target.value,
             }));
@@ -137,12 +145,12 @@ const Listing_Filter = () => {
 
     const handleOptionClick = (option, number) => {
         if (number === 1) {
-            setSearchLocation((prevState) => ({
+            setSearchCity((prevState) => ({
                 ...prevState,
                 value: option,
             }));
         } else if (number === 2) {
-            setSearchCat((prevState) => ({
+            setSearchArea((prevState) => ({
                 ...prevState,
                 value: option,
             }));
@@ -158,13 +166,17 @@ const Listing_Filter = () => {
             isVisible: false,
         }));
     };
-    const filteredcat = category.filter((option) =>
-        option.toLowerCase().includes(searchCat.keyword.toLowerCase())
-    );
-    const filteredlocation = city?.filter((option) =>
-        option.toLowerCase().includes(searchLocation.keyword.toLowerCase())
-    );
 
+  
+    const filteredstate = state?.filter((option) =>
+        option.toLowerCase().includes(searchState.keyword.toLowerCase())
+    );
+    const filteredcity = city?.filter((option) =>
+        option.toLowerCase().includes(searchCity.keyword.toLowerCase())
+    );
+    const filteredarea = area?.filter((option) =>
+        option.toLowerCase().includes(seachArea.keyword.toLowerCase())
+    );
     const filteredServices = services.filter((option) =>
         option.toLowerCase().includes(searchService.keyword.toLowerCase())
     );
@@ -172,13 +184,13 @@ const Listing_Filter = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Redirect user to the desired route
-        router.push(`/all-listing?category=${encodeURIComponent(searchService.value)}&city=${encodeURIComponent(searchLocation.value)}`);
+        router.push(`/all-listing?category=${encodeURIComponent(searchService.value)}&city=${encodeURIComponent(searchCity.value)}`);
       };
     return (
         <div className="ban-search ban-sear-all">
             <form onSubmit={handleSubmit} name="filter_form" id="filter_form" className="filter_form">
                 <ul>
-                    <li className="sr-cit">
+                    <li className="sr-state">
                         <div
                             className={`chosen-container chosen-container-single ${
                                 select.num === 1 && select.isVisible
@@ -194,8 +206,69 @@ const Listing_Filter = () => {
                                 onClick={() => handleClick(1)}
                             >
                                 <span>
-                                    {searchLocation.value
-                                        ? searchLocation.value
+                                    {searchState.value
+                                        ? searchState.value
+                                        : "Select State"}
+                                </span>
+                                <div>
+                                    <b />
+                                </div>
+                            </a>
+                            <div
+                                className="chosen-drop"
+                                onClick={stopPropagation}
+                            >
+                                <div className="chosen-search">
+                                    <input
+                                        className="chosen-search-input"
+                                        type="text"
+                                        value={searchState.keyword}
+                                        onChange={(e) =>
+                                            handleInputChange(e, 1)
+                                        }
+                                        autoComplete="off"
+                                        onClick={stopPropagation}
+                                    />
+                                </div>
+                                <ul className="chosen-results">
+                                    {filteredstate?.map((option) => (
+                                        <li
+                                            key={option}
+                                            onClick={() =>
+                                                handleOptionClick(option, 1)
+                                            }
+                                            className={`active-result result-selected ${
+                                                option ===
+                                                    searchState.value &&
+                                                "highlighted"
+                                            }`}
+                                            data-option-array-index={0}
+                                        >
+                                            {option}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li className="sr-cit">
+                        <div
+                            className={`chosen-container chosen-container-single ${
+                                select.num === 2 && select.isVisible
+                                    ? "chosen-with-drop"
+                                    : ""
+                            }`}
+                            ref={divRef2}
+                            id="city_check_chosen"
+                            style={{ width: 200 }}
+                        >
+                            <a
+                                className="chosen-single"
+                                onClick={() => handleClick(2)}
+                            >
+                                <span>
+                                    {searchCity.value
+                                        ? searchCity.value
                                         : "Select City"}
                                 </span>
                                 <div>
@@ -210,24 +283,24 @@ const Listing_Filter = () => {
                                     <input
                                         className="chosen-search-input"
                                         type="text"
-                                        value={searchLocation.keyword}
+                                        value={searchCity.keyword}
                                         onChange={(e) =>
-                                            handleInputChange(e, 1)
+                                            handleInputChange(e, 2)
                                         }
                                         autoComplete="off"
                                         onClick={stopPropagation}
                                     />
                                 </div>
                                 <ul className="chosen-results">
-                                    {filteredlocation?.map((option) => (
+                                    {filteredcity?.map((option) => (
                                         <li
                                             key={option}
                                             onClick={() =>
-                                                handleOptionClick(option, 1)
+                                                handleOptionClick(option, 2)
                                             }
                                             className={`active-result result-selected ${
                                                 option ===
-                                                    searchLocation.value &&
+                                                    searchCity.value &&
                                                 "highlighted"
                                             }`}
                                             data-option-array-index={0}
@@ -239,24 +312,24 @@ const Listing_Filter = () => {
                             </div>
                         </div>
                     </li>
-                    <li className="sr-cate">
+                    <li className="sr-area">
                         <div
                             className={`chosen-container chosen-container-single ${
-                                select.num === 2 && select.isVisible
+                                select.num === 3 && select.isVisible
                                     ? "chosen-with-drop"
                                     : ""
                             }`}
-                            ref={divRef2}
+                            ref={divRef3}
                             id="explor_select_chosen"
                             style={{ width: 200 }}
                         >
                             <a
                                 className="chosen-single"
-                                onClick={() => handleClick(2)}
+                                onClick={() => handleClick(3)}
                             >
                                 <span>
-                                    {searchCat.value
-                                        ? searchCat.value
+                                    {seachArea.value
+                                        ? seachArea.value
                                         : "Select Services"}
                                 </span>
                                 <div>
@@ -271,23 +344,23 @@ const Listing_Filter = () => {
                                     <input
                                         className="chosen-search-input"
                                         type="text"
-                                        value={searchCat.keyword}
+                                        value={seachArea.keyword}
                                         onChange={(e) =>
-                                            handleInputChange(e, 2)
+                                            handleInputChange(e, 3)
                                         }
                                         autoComplete="off"
                                         onClick={stopPropagation}
                                     />
                                 </div>
                                 <ul className="chosen-results">
-                                    {filteredcat.map((option) => (
+                                    {filteredarea?.map((option) => (
                                         <li
                                             key={option}
                                             onClick={() =>
-                                                handleOptionClick(option, 2)
+                                                handleOptionClick(option, 3)
                                             }
                                             className={`active-result result-selected ${
-                                                option === searchCat.value &&
+                                                option === seachArea.value &&
                                                 "highlighted"
                                             }`}
                                             data-option-array-index={0}
@@ -302,17 +375,17 @@ const Listing_Filter = () => {
                     <li className="sr-nor">
                         <div
                             className={`chosen-container chosen-container-single ${
-                                select.num === 3 && select.isVisible
+                                select.num === 4 && select.isVisible
                                     ? "chosen-with-drop"
                                     : ""
                             }`}
-                            ref={divRef3}
+                            ref={divRef4}
                             id="expert_select_search_chosen"
                             style={{ width: 430 }}
                         >
                             <a
                                 className="chosen-single"
-                                onClick={() => handleClick(3)}
+                                onClick={() => handleClick(4)}
                             >
                                 <span>
                                     {searchService.value
@@ -333,7 +406,7 @@ const Listing_Filter = () => {
                                         type="text"
                                         value={searchService.keyword}
                                         onChange={(e) =>
-                                            handleInputChange(e, 3)
+                                            handleInputChange(e, 4)
                                         }
                                         autoComplete="off"
                                         onClick={stopPropagation}
@@ -344,7 +417,7 @@ const Listing_Filter = () => {
                                         <li
                                             key={option}
                                             onClick={() =>
-                                                handleOptionClick(option, 3)
+                                                handleOptionClick(option, 4)
                                             }
                                             className={`active-result result-selected ${
                                                 option ===

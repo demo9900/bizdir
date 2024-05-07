@@ -3,7 +3,7 @@ import React from 'react'
 const TopNav = ({toggleCart,showadMenu}) => {
   return (
     <section>
-  <div className="ad-head">
+  <div className="ad-head block">
     <div className="head-s1">
       <div className="menu">
         {" "}
@@ -14,7 +14,7 @@ const TopNav = ({toggleCart,showadMenu}) => {
         
       </div>
       <div className="logo">
-        <img src="/logo-b.png" />
+        <img src="/logo-b.png" alt='' />
       </div>
     </div>
     <div className="head-s2">
