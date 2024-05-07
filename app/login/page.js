@@ -67,7 +67,6 @@ const page = () => {
   }
 
   return (
-    <Suspense fallback={<div>Loading ...</div>}>
     <UnAuth>
       <>
         <section>
@@ -368,7 +367,6 @@ const page = () => {
         <Footer />
       </>
     </UnAuth>
-    </Suspense>
   );
 };
 

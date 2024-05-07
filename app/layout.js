@@ -10,7 +10,7 @@ import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SessionProvider } from "next-auth/react";
-
+import { Suspense } from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,6 +22,7 @@ export default function RootLayout({ children, session }) {
   return (
    
       <SessionProvider session={session}>
+        <Suspense fallback={<div>Loading ...</div>}>
         <html>
           <Head>
             <link
@@ -36,6 +37,7 @@ export default function RootLayout({ children, session }) {
             </div>
           </body>
         </html>
+        </Suspense>
       </SessionProvider>
     
   );
