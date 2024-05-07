@@ -22,7 +22,6 @@ export default function RootLayout({ children, session }) {
   return (
    
       <SessionProvider session={session}>
-        <Suspense fallback={<div>Loading ...</div>}>
         <html>
           <Head>
             <link
@@ -31,13 +30,14 @@ export default function RootLayout({ children, session }) {
             />
           </Head>
           <body>
+        <Suspense fallback={<div>Loading ...</div>}>
             <div>
               {children}
               <ToastContainer />
             </div>
+        </Suspense>
           </body>
         </html>
-        </Suspense>
       </SessionProvider>
     
   );
