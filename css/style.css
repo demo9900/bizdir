@@ -7292,39 +7292,22 @@ font-size: 12px;
     position: relative;
     cursor: pointer;
 }
+.ud-cen-s2 table tr td.pending{
+    color:#ffc107;
+    position: relative;
+    cursor: pointer;
+}
 .ud-cen-s2 table tr td.reject .custom-tooltip{
     position: absolute; /* making the .tooltip span a container for the tooltip text */
     border:1px dashed #000;
     display: none;
-
+    background:white;
+    z-index:99;
     box-shadow: 4px 4px 8px #000;
     padding: 8px 12px;
     transition: all 0.4s ease-in-out;
 }
-.ud-cen-s2 table tr td.reject 
-span::before
-{
-    content: attr(data-text); /* here's the magic */
-    position:absolute;
-    
-    /* vertically center */
-    top:50%;
-    transform:translateY(-50%);
-    
-    /* move to right */
-    left:100%;
-    margin-left:15px; /* and add a small left margin */
-    
-    /* basic styles */
-    width:200px;
-    padding:10px;
-    border-radius:10px;
-    /* background:#000;
-    color: #fff; */
-    text-align:center;
-  
-    display:block; /* hide by default */
-  }
+
   .ud-cen-s2 table tr td.reject:hover .custom-tooltip {
     display:block;
 }

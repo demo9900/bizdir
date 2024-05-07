@@ -2,6 +2,7 @@
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { toast } from 'react-toastify';
 
 const Table = () => {
     const [listingData, setListingData] = useState([]);
@@ -48,11 +49,13 @@ const Table = () => {
             );
 
             if (res.status === 204) {
+                toast.success("listing deleted successfully");
                 // Call getListingData to update the listing data
                 getListingData();
             }
         } catch (error) {
             console.error(error);
+            toast.error("somthing went wrong")
         }
     };
 
@@ -114,7 +117,8 @@ const Table = () => {
                                         class="db-list-edit"
                                     ></a>
                                 </td> */}
-                                <td className={`${listing.approval=== 'approved'?'approve':'reject'} relative`}>{listing?.approval}
+                                <td className={`${listing.approval === 'approved' ? 'approve' : (listing.approval === 'rejected' ? 'reject' : 'pending')} relative`
+}>{listing?.approval}
                                 <span className="custom-tooltip" data-text={`${listing.approval_by?.message}`}>{listing.approval_by?.message}</span>
                                 </td>
                                 <td>
