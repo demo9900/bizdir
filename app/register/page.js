@@ -1,5 +1,5 @@
 'use client'
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext, Suspense} from 'react'
 import Link from 'next/link'
 import axios from 'axios';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
@@ -47,7 +47,8 @@ console.log(userEmail)
 
 
   return (
-    <>
+    <Suspense fallback={<div>Loading ...</div>}>
+
      <section>
 		<div className="str">
 			<div>
@@ -232,8 +233,7 @@ console.log(userEmail)
   </section>
 
 <Footer/>
-    </>
-
+</Suspense>
   )
 }
 

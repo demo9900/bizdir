@@ -7,8 +7,6 @@ import BottomMenu from "@/components/BottomMenu";
 import Footer from "@/components/Footer";
 import "../../css/style4.css";
 import Slider from "react-slick";
-import { BiSearch } from "react-icons/bi";
-import { useAppSelector } from "lib/hook";
 
 const page = () => {
     const settings = {
@@ -19,8 +17,7 @@ const page = () => {
         slidesToScroll: 1,
     };
 
-    const userdata = useAppSelector((state) => state.auth);
-    console.log(userdata);
+    
     return (
         <div>
             <section>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
 import axios from "axios";
+import { Suspense } from "react";
 import { useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
@@ -66,6 +67,7 @@ const page = () => {
   }
 
   return (
+    <Suspense fallback={<div>Loading ...</div>}>
     <UnAuth>
       <>
         <section>
@@ -149,7 +151,7 @@ const page = () => {
                             onClick={(e) => googleAuth(e)}
                             className="login-goog"
                           >
-                            <img src="/images/icon/seo.png" />
+                            <img src="/images/icon/seo.png" alt="" />
                             Continue with Google
                           </Link>
                         </li>
@@ -159,7 +161,7 @@ const page = () => {
                             onClick={(e) => microsoftAuth(e)}
                             className="login-micro"
                           >
-                            <img src="/icon/microsoft.svg" />
+                            <img src="/icon/microsoft.svg" alt="" />
                             Continue with Microsoft
                           </Link>
                         </li>
@@ -366,6 +368,7 @@ const page = () => {
         <Footer />
       </>
     </UnAuth>
+    </Suspense>
   );
 };
 
