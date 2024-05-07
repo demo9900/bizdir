@@ -7288,13 +7288,22 @@ font-size: 12px;
     color:#008000;
 }
 .ud-cen-s2 table tr td.reject{
-    color:#ff0000
+    color:#ff0000;
+    position: relative;
+    cursor: pointer;
 }
-.ud-cen-s2 table tr td.reject .tooltip{
-    position:relative; /* making the .tooltip span a container for the tooltip text */
-    border-bottom:1px dashed #000;
+.ud-cen-s2 table tr td.reject .custom-tooltip{
+    position: absolute; /* making the .tooltip span a container for the tooltip text */
+    border:1px dashed #000;
+    display: none;
+
+    box-shadow: 4px 4px 8px #000;
+    padding: 8px 12px;
+    transition: all 0.4s ease-in-out;
 }
-.ud-cen-s2 table tr td.reject span:before{
+.ud-cen-s2 table tr td.reject 
+span::before
+{
     content: attr(data-text); /* here's the magic */
     position:absolute;
     
@@ -7310,13 +7319,13 @@ font-size: 12px;
     width:200px;
     padding:10px;
     border-radius:10px;
-    background:#000;
-    color: #fff;
+    /* background:#000;
+    color: #fff; */
     text-align:center;
   
     display:block; /* hide by default */
   }
-  .ud-cen-s2 table tr td.reject.tooltip:hover:before {
+  .ud-cen-s2 table tr td.reject:hover .custom-tooltip {
     display:block;
 }
 

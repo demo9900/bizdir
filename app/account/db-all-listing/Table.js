@@ -24,7 +24,7 @@ const Table = () => {
             console.log(data);
             setListingData(data);
             console.log("listing function running");
-            setLoading(false);
+            setLoading(false);  
         } catch (error) {
             console.error(error);
         }
@@ -115,7 +115,7 @@ const Table = () => {
                                     ></a>
                                 </td> */}
                                 <td className={`${listing.approval=== 'approved'?'approve':'reject'} relative`}>{listing?.approval}
-                                <span className="tooltip" data-text={`${listing.approval_by?.message}`}></span>
+                                <span className="custom-tooltip" data-text={`${listing.approval_by?.message}`}>{listing.approval_by?.message}</span>
                                 </td>
                                 <td>
                                     <Link
