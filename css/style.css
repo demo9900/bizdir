@@ -344,14 +344,16 @@ div#event_detail_enq_success p{
     background: none;
 }
 .ban-search{margin:0 auto;display:table;width:55%;position:relative;box-shadow: 0 12px 19px 0 #00000017;z-index:7}
-.ban-search.ban-sear-all li.sr-state{width:180px}
 .ban-search.ban-sear-all li.sr-cit{display:block;width:180px}
-.ban-search.ban-sear-all li.sr-area{display:180px}
+.ban-search.ban-sear-all li.sr-state{width:180px}
+.ban-search.ban-sear-all li.sr-area{width:180px}
 .ban-search.ban-sear-all li.sr-nor{width:250px}
 .ban-search.ban-sear-all li.sr-btn{width:150px}
 .ban-search ul li.sr-cate:before{content:'layers'}
 .ban-search ul li.sr-time:before{content:'access_time'}
 .ban-search ul li.sr-cit:before{content:'location_searching'}
+.ban-search ul li.sr-state:before{content:'location_searching'}
+.ban-search ul li.sr-area:before{content:'location_searching'}
 .ban-search ul li.sr-nor:before{content:'search';font-size:22px;margin:14px 0 0 15px}
 .ban-search.ban-sear-all{width:85%;background:#00000059;padding:20px;border-radius:10px;box-shadow:0 4px 14px 0 #0000003d}
 .ser-head .ban-search ul li.sr-sea{
@@ -14740,8 +14742,8 @@ color: #333;
     .plac-hom-tit-ic-sugg span{position:relative;display:inline-block;top:auto;right:auto;margin-top:20px}
     .plac-hom-tit-ic-sugg h2{font-size:16px}
     .ban-search.ban-sear-all{width:100%}
-    .ban-search.ban-sear-all li.sr-cate,.ban-search.ban-sear-all li.sr-cit,.ban-search.ban-sear-all.ser-oly-place li.sr-nor,.ban-search.ban-sear-all.ser-oly-event li.sr-nor,.ban-search.ban-sear-all.ser-oly-blog li.sr-nor,.ban-search.ban-sear-all.ser-oly-product li.sr-nor{width:50%}
-    .ban-search.ban-sear-all li,.ban-search.ban-sear-all li.sr-nor,.ban-search.ban-sear-all li.sr-btn{width:100%;margin-bottom:10px}
+    .ban-search.ban-sear-all li.sr-cate,.ban-search.ban-sear-all li.sr-cit, li.sr-state, li.sr-area,.ban-search.ban-sear-all.ser-oly-place li.sr-nor,.ban-search.ban-sear-all.ser-oly-event li.sr-nor,.ban-search.ban-sear-all.ser-oly-blog li.sr-nor,.ban-search.ban-sear-all.ser-oly-product li.sr-nor{width:50%!important}
+    .ban-search.ban-sear-all li,.ban-search.ban-sear-all,.ban-search.ban-sear-all li.sr-btn{width:100%;margin-bottom:10px}
     .plac-det-ban-im img{height:230px}
     .plac-det-tit h1{font-size:30px}
     .plac-det-tit h4{font-size:18px}

@@ -1,10 +1,36 @@
 'use client';
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer';
 import BottomMenu from '@/components/BottomMenu';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation'
+import ListingCard from '@/components/ListingCard';
+
 const page = () => {
+  const [listings, setListings] = useState([]);
+  const searchParams = useSearchParams();
+  const area = searchParams.get('area');
+  const category = searchParams.get('category');
+  const city = searchParams.get('city')
+  console.log("area =",area)
+  useEffect(() => {
+    const fetchListings = async () => {
+      try {
+        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?category=${category}${city?`&city=${city}`:``}&area=${area}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch listings');
+        }
+        const data = await response.json();
+        setListings(data); // assuming data is an array of listings
+      } catch (error) {
+        console.error('Error fetching listings:', error);
+      }
+    };
+
+    fetchListings();
+  }, []);
+  console.log(listings)
   return (
     <div>
         <section> 
@@ -664,609 +690,15 @@ const page = () => {
             </div>
             {/* Loader Image */}
             <div className="all-list-sh all-listing-total">
-              <ul>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/2.jpeg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          Rolexo Villas in California
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">thedirectoryfinder@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/">View more</Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/24.jpg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">Village food street</Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">village@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/">View more</Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/21.jpg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          Honey 2 massage &amp; facial{" "}
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons ratstar">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">village@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/17.jpeg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">Orange pet shops</Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons ratstar">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">orange@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/16.jpg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          Ocean blue interier designs
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons ratstar">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">blue@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/30.jpg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          Packy hospital &amp; Health care
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons ratstar">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">packy@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/22.jpeg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          Maching wedding matrimoney
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons ratstar">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">matemoney@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/10.jpg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          The Royal Blue Resort &amp; Hotels
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons ratstar">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">royalblu@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-                <li>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href="/listing-details">
-                        <img src="/services/4.jpg" alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          Original bike services
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons ratstar">star</i>
-                      </label>
-                      <span className="addr">
-                        28800 Orchard Lake Road, Suite 180 Farmington Hills,
-                        U.S.A.
-                      </span>
-                      <span className="pho">7904462944</span>
-                      <span className="mail">bikeser@gmail.com</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-              </ul>
+              {listings.length > 0?(
+                  <ul>
+                  {listings.map((item,index) =>
+                 ( <ListingCard key={index} item={item}/>)
+                  )}
+                </ul>
+              ):(<span style={{fontSize: 21, color: '#bfbfbf', letterSpacing: 1, paddingLeft: 30, textShadow: '0px 0px 2px #fff', textTransform: 'uppercase', textAlign: 'center!important', marginTop: '5%'}}>!!! Oops No Listing Faund with the Selected Category</span>
+)}
+            
               {/*ADS*/}
               <div className="ban-ati-com ads-all-list">
                 <Link href="/https://themeforest.net/item/bizbook-directory-listings-template/25391222">
@@ -1311,7 +743,6 @@ const page = () => {
         </div>
         <div className="map-fi-com map-fi-cate">
           <select
-            onchange="SubcategoryFilter1(this.value);"
             name="cat_check"
             id="cat_check1"
             className="cat_check chosen-select "
@@ -1323,7 +754,7 @@ const page = () => {
             <option value="pet-shop">Pet shop</option>
             <option value="hotel---food">Hotel &amp; Food</option>
             <option value="wedding-halls">Wedding halls</option>
-            <option selected="" value="real-estate">
+            <option  value="real-estate">
               Real Estate
             </option>
             <option value="sports">Sports</option>

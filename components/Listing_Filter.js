@@ -32,23 +32,43 @@ const Listing_Filter = () => {
     const [city,setCity] = useState();
     const [area,setArea] = useState();
 
+    const [select, setSelect] = useState({
+        num: null,
+        isVisible: false,
+    });
+    const [searchState, setSearchState] = useState({
+        _id:'',
+        type:'',
+        keyword: "",
+        value: '',
+    });
+    const [searchCity, setSearchCity] = useState({
+        _id:'',
+        keyword: "",
+        value: '',
+    });
+    const [seachArea, setSearchArea] = useState({
+        _id:'',
+        keyword: "",
+        value: '',
+    });
     const fetchCity = async () => {
         try {
           const res1 = await fetch('https://bizdir-backend.vercel.app/api/state/');
-          const res2 = await fetch('https://bizdir-backend.vercel.app/api/city/');
-          const res3 = await fetch('https://bizdir-backend.vercel.app/api/area/');
+          const res2 = await fetch(`https://bizdir-backend.vercel.app/api/city/${searchState._id}`);
+          const res3 = await fetch(`https://bizdir-backend.vercel.app/api/area/${ searchCity._id}`);
           if (!res1.ok && !res2.ok && !res3.ok ) {
             throw new Error('Failed to fetch pincode data');
           }
           const data1 = await res1.json();
           const data2 = await res2.json();
           const data3 = await res3.json();
-          const stateName = await data1.map(state => state.name);
-          const cityNames = await data2.map(city => city.name);
-          const areaName = await data3.map(area => area.name);
-          setState(stateName)
-          setCity(cityNames);
-          setArea(areaName)
+          const mappedStates = data1.map(state => ({ _id: state._id, name: state.name,type:state.type }));
+          const mappedCities = data2.map(city => ({_id: city._id,name: city.name,type:city.type}));
+          const mappedArea =   data3.map(area => ({_id: area._id,name:area.name}));
+          setState(mappedStates)
+          setCity(mappedCities);
+          setArea(mappedArea)
 
         } catch (error) {
           console.error('Error fetching pincode data:', error);
@@ -57,20 +77,10 @@ const Listing_Filter = () => {
     useEffect(() => {
         
         fetchCity();
-      }, []);
-      console.log(city)
-      console.log(typeof city)
-    const category = [
-        "All Services",
-        "Service Experts",
-        "Jobs",
-        "Explore Travel",
-        "News & Magazines",
-        "Events",
-        "Products",
-        "Coupon & deals",
-        "Blogs",
-    ];
+      }, [searchState,searchCity]);
+      
+     console.log(state);
+  
     const services = [
         "What are you looking for?",
         "Automobiles",
@@ -87,26 +97,11 @@ const Listing_Filter = () => {
         "Transportation",
     ];
     
-    const [select, setSelect] = useState({
-        num: null,
-        isVisible: false,
-    });
-    const [searchState, setSearchState] = useState({
-        keyword: "",
-        value: null,
-    });
-    const [searchCity, setSearchCity] = useState({
-        keyword: "",
-        value: null,
-    });
-    const [seachArea, setSearchArea] = useState({
-        keyword: "",
-        value: null,
-    });
+    
    
     const [searchService, setSearchService] = useState({
         keyword: "",
-        value: null,
+        value: '',
     });
     const handleClick = (num) => {
         setSelect((prevState) => ({
@@ -121,16 +116,21 @@ const Listing_Filter = () => {
 
     const handleInputChange = (e, number) => {
         if (number === 1) {
-            setSearchCity((prevState) => ({
+            setSearchState((prevState) => ({
                 ...prevState,
                 keyword: e.target.value,
             }));
         } else if (number === 2) {
-            setSearchArea((prevState) => ({
+            setSearchCity((prevState) => ({
                 ...prevState,
                 keyword: e.target.value,
             }));
         } else if (number === 3) {
+            setSearchArea((prevState) => ({
+                ...prevState,
+                keyword: e.target.value,
+            }));
+        } else if (number === 4){
             setSearchService((prevState) => ({
                 ...prevState,
                 keyword: e.target.value,
@@ -140,21 +140,29 @@ const Listing_Filter = () => {
             ...prevState,
             isVisible: true,
         }));
-        console.log(select.num);
     };
 
     const handleOptionClick = (option, number) => {
-        if (number === 1) {
+        if(number ===1){
+            setSearchState((prevState) => ({
+                ...prevState,
+                _id:option._id,
+                value: option.name,
+            }));
+        }
+        else if (number === 2) {
             setSearchCity((prevState) => ({
                 ...prevState,
-                value: option,
-            }));
-        } else if (number === 2) {
-            setSearchArea((prevState) => ({
-                ...prevState,
-                value: option,
+                _id:option._id,
+                value: option.name,
             }));
         } else if (number === 3) {
+            setSearchArea((prevState) => ({
+                ...prevState,
+                _id:option._id,
+                value: option.name,
+            }));
+        } else if (number === 4) {
             setSearchService((prevState) => ({
                 ...prevState,
                 value: option,
@@ -165,17 +173,18 @@ const Listing_Filter = () => {
             ...prevState,
             isVisible: false,
         }));
+        console.log(searchState)
     };
 
   
     const filteredstate = state?.filter((option) =>
-        option.toLowerCase().includes(searchState.keyword.toLowerCase())
+        option.name.toLowerCase().includes(searchState.keyword.toLowerCase())
     );
     const filteredcity = city?.filter((option) =>
-        option.toLowerCase().includes(searchCity.keyword.toLowerCase())
+        option.name.toLowerCase().includes(searchCity.keyword.toLowerCase())
     );
     const filteredarea = area?.filter((option) =>
-        option.toLowerCase().includes(seachArea.keyword.toLowerCase())
+        option.name.toLowerCase().includes(seachArea.keyword.toLowerCase())
     );
     const filteredServices = services.filter((option) =>
         option.toLowerCase().includes(searchService.keyword.toLowerCase())
@@ -184,7 +193,7 @@ const Listing_Filter = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Redirect user to the desired route
-        router.push(`/all-listing?category=${encodeURIComponent(searchService.value)}&city=${encodeURIComponent(searchCity.value)}`);
+        router.push(`/all-listing?category=${encodeURIComponent(searchService.value)}&state=${encodeURIComponent(searchState.value)}&city=${encodeURIComponent(searchCity.value)}&area=${encodeURIComponent(seachArea.value)}`);
       };
     return (
         <div className="ban-search ban-sear-all">
@@ -233,18 +242,18 @@ const Listing_Filter = () => {
                                 <ul className="chosen-results">
                                     {filteredstate?.map((option) => (
                                         <li
-                                            key={option}
+                                            key={option._id}
                                             onClick={() =>
                                                 handleOptionClick(option, 1)
                                             }
                                             className={`active-result result-selected ${
-                                                option ===
+                                                option.name ===
                                                     searchState.value &&
                                                 "highlighted"
                                             }`}
                                             data-option-array-index={0}
                                         >
-                                            {option}
+                                            {option.name}
                                         </li>
                                     ))}
                                 </ul>
@@ -292,22 +301,29 @@ const Listing_Filter = () => {
                                     />
                                 </div>
                                 <ul className="chosen-results">
-                                    {filteredcity?.map((option) => (
+                                    {searchState.value.length > 0 ? (<>
+                                        {filteredcity?.map((option) => (
                                         <li
-                                            key={option}
+                                            key={option._id}
                                             onClick={() =>
                                                 handleOptionClick(option, 2)
                                             }
                                             className={`active-result result-selected ${
-                                                option ===
+                                                option.name ===
                                                     searchCity.value &&
                                                 "highlighted"
                                             }`}
                                             data-option-array-index={0}
                                         >
-                                            {option}
+                                            {option.name}
                                         </li>
                                     ))}
+                                    </>):(
+                                        <li className="no-results">
+                                        please select any state 
+                                        </li>
+                                    )}
+                                   
                                 </ul>
                             </div>
                         </div>
@@ -330,7 +346,7 @@ const Listing_Filter = () => {
                                 <span>
                                     {seachArea.value
                                         ? seachArea.value
-                                        : "Select Services"}
+                                        : "Select Area"}
                                 </span>
                                 <div>
                                     <b />
@@ -353,21 +369,28 @@ const Listing_Filter = () => {
                                     />
                                 </div>
                                 <ul className="chosen-results">
-                                    {filteredarea?.map((option) => (
+                                    {searchCity.value.length > 0? (<>
+                                        {filteredarea?.map((option) => (
                                         <li
-                                            key={option}
+                                            key={option._id}
                                             onClick={() =>
                                                 handleOptionClick(option, 3)
                                             }
                                             className={`active-result result-selected ${
-                                                option === seachArea.value &&
+                                                option.name === seachArea.value &&
                                                 "highlighted"
                                             }`}
                                             data-option-array-index={0}
                                         >
-                                            {option}
+                                            {option.name}
                                         </li>
                                     ))}
+                                    </>):(
+                                        <li className="no-results">
+                                        please select any city
+                                      </li>
+                                    )}
+                                    
                                 </ul>
                             </div>
                         </div>
