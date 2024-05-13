@@ -14,7 +14,7 @@ const Table = () => {
         try {
             setLoading(true);
             console.log("inside getlisting", session.jwt);
-            const res = await fetch(process.env.BACKEND_URL + "/api/listing", {
+            const res = await fetch(process.env.BACKEND_URL + `/api/listing/user/${session.user.id}`, {
                 headers: {
                     authorization: "Bearer " + session.jwt,
                 },
@@ -86,7 +86,7 @@ const Table = () => {
                                 <td>{idx + 1}</td>
                                 <td>
                                     <img
-                                        src={listing.gallery_images[0]}
+                                        src={listing.listing_image}
                                         alt="N/A"
                                     />
                                     {listing.listing_name}

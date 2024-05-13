@@ -69,6 +69,7 @@ const authOptions = {
         async session({ session, token }) {
             session.jwt = token.jwt;
             session.user = {
+                id:token.id,
                 name: token.name,
                 email: token.email,
                 image: token.image,

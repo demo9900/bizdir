@@ -9,7 +9,7 @@ const page = () => {
     const [user,setUser]= useState();
     const getUser = async () => {
         try {
-            const res = await fetch(`${process.env.BACKEND_URL}/api/user`,{
+            const res = await fetch(`${process.env.BACKEND_URL}/api/user/${session.user.id}`,{
              headers:{
                 authorization: "Bearer " + session.jwt,
              }
@@ -36,7 +36,7 @@ const page = () => {
                 <span className="udb-inst">All Listings</span>
                 <div className="ud-cen-s2">
                     <h2>Listing Details</h2>
-                    {user?.subscription.listing_limit === 0 ? (
+                    {user?.subscription?.listing_limit === 0 ? (
                         <Link onClick={showToast} href="#!" className="db-tit-btn">
                         Add New Listing
                         </Link>
