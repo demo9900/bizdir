@@ -31,11 +31,6 @@ export const SidebarData = [
         path: '/account/db-enquiry',
         icon: '/icon/tick.png'
     },
-    {   
-        title: 'Service Experts Leads',
-        path: '#',
-        icon: '/icon/expert.png'
-    },
     {   heading: 'Payment & Promotions',
         title: 'Payment & plan',
         path: '/account/db-payment',
@@ -58,12 +53,7 @@ export const SidebarData = [
     },
     {   heading: 'PROFILE PAGES',
         title: 'My Profile',
-        path: '/account/db-my-profile',
-        icon: '/icon/profile.png'
-    },
-    {   
-        title: 'Service Expert Profile',
-        path: '/account/create-service-expert-profile',
+        path: '/account/profile',
         icon: '/icon/profile.png'
     },
     {   heading: 'MY ACTIVITIES',

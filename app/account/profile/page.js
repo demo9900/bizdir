@@ -1,8 +1,35 @@
 'use client';
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
+import DateFormatter from '@/components/DateFormatter';
 
 const page = () => {
+  const [user,setUser] = useState();
+  const {data:session} = useSession();
+
+  const getUser = async () => {
+    try {
+      const res = await fetch(
+        process.env.BACKEND_URL + `/api/user/${session.user.id}`,
+        {
+          headers: {
+            authorization: "Bearer " + session.jwt,
+          },
+        }
+      );
+
+      const data = await res.json();
+      setUser(data);
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session]);
   return (
     <div className='ud-main-inn ud-no-rhs'>
       <div className="ud-cen">
@@ -18,17 +45,19 @@ const page = () => {
           </Link>
           <table className="responsive-table bordered">
             <tbody>
+                {user?.subscription?.user_plan !== 'lite' && (
               <tr>
-                <td>Profile Expiry(Listing exp)</td>
-                <td>8 June 2025</td>
+                <td>Plan Expiry(Listing exp)</td>
+                <td><DateFormatter dateString={user?.subscription?.plan_expiry_date} /> </td>
               </tr>
+              )}
               <tr>
                 <td>Name</td>
-                <td>Digital koncept</td>
+                <td>{user?.name}</td>
               </tr>
               <tr>
                 <td>Email Id</td>
-                <td>connect@bizdir.in</td>
+                <td>{user?.email}</td>
               </tr>
               <tr>
                 <td>Profile Password</td>
@@ -36,29 +65,29 @@ const page = () => {
               </tr>
               <tr>
                 <td>Mobile Number</td>
-                <td>5522114422</td>
+                <td>{user?.mobile_number}</td>
               </tr>
               <tr>
                 <td>Profile Picture</td>
                 <td>
-                  <img src="/user/62736rn53themes.png" alt="" />
+                  <img src={user?.profile_image} alt="" />
                 </td>
               </tr>
               <tr>
                 <td>City</td>
-                <td>Sydney</td>
+                <td>{user?.user_info?.user_city}</td>
               </tr>
               <tr>
                 <td>Join date</td>
-                <td>26, Mar 2021</td>
+                <td><DateFormatter dateString={user?.createdAt} /> </td>
               </tr>
               <tr>
                 <td>Verified</td>
-                <td>Yes</td>
+                <td>{user?.is_verified?.status === true ? 'Yes':'No'}</td>
               </tr>
               <tr>
-                <td>Premium service provider</td>
-                <td>Yes</td>
+                <td>Plan Type</td>
+                <td>{user?.subscription?.user_plan}</td>
               </tr>
               <tr>
                 <td>Profile Link</td>
@@ -70,16 +99,16 @@ const page = () => {
               </tr>
               <tr>
                 <td>Facebook</td>
-                <td>https://www.facebook.com/53themes</td>
+                <td>https://www.facebook.com/</td>
               </tr>
               <tr>
                 <td>Twitter</td>
-                <td>https://twitter.com/53themes</td>
+                <td>https://twitter.com/</td>
               </tr>
               <tr>
                 <td>Youtube</td>
                 <td>
-                  https://www.youtube.com/channel/UC3wN3O2GXTt7ZZniIoMZumg
+                  https://www.youtube.com/
                 </td>
               </tr>
               <tr>

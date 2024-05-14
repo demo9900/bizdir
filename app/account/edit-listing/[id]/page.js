@@ -13,7 +13,7 @@ import Step5 from "@/components/Layout/user/Listing/Step5";
 const page = ({ params }) => {
     const { data: session } = useSession();
     const [formData, setFormData] = useState({
-        user_name: "test_user",
+        user_name: session?.user?.name,
         listing_name: "",
         phone_number: "",
         email: "",

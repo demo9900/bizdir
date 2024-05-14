@@ -7286,6 +7286,12 @@ font-size: 12px;
     color: #333;
     padding: 14px 14px 14px 0px;
 }
+.ud-cen-s2 table tr td.disabled{
+    opacity:0.5;
+}
+.ud-cen-s2 table tr td.disabled .db-list-edit{
+    cursor:not-allowed;
+}
 .ud-cen-s2 table tr td.approve{
     color:#008000;
 }

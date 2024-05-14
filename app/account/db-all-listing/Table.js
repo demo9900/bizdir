@@ -2,151 +2,188 @@
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Table = () => {
-    const [listingData, setListingData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const { data: session, status } = useSession();
+  const [listingData, setListingData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { data: session, status } = useSession();
 
-    console.log(session);
-    const getListingData = async () => {
-        try {
-            setLoading(true);
-            console.log("inside getlisting", session.jwt);
-            const res = await fetch(process.env.BACKEND_URL + `/api/listing/user/${session.user.id}`, {
-                headers: {
-                    authorization: "Bearer " + session.jwt,
-                },
-            });
-
-            const data = await res.json();
-
-            console.log(data);
-            setListingData(data);
-            console.log("listing function running");
-            setLoading(false);  
-        } catch (error) {
-            console.error(error);
+  console.log(session);
+  const getListingData = async () => {
+    try {
+      setLoading(true);
+      console.log("inside getlisting", session.jwt);
+      const res = await fetch(
+        process.env.BACKEND_URL + `/api/listing/user/${session.user.id}`,
+        {
+          headers: {
+            authorization: "Bearer " + session.jwt,
+          },
         }
-    };
+      );
 
-    useEffect(() => {
-        if (status === "authenticated") getListingData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [session]);
+      const data = await res.json();
 
-    const deleteListing = async (id) => {
-        try {
-            const res = await fetch(
-                process.env.BACKEND_URL + "/api/listing/" + id,
-                {
-                    headers: {
-                        authorization: "Bearer " + session.jwt,
-                    },
-                    method: "DELETE",
-                }
+      console.log(data);
+      setListingData(data);
+      console.log("listing function running");
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (status === "authenticated") getListingData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session]);
+
+  const deleteListing = async (id) => {
+    try {
+      const res = await fetch(process.env.BACKEND_URL + "/api/listing/" + id, {
+        headers: {
+          authorization: "Bearer " + session.jwt,
+        },
+        method: "DELETE",
+      });
+
+      if (res.status === 204) {
+        toast.success("listing deleted successfully");
+        // Call getListingData to update the listing data
+        getListingData();
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("somthing went wrong");
+    }
+  };
+
+  if (loading) return <>Loading</>;
+
+  console.log(listingData);
+  return (
+    <div className="table-responsive">
+      <table className="table bordered">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Listing Name</th>
+            <th>Rating</th>
+            <th>Views</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Preview</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listingData.map((listing, idx) => {
+            return (
+              <tr key={idx}>
+                <td
+                  className={`${
+                    listing.listing_status === "Disabled" ? "disabled" : ""
+                  }`}
+                >
+                  {idx + 1}
+                </td>
+                <td
+                  className={`${
+                    listing.listing_status === "Disabled" ? "disabled" : ""
+                  }`}
+                >
+                  <img src={listing.listing_image} alt="N/A" />
+                  {listing.listing_name}
+                  {/* <span>09, Apr 2021</span> */}
+                </td>
+                <td
+                  className={`${
+                    listing.listing_status === "Disabled" ? "disabled" : ""
+                  }`}
+                >
+                  <span className="db-list-rat">
+                    {listing.ratings.$numberDecimal}
+                  </span>
+                </td>
+                <td
+                  className={`${
+                    listing.listing_status === "Disabled" ? "disabled" : ""
+                  }`}
+                >
+                  <span className="db-list-rat">{listing.views}</span>
+                </td>
+                
+                {listing.listing_status !== 'Disabled'? (
+                <td
+                  className={`${
+                    listing.listing_status === "Disabled" ? "disabled" : ""
+                  } ${
+                    listing.approval === "approved"
+                      ? "approve"
+                      : listing.approval === "rejected"
+                      ? "reject"
+                      : "pending"
+                  } relative`}
+                >
+                  {listing?.approval}
+                  <span
+                    className="custom-tooltip"
+                    data-text={`${listing.approval_by?.message}`}
+                  >
+                    {listing.approval_by?.message}
+                  </span>
+                </td>
+                ):(
+                <td>
+                <span>{listing.listing_status}</span>
+                </td>
+                )}
+                
+                <td
+                  className={` ${
+                    listing.listing_status === "Disabled"
+                      ? "disabled hidden"
+                      : ""
+                  }`}
+                >
+                  <Link
+                    className="db-list-edit"
+                    href={`/account/edit-listing/${listing._id}`}
+                  >
+                    Edit
+                  </Link>
+                </td>
+                <td
+                  className={`${
+                    listing.listing_status === "Disabled"
+                      ? "disabled hidden"
+                      : ""
+                  }`}
+                >
+                  <button
+                    className="db-list-edit"
+                    onClick={() => deleteListing(listing._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+                <td
+                  className={`${
+                    listing.listing_status === "Disabled"
+                      ? "disabled hidden"
+                      : ""
+                  }`}
+                >
+                  <button>Preview</button>
+                </td>
+              </tr>
             );
-
-            if (res.status === 204) {
-                toast.success("listing deleted successfully");
-                // Call getListingData to update the listing data
-                getListingData();
-            }
-        } catch (error) {
-            console.error(error);
-            toast.error("somthing went wrong")
-        }
-    };
-
-    if (loading) return <>Loading</>;
-
-    console.log(listingData);
-    return (
-        <div className="table-responsive">
-            <table className="table bordered">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Listing Name</th>
-                        <th>Rating</th>
-                        <th>Views</th>
-                        <th>Created by</th>
-                        {/*<th>Promote</th>*/}
-                        <th>Status</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                        <th>Preview</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {listingData.map((listing, idx) => {
-                        return (
-                            <tr key={idx}>
-                                <td>{idx + 1}</td>
-                                <td>
-                                    <img
-                                        src={listing.listing_image}
-                                        alt="N/A"
-                                    />
-                                    {listing.listing_name}
-                                    {/* <span>09, Apr 2021</span> */}
-                                </td>
-                                <td>
-                                    <span className="db-list-rat">
-                                        {listing.ratings.$numberDecimal}
-                                    </span>
-                                </td>
-                                <td>
-                                    <span className="db-list-rat">
-                                        {listing.views}
-                                    </span>
-                                </td>
-                                <td>
-                                    <a
-                                        href="http://localhost/directory/bizbook/profile/rn53-themes"
-                                        className="db-list-ststus"
-                                        target="_blank"
-                                    >
-                                        {listing.user_name}
-                                    </a>
-                                </td>
-                                {/* <td>
-                                    <a
-                                        href="admin-promote-now.html?code=&&type=listing"
-                                        class="db-list-edit"
-                                    ></a>
-                                </td> */}
-                                <td className={`${listing.approval === 'approved' ? 'approve' : (listing.approval === 'rejected' ? 'reject' : 'pending')} relative`
-}>{listing?.approval}
-                                <span className="custom-tooltip" data-text={`${listing.approval_by?.message}`}>{listing.approval_by?.message}</span>
-                                </td>
-                                <td>
-                                    <Link
-                                        href={`/account/edit-listing/${listing._id}`}
-                                    >
-                                        <button>Edit</button>
-                                    </Link>
-                                </td>
-                                <td>
-                                    <button
-                                        onClick={() =>
-                                            deleteListing(listing._id)
-                                        }
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
-                                <td>
-                                    <button>Preview</button>
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
-    );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default Table;
