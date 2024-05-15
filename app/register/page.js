@@ -55,7 +55,7 @@ console.log(userEmail)
       </div>
       </div>
       </section>
-   <section className=" login-reg">
+   <section className=" login-reg animation-bg">
   <div className="container">
     <div className="row">
       <div className="login-main">

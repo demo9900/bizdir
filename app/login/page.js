@@ -47,11 +47,14 @@ const page = () => {
     }
   }, [token, email]);
 
-  const [error, setError] = useState("");
   async function handleSubmit(event) {
     event.preventDefault();
     const email = formData.email;
     const password = formData.password;
+    if (!email || !password) {
+      toast.error("Email and password are required");
+      return;
+    }
     const result = await signIn("credentials", {
       email,
       password,
@@ -76,7 +79,7 @@ const page = () => {
             </div>
           </div>
         </section>
-        <section className=" login-reg">
+        <section className=" login-reg animation-bg">
           <div className="container">
             <div className="row">
               <div className="login-main">
