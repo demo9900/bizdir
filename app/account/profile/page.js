@@ -37,7 +37,7 @@ const page = () => {
         <span className="udb-inst">User Profile</span>
         <div className="ud-cen-s2">
           <h2>Profile Details</h2>
-          <Link href="/db-my-profile-edit" className="db-tit-btn">
+          <Link href="/account/edit-profile" className="db-tit-btn">
             Edit profile page
           </Link>
           <Link href="/db-payment" className="db-tit-btn db-tit-btn-1">
@@ -118,7 +118,7 @@ const page = () => {
               <tr>
                 <td>
                   {" "}
-                  <Link href="/db-my-profile-edit" className="db-pro-bot-btn">
+                  <Link href="/account/edit-profile" className="db-pro-bot-btn">
                     Edit profile page
                   </Link>
                   <Link href="/db-payment" className="db-pro-bot-btn">
