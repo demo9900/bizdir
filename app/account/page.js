@@ -1,10 +1,34 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 const page = () => {
-   
-    
+   const {data:session} = useSession();
+   const [count,setCount] = useState();
+   const getListCount = async () => {
+    try {
+      const res = await fetch(
+        process.env.BACKEND_URL + `/api/listing/user/count`,
+        {
+          headers: {
+            authorization: "Bearer " + session.jwt,
+          },
+        }
+      );
+
+      const data = await res.json();
+      const {count} = data;
+      setCount(count);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+     getListCount();
+  }, [session]);
+
     return (
         <div className="ud-main-inn">
             <div className="ud-cen ">
@@ -13,7 +37,7 @@ const page = () => {
                 <div className="cd-cen-intr">
                     <div className="cd-cen-intr-inn">
                         <h2>
-                            Welcom back, <b>Digital koncept</b>
+                            Welcome back <b>{session?.user?.name}</b>
                         </h2>
                         <p>
                             Stay up to date reports in your listing, products,
@@ -26,7 +50,7 @@ const page = () => {
                         <li>
                             <div>
                                 {" "}
-                                <b>21</b>
+                                <b>{count}</b>
                                 <h4>All Listings</h4>
                                 <p>Total no of listings</p>{" "}
                                 <Link href="/db-all-listing">&nbsp;</Link>

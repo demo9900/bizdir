@@ -3,6 +3,9 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 const authOptions = {
+    pages: {
+        signIn: "/login",
+      },
     secret: process.env.NEXTAUTH_SECRET,
     providers: [
         GoogleProvider({
