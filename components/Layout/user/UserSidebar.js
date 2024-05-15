@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { SidebarData } from "./SidebarData";
 import { signOut } from "next-auth/react";
-import { usePathname } from "next/navigation";
+import { usePathname,useRouter } from "next/navigation";
 const LeftSidebar = () => {
+    const router = useRouter()
     const pathname = usePathname();
     return (
         <div className="ud-lhs">
@@ -43,10 +44,12 @@ const LeftSidebar = () => {
                         );
                     })}
                     <li>
-                        <Link onClick={() => signOut()} href="">
+                        <button onClick={async () => {await signOut({redirect:false})
+                        router.push('/login');
+                    }} >
                             <img src="/icon/dbl12.png" alt="theme" />
                             Log Out
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </div>

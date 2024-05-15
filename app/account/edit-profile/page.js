@@ -12,14 +12,10 @@ const page = () => {
     email:'',
     mobile_number:'',
     name:'',
+    is_verified:'',
     profile_image:'',
     user_info:'',
-    plan_type:'',
-    facebook:'',
-    youtube:'',
-    twitter:'',
-    website:''    
-
+    subscription:'', 
   });
 
   const getUser = async () => {
@@ -42,12 +38,8 @@ const page = () => {
         name:data?.name,
         user_info:data?.user_info,
         profile_image:data?.profile_image,
-        is_verified:data?.is_verified?.status,
-        plan_type:data?.subscription?.user_plan,
-        facebook:data?.user_info.facebook,
-        youtube:data?.user_info.youtube,
-        twitter:data?.user_info.twitter,
-        website:data?.user_info.website 
+        is_verified:data?.is_verified,
+        subscription:data?.subscription,
       }))
       console.log(data);
     } catch (error) {
@@ -122,7 +114,16 @@ const handleSubmit = async (event) => {
                
                 <tr>
                   <td>Name</td>
-                  <td>{formData.name}</td>
+                  <td><div className="form-group">
+                      <input
+                        type="text"
+                        className="form-control"
+                        onChange={handleChange}
+                        value={formData.name}
+                        name="name"
+                        placeholder="Change Name"
+                      />
+                    </div></td>
                 </tr>
                 <tr>
                   <td>Email Id</td>
@@ -192,11 +193,11 @@ const handleSubmit = async (event) => {
                 </tr>
                 <tr>
                   <td>Verified</td>
-                  <td>{formData?.is_verified === true ? 'Yes': 'No'}</td>
+                  <td>{formData?.is_verified?.status === true ? 'Yes': 'No'}</td>
                 </tr>
                 <tr>
                   <td>Plan Type</td>
-                  <td>{formData?.plan_type}</td>
+                  <td>{formData?.subscription?.user_plan}</td>
                 </tr>
                 <tr>
                   <td>Facebook</td>
@@ -208,7 +209,6 @@ const handleSubmit = async (event) => {
                         value={formData?.user_info?.facebook}
                         onChange={handleChange}
                         name="user_info.facebook"
-                        defaultValue="https://www.facebook.com/53themes"
                       />
                     </div>
                   </td>
@@ -223,7 +223,6 @@ const handleSubmit = async (event) => {
                         name="user_info.twitter"
                         value={formData?.user_info?.twitter}
                         onChange={handleChange}
-                        defaultValue="https://twitter.com/53themes"
                       />
                     </div>
                   </td>
@@ -237,7 +236,7 @@ const handleSubmit = async (event) => {
                         className="form-control"
                         name="user_info.youtube"
                         value={formData?.user_info?.youtube}
-                        defaultValue="https://www.youtube.com/channel/UC3wN3O2GXTt7ZZniIoMZumg"
+                        onChange={handleChange}
                       />
                     </div>
                   </td>
@@ -251,7 +250,8 @@ const handleSubmit = async (event) => {
                         className="form-control"
                         name="user_info.website"
                         value={formData?.user_info?.website}
-                        defaultValue="www.bizdir.in"
+                        onChange={handleChange}
+                      
                       />
                     </div>
                   </td>

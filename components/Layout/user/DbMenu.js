@@ -3,9 +3,10 @@ import { useRef, useEffect } from "react";
 import { SidebarData } from "./SidebarData";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname,useRouter } from "next/navigation";
 
 const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
+  const router = useRouter()
   const dashboardRef = useRef(null);
   useEffect(() => {
     function handleClickOutside(event) {
@@ -81,12 +82,12 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
             );
           })}
           <li>
-            <Link
-              href="" onClick={() => signOut({ callbackUrl: '/', redirect:true })}
-            >
+          <button onClick={async () => {await signOut({redirect:false})
+                        router.push('/login');
+                    }} >
               <img src="/icon/dbl12.png" alt="theme" />
               Log Out
-            </Link>
+            </button>
           </li>
         </ul>
       </div>
