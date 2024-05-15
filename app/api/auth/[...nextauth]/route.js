@@ -29,11 +29,11 @@ const authOptions = {
                         }
                     );
 
+                    const data = await response.json();
                     if (!response.ok) {
-                        throw new Error("Invalid credentials");
+                        throw new Error(data.message);
                     }
 
-                    const data = await response.json();
 
                     return {
                         token: data.token,

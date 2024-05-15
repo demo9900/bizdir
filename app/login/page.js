@@ -59,7 +59,7 @@ const page = () => {
     });
 
     if (result.error) {
-      alert(result.error);
+      toast.error(result.error)
       console.log(result.error);
     } else {
       router.push("/");
