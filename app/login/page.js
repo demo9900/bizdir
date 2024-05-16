@@ -18,6 +18,7 @@ const page = () => {
     password: "",
   });
   const searchParams = useSearchParams();
+  const error = searchParams.get("error");
   const token = searchParams.get("token");
   const email = searchParams.get("email");
 
@@ -46,7 +47,9 @@ const page = () => {
       verifyUser();
     }
   }, [token, email]);
-
+useEffect(() =>{
+ toast.error(error)
+},[error])
   async function handleSubmit(event) {
     event.preventDefault();
     const email = formData.email;
@@ -150,10 +153,10 @@ const page = () => {
                         <li>
                           <Link
                             href=""
-                            onClick={(e) => googleAuth(e)}
+                            onClick={() => signIn('google')}
                             className="login-goog"
                           >
-                            <img src="/images/icon/seo.png" alt="" />
+                            <img src="/images/icon/seo.png" alt="google" />
                             Continue with Google
                           </Link>
                         </li>

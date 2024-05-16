@@ -87,10 +87,10 @@ const page = () => {
                             <div className="lis-pro-badg">
                                 <div>
                                     <img
-                                        src="/user/62736rn53themes.png"
+                                        src={session?.user?.image}
                                         alt="theme"
                                     />
-                                    <h4>Digital koncept</h4>
+                                    <h4>{session?.user?.name}</h4>
                                     <p>Member since 26, Mar 2021</p>
                                 </div>{" "}
                                 <Link
