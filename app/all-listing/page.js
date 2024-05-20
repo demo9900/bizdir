@@ -16,6 +16,8 @@ const page = () => {
   const area = searchParams.get('area');
   const category = searchParams.get('category');
   const city = searchParams.get('city')
+  const [categories,setCategories] = useState([]);
+  const [subcat,setSubCat] = useState([]);
   const divRef1 = useRef(null);
   const divRef2 = useRef(null);
   const [cities, setCities] = useState();
@@ -31,21 +33,7 @@ const page = () => {
     keyword: "",
     value: '',
   });
-  const categories = [
-    "What are you looking for?",
-    "Automobiles",
-    "Technology",
-    "Electricals",
-    "Education",
-    "Sports",
-    "Real Estate",
-    "Wedding halls",
-    "Hospitals",
-    "Pet shop",
-    "Restaurants",
-    "Spa and Facial",
-    "Transportation",
-  ];
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -69,7 +57,7 @@ const page = () => {
   useEffect(() => {console.log("runs", city)
     const fetchListings = async (category, city, area) => {
       try {
-        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category? `category=${category}}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}`);
+        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category ? `category=${category}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}`);
         if (!response.ok) {
           setListings([]);
           throw new Error('Failed to fetch listings');
@@ -94,13 +82,30 @@ const page = () => {
         console.error('Error fetching pincode data:', error);
       }
     };
+    const getCategories = async () => {
+      try {
+        const res = await fetch(`https://bizdir-backend.vercel.app/api/listing/category/all`);
+        if (!res.ok) {
+          throw new Error('Failed to fetch city data');
+        }
+        const data = await res.json();
+        const mappedcategory = await data.map(category => (category.category_name));
+        setCategories(mappedcategory)
 
+      } catch (error) {
+        console.error('Error fetching pincode data:', error);
+      }
+    };
     fetchListings(category, city, area);
     fetchCity();
+    getCategories();
   }, [city,category]);
-  console.log("filtered listing",listings)
-  console.log("cities", cities)
 
+  // console.log("filtered listing",listings)
+  // console.log("cities", cities)
+  // console.log("categories fetched",categories)
+
+  
   const handleClick = (num) => {
     setSelect((prevState) => ({
       num: num,
@@ -134,13 +139,13 @@ const page = () => {
         ...prevState,
         value: option,
       }));
-      router.push(`/all-listing?category=${encodeURIComponent(category)}&city=${encodeURIComponent(option)}`);
+      router.push(`/all-listing?city=${option}${category?`&category=${category}`:``}`);
     } else if (number === 2) {
       setSearchCat((prevState) => ({
         ...prevState,
         value: option,
       }));
-      router.push(`/all-listing?category=${encodeURIComponent(option)}&city=${encodeURIComponent(city)}`);
+      router.push(`/all-listing?category=${option}${city ?`&city=${city}`:``}`);
     }
     setSelect((prevState) => ({
       ...prevState,
@@ -914,109 +919,7 @@ const page = () => {
           </div>
         </section>
         {/* END */}
-        {/* START */}
-        <section>
-          <div className="list-map">
-            {" "}
-            <span
-              id="map-error-box"
-              className="map-error-box"
-              style={{ display: "none" }}
-            >
-              !!! Oops No Listing with the Selected Category
-            </span>
-            <div className="list-map-resu map-view" id="map-view" />
-            <div className="list-map-filt">
-              <div className="map-fi-com map-fi-view">
-                <div className="vfilter">
-                  {" "}
-                  <i className="material-icons ic-map-1" title="Grid view">
-                    apps
-                  </i>
-                  <i className="material-icons ic-map-2" title="List view">
-                    format_list_bulleted
-                  </i>
-                  <i className="material-icons ic-map-3 act" title="Map view">
-                    layers
-                  </i>
-                </div>
-              </div>
-              <div className="map-fi-com map-fi-cate">
-                <select
-                  name="cat_check"
-                  id="cat_check1"
-                  className="cat_check chosen-select "
-                >
-                  <option value="">Select Category</option>
-                  <option value="hotels-and-resorts">Hotels And Resorts</option>
-                  <option value="spa-and-facial">Spa and Facial</option>
-                  <option value="digital-products">Digital Products</option>
-                  <option value="pet-shop">Pet shop</option>
-                  <option value="hotel---food">Hotel &amp; Food</option>
-                  <option value="wedding-halls">Wedding halls</option>
-                  <option value="real-estate">
-                    Real Estate
-                  </option>
-                  <option value="sports">Sports</option>
-                  <option value="education">Education</option>
-                  <option value="transportation">Transportation</option>
-                  <option value="electricals">Electricals</option>
-                  <option value="automobiles">Automobiles</option>
-                  <option value="hospitals">Hospitals</option>
-                </select>
-              </div>
-              <div className="sub_cat_section1 map-fi-com map-fi-subcate">
-                <select
-                  name="sub_cat_check"
-                  id="sub_cat_check1"
-                  className="sub_cat_check"
-                >
-                  <option value="">Select sub-category</option>
-                  <option value={22}>Villas</option>
-                  <option value={21}>Indepentant House</option>
-                  <option value={20}>Plots and Lands</option>
-                </select>
-              </div>
-              {/*        <div className="map-fi-com map-fi-rat">*/}
-              {/*            <select id="rating_check1" name="rating_check">*/}
-              {/*                <option value="">Select Rating</option>*/}
-              {/*                <option value="5">5 Star</option>*/}
-              {/*                <option value="4">4 Star</option>*/}
-              {/*                <option value="3">3 Star</option>*/}
-              {/*                <option value="2">2 Star</option>*/}
-              {/*                <option value="1">1 Star</option>*/}
-              {/*            </select>*/}
-              {/*        </div>*/}
-              <div className="map-fi-com map-fi-fea">
-                <select id="city_check1" name="city_check">
-                  <option value="">Select City</option>
-                  <option value={10519}>Toronto</option>
-                  <option value={1068}>Vadodara</option>
-                  <option value={11}>Akkarampalle</option>
-                  <option value={1131}>Hisar</option>
-                  <option value={26}>Balapur</option>
-                  <option value={114}>Karnul</option>
-                  <option value={706}>Delhi</option>
-                  <option value={707}>New Delhi</option>
-                  <option value={3659}>Chennai</option>
-                </select>
-              </div>
-              <div className="map-fi-com map-fi-fea">
-                <select id="feature_check1" name="feature_check">
-                  <option value="">Select Feature</option>
-                  <option value="trusted">Trusted services provider</option>
-                  <option value="premium">Premium services</option>
-                  <option value="verified">Verified services</option>
-                  <option value="trending">Trending services</option>
-                  <option value="offers">Offers and discounts</option>
-                  <option value="latest">Latest updated</option>
-                  <option value="likes">Most likes</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* END */}
+        
         {/* START */}
         <section>
           <div className="full-bot-book">
