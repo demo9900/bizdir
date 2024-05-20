@@ -8,7 +8,7 @@ const ListingCard = ({item}) => {
                     <div className="al-img">
                       {" "}
                       <span className="open-stat">open</span>
-                      <Link href="/listing-details">
+                      <Link href={`/all-listing/${item._id}`}>
                         <img src="/services/2.jpeg" alt="" />
                       </Link>
                     </div>
@@ -44,7 +44,7 @@ const ListingCard = ({item}) => {
                         >
                           Get quote
                         </Link>
-                        <Link href="/">View more</Link>
+                        <Link href={`/all-listing/${item._id}`}>View more</Link>
                         <Link href="/Tel:7904462944">Call Now</Link>
                         <Link
                           href="/https://wa.me/7904462944"

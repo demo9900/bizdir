@@ -69,7 +69,7 @@ const page = () => {
   useEffect(() => {console.log("runs", city)
     const fetchListings = async (category, city, area) => {
       try {
-        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?category=${category}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}`);
+        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category? `category=${category}}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}`);
         if (!response.ok) {
           setListings([]);
           throw new Error('Failed to fetch listings');
@@ -150,7 +150,7 @@ const page = () => {
   const filteredcity = cities?.filter((option) =>
     option.toLowerCase().includes(searchCity.keyword.toLowerCase())
   );
-  const filteredServices = categories.filter((option) =>
+  const filteredcategory = categories.filter((option) =>
     option.toLowerCase().includes(searchCat.keyword.toLowerCase())
   );
   return (
@@ -410,7 +410,7 @@ const page = () => {
                             />
                           </div>
                           <ul className="chosen-results">
-                            {filteredServices.map((option) => (
+                            {filteredcategory.map((option) => (
                               <li
                                 key={option}
                                 onClick={() =>
@@ -444,32 +444,6 @@ const page = () => {
                               id="Villas"
                             />
                             <label htmlFor="Villas">Villas</label>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="chbox">
-                            <input
-                              type="checkbox"
-                              className="sub_cat_check"
-                              name="sub_cat_check"
-                              defaultValue={21}
-                              id="Indepentant House"
-                            />
-                            <label htmlFor="Indepentant House">
-                              Indepentant House
-                            </label>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="chbox">
-                            <input
-                              type="checkbox"
-                              className="sub_cat_check"
-                              name="sub_cat_check"
-                              defaultValue={20}
-                              id="Plots and Lands"
-                            />
-                            <label htmlFor="Plots and Lands">Plots and Lands</label>
                           </div>
                         </li>
                       </ul>
