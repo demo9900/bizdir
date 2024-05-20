@@ -22,6 +22,8 @@ const page = () => {
   const token = searchParams.get("token");
   const email = searchParams.get("email");
 
+window.recaptchaVerifier()
+
   const { data: session, status } = useSession();
   console.log("user session from login", session);
 
