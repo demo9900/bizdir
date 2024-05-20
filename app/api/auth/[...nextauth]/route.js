@@ -38,7 +38,6 @@ const authOptions = {
                         throw new Error(data.message);
                     }
 
-
                     return {
                         token: data.token,
                         id: data.id,
@@ -58,7 +57,7 @@ const authOptions = {
         maxAge: 24 * 60 * 60, // 24 hours
     },
     callbacks: {
-        async signIn({ account, profile }) {
+        async signIn({ account, profile,user }) {
             if (account.provider === "google") {
                 try {
                     const response = await fetch(`${process.env.BACKEND_URL}/api/auth/login/google`, {
@@ -77,7 +76,10 @@ const authOptions = {
                     const data = await response.json();
                     console.log("response :", data);
                     if(response.status === 200 || response.status === 201 ){
-                        console.log(profile)
+                        user.token = data.token;
+                        user.id = data.id;
+                        user.role = data.user.role.role_name;
+                        user.is_verified = data.user.is_verified;
                         return data;
                     }else if (response.status === 403){
                          return '/login?error=please try another method'
@@ -86,16 +88,9 @@ const authOptions = {
                     console.error("Error storing user data:", error); 
                 }
             }
-            return {
-                token: data.token,
-                id: data.id,
-                name: data.user.name,
-                email: data.user.email,
-                image: data.user.image,
-                is_verified: data.user.is_verified,
-            };
+           return true;
         },        
-        async jwt({ token, user, }) {
+        async jwt({ token, user }) {
             if (user) {
                 token.jwt = user.token; // Store the token in the JWT token
                 token.id = user.id; // Store the user ID in the JWT token
@@ -120,6 +115,9 @@ const authOptions = {
 
             return session;
         },
+        async redirect({ url, baseUrl }) {
+            return baseUrl
+          },
     },
 };
 
