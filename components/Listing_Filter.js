@@ -97,8 +97,6 @@ const Listing_Filter = () => {
         "Transportation",
     ];
     
-    
-   
     const [searchService, setSearchService] = useState({
         keyword: "",
         value: '',
