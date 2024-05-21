@@ -266,7 +266,7 @@ const page = ({params}) => {
                                             <div className="row pg-list-ser-area">
                                                 <ul>
                                                    {listing?.service_location?.map((item,index)=>(
-                                                    <li><span>{item}</span>
+                                                    <li key={index}><span>{item}</span>
                                                     </li>
                                                    ))}
                                                 </ul>
