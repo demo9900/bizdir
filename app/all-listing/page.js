@@ -461,9 +461,9 @@ const page = () => {
                             />
                           </div>
                           <ul className="chosen-results">
-                            {filteredcategory?.map((option) => (
+                            {filteredcategory?.map((option,index) => (
                               <li
-                                key={option.cat}
+                                key={index}
                                 onClick={() =>
                                   handleOptionClick(option, 2)
                                 }
