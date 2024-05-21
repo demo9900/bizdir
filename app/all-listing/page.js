@@ -1,23 +1,26 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react'
 import Header from '@/components/Header'
-import { useRouter } from 'next/navigation';
+import { useRouter,usePathname } from 'next/navigation';
 import Footer from '@/components/Footer';
 import BottomMenu from '@/components/BottomMenu';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation'
 import ListingCard from '@/components/ListingCard';
+import { Preview } from '@mui/icons-material';
 
 const page = () => {
   const router = useRouter()
-
+  const pathname = usePathname();
   const [listings, setListings] = useState([]);
   const searchParams = useSearchParams();
   const area = searchParams.get('area');
   const category = searchParams.get('category');
+  const subcategory = searchParams.get('subcat');
   const city = searchParams.get('city')
   const [categories,setCategories] = useState([]);
   const [subcat,setSubCat] = useState([]);
+  const [checkedsubcat,setCheckedSubCat] = useState([]);
   const divRef1 = useRef(null);
   const divRef2 = useRef(null);
   const [cities, setCities] = useState();
@@ -55,9 +58,9 @@ const page = () => {
     };
   }, []);
   useEffect(() => {console.log("runs", city)
-    const fetchListings = async (category, city, area) => {
+    const fetchListings = async (category, city, area,subcategory) => {
       try {
-        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category ? `category=${category}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}`);
+        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category? `category=${category}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}${subcategory?`&subcategory=${subcategory}`:``}`);
         if (!response.ok) {
           setListings([]);
           throw new Error('Failed to fetch listings');
@@ -89,22 +92,41 @@ const page = () => {
           throw new Error('Failed to fetch city data');
         }
         const data = await res.json();
-        const mappedcategory = await data.map(category => (category.category_name));
+        const mappedcategory = await data.map(category => ({cat:category.category_name,subcat:category.subcategory}));
         setCategories(mappedcategory)
 
       } catch (error) {
         console.error('Error fetching pincode data:', error);
       }
     };
-    fetchListings(category, city, area);
+    fetchListings(category, city, area,subcategory);
     fetchCity();
     getCategories();
-  }, [city,category]);
+    if(category ){
+      setSearchCat((prevState) => ({
+        ...prevState,
+        value: category,
+      }));
+    }if(city){
+      setSearchCity((prevState) => ({
+        ...prevState,
+        value: city,
+      }));
+    }
+  }, [city,category,area,subcategory]);
 
-  // console.log("filtered listing",listings)
-  // console.log("cities", cities)
-  // console.log("categories fetched",categories)
 
+  const filterSubCategory = (category) =>{
+    const filtercat = categories.filter((option) =>
+    option.cat.toLowerCase().includes(category.toLowerCase())).map(option =>option.subcat).flat();
+    setSubCat(filtercat);
+  }
+  useEffect(() => {
+    if (category && categories.length > 0) {
+      filterSubCategory(category);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [categories, category]);
   
   const handleClick = (num) => {
     setSelect((prevState) => ({
@@ -116,22 +138,42 @@ const page = () => {
     e.stopPropagation();
   };
   const handleInputChange = (e, number) => {
+    const { value, checked, type } = e.target;
     if (number === 1) {
       setSearchCity((prevState) => ({
         ...prevState,
         keyword: e.target.value,
+      }));
+      setSelect((prevState) => ({
+        ...prevState,
+        isVisible: true,
       }));
     } else if (number === 2) {
       setSearchCat((prevState) => ({
         ...prevState,
         keyword: e.target.value,
       }));
+      setSelect((prevState) => ({
+        ...prevState,
+        isVisible: true,
+      }));
+    } else if (type === "checkbox") {
+     setCheckedSubCat(prevState =>{
+      let updatedSubCat;
+      if(checked){
+        updatedSubCat= [...prevState,value]
+      } else {
+        updatedSubCat= prevState.filter(subcategory => subcategory !==value)
+      }
+      return updatedSubCat;
+    })
+     
     }
-    setSelect((prevState) => ({
-      ...prevState,
-      isVisible: true,
-    }));
   };
+  useEffect(() => {
+    router.push(`/all-listing?${city?`city=${city}`:``}${category?`&category=${category}`:``}${checkedsubcat?`&subcat=${checkedsubcat.join(',')}`:``}`);
+  }, [checkedsubcat, city, category, router]);
+  
   const handleOptionClick = (option, number) => {
     console.log("selected city is", searchCity)
     if (number === 1) {
@@ -140,12 +182,14 @@ const page = () => {
         value: option,
       }));
       router.push(`/all-listing?city=${option}${category?`&category=${category}`:``}`);
+      
     } else if (number === 2) {
       setSearchCat((prevState) => ({
         ...prevState,
-        value: option,
+        value: option.cat,
       }));
-      router.push(`/all-listing?category=${option}${city ?`&city=${city}`:``}`);
+      setSubCat(option.subcat)
+      router.push(`/all-listing?category=${option.cat}${city ?`&city=${city}`:``}`);
     }
     setSelect((prevState) => ({
       ...prevState,
@@ -156,8 +200,10 @@ const page = () => {
     option.toLowerCase().includes(searchCity.keyword.toLowerCase())
   );
   const filteredcategory = categories.filter((option) =>
-    option.toLowerCase().includes(searchCat.keyword.toLowerCase())
+    option.cat.toLowerCase().includes(searchCat.keyword.toLowerCase())
   );
+
+
   return (
     <div>
       <section>
@@ -415,19 +461,19 @@ const page = () => {
                             />
                           </div>
                           <ul className="chosen-results">
-                            {filteredcategory.map((option) => (
+                            {filteredcategory?.map((option) => (
                               <li
-                                key={option}
+                                key={option.cat}
                                 onClick={() =>
                                   handleOptionClick(option, 2)
                                 }
-                                className={`active-result result-selected ${option ===
+                                className={`active-result result-selected ${option.cat ===
                                   searchCat.value &&
                                   "highlighted"
                                   }`}
                                 data-option-array-index={0}
                               >
-                                {option}
+                                {option.cat}
                               </li>
                             ))}
                           </ul>
@@ -439,18 +485,22 @@ const page = () => {
                     <div className="sub_cat_section filt-com lhs-sub">
                       <h4>Sub category</h4>
                       <ul>
-                        <li>
+                        {subcat.map((option,index) =>(
+                          <li key={index}>
                           <div className="chbox">
                             <input
                               type="checkbox"
                               className="sub_cat_check"
+                              onChange={handleInputChange}
                               name="sub_cat_check"
-                              defaultValue={22}
-                              id="Villas"
+                              value={option}
+                              id={index}
                             />
-                            <label htmlFor="Villas">Villas</label>
+                            <label htmlFor={index}>{option}</label>
                           </div>
                         </li>
+                        ) )}
+                        
                       </ul>
                     </div>
                     {/*END*/}
