@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Location_Filter from '@/components/Location_Filter'
+import { CldUploadWidget } from 'next-cloudinary';
+
 const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
+  const [resource, setResource] = useState();
+  console.log(resource)
   return (
     <div className="row">
     <div className="login-main add-list posr">
@@ -151,7 +155,30 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                 <label>Choose profile image</label>
                 <div className="fil-img-uplo">
                 <span className="dumfil">Upload a file</span>
-                <input type="file" name="profile_image" accept="image/*,.jpg,.jpeg,.png" className="form-control valid" />
+                <CldUploadWidget
+                signatureEndpoint="/api/sign-cloudinary-params"
+                uploadPreset='listing_image'
+                onSuccess={(result, { widget }) => {
+                  setFormData({
+                    ...formData,
+                    listing_image:result?.info?.secure_url,
+                  })
+                  widget.close();
+                }}
+              >
+                {({ open }) => {
+                  function handleOnClick() {
+                    setResource(undefined);
+                    open();
+                  }
+                  return (
+                    <button onClick={handleOnClick}>
+                      upload image
+                    </button>
+                  );
+                }}
+              </CldUploadWidget>
+               
               </div>
               </div>
             </div>
@@ -160,7 +187,29 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                 <label>Choose cover image</label>
                 <div className="fil-img-uplo">
                 <span className="dumfil">Upload a file</span>
-                <input type="file" name="cover_image" accept="image/*,.jpg,.jpeg,.png" className="form-control valid" />
+                   <CldUploadWidget
+                signatureEndpoint="/api/sign-cloudinary-params"
+                uploadPreset='listing_image'
+                onSuccess={(result, { widget }) => {
+                  setFormData({
+                    ...formData,
+                    listing_image:result?.info?.secure_url,
+                  })
+                  widget.close();
+                }}
+              >
+                {({ open }) => {
+                  function handleOnClick() {
+                    setResource(undefined);
+                    open();
+                  }
+                  return (
+                    <button onClick={handleOnClick}>
+                      upload image
+                    </button>
+                  );
+                }}
+              </CldUploadWidget>
               </div>
               </div>
             </div>

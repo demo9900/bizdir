@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { CldUploadWidget } from "next-cloudinary";
 import { useSession } from "next-auth/react";
 import Step1 from "@/components/Layout/user/Listing/Step1";
 import Step2 from "@/components/Layout/user/Listing/Step2";
@@ -18,6 +19,7 @@ const page = ({ params }) => {
         phone_number: "",
         email: "",
         whatsapp_number: "",
+        listing_image:"",
         website: "",
         shop_address: "",
         country: "",

@@ -22,6 +22,7 @@ const page = () => {
     whatsapp_number: "",
     website: "",
     shop_address: "",
+    listing_image:"",
     country: "",
     cities: [],
     category: "",

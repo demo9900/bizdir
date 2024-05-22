@@ -90,7 +90,7 @@ const authOptions = {
             }
            return true;
         },        
-        async jwt({ token, user }) {
+        async jwt({ token, user,trigger,session }) {
             if (user) {
                 token.jwt = user.token; // Store the token in the JWT token
                 token.id = user.id; // Store the user ID in the JWT token
@@ -99,6 +99,10 @@ const authOptions = {
                 token.image = user.image; // Store the user image in the JWT token
                 token.is_verified = user.is_verified; // // Store the token in the JWT token
             }
+            if (trigger === "update" && session?.image) {
+                // Note, that `session` can be any arbitrary object, remember to validate it!
+                token.image = session.image
+              }
             console.log("user from jwt",user)
             return { ...token };
         },

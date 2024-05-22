@@ -2,17 +2,19 @@
 import React,{useState,useEffect} from 'react'
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
+import { CldUploadWidget } from 'next-cloudinary';
 import { toast } from 'react-toastify';
 import DateFormatter from '@/components/DateFormatter';
 
 const page = () => {
-  const {data:session} = useSession();
+  const {data:session,update} = useSession();
   const [formData,setFormData] = useState({
     createdAt:'',
     email:'',
     mobile_number:'',
     name:'',
     is_verified:'',
+    profile_image:'',
     profile_image:'',
     user_info:'',
     subscription:'', 
@@ -87,6 +89,7 @@ const handleSubmit = async (event) => {
     const data = await res.json();
     if(res.status ===200){
       toast.success(data.message)
+      update({image:formData.profile_image});
     } else if(res.status === 400) {
       toast.error(data.message);
     }
@@ -162,13 +165,35 @@ const handleSubmit = async (event) => {
                 <tr>
                   <td>Profile Picture</td>
                   <td>
-                    <div className="form-group">
-                      <input
-                        type="file"
-                        name="profile_image"
-                        className="form-control"
-                      />
-                    </div>
+                  <div className="form-group">
+                <label>Choose profile image</label>
+                <div className="fil-img-uplo">
+                <span className="dumfil">Upload a file</span>
+                <CldUploadWidget
+                signatureEndpoint="/api/sign-cloudinary-params"
+                uploadPreset='listing_image'
+                onSuccess={(result, { widget }) => {
+                  setFormData({
+                    ...formData,
+                    profile_image:result?.info?.secure_url,
+                  })
+                  widget.close();
+                }}
+              >
+                {({ open }) => {
+                  function handleOnClick() {
+                    open();
+                  }
+                  return (
+                    <button type="button" onClick={handleOnClick}>
+                      upload image
+                    </button>
+                  );
+                }}
+              </CldUploadWidget>
+               
+              </div>
+              </div>
                   </td>
                 </tr>
                 <tr>

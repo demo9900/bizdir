@@ -22,7 +22,6 @@ const page = () => {
   const token = searchParams.get("token");
   const email = searchParams.get("email");
 
-window.recaptchaVerifier()
 
   const { data: session, status } = useSession();
   console.log("user session from login", session);
@@ -32,7 +31,7 @@ window.recaptchaVerifier()
     const verifyUser = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:8080/api/auth/verify/?token=${token}&email=${email}`
+          `${process.env.BACKEND_URL}/api/auth/verify/?token=${token}&email=${email}`
         );
         if (response.status === 200) {
           toast.success("Successfully verified!");
