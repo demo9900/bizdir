@@ -4,6 +4,8 @@ import Link from "next/link";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { CldUploadWidget } from "next-cloudinary";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
 import Step1 from "@/components/Layout/user/Listing/Step1";
 import Step2 from "@/components/Layout/user/Listing/Step2";
@@ -13,6 +15,7 @@ import Step5 from "@/components/Layout/user/Listing/Step5";
 
 const page = ({ params }) => {
     const { data: session } = useSession();
+    const router = useRouter();
     const [formData, setFormData] = useState({
         user_name: session?.user?.name,
         listing_name: "",
@@ -52,6 +55,8 @@ const page = ({ params }) => {
                 website: data.website,
                 shop_address: data.shop_address,
                 country: data.country,
+                listing_image:data?.listing_image,
+                cover_image:data?.cover_image,
                 cities: data.cities,
                 category: data.category,
                 sub_category: data.sub_category,
@@ -111,6 +116,10 @@ const page = ({ params }) => {
                     },
                 }
             );
+            if(response.status === 200){
+                toast.success("listing updated successfully!");
+                router.push('/account/db-all-listing')
+            }
             console.log(response.data);
         } catch (error) {
             console.error("Error submitting form:", error);

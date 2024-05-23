@@ -48,7 +48,7 @@ const Table = () => {
         method: "DELETE",
       });
 
-      if (res.status === 204) {
+      if (res.status === 200) {
         toast.success("listing deleted successfully");
         // Call getListingData to update the listing data
         getListingData();

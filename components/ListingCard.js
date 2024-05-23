@@ -9,7 +9,7 @@ const ListingCard = ({item,key}) => {
                       {" "}
                       <span className="open-stat">open</span>
                       <Link href={`/all-listing/${item._id}`}>
-                        <img src="/services/2.jpeg" alt="" />
+                        <img src={item.listing_image} alt="" />
                       </Link>
                     </div>
                     {/*-END LISTING IMAGE-*/}

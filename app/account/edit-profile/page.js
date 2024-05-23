@@ -40,6 +40,7 @@ const page = () => {
         name:data?.name,
         user_info:data?.user_info,
         profile_image:data?.profile_image,
+        cover_image:data?.profile_image,
         is_verified:data?.is_verified,
         subscription:data?.subscription,
       }))
@@ -176,6 +177,40 @@ const handleSubmit = async (event) => {
                   setFormData({
                     ...formData,
                     profile_image:result?.info?.secure_url,
+                  })
+                  widget.close();
+                }}
+              >
+                {({ open }) => {
+                  function handleOnClick() {
+                    open();
+                  }
+                  return (
+                    <button type="button" onClick={handleOnClick}>
+                      upload image
+                    </button>
+                  );
+                }}
+              </CldUploadWidget>
+               
+              </div>
+              </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Profile Cover Image</td>
+                  <td>
+                  <div className="form-group">
+                <label>Choose profile image</label>
+                <div className="fil-img-uplo">
+                <span className="dumfil">Upload a file</span>
+                <CldUploadWidget
+                signatureEndpoint="/api/sign-cloudinary-params"
+                uploadPreset='profile_image'
+                onSuccess={(result, { widget }) => {
+                  setFormData({
+                    ...formData,
+                    cover_image:result?.info?.secure_url,
                   })
                   widget.close();
                 }}

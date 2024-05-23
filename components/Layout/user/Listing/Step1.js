@@ -172,7 +172,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                     open();
                   }
                   return (
-                    <button onClick={handleOnClick}>
+                    <button type='button' onClick={handleOnClick}>
                       upload image
                     </button>
                   );

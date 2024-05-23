@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { CldUploadWidget } from "next-cloudinary";
 const Step2 = ({
   formData,
   handleInputChange,

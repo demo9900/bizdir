@@ -95,7 +95,7 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
     if(number=== 1){
     setFormData((prevFormData) => ({
       ...prevFormData,
-      cities:[...prevFormData.cities,option],
+      cities:[...prevFormData?.cities,option],
     }));
     console.log(searchCity)
     }else if(number === 2){

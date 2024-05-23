@@ -8,6 +8,7 @@ const page = ({params}) => {
     const [activeSection, setActiveSection] = useState(null);
   const [loading, setLoading] = useState();
     const [listing, setListing] = useState();
+    const [user,setUser] = useState();
     const aboutRef = useRef(null);
     const serviceRef = useRef(null);
     const galleryRef = useRef(null);
@@ -39,14 +40,7 @@ const page = ({params}) => {
     const getListing = async () => {
         try {
           setLoading(true);
-          const res = await fetch(
-            process.env.BACKEND_URL + `/api/listing/${params.id}`,
-            {
-              headers: {
-              'Content-Type': 'application/json'
-              },
-            }
-          );
+          const res = await fetch(process.env.BACKEND_URL + `/api/listing/${params.id}`);
     
           const data = await res.json();
           setListing(data);
@@ -112,7 +106,7 @@ const page = ({params}) => {
                 </section>
                 <section>
                     <div className="list-bann">
-                        <img src="/listing-ban/1.jpg"alt=""/>
+                        <img src={listing?.cover_image}alt=""/>
                     </div>
                 </section>
                 <section className=" pg-list-1">
@@ -120,7 +114,7 @@ const page = ({params}) => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="pg-list-1-pro">
-                                    <img src="/services/2.jpeg"alt=""/> <span className="stat"><i className="material-icons">verified_user</i></span>
+                                    <img src={listing?.listing_image} alt=""/> <span className="stat"><i className="material-icons">verified_user</i></span>
                                 </div>
                                 <div className="pg-list-1-left">
                                     <h3>{listing?.listing_name}</h3>
@@ -681,9 +675,9 @@ const page = ({params}) => {
                                             <div> <span className="rat" alt="User rating">4.2</span>
                                                 <span className="by">Created by</span>
                                                 <img src="/user/3.jpg"alt=""/>
-                                                <h4>Loki</h4>
+                                                <h4>{listing?.user_name}</h4>
                                                 <p>Member since Feb 2021</p>
-                                            </div> <a href="profile.html" className="fclick" target="_blank">&nbsp;</a>
+                                            </div> <Link href={`/profile/${listing?.user}`} className="fclick">&nbsp;</Link>
                                         </div>
                                     </div>
                                     {/*END LISTING DETAILS: LEFT PART 7*/}
