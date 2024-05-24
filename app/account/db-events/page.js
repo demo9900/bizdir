@@ -4,8 +4,11 @@ import React from "react";
 // import BottomMenu from "@/components/BottomMenu";
 import Link from "next/link";
 import EventList from "./EventList";
+import ComingSoon from "@/components/ComingSoon";
 
 const page = () => {
+
+    return <ComingSoon />
     return (
         <div className="ud-main-inn ud-no-rhs">
             <div className="ud-cen">
