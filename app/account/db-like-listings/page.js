@@ -1,13 +1,15 @@
-'use client';
-import React from 'react'
-import Headertwo from '@/components/Headertwo'
-import Footer from '@/components/Footer';
-import BottomMenu from '@/components/BottomMenu';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import Headertwo from "@/components/Headertwo";
+import Footer from "@/components/Footer";
+import BottomMenu from "@/components/BottomMenu";
+import Link from "next/link";
+import ComingSoon from "@/components/ComingSoon";
 
 const page = () => {
+  return <ComingSoon />;
   return (
-    <div className='ud-main-inn ud-no-rhs'>
+    <div className="ud-main-inn ud-no-rhs">
       <div className="ud-cen">
         <div className="log-bor">&nbsp;</div>{" "}
         <span className="udb-inst">Liked Listings</span>
@@ -51,7 +53,10 @@ const page = () => {
               <tr>
                 <td>2</td>
                 <td>
-                  <img alt="demoimage" src="/listings/4797732622rn53themes.png" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/4797732622rn53themes.png"
+                  />
                   Wedding Venues viki <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -75,7 +80,10 @@ const page = () => {
               <tr>
                 <td>3</td>
                 <td>
-                  <img alt="demoimage" src="/listings/26404cvs-gift-card-476x328.png" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/26404cvs-gift-card-476x328.png"
+                  />
                   asjdklfasd <span>23, Jan 2020</span>
                 </td>
                 <td>
@@ -99,7 +107,10 @@ const page = () => {
               <tr>
                 <td>4</td>
                 <td>
-                  <img alt="demoimage" src="/listings/56271pexels-photo-713148.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/56271pexels-photo-713148.jpeg"
+                  />
                   IPM Business Software <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -123,7 +134,10 @@ const page = () => {
               <tr>
                 <td>5</td>
                 <td>
-                  <img alt="demoimage" src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg"
+                  />
                   Forms hospitals <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -243,7 +257,10 @@ const page = () => {
               <tr>
                 <td>10</td>
                 <td>
-                  <img alt="demoimage" src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg"
+                  />
                   lll <span>16, Jan 2020</span>
                 </td>
                 <td>
@@ -267,7 +284,10 @@ const page = () => {
               <tr>
                 <td>11</td>
                 <td>
-                  <img alt="demoimage" src="/listings/21604photo-of-a-boy-with-curly-hair-2929036.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/21604photo-of-a-boy-with-curly-hair-2929036.jpg"
+                  />
                   William Chil care Hospital <span>11, Jan 2020</span>
                 </td>
                 <td>
@@ -291,7 +311,10 @@ const page = () => {
               <tr>
                 <td>12</td>
                 <td>
-                  <img alt="demoimage" src="/listings/73954man-and-child-holding-baby-3279209.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/73954man-and-child-holding-baby-3279209.jpg"
+                  />
                   Urban Community Hospital <span>11, Jan 2020</span>
                 </td>
                 <td>
@@ -315,7 +338,10 @@ const page = () => {
               <tr>
                 <td>13</td>
                 <td>
-                  <img alt="demoimage" src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/20140doctor-sitting-in-front-of-his-desk-2182979.jpg"
+                  />
                   Joseph Multispeciality Hospital <span>11, Jan 2020</span>
                 </td>
                 <td>
@@ -339,7 +365,10 @@ const page = () => {
               <tr>
                 <td>14</td>
                 <td>
-                  <img alt="demoimage" src="/listings/22386pexels-photo-1157391.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/22386pexels-photo-1157391.jpeg"
+                  />
                   Apolloo Hospitals UAE <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -363,7 +392,10 @@ const page = () => {
               <tr>
                 <td>15</td>
                 <td>
-                  <img alt="demoimage" src="/listings/43032pexels-photo-955793.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/43032pexels-photo-955793.jpeg"
+                  />
                   Appers Premium Independent Houses <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -387,7 +419,10 @@ const page = () => {
               <tr>
                 <td>16</td>
                 <td>
-                  <img alt="demoimage" src="/listings/61191pexels-photo-96444.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/61191pexels-photo-96444.jpeg"
+                  />
                   Capital five star hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -411,7 +446,10 @@ const page = () => {
               <tr>
                 <td>17</td>
                 <td>
-                  <img alt="demoimage" src="/listings/51803pexels-photo-1386168.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/51803pexels-photo-1386168.jpeg"
+                  />
                   Hard Rocks Hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -435,7 +473,10 @@ const page = () => {
               <tr>
                 <td>18</td>
                 <td>
-                  <img alt="demoimage" src="/listings/26318pexels-photo-594077.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/26318pexels-photo-594077.jpeg"
+                  />
                   Taaj Five Star Hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -459,7 +500,10 @@ const page = () => {
               <tr>
                 <td>19</td>
                 <td>
-                  <img alt="demoimage" src="/listings/4103pexels-photo-248547.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/4103pexels-photo-248547.jpeg"
+                  />
                   Dial Sports Shops <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -483,7 +527,10 @@ const page = () => {
               <tr>
                 <td>20</td>
                 <td>
-                  <img alt="demoimage" src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/83091accomplishment-ceremony-education-graduation-267885.jpg"
+                  />
                   Andree Education and Tuition Center <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -507,7 +554,10 @@ const page = () => {
               <tr>
                 <td>21</td>
                 <td>
-                  <img alt="demoimage" src="/listings/25918pexels-photo-3217851.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/25918pexels-photo-3217851.jpeg"
+                  />
                   TATE Electrical Shops <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -531,7 +581,10 @@ const page = () => {
               <tr>
                 <td>22</td>
                 <td>
-                  <img alt="demoimage" src="/listings/68725pexels-photo-2747550.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/68725pexels-photo-2747550.jpeg"
+                  />
                   Center Automobiles <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -555,7 +608,10 @@ const page = () => {
               <tr>
                 <td>23</td>
                 <td>
-                  <img alt="demoimage" src="/listings/22862pexels-photo-1250655.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/22862pexels-photo-1250655.jpeg"
+                  />
                   Green Healthcare Hospital <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -579,7 +635,10 @@ const page = () => {
               <tr>
                 <td>24</td>
                 <td>
-                  <img alt="demoimage" src="/listings/9953white-bmw-e46-under-cloudy-skies-707046.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/9953white-bmw-e46-under-cloudy-skies-707046.jpg"
+                  />
                   Lemoo Cap Services <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -603,7 +662,10 @@ const page = () => {
               <tr>
                 <td>25</td>
                 <td>
-                  <img alt="demoimage" src="/listings/89971pexels-photo-2096983.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/89971pexels-photo-2096983.jpeg"
+                  />
                   Rachel Taj Hotels <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -651,7 +713,10 @@ const page = () => {
               <tr>
                 <td>27</td>
                 <td>
-                  <img alt="demoimage" src="/listings/47884beautiful-wooden-houses-with-lawns-1643389.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/47884beautiful-wooden-houses-with-lawns-1643389.jpg"
+                  />
                   Asian Real Estate <span>01, Feb 2020</span>
                 </td>
                 <td>
@@ -723,7 +788,10 @@ const page = () => {
               <tr>
                 <td>30</td>
                 <td>
-                  <img alt="demoimage" src="/listings/6764gettyimages-200066800-001-1.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/6764gettyimages-200066800-001-1.jpg"
+                  />
                   Royal Real Estates <span>18, Jan 2020</span>
                 </td>
                 <td>
@@ -747,7 +815,10 @@ const page = () => {
               <tr>
                 <td>31</td>
                 <td>
-                  <img alt="demoimage" src="/listings/67634pexels-photo-208736.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/67634pexels-photo-208736.jpeg"
+                  />
                   Della World Premium Properties <span>07, Jan 2020</span>
                 </td>
                 <td>
@@ -771,7 +842,10 @@ const page = () => {
               <tr>
                 <td>32</td>
                 <td>
-                  <img alt="demoimage" src="/listings/32898pexels-photo-1858175.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/32898pexels-photo-1858175.jpeg"
+                  />
                   Honey Massage Center <span>30, Mar 2020</span>
                 </td>
                 <td>
@@ -795,7 +869,10 @@ const page = () => {
               <tr>
                 <td>33</td>
                 <td>
-                  <img alt="demoimage" src="/listings/80274easy-to-install-2.png" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/80274easy-to-install-2.png"
+                  />
                   forms soft tech <span>22, Jan 2020</span>
                 </td>
                 <td>
@@ -843,7 +920,10 @@ const page = () => {
               <tr>
                 <td>35</td>
                 <td>
-                  <img alt="demoimage" src="/listings/43340pexels-photo-106399.jpeg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/43340pexels-photo-106399.jpeg"
+                  />
                   Rolexo Villas in California <span>07, Mar 2021</span>
                 </td>
                 <td>
@@ -891,7 +971,10 @@ const page = () => {
               <tr>
                 <td>37</td>
                 <td>
-                  <img alt="demoimage" src="/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/16671tcx_pro21_white__23108.1409770848.1280.1280.jpg"
+                  />
                   Hari krishna entrepreneur <span>29, Jul 2020</span>
                 </td>
                 <td>
@@ -915,7 +998,10 @@ const page = () => {
               <tr>
                 <td>38</td>
                 <td>
-                  <img alt="demoimage" src="/listings/79587loewe-technologies-4aqx0r9kucg-unsplash.jpg" />
+                  <img
+                    alt="demoimage"
+                    src="/listings/79587loewe-technologies-4aqx0r9kucg-unsplash.jpg"
+                  />
                   fghdfgfdg <span>05, May 2020</span>
                 </td>
                 <td>
@@ -940,9 +1026,8 @@ const page = () => {
           </table>
         </div>
       </div>
-      </div>
-      
-  )
-}
+    </div>
+  );
+};
 
-export default page
+export default page;

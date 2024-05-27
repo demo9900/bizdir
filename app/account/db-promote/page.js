@@ -1,8 +1,10 @@
 'use client';
 import React from 'react'
 import Link from 'next/link';
+import ComingSoon from '@/components/ComingSoon';
 
 const page = () => {
+  return <ComingSoon />
   return (
       <div className='ud-main-inn ud-no-rhs'>
       <div className="ud-cen">
