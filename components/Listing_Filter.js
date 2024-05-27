@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-const Listing_Filter = () => {
+const Listing_Filter = ({location}) => {
     const divRef1 = useRef(null);
     const divRef2 = useRef(null);
     const divRef3 = useRef(null);
@@ -47,6 +47,7 @@ const Listing_Filter = () => {
         keyword: "",
         value: '',
     });
+
     const [seachArea, setSearchArea] = useState({
         _id:'',
         keyword: "",
@@ -79,7 +80,7 @@ const Listing_Filter = () => {
         fetchCity();
       }, [searchState,searchCity]);
       
-     console.log(state);
+     
   
     const services = [
         "What are you looking for?",
@@ -171,7 +172,7 @@ const Listing_Filter = () => {
             ...prevState,
             isVisible: false,
         }));
-        console.log(searchState)
+     
     };
 
   
@@ -274,8 +275,7 @@ const Listing_Filter = () => {
                                 onClick={() => handleClick(2)}
                             >
                                 <span>
-                                    {searchCity.value
-                                        ? searchCity.value
+                                    {location ? location: searchCity.value? searchCity.value
                                         : "Select City"}
                                 </span>
                                 <div>
@@ -367,7 +367,7 @@ const Listing_Filter = () => {
                                     />
                                 </div>
                                 <ul className="chosen-results">
-                                    {searchCity.value.length > 0? (<>
+                                    {searchCity?.value?.length > 0? (<>
                                         {filteredarea?.map((option) => (
                                         <li
                                             key={option._id}

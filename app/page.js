@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSession } from "next-auth/react";
@@ -9,18 +9,54 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomMenu from "@/components/BottomMenu";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import Search_Service from "@/components/Layout/Search_Service";
-import Select_Search from "@/components/Select_Search";
 import Listing_Filter from "@/components/Listing_Filter";
+import Listing_Tab from "@/components/Layout/Listing_Tab";
 
 const page = () => {
     const [location, setLocation] = useState({});
     const [loading, setLoading] = useState(true);
+    const [popularlist,setPopularList] = useState([]);
+    const [latestlist,setLatestList] = useState([]);
+    const [verifiedlist,setVerifiedList] = useState([]);
+    const [nearbylist,setNearbyList] = useState([]);
+    const [offerlist,setOfferList] = useState([]);
     const { data: session, status } = useSession();
     console.log("user session", session);
 
-
+    useEffect(() => {
+        const fetchListings = async () => {
+          try {
+            const endpoints = [
+              `${process.env.BACKEND_URL}/api/listing/popular/list`,
+              `${process.env.BACKEND_URL}/api/listing/latest/list`,
+              `${process.env.BACKEND_URL}/api/listing/verified/list`,
+              `${process.env.BACKEND_URL}/api/listing/nearby/list?city=${location.city}`,
+              `${process.env.BACKEND_URL}/api/listing/offer/list`,
+            ];
+    
+            const [res1, res2, res3, res4, res5] = await Promise.all(endpoints.map((endpoint) => fetch(endpoint)));
+    
+            if (!res1.ok || !res2.ok || !res3.ok || !res4.ok || !res5.ok) {
+              throw new Error('Failed to fetch one or more listings');
+            }
+    
+            const data1 = await res1.json();
+            const data2 = await res2.json();
+            const data3 = await res3.json();
+            const data4 = await res4.json();
+            const data5 = await res5.json();
+    
+            setPopularList(data1); // assuming data is an array of listings
+            setLatestList(data2); // assuming data is an array of listings
+            setVerifiedList(data3); // assuming data is an array of listings
+            setNearbyList(data4); // assuming data is an array of listings
+            setOfferList(data5); // assuming data is an array of listings
+          } catch (error) {
+            console.error('Error fetching listings:', error);
+          }
+        };
+        fetchListings();
+      }, [location]);
 
     var settings = {
         infinite: true,
@@ -87,6 +123,7 @@ const page = () => {
                             city: data.city,
                             country: data.countryName,
                         });
+                        console.log(data)
                         setLoading(false);
                     });
             });
@@ -118,7 +155,7 @@ const page = () => {
                                         {location.city}, {location.country}{" "}
                                     </h1>
                                 </div>
-                                <Listing_Filter />
+                                <Listing_Filter location={location.city}/>
                                 <div className="ban-short-links ani">
                                     <ul>
                                         <li>
@@ -233,20 +270,6 @@ const page = () => {
                                                 />
                                             </div>
                                         </li>
-                                        <li>
-                                            <div>
-                                                <img
-                                                    src="/icon/blog1.png"
-                                                    alt="bizdir"
-                                                    loading="lazy"
-                                                />
-                                                <h4>Blogs</h4>
-                                                <a
-                                                    href="/blog-posts"
-                                                    className="fclick"
-                                                />
-                                            </div>
-                                        </li>
                                     </ul>
                                 </div>
 
@@ -330,214 +353,7 @@ const page = () => {
             <section>
                 <div className="str">
                     <div className="container">
-                        <div className="products row mx-auto">
-                            <div className="home-tit">
-                                <h2>
-                                    <span>Popular Services</span> near you
-                                </h2>
-                                <p>
-                                    lacinia viverra lectus. Fusce imperdiet
-                                    ullamcorper metus eu fringilla.
-                                </p>
-                            </div>
-                            <div className="plac-hom-all-pla">
-                                <ul>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/69336spa1.jpg"
-                                                    className="b-lazy b-loaded"
-                                             alt=""  />
-                                                <h4>Spa and Facial</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/spa-and-facial"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/1280613.jpg"
-                                                    className="b-lazy b-loaded"
-                                         alt=""  />
-                                                <h4>Hospitals</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/hospitals"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/83881.jpeg"
-                                                    className="b-lazy b-loaded"
-                                             alt=""
-                                                />
-                                                <h4>Transportation</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/transportation"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/63205tr1.jpg"
-                                                    className="b-lazy b-loaded"
-                                                    alt=""
-                                                />
-                                                <h4>Automobiles</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/automobiles"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/414416.jpeg"
-                                                    className="b-lazy b-loaded"
-                                             alt=""
-                                                />
-                                                <h4>Electricals</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/electricals"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/4734716.jpeg"
-                                                    className="b-lazy b-loaded"
-                                                    alt=""
-                                                />
-                                                <h4>Education</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/education"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/780168.jpeg"
-                                                    className="b-lazy b-loaded"
-                                             alt=""
-                                                />
-                                                <h4>Sports</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/sports"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="plac-hom-box">
-                                            <div className="plac-hom-box-im">
-                                                <img
-                                                    src="https://utilitypages.in/images/services/50723s9.jpeg"
-                                                    className="b-lazy b-loaded"
-                                                    alt=""                                                />
-                                                <h4>Real Estate</h4>
-                                            </div>
-                                            <div className="rel-list-txt-box">
-                                                <span className="dir-ho-cat">
-                                                    Show All (00 )
-                                                </span>
-                                                <span className="rat-more-cta-ic">
-                                                    More details
-                                                </span>
-                                            </div>
-                                            <a
-                                                href="https://utilitypages.in/all-listing/real-estate"
-                                                className="fclick"
-                                            />
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <Link href="/all-category" className="more">
-                                View all services
-                            </Link>
-                        </div>
+                        <Listing_Tab popularlist={popularlist} latestlist={latestlist} verifiedlist={verifiedlist} nearbylist={nearbylist} offerlist={offerlist} />
                     </div>
                 </div>
             </section>

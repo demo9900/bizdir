@@ -159,10 +159,10 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
                 onSuccess={(result, { widget }) => {
-                  setFormData({
-                    ...formData,
-                    listing_image:result?.info?.secure_url,
-                  })
+                  setFormData(prevFormData => ({
+                    ...prevFormData,
+                    listing_image: result?.info?.secure_url,
+                  }));
                   widget.close();
                 }}
               >

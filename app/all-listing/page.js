@@ -118,7 +118,7 @@ const page = () => {
 
   const filterSubCategory = (category) =>{
     const filtercat = categories.filter((option) =>
-    option.cat.toLowerCase().includes(category.toLowerCase())).map(option =>option.subcat).flat();
+    option?.cat?.toLowerCase().includes(category.toLowerCase())).map(option =>option.subcat).flat();
     setSubCat(filtercat);
   }
   useEffect(() => {
