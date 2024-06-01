@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { client } from "@/lib/apollo";
-import { gql } from "@apollo/client";
 import { GetAllstates,GetCityByState,GetAreaByCity,GetStateByCity } from "@/lib/query";
-import { useQuery } from "@apollo/client";
 import { useRouter } from "next/navigation";
 const Listing_Filter =  ({location}) => {
     const divRef1 = useRef(null);
