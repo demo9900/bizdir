@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import { client } from "@/lib/apollo";
+import { gql } from "@apollo/client";
+import { GetAllstates,GetCityByState,GetAreaByCity,GetStateByCity } from "@/lib/query";
+import { useQuery } from "@apollo/client";
 import { useRouter } from "next/navigation";
-const Listing_Filter = ({location}) => {
+const Listing_Filter =  ({location}) => {
     const divRef1 = useRef(null);
     const divRef2 = useRef(null);
     const divRef3 = useRef(null);
@@ -53,33 +57,55 @@ const Listing_Filter = ({location}) => {
         keyword: "",
         value: '',
     });
-    const fetchCity = async () => {
-        try {
-          const res1 = await fetch('https://bizdir-backend.vercel.app/api/state/');
-          const res2 = await fetch(`https://bizdir-backend.vercel.app/api/city/${searchState._id}`);
-          const res3 = await fetch(`https://bizdir-backend.vercel.app/api/area/${ searchCity._id}`);
-          if (!res1.ok && !res2.ok && !res3.ok ) {
-            throw new Error('Failed to fetch pincode data');
-          }
-          const data1 = await res1.json();
-          const data2 = await res2.json();
-          const data3 = await res3.json();
-          const mappedStates = data1.map(state => ({ _id: state._id, name: state.name,type:state.type }));
-          const mappedCities = data2.map(city => ({_id: city._id,name: city.name,type:city.type}));
-          const mappedArea =   data3.map(area => ({_id: area._id,name:area.name}));
-          setState(mappedStates)
-          setCity(mappedCities);
-          setArea(mappedArea)
-
-        } catch (error) {
-          console.error('Error fetching pincode data:', error);
-        }
-      };
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await client.query({query:GetAllstates})
+                const {getAllStates} =await res.data;
+                if(getAllStates.code !== 200){
+                    throw new Error('Failed to fetch pincode data');
+                }
+                const mappedstate =await getAllStates?.states?.map(state =>({_id:state._id,name:state.name}))
+                setState(mappedstate);
+                if(searchState._id){
+                    const res1 =await client.query({
+                        query: GetCityByState,
+                        variables: { getCityByStateId: searchState._id }
+                      });
+                      const {getCityByState} =await res1.data;
+                      if(getCityByState.code !== 200){
+                        throw new Error('Failed to fetch pincode data');
+                    }
+                    const mappedcity =await getCityByState?.cities?.map(city =>({_id:city._id,name:city.name}))
+                    setCity(mappedcity);
+                }
+                if(searchCity._id){
+                    const res2 =await client.query({
+                        query: GetAreaByCity,
+                        variables: { cityId: searchCity._id }
+                      });
+                      const {getAreasByCity} =await res2.data; 
+                      if(getAreasByCity.code !== 200){
+                        throw new Error('Failed to fetch pincode data');
+                    }
+                const mappedarea =await getAreasByCity?.areas?.map(area =>({_id:area._id,name:area.name}))
+                setArea(mappedarea);
+                }
+             
+                
+                
+            } catch (error) {
+                console.error('something went wrong:', error);
+            }
+           
         
-        fetchCity();
-      }, [searchState,searchCity]);
-      
+        };
+        fetchData();
+      }, [searchState,searchCity,location]);
+     
+    
+    
+    
      
   
     const services = [
@@ -275,8 +301,7 @@ const Listing_Filter = ({location}) => {
                                 onClick={() => handleClick(2)}
                             >
                                 <span>
-                                    {location ? location: searchCity.value? searchCity.value
-                                        : "Select City"}
+                                    {searchCity.value ? searchCity.value: "Select City"}
                                 </span>
                                 <div>
                                     <b />

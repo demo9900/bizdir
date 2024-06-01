@@ -191,10 +191,10 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
                 onSuccess={(result, { widget }) => {
-                  setFormData({
-                    ...formData,
-                    listing_image:result?.info?.secure_url,
-                  })
+                  setFormData(prevFormData => ({
+                    ...prevFormData,
+                    cover_image: result?.info?.secure_url,
+                  }));
                   widget.close();
                 }}
               >
@@ -204,7 +204,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                     open();
                   }
                   return (
-                    <button onClick={handleOnClick}>
+                    <button type='button' onClick={handleOnClick}>
                       upload image
                     </button>
                   );

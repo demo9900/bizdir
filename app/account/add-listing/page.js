@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Location_Filter from "@/components/Location_Filter";
 import axios from "axios";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Step1 from "@/components/Layout/user/Listing/Step1";
 import Step2 from "@/components/Layout/user/Listing/Step2";
@@ -27,8 +25,8 @@ const page = () => {
     category: "",
     sub_category: [],
     listing_detail: "",
-    listing_profile: "",
-    listing_cover: "",
+    listing_image: "",
+    cover_image: "",
     service_location: [],
     service_provided:[],
     youtube_link: "",
