@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSession } from "next-auth/react";
 import Service_Slider from "@/components/Slider/Service_Slider";
+import {getListingByType} from "@/lib/query"
+import { client } from "@/lib/apollo";
 import Slider from "react-slick";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,6 +18,7 @@ const page = () => {
     const [location, setLocation] = useState({});
     const [loading, setLoading] = useState(true);
     const [popularlist,setPopularList] = useState([]);
+    const [trendinglist,setTrendingList] = useState([]);
     const [latestlist,setLatestList] = useState([]);
     const [verifiedlist,setVerifiedList] = useState([]);
     const [nearbylist,setNearbyList] = useState([]);
@@ -23,41 +26,91 @@ const page = () => {
     const { data: session, status } = useSession();
     console.log("user session", session);
 
+   
+    // useEffect(() => {
+    //     const fetchListings = async () => {
+    //       try {
+    //         const endpoints = [
+    //           `${process.env.BACKEND_URL}/api/listing/popular/list`,
+    //           `${process.env.BACKEND_URL}/api/listing/latest/list`,
+    //           `${process.env.BACKEND_URL}/api/listing/verified/list`,
+    //           `${process.env.BACKEND_URL}/api/listing/nearby/list?city=${location.city}`,
+    //           `${process.env.BACKEND_URL}/api/listing/offer/list`,
+    //         ];
+    
+    //         const [res1, res2, res3, res4, res5] = await Promise.all(endpoints.map((endpoint) => fetch(endpoint)));
+    
+    //         if (!res1.ok || !res2.ok || !res3.ok || !res4.ok || !res5.ok) {
+    //           throw new Error('Failed to fetch one or more listings');
+    //         }
+    
+    //         const data1 = await res1.json();
+    //         const data2 = await res2.json();
+    //         const data3 = await res3.json();
+    //         const data4 = await res4.json();
+    //         const data5 = await res5.json();
+    
+    //         setPopularList(data1); // assuming data is an array of listings
+    //         setLatestList(data2); // assuming data is an array of listings
+    //         setVerifiedList(data3); // assuming data is an array of listings
+    //         setNearbyList(data4); // assuming data is an array of listings
+    //         setOfferList(data5); // assuming data is an array of listings
+    //       } catch (error) {
+    //         console.error('Error fetching listings:', error);
+    //       }
+    //     };
+    //     fetchListings();
+    //   }, [location]);
     useEffect(() => {
-        const fetchListings = async () => {
-          try {
-            const endpoints = [
-              `${process.env.BACKEND_URL}/api/listing/popular/list`,
-              `${process.env.BACKEND_URL}/api/listing/latest/list`,
-              `${process.env.BACKEND_URL}/api/listing/verified/list`,
-              `${process.env.BACKEND_URL}/api/listing/nearby/list?city=${location.city}`,
-              `${process.env.BACKEND_URL}/api/listing/offer/list`,
-            ];
-    
-            const [res1, res2, res3, res4, res5] = await Promise.all(endpoints.map((endpoint) => fetch(endpoint)));
-    
-            if (!res1.ok || !res2.ok || !res3.ok || !res4.ok || !res5.ok) {
-              throw new Error('Failed to fetch one or more listings');
+        const getLocation = async () =>{
+            const res = await fetch('https://loaction.damnloaction.workers.dev');
+            if(res.status === 200){
+                const data =await res.json();
+                const {city} = data.location;
+                setLocation({
+                    city:city
+                })
+                console.log(data);
+                return data;
+            }}
+       
+        getLocation()
+    }, []);
+      useEffect(()=>{
+        const fetchData = async () =>{
+            try {
+            const res = await client.query({
+                query: getListingByType,
+                variables:{type:"popular",city:location.city}
+            })
+            const res2 = await client.query({
+                query: getListingByType,
+                variables:{type:"latest",city:location.city}
+            })
+            const res3 = await client.query({
+                query: getListingByType,
+                variables:{type:"verified",city:location.city}
+            })
+            const {getListingsByTypes:data1} = await res.data;
+            const {getListingsByTypes:data2} = await res2.data;
+            const {getListingsByTypes:data3} = await res3.data;
+            if(data1.code !== 200 && data2.code !== 200 && data3.code !== 200){
+                throw new Error('Failed to fetch pincode data');
             }
-    
-            const data1 = await res1.json();
-            const data2 = await res2.json();
-            const data3 = await res3.json();
-            const data4 = await res4.json();
-            const data5 = await res5.json();
-    
-            setPopularList(data1); // assuming data is an array of listings
-            setLatestList(data2); // assuming data is an array of listings
-            setVerifiedList(data3); // assuming data is an array of listings
-            setNearbyList(data4); // assuming data is an array of listings
-            setOfferList(data5); // assuming data is an array of listings
-          } catch (error) {
-            console.error('Error fetching listings:', error);
-          }
-        };
-        fetchListings();
-      }, [location]);
-
+            const {listings:list1} = await data1;
+            setTrendingList(list1)
+            const {listings:list2} = await data2;
+            setLatestList(list2)
+            const {listings:list3} = await data3;
+            setVerifiedList(list3)
+            } catch (error) {
+                console.error('something went wrong:', error);
+            }
+        }
+        fetchData()
+      },[location])
+      console.log('trending list ',trendinglist)
+      console.log('latest list ',latestlist)
     var settings = {
         infinite: true,
         speed: 500,
@@ -110,32 +163,8 @@ const page = () => {
         ],
     };
 
-    useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const { latitude, longitude } = position.coords;
-                fetch(
-                    `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
-                )
-                    .then((response) => response.json())
-                    .then((data) => {
-                        setLocation({
-                            city: data.city,
-                            country: data.countryName,
-                        });
-                        console.log(data)
-                        setLoading(false);
-                    });
-            });
-        } else {
-            setLocation({
-                city: "Unknown",
-                country: "Unknown",
-            });
-            setLoading(false);
-        }
-    }, []);
-
+   
+console.log("city is=",location)
     return (
         <>
             <section>
@@ -150,6 +179,7 @@ const page = () => {
                                             Connect with the right
                                             <br />
                                             Service Experts
+                                            
                                         </b>{" "}
                                         Restaurants, cafe&apos;s, and bars in{" "}
                                         {location.city}, {location.country}{" "}
@@ -353,7 +383,7 @@ const page = () => {
             <section>
                 <div className="str">
                     <div className="container">
-                        <Listing_Tab popularlist={popularlist} latestlist={latestlist} verifiedlist={verifiedlist} nearbylist={nearbylist} offerlist={offerlist} />
+                        <Listing_Tab trendinglist={trendinglist} latestlist={latestlist} verifiedlist={verifiedlist} nearbylist={nearbylist} offerlist={offerlist} />
                     </div>
                 </div>
             </section>
