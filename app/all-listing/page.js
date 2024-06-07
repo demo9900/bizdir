@@ -5,9 +5,10 @@ import { useRouter,usePathname } from 'next/navigation';
 import Footer from '@/components/Footer';
 import BottomMenu from '@/components/BottomMenu';
 import Link from 'next/link';
+import { GET_FILTERED_LISTING,GET_ALL_CITY,GET_ALL_CATEGORY } from '@/lib/query';
+import { client } from '@/lib/apollo';
 import { useSearchParams } from 'next/navigation'
 import ListingCard from '@/components/ListingCard';
-import { Preview } from '@mui/icons-material';
 
 const page = () => {
   const router = useRouter()
@@ -23,6 +24,7 @@ const page = () => {
   const [checkedsubcat,setCheckedSubCat] = useState([]);
   const divRef1 = useRef(null);
   const divRef2 = useRef(null);
+  const [loading,setLoading] = useState(false);
   const [cities, setCities] = useState();
   const [select, setSelect] = useState({
     num: null,
@@ -58,34 +60,100 @@ const page = () => {
     };
   }, []);
   useEffect(() => {console.log("runs", city)
-    const fetchListings = async (category, city, area,subcategory) => {
+    // const fetchListings = async (category, city, area,subcategory) => {
+    //   try {
+    //     setLoading(true);
+    //     const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category? `category=${category}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}${subcategory?`&subcategory=${subcategory}`:``}`);
+    //     if (!response.ok) {
+    //       setListings([]);
+    //       throw new Error('Failed to fetch listings');
+    //     }
+    //     const data = await response.json();
+    //     setLoading(false);
+    //     setListings(data); // assuming data is an array of listings
+    //     console.log('city='+city+'category='+category+'area='+area)
+    //   } catch (error) {
+    //     console.error('Error fetching listings:', error);
+    //   }
+    // };
+
+    const fetchListings = async (category, city, area, subcategory) => {
       try {
-        const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category? `category=${category}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}${subcategory?`&subcategory=${subcategory}`:``}`);
-        if (!response.ok) {
+        setLoading(true);
+    
+        const filters = {
+          category,
+          city,
+          area,
+          subcategory
+        };
+    
+        const { data, error } = await client.query({
+          query: GET_FILTERED_LISTING,
+          variables: { filters }
+        });
+    
+        if (error) {
           setListings([]);
           throw new Error('Failed to fetch listings');
         }
-        const data = await response.json();
-        setListings(data); // assuming data is an array of listings
+    
+        const listings = await data.getFilteredListing.listings;
+        setListings(listings); // assuming data.getFilteredListing.listings is an array of listings
+        setLoading(false);
+        console.log('city=' + city + ' category=' + category + ' area=' + area);
       } catch (error) {
         console.error('Error fetching listings:', error);
+        setLoading(false);
       }
     };
+
     const fetchCity = async () => {
       try {
-        const res = await fetch(`https://bizdir-backend.vercel.app/api/city/`);
-        if (!res.ok) {
-          throw new Error('Failed to fetch city data');
+        setLoading(true);
+        const { data, error } = await client.query({
+          query: GET_ALL_CITY,
+        });
+    
+        if (error) {
+          setCities([]);
+          throw new Error('Failed to fetch listings');
         }
-        const data = await res.json();
-        const mappedCities = await data.map(city => (city.name));
-        setCities(mappedCities)
-
+    
+        const city = await data.getAllCity.cities;
+        const mappedCities = await city.map(item => (item.name));
+        setCities(mappedCities); // assuming data.getFilteredListing.listings is an array of listings
+        setLoading(false);
+        console.log(mappedCities);
       } catch (error) {
-        console.error('Error fetching pincode data:', error);
+        console.error('Error fetching listings:', error);
+        setLoading(false);
       }
     };
+    
     const getCategories = async () => {
+      try {
+        setLoading(true);
+        const { data, error } = await client.query({
+          query: GET_ALL_CATEGORY,
+        });
+    
+        if (error) {
+          setCategories([]);
+          throw new Error('Failed to fetch listings');
+        }
+    
+        const items = await data.getAllCategories.categories;
+        const mappedcategory = await items.map(category => ({cat:category.category_name,subcat:category.subcategory}));
+        setCategories(mappedcategory); // assuming data.getFilteredListing.listings is an array of listings
+        setLoading(false);
+        console.log(mappedcategory);
+      } catch (error) {
+        console.error('Error fetching categort:', error);
+        setLoading(false);
+      }
+    };
+    const getCategories9 = async () => {
       try {
         const res = await fetch(`https://bizdir-backend.vercel.app/api/listing/category/all`);
         if (!res.ok) {
@@ -171,8 +239,8 @@ const page = () => {
     }
   };
   useEffect(() => {
-    router.push(`/all-listing?${city?`city=${city}`:``}${category?`&category=${category}`:``}${checkedsubcat?`&subcat=${checkedsubcat.join(',')}`:``}`);
-  }, [checkedsubcat, city, category, router]);
+    router.push(`/all-listing?${city?`city=${city}`:``}${category?`&category=${category}`:``}${area ? `&area=${area}`:``}${checkedsubcat?`&subcat=${checkedsubcat.join(',')}`:``}`);
+  }, [checkedsubcat]);
   
   const handleOptionClick = (option, number) => {
     console.log("selected city is", searchCity)
@@ -858,78 +926,31 @@ const page = () => {
                     </div>
                   </div>
                   {/* LISTING INN FILTER */}
-                  <div className="list-filt-v2">
-                    <ul>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            name="lfv2-all"
-                            className="lfv2-all"
-                            defaultValue={1}
-                            id="lfv2-all"
-                            defaultChecked="checked"
-                          />
-                          <label htmlFor="lfv2-all">All</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            name="lfv2-pop"
-                            className="lfv2-pop"
-                            id="lfv2-pop"
-                          />
-                          <label htmlFor="lfv2-pop">Popular</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            name="lfv2-op"
-                            className="lfv2-op"
-                            id="lfv2-op"
-                          />
-                          <label htmlFor="lfv2-op">Open</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            name="lfv2-tru"
-                            className="lfv2-tru"
-                            id="lfv2-tru"
-                          />
-                          <label htmlFor="lfv2-tru">Verified</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            name="lfv2-near"
-                            className="lfv2-near"
-                            id="lfv2-near"
-                          />
-                          <label htmlFor="lfv2-near">Nearby</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="chbox">
-                          <input
-                            type="checkbox"
-                            name="lfv2-off"
-                            className="lfv2-off"
-                            id="lfv2-off"
-                          />
-                          <label htmlFor="lfv2-off">Offers</label>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                  <div className="top-ser w-1/2 flex">
+            <form name="filter_form" id="filter_form" className="filter_form">
+              <ul>
+                <li className="sr-sea">
+                 
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    id="top-select-search"
+                    placeholder="Search for services and business..."
+                  />
+                 
+                </li>
+                <li className="sbtn">
+                  <button
+                    type="button"
+                    className="btn btn-success"
+                    id="top_filter_submit"
+                  >
+                    <i className="material-icons">&nbsp;</i>
+                  </button>
+                </li>
+              </ul>
+            </form>
+          </div>
                   {/* END LISTING INN FILTER */}
                   {/*ADS*/}
                   <div className="ban-ati-com ads-all-list">
@@ -945,10 +966,10 @@ const page = () => {
                   </div>
                   {/* Loader Image */}
                   <div className="all-list-sh all-listing-total">
-                    {listings.length > 0 ? (
+                    {(listings.length > 0 && !loading) ? (
                       <ul>
                         {listings.map((item, index) =>
-                          (<ListingCard key={index} item={item} />)
+                          (<ListingCard id={index} item={item} />)
                         )}
                       </ul>
                     ) : (<span style={{ fontSize: 21, color: '#bfbfbf', letterSpacing: 1, paddingLeft: 30, textShadow: '0px 0px 2px #fff', textTransform: 'uppercase', textAlign: 'center!important', marginTop: '5%' }}>!!! Oops No Listing Faund with the Selected Category</span>

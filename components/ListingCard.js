@@ -1,75 +1,71 @@
-import React from 'react'
-import Link from 'next/link'
-const ListingCard = ({item,key}) => {
-  return (
-    <li key={key}>
-                  <div className="eve-box">
-                    {/*-LISTING IMAGE-*/}
-                    <div className="al-img">
-                      {" "}
-                      <span className="open-stat">open</span>
-                      <Link href={`/all-listing/${item._id}`}>
-                        <img src={item.listing_image} alt="" />
-                      </Link>
-                    </div>
-                    {/*-END LISTING IMAGE-*/}
-                    {/*-LISTING NAME-*/}
-                    <div>
-                      <h4>
-                        <Link href="/listing-details">
-                          {item.listing_name}
-                        </Link>
-                        <i className="li-veri">
-                          <img src="/icon/svg/verified.png" alt="" />
-                        </i>
-                      </h4>
-                      <label className="rat">
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                        <i className="material-icons">star</i>
-                      </label>
-                      <span className="addr">
-                        {item.listing_address}
-                      </span>
-                      <span className="pho">{item.phone_number}</span>
-                      <span className="mail">{item.email}</span>
-                      <div className="links">
-                        <Link
-                          href="/#"
-                          data-toggle="modal"
-                          data-target="#quote"
-                          className="quo"
-                        >
-                          Get quote
-                        </Link>
-                        <Link href={`/all-listing/${item._id}`}>View more</Link>
-                        <Link href="/Tel:7904462944">Call Now</Link>
-                        <Link
-                          href="/https://wa.me/7904462944"
-                          className="what"
-                          target="_blank"
-                        >
-                          WhatsApp
-                        </Link>
-                      </div>
-                    </div>
-                    {/*-END LISTING NAME-*/}
-                    {/*-SAVE-*/}
-                    <span
-                      className="enq-sav"
-                      data-toggle="tooltip"
-                      title=" Click to like this listing"
-                    >
-                      <i className="l-like sav-act">
-                        <img src="/icon/svg/like.svg" alt="" />
-                      </i>
-                    </span>
-                    {/*-END SAVE-*/}
-                  </div>
-                </li>
-  )
-}
+import React from "react";
+import Link from "next/link";
+const ListingCard = ({ item, id }) => {
 
-export default ListingCard
+  return (
+    <li key={id}>
+      <div className="eve-box">
+        {/*-LISTING IMAGE-*/}
+        <div className="al-img">
+          <span className="open-stat">open</span>
+          <Link href={`/all-listing/${item._id}`}>
+            <img src={item.listing_image} alt="" />
+          </Link>
+        </div>
+        {/*-END LISTING IMAGE-*/}
+        {/*-LISTING NAME-*/}
+        <div>
+          <h4>
+            <Link href="/listing-details">{item.listing_name}</Link>
+            <i className="li-veri">
+              <img src="/icon/svg/verified.png" alt="" />
+            </i>
+          </h4>
+          <label className="rat">
+            <i className="material-icons">star</i>
+            <i className="material-icons">star</i>
+            <i className="material-icons">star</i>
+            <i className="material-icons">star</i>
+            <i className="material-icons">star</i>
+          </label>
+          <span className="addr">{item.listing_address}</span>
+          <span className="pho">{item.phone_number}</span>
+          <span className="mail">{item.email}</span>
+          <div className="links">
+            <Link
+              href="/#"
+              data-toggle="modal"
+              data-target="#quote"
+              className="quo"
+            >
+              Get quote
+            </Link>
+            <Link href={`/all-listing/${item._id}`}>View more</Link>
+            <Link href="/Tel:7904462944">Call Now</Link>
+            <Link
+              href="/https://wa.me/7904462944"
+              className="what"
+              target="_blank"
+            >
+              WhatsApp
+            </Link>
+          </div>
+        </div>
+        {/*-END LISTING NAME-*/}
+        {/*-SAVE-*/}
+        <span
+          className="enq-sav"
+          data-toggle="tooltip"
+          title=" Click to like this listing"
+        >
+          <i className="l-like sav-act">
+            <img src="/icon/svg/like.svg" alt="" />
+          </i>
+        </span>
+        {/*-END SAVE-*/}
+      </div>
+    </li>
+  );
+};
+
+export default ListingCard;

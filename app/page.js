@@ -27,40 +27,7 @@ const page = () => {
     console.log("user session", session);
 
    
-    // useEffect(() => {
-    //     const fetchListings = async () => {
-    //       try {
-    //         const endpoints = [
-    //           `${process.env.BACKEND_URL}/api/listing/popular/list`,
-    //           `${process.env.BACKEND_URL}/api/listing/latest/list`,
-    //           `${process.env.BACKEND_URL}/api/listing/verified/list`,
-    //           `${process.env.BACKEND_URL}/api/listing/nearby/list?city=${location.city}`,
-    //           `${process.env.BACKEND_URL}/api/listing/offer/list`,
-    //         ];
-    
-    //         const [res1, res2, res3, res4, res5] = await Promise.all(endpoints.map((endpoint) => fetch(endpoint)));
-    
-    //         if (!res1.ok || !res2.ok || !res3.ok || !res4.ok || !res5.ok) {
-    //           throw new Error('Failed to fetch one or more listings');
-    //         }
-    
-    //         const data1 = await res1.json();
-    //         const data2 = await res2.json();
-    //         const data3 = await res3.json();
-    //         const data4 = await res4.json();
-    //         const data5 = await res5.json();
-    
-    //         setPopularList(data1); // assuming data is an array of listings
-    //         setLatestList(data2); // assuming data is an array of listings
-    //         setVerifiedList(data3); // assuming data is an array of listings
-    //         setNearbyList(data4); // assuming data is an array of listings
-    //         setOfferList(data5); // assuming data is an array of listings
-    //       } catch (error) {
-    //         console.error('Error fetching listings:', error);
-    //       }
-    //     };
-    //     fetchListings();
-    //   }, [location]);
+   
     useEffect(() => {
         const getLocation = async () =>{
             const res = await fetch('https://loaction.damnloaction.workers.dev');

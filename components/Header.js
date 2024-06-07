@@ -182,91 +182,14 @@ const Header = ({transparent}) => {
             <form name="filter_form" id="filter_form" className="filter_form">
               <ul>
                 <li className="sr-sea">
-                  {/*                                            <input type="text"  id="*/}
-                  {/*" className="autocomplete"*/}
-                  {/*                                                   placeholder="*/}
-                  {/*">*/}
+                 
                   <input
                     type="text"
                     autoComplete="off"
                     id="top-select-search"
                     placeholder="Search for services and business..."
                   />
-                  <ul id="tser-res1" className="tser-res tser-res2">
-                    <li>
-                      <div>
-                        <h4>The Royal Spa Center For Womens</h4>
-                        <span>
-                          No:2, 4th Avenue, Newyork, USA, Near to Airport
-                        </span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Real estate</h4>
-                        <span>Chennai, India</span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Education</h4>
-                        <span>
-                          Schools, university, colleges, online classes, tution
-                          centers, distance education..
-                        </span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Hotel and resort booking</h4>
-                        <span>
-                          hotel booking online, hotel reservation, holiday room
-                          booking
-                        </span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Import and export</h4>
-                        <span>
-                          Import and export to other countrys with low cost
-                        </span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Properties in Illunois</h4>
-                        <span>Villas, Plots, House rent and buy</span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Schools in Adyar</h4>
-                        <span>schools, adyar, education, </span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Laptop services near you</h4>
-                        <span>laptop services, computer services</span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <h4>Hospital and medical services near you</h4>
-                        <span>Hospital and medical services near you</span>
-                        <Link href="/all-listing" />
-                      </div>
-                    </li>
-                  </ul>
+                 
                 </li>
                 <li className="sbtn">
                   <button
