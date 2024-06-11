@@ -204,12 +204,12 @@ const page = ({params}) => {
                           Review
                         </span>
                       </li>
-                      <li>
+                      {/* <li>
                         <span onClick={() => setClaimModal(true)} className='cursor-pointer'  data-toggle="modal" >
                           <i className="material-icons">store</i>
                           Claim business
                         </span>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>
@@ -295,11 +295,12 @@ const page = ({params}) => {
                       <li>
                         {" "}
                         <span
+                        onClick={() => setClaimModal(true)}
                           data-toggle="modal"
                           data-target="#quote"
                           className="pulse cta cta-get"
                         >
-                          Get quote
+                          Claim Listing
                         </span>
                       </li>
                     </ul>
