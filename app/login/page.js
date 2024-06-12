@@ -5,7 +5,7 @@ import { signIn, useSession } from "next-auth/react";
 import axios from "axios";
 import { Suspense } from "react";
 import { useEffect } from "react";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import { toast } from "react-toastify";
 import Footer from "@/components/Footer";
@@ -18,6 +18,8 @@ const page = () => {
     password: "",
   });
   const searchParams = useSearchParams();
+  const callbackurl = searchParams.get('callbackUrl')
+  
   const error = searchParams.get("error");
   const token = searchParams.get("token");
   const email = searchParams.get("email");
@@ -59,10 +61,12 @@ useEffect(() =>{
       toast.error("Email and password are required");
       return;
     }
+    console.log("callbackurl:",callbackurl)
     const result = await signIn("credentials", {
       email,
       password,
-      redirect: false,
+      redirect: true,
+      callbackUrl: callbackurl || '/'
     });
 
     if (result.error) {

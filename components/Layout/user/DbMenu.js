@@ -83,7 +83,7 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
           })}
           <li>
           <button onClick={async () => {await signOut({redirect:false})
-                        router.push('/login');
+                        router.push('/');
                     }} >
               <img src="/icon/dbl12.png" alt="theme" />
               Log Out

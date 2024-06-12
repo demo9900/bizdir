@@ -1,0 +1,2 @@
+1. add state on create listing
+2. add locate on map.

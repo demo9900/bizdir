@@ -60,22 +60,7 @@ const page = () => {
     };
   }, []);
   useEffect(() => {console.log("runs", city)
-    // const fetchListings = async (category, city, area,subcategory) => {
-    //   try {
-    //     setLoading(true);
-    //     const response = await fetch(`${process.env.BACKEND_URL}/api/listing/search?${category? `category=${category}`:``}${city ? `&city=${city}` : ``}${area ? `&area=${area}` : ``}${subcategory?`&subcategory=${subcategory}`:``}`);
-    //     if (!response.ok) {
-    //       setListings([]);
-    //       throw new Error('Failed to fetch listings');
-    //     }
-    //     const data = await response.json();
-    //     setLoading(false);
-    //     setListings(data); // assuming data is an array of listings
-    //     console.log('city='+city+'category='+category+'area='+area)
-    //   } catch (error) {
-    //     console.error('Error fetching listings:', error);
-    //   }
-    // };
+   
 
     const fetchListings = async (category, city, area, subcategory) => {
       try {

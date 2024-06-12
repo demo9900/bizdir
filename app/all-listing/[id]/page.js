@@ -1,21 +1,31 @@
 'use client'
 import React, { useRef, useState, useEffect } from 'react'
 import Header from '@/components/Header'
+import { useRouter,usePathname } from 'next/navigation'
+import { CldUploadWidget } from 'next-cloudinary';
 import Footer from '@/components/Footer'
 import { useSession } from 'next-auth/react'
+import { signIn } from 'next-auth/react';
 import { toast } from "react-toastify";
 import { client } from '@/lib/apollo';
 import { CREATE_CLAIM_REQUEST } from '@/lib/mutation'
+import { GETLISTING } from '@/lib/query';
 import Link from 'next/link'
 import BottomMenu from '@/components/BottomMenu'
 const page = ({params}) => {
   const { data: session, status, update } = useSession();
+  const pathname = usePathname();
+  const router = useRouter();
     const [formData, setFormData] = useState({
         listing_name:"",
         listing_id:"",
+        user_id:session?.user.id,
         name: "",
         email: "",
         phone_number:"",
+        listing_image:"",
+        verification_image:"",
+        listing_date:"",
         description:""
         
       });
@@ -40,7 +50,7 @@ const page = ({params}) => {
       console.log(formData);
     };
     const validateFormData = (formData) => {
-      const requiredFields = ['listing_name', 'listing_id', 'name', 'email', 'phone_number', 'description'];
+      const requiredFields = ['listing_name', 'listing_id', 'name', 'email', 'phone_number', 'description','verification_image'];
       for (const field of requiredFields) {
         if (!formData[field] || formData[field].trim() === "") {
           return false;
@@ -56,6 +66,10 @@ const page = ({params}) => {
        
         if (!validateFormData(formData)) {
           toast.error('Please fill all required fields');
+          return;
+        }
+        if(session?.user.id === listing?.user){
+          toast.error('You Already Claimed This Listing.')
           return;
         }
         const { data, errors } = await client.mutate({
@@ -83,7 +97,15 @@ const page = ({params}) => {
         console.error("Error submitting form:", error);
       }
     };
-    const handleScrollToSection = (section) => {
+    const handleClaimModal = () =>{
+      if(status === 'authenticated'){
+        setClaimModal(true);
+      }else{
+        signIn(null, { callbackUrl: pathname });
+        console.log("callbackurl:", pathname)
+      }
+    }
+     const handleScrollToSection = (section) => {
         setActiveSection(section);
         const sectionRef = {
             about: aboutRef,
@@ -104,24 +126,31 @@ const page = ({params}) => {
           }
     };
 
-    const getListing = async () => {
-        try {
-          setLoading(true);
-          const res = await fetch(process.env.BACKEND_URL + `/api/listing/${params.id}`);
     
-          const data = await res.json();
-          setListing(data);
-          console.log(data);
-          setFormData(prevFormData => ({
-            ...prevFormData,
-            listing_id: data._id,  // Adjust according to the structure of your data
-            listing_name: data.listing_name // Optionally update other fields
-          }));
-          setLoading(false);
-        } catch (error) {
-          console.error(error);
+
+      const getListing = async () =>{
+        try {
+        const res = await client.query({
+            query: GETLISTING,
+            variables:{id:params.id}
+        })
+        const {getListing:data} = await res.data;
+        if(data.code !== 200){
+            throw new Error('something went wrong');
         }
-      };
+        const {listing} = await data;
+        setListing(listing)
+        setFormData(prevFormData => ({
+          ...prevFormData,
+          listing_id: listing._id,  // Adjust according to the structure of your data
+          listing_name: listing.listing_name, // Optionally update other fields
+          listing_image: listing.listing_image,
+          listing_date: listing.createdAt
+        }));
+        } catch (error) {
+            console.error('something went wrong:', error);
+        }
+    }
       useEffect(() => {
         getListing();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -271,18 +300,7 @@ const page = ({params}) => {
                           Call now
                         </a>
                       </li>
-                      <li>
-                        <span
-                          className="cta cta-like ldelik Animatedheartfunc385 "
-                          data-for={1}
-                          data-section={1}
-                          data-num={325}
-                          data-item={37}
-                          data-id={385}
-                        >
-                          <b className="like-content385">1</b> Likes
-                        </span>
-                      </li>
+                    
                       <li>
                         {" "}
                         <a
@@ -295,7 +313,7 @@ const page = ({params}) => {
                       <li>
                         {" "}
                         <span
-                        onClick={() => setClaimModal(true)}
+                        onClick={handleClaimModal}
                           data-toggle="modal"
                           data-target="#quote"
                           className="pulse cta cta-get"
@@ -676,7 +694,7 @@ const page = ({params}) => {
                             </div>
                             <div className="row">
                               <div>
-                                <fieldset className="rating">
+                                <fieldset  className="rating" >
                                   <input
                                     type="radio"
                                     id="star5"
@@ -1527,7 +1545,7 @@ const page = ({params}) => {
                         id="popup_claim_form"
                         onSubmit={handleSubmit}
                       >
-                        <fieldset >
+                        <fieldset  >
                          
                           <div className="form-group">
                             <input
@@ -1562,14 +1580,34 @@ const page = ({params}) => {
                             />
                           </div>
                           <div className="form-group">
-                            <input
-                              type="file"
-                              className="form-control"
-                              name="enquiry_image"
-                              placeholder="Identification Proof *"
-                              
-                            />
-                          </div>
+                <label>Identification Proofe *</label>
+                <div className="fil-img-uplo">
+                <span className="dumfil">Upload a file</span>
+                <CldUploadWidget
+                signatureEndpoint="/api/sign-cloudinary-params"
+                uploadPreset='listing_image'
+                onSuccess={(result, { widget }) => {
+                  setFormData(prevFormData => ({
+                    ...prevFormData,
+                    verification_image: result?.info?.secure_url,
+                  }));
+                  widget.close();
+                }}
+              >
+                {({ open }) => {
+                  function handleOnClick() {
+                    open();
+                  }
+                  return (
+                    <button type='button' onClick={handleOnClick}>
+                      upload image
+                    </button>
+                  );
+                }}
+              </CldUploadWidget>
+               
+              </div>
+              </div>
                           <div className="form-group">
                             <textarea
                               onChange={handleChange}
@@ -1586,8 +1624,9 @@ const page = ({params}) => {
                             id="popup_claim_submit"
                             name="popup_claim_submit"
                             className="btn btn-primary cursor-pointer"
+                            disabled={session?.user.id === listing?.user}
                           >
-                            Claim Now
+                            {session?.user.id === listing?.user ? 'You already claimed':'Claim now'}
                           </button>
                         </fieldset>
                       </form>

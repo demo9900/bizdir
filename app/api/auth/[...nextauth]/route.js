@@ -1,8 +1,8 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-
-
+import { client } from "@/lib/apollo";
+import { LOGIN_USER } from "@/lib/mutation";
 const authOptions = {
     pages: {
         signIn: "/login",
@@ -22,32 +22,31 @@ const authOptions = {
             async authorize(credentials) {
                 try {
                     const { email, password } = credentials;
-                    const response = await fetch(
-                        `${process.env.BACKEND_URL}/api/auth/login`,
-                        {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({ email, password }),
+                   
+                        // Send GraphQL mutation request to login user
+                        const { data, errors } = await client.mutate({
+                          mutation: LOGIN_USER,
+                          variables: { email: email,password:password},
+                        });
+                    
+                        if (errors || data.loginUser.code !== 200) {
+                            console.log(errors)
+                          throw new Error("something went wrong", errors);
                         }
-                    );
-
-                    const data = await response.json();
-                    if (!response.ok) {
-                        throw new Error(data.message);
-                    }
-
+                        
+                        const user = await data.loginUser.user;
+                      
                     return {
-                        token: data.token,
-                        id: data.id,
-                        name: data.user.name,
-                        email: data.user.email,
-                        image: data.user.image,
-                        is_verified: data.user.is_verified,
+                        token: user.token,
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        image: user.image,
+                        is_verified: user.is_verified,
                     };
                 } catch (error) {
-                    throw new Error(error.message);
+                    console.log("something went wrong",error)
+                    throw new Error(error);
                 }
             },
         }),
@@ -120,8 +119,13 @@ const authOptions = {
             return session;
         },
         async redirect({ url, baseUrl }) {
+            // Allows relative callback URLs
+            console.log("url:",url+"baseUrl:",baseUrl)
+            if (url.startsWith("/")) return `${baseUrl}${url}`
+            // Allows callback URLs on the same origin
+            else if (new URL(url).origin === baseUrl) return url
             return baseUrl
-          },
+          }
     },
 };
 
