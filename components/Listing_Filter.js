@@ -91,22 +91,7 @@ const Listing_Filter =  ({location}) => {
                 const mappedarea =await getAreasByCity?.areas?.map(area =>({_id:area._id,name:area.name}))
                 setArea(mappedarea);
                 }
-                // if(location && !searchState._id){
-                //     const res3 =await client.query({
-                //         query: GetStateByCity,
-                //         variables: { city: location }
-                //       });
-                //       const {getStateByCity} =await res3.data;
-                //       if(getStateByCity.code !== 200){
-                //         throw new Error('Failed to fetch pincode data');
-                //     }
-                //     setSearchState((prevState) => ({
-                //         ...prevState,
-                //         _id:getStateByCity.city.state._id,
-                //         value: getStateByCity.city.state.name,
-                //     }));
-                    
-                // }
+               
                 
                 
             } catch (error) {
@@ -116,7 +101,7 @@ const Listing_Filter =  ({location}) => {
         
         };
         fetchData();
-      }, [searchState,searchCity,location]);
+      }, [searchState,searchCity]);
      
     
     
