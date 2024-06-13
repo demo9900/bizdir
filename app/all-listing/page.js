@@ -59,7 +59,6 @@ const page = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  useEffect(() => {console.log("runs", city)
    
 
     const fetchListings = async (category, city, area, subcategory) => {
@@ -86,7 +85,6 @@ const page = () => {
         const listings = await data.getFilteredListing.listings;
         setListings(listings); // assuming data.getFilteredListing.listings is an array of listings
         setLoading(false);
-        console.log('city=' + city + ' category=' + category + ' area=' + area);
       } catch (error) {
         console.error('Error fetching listings:', error);
         setLoading(false);
@@ -109,7 +107,6 @@ const page = () => {
         const mappedCities = await city.map(item => (item.name));
         setCities(mappedCities); // assuming data.getFilteredListing.listings is an array of listings
         setLoading(false);
-        console.log(mappedCities);
       } catch (error) {
         console.error('Error fetching listings:', error);
         setLoading(false);
@@ -132,7 +129,6 @@ const page = () => {
         const mappedcategory = await items.map(category => ({cat:category.category_name,subcat:category.subcategory}));
         setCategories(mappedcategory); // assuming data.getFilteredListing.listings is an array of listings
         setLoading(false);
-        console.log(mappedcategory);
       } catch (error) {
         console.error('Error fetching categort:', error);
         setLoading(false);
@@ -228,7 +224,6 @@ const page = () => {
   }, [checkedsubcat]);
   
   const handleOptionClick = (option, number) => {
-    console.log("selected city is", searchCity)
     if (number === 1) {
       setSearchCity((prevState) => ({
         ...prevState,

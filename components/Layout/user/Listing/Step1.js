@@ -4,7 +4,7 @@ import { CldUploadWidget } from 'next-cloudinary';
 
 const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
   const [resource, setResource] = useState();
-  console.log(resource)
+
   return (
     <div className="row">
     <div className="login-main add-list posr">

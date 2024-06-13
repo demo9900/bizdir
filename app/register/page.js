@@ -15,9 +15,8 @@ const page = () => {
     mobile_number:"",
     user_type:""
 })
-console.log(formData)
+
 const [userEmail, setuserEmail] = useState("");
-console.log(userEmail)
     const [error, setError] = useState("")
 
   const searchParams = useSearchParams()

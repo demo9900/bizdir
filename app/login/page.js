@@ -18,18 +18,15 @@ const page = () => {
     password: "",
   });
   const searchParams = useSearchParams();
-  const callbackurl = searchParams.get('callbackUrl')
-  
+  const callbackurl = searchParams.get("callbackUrl");
+
   const error = searchParams.get("error");
   const token = searchParams.get("token");
   const email = searchParams.get("email");
 
-
   const { data: session, status } = useSession();
-  console.log("user session from login", session);
 
   useEffect(() => {
-    console.log(token, email);
     const verifyUser = async () => {
       try {
         const response = await axios.post(
@@ -50,27 +47,31 @@ const page = () => {
       verifyUser();
     }
   }, [token, email]);
-useEffect(() =>{
- toast.error(error)
-},[error])
+  useEffect(() => {
+    toast.error(error);
+  }, [error]);
+
   async function handleSubmit(event) {
     event.preventDefault();
     const email = formData.email;
     const password = formData.password;
+
     if (!email || !password) {
       toast.error("Email and password are required");
       return;
     }
-    console.log("callbackurl:",callbackurl)
+
     const result = await signIn("credentials", {
       email,
       password,
       redirect: true,
-      callbackUrl: callbackurl || '/'
+      callbackUrl: callbackurl || "/",
     });
 
+    console.log("result => ", result);
+
     if (result.error) {
-      toast.error(result.error)
+      toast.error(result.error);
     } else {
       router.replace("/");
     }
@@ -157,7 +158,7 @@ useEffect(() =>{
                         <li>
                           <Link
                             href=""
-                            onClick={() => signIn('google')}
+                            onClick={() => signIn("google")}
                             className="login-goog"
                           >
                             <img src="/images/icon/seo.png" alt="google" />

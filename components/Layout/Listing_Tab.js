@@ -1,10 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-const Listing_Tab = ({trendinglist,latestlist,verifiedlist,nearbylist,offerlist}) => {
+const Listing_Tab = ({
+  trendinglist,
+  latestlist,
+  verifiedlist,
+  nearbylist,
+  offerlist,
+}) => {
   const [openTab, setOpenTab] = useState(1);
- 
- 
+
   return (
     <div className="products row mx-auto">
       <div className="home-tit">
@@ -18,7 +23,7 @@ const Listing_Tab = ({trendinglist,latestlist,verifiedlist,nearbylist,offerlist}
       </div>
       <div className="list-filt-v2 mb-[20px]">
         <ul>
-        <li>
+          <li>
             <div className="chbox">
               <label
                 onClick={(e) => {
@@ -34,165 +39,104 @@ const Listing_Tab = ({trendinglist,latestlist,verifiedlist,nearbylist,offerlist}
           </li>
           <li>
             <div className="chbox">
-              <label  onClick={(e) => {
+              <label
+                onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(2);
                 }}
-                className={openTab === 2 ? "select" : ""} htmlFor="lfv2-op">Latest</label>
+                className={openTab === 2 ? "select" : ""}
+                htmlFor="lfv2-op"
+              >
+                Latest
+              </label>
             </div>
           </li>
           <li>
             <div className="chbox">
-              <label  onClick={(e) => {
+              <label
+                onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(3);
                 }}
-                className={openTab === 3 ? "select" : ""} htmlFor="lfv2-tru">Verified</label>
+                className={openTab === 3 ? "select" : ""}
+                htmlFor="lfv2-tru"
+              >
+                Verified
+              </label>
             </div>
           </li>
-         
+
           <li>
             <div className="chbox">
-              <label  onClick={(e) => {
+              <label
+                onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(5);
                 }}
-                className={openTab === 4 ? "select" : ""} htmlFor="lfv2-off">Offers</label>
+                className={openTab === 4 ? "select" : ""}
+                htmlFor="lfv2-off"
+              >
+                Offers
+              </label>
             </div>
           </li>
         </ul>
       </div>
       <div className="plac-hom-all-pla">
-        {openTab === 1 && (
-           <div>
-           <ul>
-            {trendinglist.length > 0? (trendinglist.map((item,index) =>(
-             <li key={index}>
-               <div className="plac-hom-box">
-                 <div className="plac-hom-box-im">
-                   <img
-                     src={item?.listing_image}
-                     className="b-lazy b-loaded"
-                     alt=""
-                   />
-                   <h4>{item?.listing_name}</h4>
-                 </div>
-                 <div className="rel-list-txt-box">
-                   <span className="dir-ho-cat">{item?.category}</span>
-                   <span className="rat-more-cta-ic">More details</span>
-                 </div>
-                 <Link
-                   href={`/all-listing/${item._id}`}
-                   className="fclick"
-                 />
-               </div>
-             </li>
-            ))):(
-                 <div className="container ser-re-hu mx-auto my-10 text-center">Oops!!! No result(s) Found . Please try with other!!!</div>
-            )}
-           </ul>
-         </div>
-        )}
-        {openTab === 2 && (
-           <div>
-           <ul>
-            {latestlist.length > 0? (latestlist?.map((item,index) =>(
-             <li key={index}>
-               <div className="plac-hom-box">
-                 <div className="plac-hom-box-im">
-                   <img
-                     src={item?.listing_image}
-                     className="b-lazy b-loaded"
-                     alt=""
-                   />
-                   <h4>{item?.listing_name}</h4>
-                 </div>
-                 <div className="rel-list-txt-box">
-                   <span className="dir-ho-cat">{item?.category}</span>
-                   <span className="rat-more-cta-ic">More details</span>
-                 </div>
-                 <Link
-                   href={`/all-listing/${item._id}`}
-                   className="fclick"
-                 />
-               </div>
-             </li>
-            ))):(
-              <li>
-                 <div className="container ser-re-hu mx-auto my-10 text-center">Oops!!! No result(s) Found . Please try with other!!!</div>
-              </li>
-            )}
-           </ul>
-         </div>
-        )}
-        {openTab === 3 && (
-           <div>
-           <ul>
-            {verifiedlist?.length > 0? (verifiedlist?.map((item,index) =>(
-             <li key={index}>
-               <div className="plac-hom-box">
-                 <div className="plac-hom-box-im">
-                   <img
-                     src={item?.listing_image}
-                     className="b-lazy b-loaded"
-                     alt=""
-                   />
-                   <h4>{item?.listing_name}</h4>
-                 <span></span>
-                 </div>
-                 <div className="rel-list-txt-box">
-                   <span className="dir-ho-cat">{item?.category}</span>
-                   <span className="rat-more-cta-ic">More details</span>
-                 </div>
-                 <Link
-                   href={`/all-listing/${item._id}`}
-                   className="fclick"
-                 />
-               </div>
-             </li>
-            ))):(
-                 <div className="container ser-re-hu mx-auto my-10 text-center">Oops!!! No result(s) Found . Please try with other!!!</div>
-            )}
-           </ul>
-         </div>
-        )}
-        {openTab === 4 && (
-           <div>
-           <ul>
-            {offerlist.length > 0? (offerlist?.map((item,index) =>(
-             <li key={index}>
-               <div className="plac-hom-box">
-                 <div className="plac-hom-box-im">
-                   <img
-                     src={item?.listing_image}
-                     className="b-lazy b-loaded"
-                     alt=""
-                   />
-                   <h4>{item?.listing_name}</h4>
-                 </div>
-                 <div className="rel-list-txt-box">
-                   <span className="dir-ho-cat">{item?.category}</span>
-                   <span className="rat-more-cta-ic">More details</span>
-                 </div>
-                 <Link
-                   href={`/all-listing/${item._id}`}
-                   className="fclick"
-                 />
-               </div>
-             </li>
-            ))):(
-                 <div className="container ser-re-hu mx-auto my-10 text-center">Oops!!! No result(s) Found . Please try with other!!!</div>
-            )}
-           </ul>
-         </div>
-        )}
+        {openTab === 1 && <ListingCard itemList={trendinglist} />}
+        {openTab === 2 && <ListingCard itemList={latestlist} />}
+        {openTab === 3 && <ListingCard itemList={verifiedlist} />}
+        {openTab === 4 && <ListingCard itemList={offerlist} />}
       </div>
-     <div className="hom-cate-more">
-    <Link href="/all-listing" className="cta-new-blue">View all services</Link>
-    </div>
-
+      <div className="hom-cate-more">
+        <Link href="/all-listing" className="cta-new-blue">
+          View all services
+        </Link>
+      </div>
     </div>
   );
 };
 
 export default Listing_Tab;
+
+const ListingCard = ({ itemList }) => {
+  return (
+    <ul>
+      {itemList.length > 0 ? (
+        itemList.map((item, index) => (
+          <li key={index}>
+            <div className="plac-hom-box">
+              <div className="plac-hom-box-im">
+                {itemList.isClaimed && (
+                  <small
+                    style={{
+                      color: itemList.isClaimed === "claimed" ? "green" : "",
+                    }}
+                  >
+                    {itemList?.isClaimed}
+                  </small>
+                )}
+                <small>Unclaimed</small>
+                <img
+                  src={item?.listing_image}
+                  className="b-lazy b-loaded"
+                  alt=""
+                />
+                <h4>{item?.listing_name}</h4>
+              </div>
+              <div className="rel-list-txt-box">
+                <span className="dir-ho-cat">{item?.category}</span>
+                <span className="rat-more-cta-ic">More details</span>
+              </div>
+              <Link href={`/all-listing/${item._id}`} className="fclick" />
+            </div>
+          </li>
+        ))
+      ) : (
+        <div className="container ser-re-hu mx-auto my-10 text-center">
+          Oops!!! No result(s) Found . Please try with other!!!
+        </div>
+      )}
+    </ul>
+  );
+};

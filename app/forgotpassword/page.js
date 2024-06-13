@@ -9,7 +9,6 @@ const page = () => {
   const router = useRouter()
  
 const [userEmail, setuserEmail] = useState("");
-console.log(userEmail)
     const [error, setError] = useState("")
 
  

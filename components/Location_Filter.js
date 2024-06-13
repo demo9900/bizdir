@@ -44,7 +44,7 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
   useEffect(() => {
     fetchCity();
   }, []);
-  console.log(city);
+
   const country = ["India","Usa"]
   const category = [
     'Restaurants',
@@ -89,7 +89,6 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
         ...prevState,
         isVisible: true
       }));
-    console.log(select.num)
   };
   const handleOptionClick = (option,number) => {
     if(number=== 1){
@@ -97,7 +96,6 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
       ...prevFormData,
       cities:[...prevFormData?.cities,option],
     }));
-    console.log(searchCity)
     }else if(number === 2){
       setFormData(prevState =>({
         ...prevState,

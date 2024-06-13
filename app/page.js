@@ -24,9 +24,6 @@ const page = () => {
     const [nearbylist,setNearbyList] = useState([]);
     const [offerlist,setOfferList] = useState([]);
     const { data: session, status } = useSession();
-    console.log("user session", session);
-
-   
    
     useEffect(() => {
         const getLocation = async () =>{
@@ -76,8 +73,6 @@ const page = () => {
         }
         fetchData()
       },[location])
-      console.log('trending list ',trendinglist)
-      console.log('latest list ',latestlist)
     var settings = {
         infinite: true,
         speed: 500,
@@ -131,7 +126,6 @@ const page = () => {
     };
 
    
-console.log("city is=",location)
     return (
         <>
             <section>

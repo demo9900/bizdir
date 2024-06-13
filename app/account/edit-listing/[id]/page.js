@@ -66,7 +66,6 @@ const page = ({ params }) => {
                 youtube_link: data.youtube_link,
                 map_url: data.map_url,
             }));
-            console.log("listing function running");
         } catch (error) {
             console.error(error);
         }
@@ -76,7 +75,6 @@ const page = ({ params }) => {
         getListing();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [session]);
-    console.log("listing id =", params.id);
 
     const handleInputChange = (event, index) => {
         const { name, value } = event.target;

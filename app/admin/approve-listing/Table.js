@@ -8,11 +8,9 @@ const Table = () => {
   const [loading, setLoading] = useState(true);
   const { data: session, status } = useSession();
 
-  console.log(session);
   const getListingData = async () => {
     try {
       setLoading(true);
-      console.log("inside getlisting", session.jwt);
       const res = await fetch(
         process.env.BACKEND_URL + "/api/listing/?approved_listing=true",
         {
@@ -91,7 +89,6 @@ const Table = () => {
   
   if (loading) return <>Loading</>;
 
-  console.log(listingData);
   return (
     <table className="responsive-table bordered" id="pg-resu">
       <thead>

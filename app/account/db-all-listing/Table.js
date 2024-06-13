@@ -9,11 +9,9 @@ const Table = () => {
   const [loading, setLoading] = useState(true);
   const { data: session, status } = useSession();
 
-  console.log(session);
   const getListingData = async () => {
     try {
       setLoading(true);
-      console.log("inside getlisting", session.jwt);
       const res = await fetch(
         process.env.BACKEND_URL + `/api/listing/user/${session.user.id}`,
         {
@@ -27,7 +25,6 @@ const Table = () => {
 
       console.log(data);
       setListingData(data);
-      console.log("listing function running");
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -60,8 +57,6 @@ const Table = () => {
   };
 
   if (loading) return <>Loading</>;
-
-  console.log(listingData);
   return (
     <div className="table-responsive">
       <table className="table bordered">

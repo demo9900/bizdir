@@ -14,7 +14,7 @@ export default function DashboardLayout({
   const pathname = usePathname();
   const path = ["/account/add-listing", "/account/edit-listing"];
   const hideSidebar = path.some((path) => pathname.startsWith(path));
-  console.log(pathname);
+
   return (
     <Auth>
     <div>

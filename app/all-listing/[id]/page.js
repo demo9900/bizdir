@@ -102,7 +102,6 @@ const page = ({params}) => {
         setClaimModal(true);
       }else{
         signIn(null, { callbackUrl: pathname });
-        console.log("callbackurl:", pathname)
       }
     }
      const handleScrollToSection = (section) => {

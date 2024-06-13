@@ -14856,7 +14856,20 @@ color: #333;
 .plac-hom-box-txt span:nth-child(1).red-sml-cta{background:var(--red);width:auto;color:#fff;font-size:12px;padding:3px 16px;border-radius:2px;font-weight:500;margin-right:25px}
 .plac-hom-box-txt span:nth-child(1).red-sml-cta{background:var(--red);width:auto;color:#fff;font-size:12px;padding:3px 16px;border-radius:2px;font-weight:500;margin-right:25px}
 .plac-hom-all-pla{float:left;width:100%;position:relative;overflow:hidden;padding:0 8px}
-
+.plac-hom-box-im > small {
+    position: absolute;
+    background: #ffff60;
+    top: 12px;
+    left: -36px;
+    padding: 6px 36px;
+    /* width: 300px; */
+    /* color: white; */
+    font-size: 10px;
+    /* border-radius: 300px; */
+    transform: rotate(-45deg);
+    font-weight: 800;
+    z-index: 1000;
+}
 
 
 .plac-hom-all-pla ul li{float:left;width:33.3333%;padding:10px}

@@ -13,7 +13,6 @@ const page = () => {
         if (!newCities.includes(city)) {
           newCities.push(city);
         }
-        console.log(cities)
       });
       return newCities;
     });

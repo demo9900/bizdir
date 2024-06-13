@@ -8,7 +8,6 @@ const Table = () => {
   const [loading, setLoading] = useState(true);
   const { data: session, status } = useSession();
 
-  console.log(session);
   const getListingData = async () => {
     try {
       setLoading(true);
@@ -55,7 +54,6 @@ const Table = () => {
 
   if (loading) return <>Loading</>;
 
-  console.log(listingData);
   return (
     <table className="responsive-table bordered" id="pg-resu">
       <thead>

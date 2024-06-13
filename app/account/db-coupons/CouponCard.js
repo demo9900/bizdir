@@ -11,7 +11,6 @@ const CouponCard = () => {
     const getCouponData = async () => {
         try {
             setLoading(true);
-            console.log("inside getcoupon", session.jwt);
             const res = await fetch(process.env.BACKEND_URL + "/api/coupon", {
                 headers: {
                     authorization: "Bearer " + session.jwt,

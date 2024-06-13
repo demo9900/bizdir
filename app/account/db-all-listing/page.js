@@ -28,7 +28,7 @@ const page = () => {
     const showToast = () =>{
         toast.warn("your limit exceeded")
     }
-    console.log("user data", user)
+
     return (
         <div className="ud-main-inn ud-no-rhs">
             <div className="ud-cen">
