@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Location_Filter from "@/components/Location_Filter";
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -24,8 +23,10 @@ const page = () => {
     shop_address: "",
     listing_image:"",
     country: "",
+    state:"",
     cities: [],
-    category: "",
+    areas:[],
+    category: "test",
     sub_category: [],
     listing_detail: "",
     listing_profile: "",
