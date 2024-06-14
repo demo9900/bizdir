@@ -59,9 +59,9 @@ const page = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  
   useEffect(() => {console.log("runs", city)
    
-
     const fetchListings = async (category, city, area, subcategory) => {
       try {
         setLoading(true);

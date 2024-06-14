@@ -7,8 +7,7 @@ const Location_Filter = ({formData,InputChange,setFormData}) => {
   const divRef3 = useRef(null);
   const divRef4 = useRef(null);
   const divRef5 = useRef(null);
-  const cityRef = useRef(null);
-  const areaRef = useRef(null);
+  
   const subcategoryRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -109,7 +108,7 @@ const [searchArea, setSearchArea] = useState({
     };
     fetchData();
   }, [searchState,searchCity]);
-  console.log("all fetched category =>",category)
+  
   const country = ["India","Usa"]
 
   const [select, setSelect] = useState({
@@ -153,7 +152,7 @@ const [searchArea, setSearchArea] = useState({
         ...prevState,
         isVisible: true
       }));
-    console.log(select.num)
+    console.log(formData)
   };
   const handleOptionClick = (option,number) => {
     if(number === 1){
@@ -168,33 +167,28 @@ const [searchArea, setSearchArea] = useState({
   }));
     }
     else if(number=== 2){
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      cities:[...prevFormData?.cities,option.name],
+    setFormData((prevState) => ({
+      ...prevState,
+      city:option.name,
     }));
     setSearchCity((prevState) => ({
       ...prevState,
       _id:option._id,
       value: option.name,
   }));
-  if(option.name){
-    cityRef.current.focus();
-  }
+ 
   console.log(formData)
     }
    else if(number=== 3){
       setFormData((prevState) => ({
         ...prevState,
-        areas:[...prevState?.areas,option.name],
+        area:option.name
       }));
       setSearchArea((prevState) => ({
         ...prevState,
         _id:option._id,
         value: option.name,
     }));
-    if(option.name){
-      areaRef.current.focus();
-    }
       }
     else if(number === 4){
       setFormData(prevState =>({
@@ -205,7 +199,7 @@ const [searchArea, setSearchArea] = useState({
     } else if (number === 5){
       setFormData((prevFormData) => ({
         ...prevFormData,
-        sub_category:[...prevFormData.sub_category,option],
+        subcategory:[...prevFormData.subcategory,option],
       }));
       if(option){
         subcategoryRef.current.focus();
@@ -218,73 +212,29 @@ const [searchArea, setSearchArea] = useState({
       }));
   };
  
-  // useEffect(() => {
-  //   if (formData.cities?.length > 0 ) {
-  //     cityRef.current.focus();
-  //   }else if (formData.areas?.length > 0) {
-  //     areaRef.current.focus();
-  //   }
-  //    else if (formData.sub_category?.length > 0) {
-  //     subcategoryRef.current.focus();
-  //   }
-  // }, [formData.cities,formData.areas,formData.sub_category]);
+  
   const handleKeyPress = (e,number) => {
-    if (number === 2 && e.key === "Backspace" && searchCity.keyword === "") {
+   
+     if (number === 5 && e.key === "Backspace" && searchSubCat === "") {
       setFormData(prevState => ({
         ...prevState,
-        cities: prevState.cities.slice(0, -1) // Remove the last index value
-      }));
-    }else if (number === 3 && e.key === "Backspace" && searchArea.keyword === "") {
-      setFormData(prevState => ({
-        ...prevState,
-        areas: prevState.areas.slice(0, -1) // Remove the last index value
-      }));
-      console.log("backspace working")
-    }
-     else if (number === 5 && e.key === "Backspace" && searchSubCat === "") {
-      setFormData(prevState => ({
-        ...prevState,
-        sub_category: prevState.sub_category.slice(0, -1) // Remove the last index value
+        subcategory: prevState.subcategory.slice(0, -1) // Remove the last index value
       }));
     }
   };
 
   const handleRemove = (index, number) => {
-    if (number === 2) {
+    
+      if (number === 5) {
       setFormData((prevState) => {
-        const updatedValue = [...prevState.cities]; // Create a copy of the current array
+        const updatedValue = [...prevState.subcategory]; // Create a copy of the current array
         updatedValue.splice(index, 1); // Remove the item at the specified index
         return {
           ...prevState,
-          cities: updatedValue, // Update the state with the modified array
+          subcategory: updatedValue, // Update the state with the modified array
         };
       });
-      if(formData.cities.length > 0 ){
-        cityRef.current.focus();
-      }
-    }if (number === 3) {
-      setFormData((prevState) => {
-        const updatedValue = [...prevState.areas]; // Create a copy of the current array
-        updatedValue.splice(index, 1); // Remove the item at the specified index
-        return {
-          ...prevState,
-          areas: updatedValue, // Update the state with the modified array
-        };
-      });
-      if(formData.areas.length > 0 ){
-        areaRef.current.focus();
-      }
-    }
-     else if (number === 5) {
-      setFormData((prevState) => {
-        const updatedValue = [...prevState.sub_category]; // Create a copy of the current array
-        updatedValue.splice(index, 1); // Remove the item at the specified index
-        return {
-          ...prevState,
-          sub_category: updatedValue, // Update the state with the modified array
-        };
-      });
-      if(formData.sub_category.length > 0 ){
+      if(formData.subcategory.length > 0 ){
         subcategoryRef.current.focus();
       }
     }
@@ -309,7 +259,7 @@ const [searchArea, setSearchArea] = useState({
 const filteredsubcat = subcategory?.filter(option =>
   option.toLowerCase().includes(searchSubCat.toLowerCase())
 ).filter(option =>
-  !formData.sub_category?.includes(option)
+  !formData.subcategory?.includes(option)
 );
 
   return (
@@ -357,7 +307,7 @@ const filteredsubcat = subcategory?.filter(option =>
                 </div>
                 <ul className="chosen-results">
                   <li className="active-result" data-option-array-index={0}>
-                    Select Category
+                    Select State
                   </li>
                   {filteredstate?.map(option =>(
                   <li key={option._id} onClick={() => handleOptionClick(option,1)}  className="active-result" data-option-array-index={1}>
@@ -373,59 +323,48 @@ const filteredsubcat = subcategory?.filter(option =>
         <div className="col-md-6">
           <div className="form-group">
             <div
-              className={`chosen-container chosen-container-multi ${
+              className={`chosen-container chosen-container-single ${
                 select.num === 2 && select.isVisible
                   ? "chosen-with-drop"
                   : ""
               } chosen-container-active`}
-              ref={divRef2}
               alt=""
+              ref={divRef2}
               id="city_id_chosen"
-              style={{ width: 640 }}
+              style={{ width: 305 }}
             >
-              <ul className="chosen-choices">
-
-              {formData.cities?.length > 0 &&
-                formData.cities.map((option, index) => {
-                  return (
-                    <li key={index} className="search-choice">
-                      <span>{option}</span>
-                      <a onClick={() => handleRemove(index,2)} className="search-choice-close" data-option-array-index={0} />
-                    </li>
-                  );
-                })}
-
-                <li className="search-field">
+              <a className="chosen-single" onClick={() => handleClick(2)}>
+              <span>{formData?.city?.length > 0 ? formData.city:'Select City' }</span>
+                <div>
+                  <b />
+                </div>
+              </a>
+              <div className="chosen-drop">
+                <div className="chosen-search">
                   <input
-                    ref={cityRef}
-                    onKeyUp={(e)=>handleKeyPress(e,2)}
-                    onClick={() => handleClick(2)}
-                    className="chosen-search-input default"
-                    onChange={(e)=>handleInputChange(e,2)}
-                    style={{
-                      width: formData.cities?.length > 0 ? "33px!important" : "137.062px"
-                    }}
-                    value={searchCity.keyword}
+                    className="chosen-search-input valid"
                     type="text"
                     autoComplete="off"
-                    placeholder="Select your Cities"
+                    value={searchCity.keyword}
+                    onChange={(e)=>handleInputChange(e,2)}
                   />
-                </li>
-              </ul>
-              <div className="chosen-drop">
+                </div>
                 <ul className="chosen-results">
-                  {searchState.value.length > 0 ? (<>
-                    {filteredcity?.map((option,index)=>(
-                  <li  className="active-result" key={index}  onClick={() => handleOptionClick(option,2)} data-option-array-index={0}>
+                  {searchState.value.length > 0 ? (
+                    <>
+                    {filteredcity?.map(option =>(
+                  <li key={option._id} onClick={() => handleOptionClick(option,2)}  className="active-result" data-option-array-index={1}>
                     {option.name}
                   </li>
                   ))}
-                  </>
+                    </>
                   ):(
                     <li className="no-results">
-                    please select any state 
+                    please select any state first 
                     </li>
                   )}
+                  
+                 
                 </ul>
               </div>
             </div>
@@ -434,59 +373,46 @@ const filteredsubcat = subcategory?.filter(option =>
         <div className="col-md-6">
           <div className="form-group">
             <div
-              className={`chosen-container chosen-container-multi ${
+              className={`chosen-container chosen-container-single ${
                 select.num === 3 && select.isVisible
                   ? "chosen-with-drop"
                   : ""
               } chosen-container-active`}
-              ref={divRef3}
               alt=""
+              ref={divRef3}
               id="area_id_chosen"
-              style={{ width: 640 }}
+              style={{ width: 305 }}
             >
-              <ul className="chosen-choices">
-
-              {formData.areas?.length > 0 &&
-                formData.areas.map((option, index) => {
-                  return (
-                    <li key={index} className="search-choice">
-                      <span>{option}</span>
-                      <a onClick={() => handleRemove(index,3)} className="search-choice-close" data-option-array-index={0} />
-                    </li>
-                  );
-                })}
-
-                <li className="search-field">
+              <a className="chosen-single" onClick={() => handleClick(3)}>
+              <span>{formData?.area?.length > 0 ? formData.area:'Select Area' }</span>
+                <div>
+                  <b />
+                </div>
+              </a>
+              <div className="chosen-drop">
+                <div className="chosen-search">
                   <input
-                    ref={areaRef}
-                    onKeyUp={(e)=>handleKeyPress(e,3)}
-                    onClick={() => handleClick(3)}
-                    className="chosen-search-input default"
-                    onChange={(e)=>handleInputChange(e,3)}
-                    style={{
-                      width: formData.areas?.length > 0 ? "33px!important" : "137.062px"
-                    }}
-                    value={searchArea.keyword}
+                    className="chosen-search-input valid"
                     type="text"
                     autoComplete="off"
-                    placeholder="Select your area"
+                    value={searchArea.keyword}
+                    onChange={(e)=>handleInputChange(e,3)}
                   />
-                </li>
-              </ul>
-              <div className="chosen-drop">
+                </div>
                 <ul className="chosen-results">
                   {searchCity.value.length > 0 ? (<>
-                    {filteredarea?.map((option,index)=>(
-                  <li  className="active-result" key={index}  onClick={() => handleOptionClick(option,3)} data-option-array-index={0}>
+                    {filteredarea?.map(option =>(
+                  <li key={option._id} onClick={() => handleOptionClick(option,3)}  className="active-result" data-option-array-index={1}>
                     {option.name}
                   </li>
                   ))}
-                  </>
-                  ):(
-                    <li className="no-results">
-                    please select any city 
-                    </li>
+                  </>):(
+                     <li className="no-results">
+                     please select any city first 
+                     </li>
                   )}
+                 
+                 
                 </ul>
               </div>
             </div>
@@ -552,8 +478,8 @@ const filteredsubcat = subcategory?.filter(option =>
               style={{ width: 640 }}
             >
               <ul className="chosen-choices">
-              {formData?.sub_category?.length > 0 &&
-                formData?.sub_category.map((option, index) => {
+              {formData?.subcategory?.length > 0 &&
+                formData?.subcategory.map((option, index) => {
                   return (
                     <li key={index} className="search-choice">
                       <span>{option}</span>
@@ -570,7 +496,7 @@ const filteredsubcat = subcategory?.filter(option =>
                     onClick={() => handleClick(5)}
                     onChange={(e)=>handleInputChange(e,5)}
                     style={{
-                      width: formData.sub_category?.length > 0 ? "33px!important" : "137.062px"
+                      width: formData.subcategory?.length > 0 ? "33px!important" : "137.062px"
                     }}
                     value={searchSubCat}
                     autoComplete="off"
