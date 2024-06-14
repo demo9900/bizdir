@@ -1,37 +1,64 @@
-'use client';
-import React,{useState,useEffect} from 'react'
-import { useSession } from 'next-auth/react';
-import Link from 'next/link';
-import DateFormatter from '@/components/DateFormatter';
+"use client";
+import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import DateFormatter from "@/components/DateFormatter";
+import { client } from "@/lib/apollo";
+import { GET_USER_DETAILS } from "@/lib/query";
 
 const page = () => {
-  const [user,setUser] = useState();
-  const {data:session} = useSession();
+  const [user, setUser] = useState();
+  const { data: session } = useSession();
 
   const getUser = async () => {
-    try {
-      const res = await fetch(
-        process.env.BACKEND_URL + `/api/user/${session.user.id}`,
-        {
-          headers: {
-            authorization: "Bearer " + session.jwt,
-          },
-        }
-      );
+    // try {
+    //   const res = await fetch(
+    //     process.env.BACKEND_URL + `/api/user/${session.user.id}`,
+    //     {
+    //       headers: {
+    //         authorization: "Bearer " + session.jwt,
+    //       },
+    //     }
+    //   );
 
-      const data = await res.json();
-      setUser(data);
+    //   const data = await res.json();
+    //   setUser(data);
+    //   console.log(data);
+    // } catch (error) {
+    //   console.error(error);
+    // }
+
+    try {
+      const { data, errors } = await client.query({
+        query: GET_USER_DETAILS,
+        variables: { id: params.id },
+        context: {
+          headers: {
+            Authorization: `Bearer ${session.jwt}`,
+          },
+        },
+      });
+
       console.log(data);
+
+      if (errors || data.getUser.code !== 200) {
+        throw new Error("Something went wrong");
+      }
+
+      setUser(data.getUser.user);
+      setLoading(false);
     } catch (error) {
-      console.error(error);
+      console.error("Error submitting form:", error);
     }
   };
+  
   useEffect(() => {
     getUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
+
   return (
-    <div className='ud-main-inn ud-no-rhs'>
+    <div className="ud-main-inn ud-no-rhs">
       <div className="ud-cen">
         <div className="log-bor">&nbsp;</div>{" "}
         <span className="udb-inst">User Profile</span>
@@ -45,11 +72,15 @@ const page = () => {
           </Link>
           <table className="responsive-table bordered">
             <tbody>
-                {user?.subscription?.user_plan !== 'lite' && (
-              <tr>
-                <td>Plan Expiry(Listing exp)</td>
-                <td><DateFormatter dateString={user?.subscription?.plan_expiry_date} /> </td>
-              </tr>
+              {user?.subscription?.user_plan !== "lite" && (
+                <tr>
+                  <td>Plan Expiry(Listing exp)</td>
+                  <td>
+                    <DateFormatter
+                      dateString={user?.subscription?.plan_expiry_date}
+                    />{" "}
+                  </td>
+                </tr>
               )}
               <tr>
                 <td>Name</td>
@@ -79,11 +110,13 @@ const page = () => {
               </tr>
               <tr>
                 <td>Join date</td>
-                <td><DateFormatter dateString={user?.createdAt} /> </td>
+                <td>
+                  <DateFormatter dateString={user?.createdAt} />{" "}
+                </td>
               </tr>
               <tr>
                 <td>Verified</td>
-                <td>{user?.is_verified?.status === true ? 'Yes':'No'}</td>
+                <td>{user?.is_verified?.status === true ? "Yes" : "No"}</td>
               </tr>
               <tr>
                 <td>Plan Type</td>
@@ -107,9 +140,7 @@ const page = () => {
               </tr>
               <tr>
                 <td>Youtube</td>
-                <td>
-                  https://www.youtube.com/
-                </td>
+                <td>https://www.youtube.com/</td>
               </tr>
               <tr>
                 <td>Website</td>
@@ -131,8 +162,8 @@ const page = () => {
           </table>
         </div>
       </div>
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default page
+export default page;

@@ -86,7 +86,7 @@ const page = () => {
         }
 
         const listings = await data.getFilteredListing.listings;
-        setListings(listings); // assuming data.getFilteredListing.listings is an array of listings
+        setListings(listings);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching listings:", error);
@@ -133,7 +133,7 @@ const page = () => {
           cat: category.category_name,
           subcat: category.subcategory,
         }));
-        setCategories(mappedcategory); // assuming data.getFilteredListing.listings is an array of listings
+        setCategories(mappedcategory);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching categort:", error);
@@ -141,24 +141,24 @@ const page = () => {
       }
     };
 
-    const getCategories9 = async () => {
-      try {
-        const res = await fetch(
-          `https://bizdir-backend.vercel.app/api/listing/category/all`
-        );
-        if (!res.ok) {
-          throw new Error("Failed to fetch city data");
-        }
-        const data = await res.json();
-        const mappedcategory = await data.map((category) => ({
-          cat: category.category_name,
-          subcat: category.subcategory,
-        }));
-        setCategories(mappedcategory);
-      } catch (error) {
-        console.error("Error fetching pincode data:", error);
-      }
-    };
+    // const getCategories9 = async () => {
+    //   try {
+    //     const res = await fetch(
+    //       `https://bizdir-backend.vercel.app/api/listing/category/all`
+    //     );
+    //     if (!res.ok) {
+    //       throw new Error("Failed to fetch city data");
+    //     }
+    //     const data = await res.json();
+    //     const mappedcategory = await data.map((category) => ({
+    //       cat: category.category_name,
+    //       subcat: category.subcategory,
+    //     }));
+    //     setCategories(mappedcategory);
+    //   } catch (error) {
+    //     console.error("Error fetching pincode data:", error);
+    //   }
+    // };
 
     fetchListings(category, city, area, subcategory);
     fetchCity();
@@ -187,6 +187,7 @@ const page = () => {
       .flat();
     setSubCat(filtercat);
   };
+
   useEffect(() => {
     if (category && categories.length > 0) {
       filterSubCategory(category);
@@ -200,9 +201,11 @@ const page = () => {
       isVisible: !prevState.isVisible,
     }));
   };
+
   const stopPropagation = (e) => {
     e.stopPropagation();
   };
+
   const handleInputChange = (e, number) => {
     const { value, checked, type } = e.target;
     if (number === 1) {
@@ -237,6 +240,7 @@ const page = () => {
       });
     }
   };
+
   useEffect(() => {
     router.push(
       `/all-listing?${city ? `city=${city}` : ``}${
@@ -272,9 +276,11 @@ const page = () => {
       isVisible: false,
     }));
   };
+
   const filteredcity = cities?.filter((option) =>
     option.toLowerCase().includes(searchCity.keyword.toLowerCase())
   );
+
   const filteredcategory = categories.filter((option) =>
     option.cat.toLowerCase().includes(searchCat.keyword.toLowerCase())
   );

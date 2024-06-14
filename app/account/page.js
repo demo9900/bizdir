@@ -2,26 +2,50 @@
 import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { client } from "@/lib/apollo";
+import { GET_LISTING_COUNT } from "@/lib/query";
 
 const page = () => {
   const { data: session, status } = useSession();
-  const [count, setCount] = useState();
-  const getListCount = async () => {
-    try {
-      const res = await fetch(
-        process.env.BACKEND_URL + `/api/listing/user/count`,
-        {
-          headers: {
-            authorization: "Bearer " + session.jwt,
-          },
-        }
-      );
+  const [count, setCount] = useState(0);
 
-      const data = await res.json();
-      const { count } = data;
-      setCount(count);
+  const getListCount = async () => {
+    // try {
+    //   const res = await fetch(
+    //     process.env.BACKEND_URL + `/api/listing/user/count`,
+    //     {
+    //       headers: {
+    //         authorization: "Bearer " + session.jwt,
+    //       },
+    //     }
+    //   );
+
+    //   const data = await res.json();
+    //   const { count } = data;
+    //   setCount(count);
+    // } catch (error) {
+    //   console.error(error);
+    // }
+
+    try {
+      const { data, errors } = await client.query({
+        query: GET_LISTING_COUNT,
+        variables: { userId: session.user?.id, isEmployee: false },
+        context: {
+          headers: {
+            Authorization: `Bearer ${session.jwt}`,
+          },
+        },
+      });
+
+      if (errors || data.getListingCount.code !== 200) {
+        throw new Error("Something went wrong");
+      }
+
+      console.log(data);
+      setCount(data.getListingCount.count);
     } catch (error) {
-      console.error(error);
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -33,7 +57,7 @@ const page = () => {
   return (
     <div className="ud-main-inn">
       <div className="ud-cen ">
-        <div className="log-bor">&nbsp;</div>{" "}
+        <div className="log-bor">&nbsp;</div>
         <span className="udb-inst">User Dashboard</span>
         <div className="cd-cen-intr">
           <div className="cd-cen-intr-inn">
@@ -50,28 +74,25 @@ const page = () => {
           <ul>
             <li>
               <div>
-                {" "}
                 <b>{count}</b>
                 <h4>All Listings</h4>
-                <p>Total no of listings</p>{" "}
+                <p>Total no of listings</p>
                 <Link href="/db-all-listing">&nbsp;</Link>
               </div>
             </li>
             <li>
               <div>
-                {" "}
                 <b>13</b>
                 <h4>Enquiries</h4>
-                <p>Total no of enquiry</p>{" "}
+                <p>Total no of enquiry</p>
                 <Link href="/db-enquiry">&nbsp;</Link>
               </div>
             </li>
             <li>
               <div>
-                {" "}
                 <b>18</b>
                 <h4>Followings</h4>
-                <p>Total no of followings</p>{" "}
+                <p>Total no of followings</p>
                 <Link href="/db-followings">&nbsp;</Link>
               </div>
             </li>
@@ -90,7 +111,7 @@ const page = () => {
                   <img src={session?.user?.image} alt="theme" />
                   <h4>{session?.user?.name}</h4>
                   <p>Member since 26, Mar 2021</p>
-                </div>{" "}
+                </div>
                 <Link href="/profile" className="fclick" target="_blank">
                   &nbsp;
                 </Link>
@@ -136,7 +157,7 @@ const page = () => {
                   <img src="/user/39791rn53-themes.png" alt="theme" />
                   <h4>Digital koncept net</h4>
                   <p>Member since 26, Mar 2021</p>
-                </div>{" "}
+                </div>
                 <Link
                   href="/company-profile"
                   className="fclick"
@@ -175,9 +196,7 @@ const page = () => {
       <div className="ud-rhs">
         <div className="ud-rhs-promo">
           <h3>Promote my business</h3>
-          <p>
-            Your listing show on the top of the respective category page
-          </p>{" "}
+          <p>Your listing show on the top of the respective category page</p>
           <Link href="/promote-business">Start now</Link>
         </div>
         {/*    //Total Point Section Starts*/}
@@ -189,9 +208,9 @@ const page = () => {
           <div className="ud-rhs-poin2">
             <h3>Earn more credit points</h3>
             <p>
-              Use this poins to promote your listing.{" "}
+              Use this poins to promote your listing.
               <Link href="/#">Click here</Link> for demo
-            </p>{" "}
+            </p>
             <Link href="/buy-points" className="cta">
               Buy Points
             </Link>
@@ -227,7 +246,7 @@ const page = () => {
                   <b>Payment Status:</b> PENDING
                 </span>
               </li>
-            </ul>{" "}
+            </ul>
             <Link href="/db-payment" className="btn btn2">
               Pay Now
             </Link>
@@ -331,7 +350,7 @@ const page = () => {
           <p>
             Follow your favirote business users and grove your online business
             now.
-          </p>{" "}
+          </p>
           <Link href="/community">Community</Link>
         </div>
         <div className="ud-rhs-sec-3">

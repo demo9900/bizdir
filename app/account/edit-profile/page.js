@@ -1,105 +1,117 @@
-'use client';
-import React,{useState,useEffect} from 'react'
-import Link from 'next/link';
-import { useSession } from 'next-auth/react';
-import { CldUploadWidget } from 'next-cloudinary';
-import { toast } from 'react-toastify';
-import DateFormatter from '@/components/DateFormatter';
+"use client";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { CldUploadWidget } from "next-cloudinary";
+import { toast } from "react-toastify";
+import DateFormatter from "@/components/DateFormatter";
+import { client } from "@/lib/apollo";
+import { GET_USER_DETAILS } from "@/lib/query";
 
 const page = () => {
-  const {data:session,update} = useSession();
-  const [formData,setFormData] = useState({
-    createdAt:'',
-    email:'',
-    mobile_number:'',
-    name:'',
-    is_verified:'',
-    profile_image:'',
-    profile_image:'',
-    user_info:'',
-    subscription:'', 
+  const { data: session, update } = useSession();
+  const [formData, setFormData] = useState({
+    createdAt: "",
+    email: "",
+    mobile_number: "",
+    name: "",
+    is_verified: "",
+    profile_image: "",
+    profile_image: "",
+    user_info: "",
+    subscription: "",
   });
 
   const getUser = async () => {
     try {
-      const res = await fetch(
-        process.env.BACKEND_URL + `/api/user/${session.user.id}`,
-        {
+      const { data, errors } = await client.query({
+        query: GET_USER_DETAILS,
+        variables: { id: params.id },
+        context: {
           headers: {
-            authorization: "Bearer " + session.jwt,
+            Authorization: `Bearer ${session.jwt}`,
           },
-        }
-      );
+        },
+      });
 
-      const data = await res.json();
+      console.log(data);
+
+      if (errors || data.getUser.code !== 200) {
+        throw new Error("Something went wrong");
+      }
+
+      const userData = data.getUser.user;
+
       setFormData((preveFormData) => ({
         ...preveFormData,
-        createdAt:data?.createdAt,
-        email:data?.email,
-        mobile_number:data?.mobile_number,
-        name:data?.name,
-        user_info:data?.user_info,
-        profile_image:data?.profile_image,
-        cover_image:data?.profile_image,
-        is_verified:data?.is_verified,
-        subscription:data?.subscription,
-      }))
-      console.log(data);
+        createdAt: userData?.createdAt,
+        email: userData?.email,
+        mobile_number: userData?.mobile_number,
+        name: userData?.name,
+        user_info: userData?.user_info,
+        profile_image: userData?.profile_image,
+        cover_image: userData?.profile_image,
+        is_verified: userData?.is_verified,
+        subscription: userData?.subscription,
+      }));
+      setLoading(false);
     } catch (error) {
-      console.error(error);
+      console.error("Error submitting form:", error);
     }
   };
+
   useEffect(() => {
     getUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
+
   const handleChange = (event) => {
-    const {name,value} = event.target;
-    if (name.startsWith('user_info.')) {
-      const userInfoField = name.split('.')[1];
-      setFormData(prevState => ({
+    const { name, value } = event.target;
+    if (name.startsWith("user_info.")) {
+      const userInfoField = name.split(".")[1];
+      setFormData((prevState) => ({
         ...prevState,
         user_info: {
           ...prevState.user_info,
-          [userInfoField]: value
-        }
+          [userInfoField]: value,
+        },
       }));
     } else
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-      
-    });
+      setFormData({
+        ...formData,
+        [event.target.name]: event.target.value,
+      });
     console.log(formData);
-  
-};
-const handleSubmit = async (event) => {
-  event.preventDefault();
-  try {
-    const res = await fetch(
-      process.env.BACKEND_URL + `/api/user/${session.user.id}`,
-      {
-        method:'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: "Bearer " + session?.jwt,
-        },
-        body: JSON.stringify(formData)
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const res = await fetch(
+        process.env.BACKEND_URL + `/api/user/${session.user.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: "Bearer " + session?.jwt,
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      const data = await res.json();
+      if (res.status === 200) {
+        toast.success(data.message);
+        update({ image: formData.profile_image });
+      } else if (res.status === 400) {
+        toast.error(data.message);
       }
-    );
-    const data = await res.json();
-    if(res.status ===200){
-      toast.success(data.message)
-      update({image:formData.profile_image});
-    } else if(res.status === 400) {
-      toast.error(data.message);
+      console.log(res);
+    } catch (error) {
+      console.error(error);
     }
-    console.log(res);
-  } catch (error) {
-    console.error(error);
-  }
-};
-  console.log("formdata =", formData)
+  };
+
+  console.log("formdata =", formData);
   return (
     <div className="ud-main-inn ud-no-rhs">
       <div className="ud-cen">
@@ -115,10 +127,10 @@ const handleSubmit = async (event) => {
           >
             <table className="responsive-table bordered">
               <tbody>
-               
                 <tr>
                   <td>Name</td>
-                  <td><div className="form-group">
+                  <td>
+                    <div className="form-group">
                       <input
                         type="text"
                         className="form-control"
@@ -127,7 +139,8 @@ const handleSubmit = async (event) => {
                         name="name"
                         placeholder="Change Name"
                       />
-                    </div></td>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td>Email Id</td>
@@ -166,69 +179,67 @@ const handleSubmit = async (event) => {
                 <tr>
                   <td>Profile Picture</td>
                   <td>
-                  <div className="form-group">
-                <label>Choose profile image</label>
-                <div className="fil-img-uplo">
-                <span className="dumfil">Upload a file</span>
-                <CldUploadWidget
-                signatureEndpoint="/api/sign-cloudinary-params"
-                uploadPreset='listing_image'
-                onSuccess={(result, { widget }) => {
-                  setFormData({
-                    ...formData,
-                    profile_image:result?.info?.secure_url,
-                  })
-                  widget.close();
-                }}
-              >
-                {({ open }) => {
-                  function handleOnClick() {
-                    open();
-                  }
-                  return (
-                    <button type="button" onClick={handleOnClick}>
-                      upload image
-                    </button>
-                  );
-                }}
-              </CldUploadWidget>
-               
-              </div>
-              </div>
+                    <div className="form-group">
+                      <label>Choose profile image</label>
+                      <div className="fil-img-uplo">
+                        <span className="dumfil">Upload a file</span>
+                        <CldUploadWidget
+                          signatureEndpoint="/api/sign-cloudinary-params"
+                          uploadPreset="listing_image"
+                          onSuccess={(result, { widget }) => {
+                            setFormData({
+                              ...formData,
+                              profile_image: result?.info?.secure_url,
+                            });
+                            widget.close();
+                          }}
+                        >
+                          {({ open }) => {
+                            function handleOnClick() {
+                              open();
+                            }
+                            return (
+                              <button type="button" onClick={handleOnClick}>
+                                upload image
+                              </button>
+                            );
+                          }}
+                        </CldUploadWidget>
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td>Profile Cover Image</td>
                   <td>
-                  <div className="form-group">
-                <label>Choose profile image</label>
-                <div className="fil-img-uplo">
-                <span className="dumfil">Upload a file</span>
-                <CldUploadWidget
-                signatureEndpoint="/api/sign-cloudinary-params"
-                uploadPreset='profile_image'
-                onSuccess={(result, { widget }) => {
-                  setFormData({
-                    ...formData,
-                    cover_image:result?.info?.secure_url,
-                  })
-                  widget.close();
-                }}
-              >
-                {({ open }) => {
-                  function handleOnClick() {
-                    open();
-                  }
-                  return (
-                    <button type="button" onClick={handleOnClick}>
-                      upload image
-                    </button>
-                  );
-                }}
-              </CldUploadWidget>
-               
-              </div>
-              </div>
+                    <div className="form-group">
+                      <label>Choose profile image</label>
+                      <div className="fil-img-uplo">
+                        <span className="dumfil">Upload a file</span>
+                        <CldUploadWidget
+                          signatureEndpoint="/api/sign-cloudinary-params"
+                          uploadPreset="profile_image"
+                          onSuccess={(result, { widget }) => {
+                            setFormData({
+                              ...formData,
+                              cover_image: result?.info?.secure_url,
+                            });
+                            widget.close();
+                          }}
+                        >
+                          {({ open }) => {
+                            function handleOnClick() {
+                              open();
+                            }
+                            return (
+                              <button type="button" onClick={handleOnClick}>
+                                upload image
+                              </button>
+                            );
+                          }}
+                        </CldUploadWidget>
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -249,11 +260,16 @@ const handleSubmit = async (event) => {
                 </tr>
                 <tr>
                   <td>Join date</td>
-                  <td> <DateFormatter dateString={formData?.createdAt}/> </td>
+                  <td>
+                    {" "}
+                    <DateFormatter dateString={formData?.createdAt} />{" "}
+                  </td>
                 </tr>
                 <tr>
                   <td>Verified</td>
-                  <td>{formData?.is_verified?.status === true ? 'Yes': 'No'}</td>
+                  <td>
+                    {formData?.is_verified?.status === true ? "Yes" : "No"}
+                  </td>
                 </tr>
                 <tr>
                   <td>Plan Type</td>
@@ -311,7 +327,6 @@ const handleSubmit = async (event) => {
                         name="user_info.website"
                         value={formData?.user_info?.website}
                         onChange={handleChange}
-                      
                       />
                     </div>
                   </td>
@@ -337,7 +352,7 @@ const handleSubmit = async (event) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

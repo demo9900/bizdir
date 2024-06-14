@@ -107,7 +107,7 @@ const ListingCard = ({ itemList }) => {
           <li key={index}>
             <div className="plac-hom-box">
               <div className="plac-hom-box-im">
-                {itemList.isClaimed && (
+                {itemList.hasOwnProperty("isClaimed") && (
                   <small
                     style={{
                       color: itemList.isClaimed === "claimed" ? "green" : "",
