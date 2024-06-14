@@ -41,37 +41,37 @@ const Header = ({transparent}) => {
                   <ul>
                     <li>
                       <Link href="/all-category" className="act">
-                        <img src="/icon/shop.png" />
+                        <img alt="image" src="/icon/shop.png" />
                         All Services
                       </Link>
                     </li>
                     <li>
                       <Link href="/events">
-                        <img src="/icon/calendar.png" />
+                        <img alt="image" src="/icon/calendar.png" />
                         Events
                       </Link>
                     </li>
                     <li>
                       <Link href="/all-products">
-                        <img src="/icon/cart.png" />
+                        <img alt="image" src="/icon/cart.png" />
                         Products
                       </Link>
                     </li>
                     <li>
                       <Link href="/coupons">
-                        <img src="/icon/coupons.png" />
+                        <img alt="image" src="/icon/coupons.png" />
                         Coupon &amp; deals
                       </Link>
                     </li>
                     <li>
                       <Link href="/blog-posts">
-                        <img src="/icon/blog1.png" />
+                        <img alt="image" src="/icon/blog1.png" />
                         Blogs
                       </Link>
                     </li>
                     <li>
                       <Link href="/community">
-                        <img src="/icon/11.png" />
+                        <img alt="image" src="/icon/11.png" />
                         Community
                       </Link>
                     </li>

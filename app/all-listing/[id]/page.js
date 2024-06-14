@@ -948,7 +948,7 @@ const page = ({params}) => {
                       {" "}
                       <a href="#">
                         <span>Ad</span>
-                        <img src="/ads/3.png" />
+                        <img src="/ads/3.png" alt='ads-3' />
                       </a>
                     </div>
                     {/*ADS*/}
@@ -1181,7 +1181,7 @@ const page = ({params}) => {
                                   href="https://www.facebook.com/53themes"
                                   target="_blank"
                                 >
-                                  <img src="https://bizbookdirectorytemplate.com/images/social/3.png" />
+                                  <img src="https://bizbookdirectorytemplate.com/images/social/3.png" alt='social-image-3'/>
                                 </a>
                               </li>
                               <li>
@@ -1189,7 +1189,7 @@ const page = ({params}) => {
                                   href="https://twitter.com/53themes"
                                   target="_blank"
                                 >
-                                  <img src="https://bizbookdirectorytemplate.com/images/social/2.png" />
+                                  <img src="https://bizbookdirectorytemplate.com/images/social/2.png" alt='social-image-2' />
                                 </a>
                               </li>
                               <li>
@@ -1197,12 +1197,12 @@ const page = ({params}) => {
                                   href="https://www.youtube.com/channel/UC3wN3O2GXTt7ZZniIoMZumg"
                                   target="_blank"
                                 >
-                                  <img src="https://bizbookdirectorytemplate.com/images/social/5.png" />
+                                  <img src="https://bizbookdirectorytemplate.com/images/social/5.png" alt='social-image-5' />
                                 </a>
                               </li>
                               <li>
                                 <a href="#" target="_blank">
-                                  <img src="https://bizbookdirectorytemplate.com/images/social/6.png" />
+                                  <img src="https://bizbookdirectorytemplate.com/images/social/6.png" alt='social-image-6' />
                                 </a>
                               </li>
                             </ul>
@@ -1331,7 +1331,7 @@ const page = ({params}) => {
                       {" "}
                       <a href="#">
                         <span>Ad</span>
-                        <img src="/ads/59040boat-728x90.png" />
+                        <img src="/ads/59040boat-728x90.png" alt='boat-ads' />
                       </a>
                     </div>
                     {/*ADS*/}

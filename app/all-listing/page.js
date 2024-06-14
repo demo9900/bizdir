@@ -1,30 +1,34 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react'
-import Header from '@/components/Header'
-import { useRouter,usePathname } from 'next/navigation';
-import Footer from '@/components/Footer';
-import BottomMenu from '@/components/BottomMenu';
-import Link from 'next/link';
-import { GET_FILTERED_LISTING,GET_ALL_CITY,GET_ALL_CATEGORY } from '@/lib/query';
-import { client } from '@/lib/apollo';
-import { useSearchParams } from 'next/navigation'
-import ListingCard from '@/components/ListingCard';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import Header from "@/components/Header";
+import { useRouter, usePathname } from "next/navigation";
+import Footer from "@/components/Footer";
+import BottomMenu from "@/components/BottomMenu";
+import Link from "next/link";
+import {
+  GET_FILTERED_LISTING,
+  GET_ALL_CITY,
+  GET_ALL_CATEGORY,
+} from "@/lib/query";
+import { client } from "@/lib/apollo";
+import { useSearchParams } from "next/navigation";
+import ListingCard from "@/components/ListingCard";
 
 const page = () => {
-  const router = useRouter()
+  const router = useRouter();
   const pathname = usePathname();
   const [listings, setListings] = useState([]);
   const searchParams = useSearchParams();
-  const area = searchParams.get('area');
-  const category = searchParams.get('category');
-  const subcategory = searchParams.get('subcat');
-  const city = searchParams.get('city')
-  const [categories,setCategories] = useState([]);
-  const [subcat,setSubCat] = useState([]);
-  const [checkedsubcat,setCheckedSubCat] = useState([]);
+  const area = searchParams.get("area");
+  const category = searchParams.get("category");
+  const subcategory = searchParams.get("subcat");
+  const city = searchParams.get("city");
+  const [categories, setCategories] = useState([]);
+  const [subcat, setSubCat] = useState([]);
+  const [checkedsubcat, setCheckedSubCat] = useState([]);
   const divRef1 = useRef(null);
   const divRef2 = useRef(null);
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [cities, setCities] = useState();
   const [select, setSelect] = useState({
     num: null,
@@ -32,19 +36,18 @@ const page = () => {
   });
   const [searchCity, setSearchCity] = useState({
     keyword: "",
-    value: '',
+    value: "",
   });
   const [searchCat, setSearchCat] = useState({
     keyword: "",
-    value: '',
+    value: "",
   });
-  
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
         !divRef1.current.contains(event.target) &&
         !divRef2.current.contains(event.target)
-
       ) {
         setSelect((prevState) => ({
           ...prevState,
@@ -59,34 +62,34 @@ const page = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-   
 
+  useEffect(() => {
     const fetchListings = async (category, city, area, subcategory) => {
       try {
         setLoading(true);
-    
+
         const filters = {
           category,
           city,
           area,
-          subcategory
+          subcategory,
         };
-    
+
         const { data, error } = await client.query({
           query: GET_FILTERED_LISTING,
-          variables: { filters }
+          variables: { filters },
         });
-    
+
         if (error) {
           setListings([]);
-          throw new Error('Failed to fetch listings');
+          throw new Error("Failed to fetch listings");
         }
-    
+
         const listings = await data.getFilteredListing.listings;
         setListings(listings); // assuming data.getFilteredListing.listings is an array of listings
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching listings:', error);
+        console.error("Error fetching listings:", error);
         setLoading(false);
       }
     };
@@ -97,86 +100,100 @@ const page = () => {
         const { data, error } = await client.query({
           query: GET_ALL_CITY,
         });
-    
+
         if (error) {
           setCities([]);
-          throw new Error('Failed to fetch listings');
+          throw new Error("Failed to fetch listings");
         }
-    
+
         const city = await data.getAllCity.cities;
-        const mappedCities = await city.map(item => (item.name));
+        const mappedCities = await city.map((item) => item.name);
         setCities(mappedCities); // assuming data.getFilteredListing.listings is an array of listings
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching listings:', error);
+        console.error("Error fetching listings:", error);
         setLoading(false);
       }
     };
-    
+
     const getCategories = async () => {
       try {
         setLoading(true);
         const { data, error } = await client.query({
           query: GET_ALL_CATEGORY,
         });
-    
+
         if (error) {
           setCategories([]);
-          throw new Error('Failed to fetch listings');
+          throw new Error("Failed to fetch listings");
         }
-    
+
         const items = await data.getAllCategories.categories;
-        const mappedcategory = await items.map(category => ({cat:category.category_name,subcat:category.subcategory}));
+        const mappedcategory = await items.map((category) => ({
+          cat: category.category_name,
+          subcat: category.subcategory,
+        }));
         setCategories(mappedcategory); // assuming data.getFilteredListing.listings is an array of listings
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching categort:', error);
+        console.error("Error fetching categort:", error);
         setLoading(false);
       }
     };
+
     const getCategories9 = async () => {
       try {
-        const res = await fetch(`https://bizdir-backend.vercel.app/api/listing/category/all`);
+        const res = await fetch(
+          `https://bizdir-backend.vercel.app/api/listing/category/all`
+        );
         if (!res.ok) {
-          throw new Error('Failed to fetch city data');
+          throw new Error("Failed to fetch city data");
         }
         const data = await res.json();
-        const mappedcategory = await data.map(category => ({cat:category.category_name,subcat:category.subcategory}));
-        setCategories(mappedcategory)
-
+        const mappedcategory = await data.map((category) => ({
+          cat: category.category_name,
+          subcat: category.subcategory,
+        }));
+        setCategories(mappedcategory);
       } catch (error) {
-        console.error('Error fetching pincode data:', error);
+        console.error("Error fetching pincode data:", error);
       }
     };
-    fetchListings(category, city, area,subcategory);
+
+    fetchListings(category, city, area, subcategory);
     fetchCity();
     getCategories();
-    if(category ){
+
+    if (category) {
       setSearchCat((prevState) => ({
         ...prevState,
         value: category,
       }));
-    }if(city){
+    }
+    if (city) {
       setSearchCity((prevState) => ({
         ...prevState,
         value: city,
       }));
     }
-  }, [city,category,area,subcategory]);
+  }, [city, category, area, subcategory]);
 
-
-  const filterSubCategory = (category) =>{
-    const filtercat = categories.filter((option) =>
-    option?.cat?.toLowerCase().includes(category.toLowerCase())).map(option =>option.subcat).flat();
+  const filterSubCategory = (category) => {
+    const filtercat = categories
+      .filter((option) =>
+        option?.cat?.toLowerCase().includes(category.toLowerCase())
+      )
+      .map((option) => option.subcat)
+      .flat();
     setSubCat(filtercat);
-  }
+  };
   useEffect(() => {
     if (category && categories.length > 0) {
       filterSubCategory(category);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categories, category]);
-  
+
   const handleClick = (num) => {
     setSelect((prevState) => ({
       num: num,
@@ -207,37 +224,48 @@ const page = () => {
         isVisible: true,
       }));
     } else if (type === "checkbox") {
-     setCheckedSubCat(prevState =>{
-      let updatedSubCat;
-      if(checked){
-        updatedSubCat= [...prevState,value]
-      } else {
-        updatedSubCat= prevState.filter(subcategory => subcategory !==value)
-      }
-      return updatedSubCat;
-    })
-     
+      setCheckedSubCat((prevState) => {
+        let updatedSubCat;
+        if (checked) {
+          updatedSubCat = [...prevState, value];
+        } else {
+          updatedSubCat = prevState.filter(
+            (subcategory) => subcategory !== value
+          );
+        }
+        return updatedSubCat;
+      });
     }
   };
   useEffect(() => {
-    router.push(`/all-listing?${city?`city=${city}`:``}${category?`&category=${category}`:``}${area ? `&area=${area}`:``}${checkedsubcat?`&subcat=${checkedsubcat.join(',')}`:``}`);
+    router.push(
+      `/all-listing?${city ? `city=${city}` : ``}${
+        category ? `&category=${category}` : ``
+      }${area ? `&area=${area}` : ``}${
+        checkedsubcat ? `&subcat=${checkedsubcat.join(",")}` : ``
+      }`
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkedsubcat]);
-  
+
   const handleOptionClick = (option, number) => {
     if (number === 1) {
       setSearchCity((prevState) => ({
         ...prevState,
         value: option,
       }));
-      router.push(`/all-listing?city=${option}${category?`&category=${category}`:``}`);
-      
+      router.push(
+        `/all-listing?city=${option}${category ? `&category=${category}` : ``}`
+      );
     } else if (number === 2) {
       setSearchCat((prevState) => ({
         ...prevState,
         value: option.cat,
       }));
-      setSubCat(option.subcat)
-      router.push(`/all-listing?category=${option.cat}${city ?`&city=${city}`:``}`);
+      setSubCat(option.subcat);
+      router.push(
+        `/all-listing?category=${option.cat}${city ? `&city=${city}` : ``}`
+      );
     }
     setSelect((prevState) => ({
       ...prevState,
@@ -250,7 +278,6 @@ const page = () => {
   const filteredcategory = categories.filter((option) =>
     option.cat.toLowerCase().includes(searchCat.keyword.toLowerCase())
   );
-
 
   return (
     <div>
@@ -307,7 +334,7 @@ const page = () => {
                           <li>
                             <div className="near-bx">
                               <div className="ne-1">
-                                <img src="/services/1.jpg" alt='service' />
+                                <img src="/services/1.jpg" alt="service" />
                               </div>
                               <div className="ne-2">
                                 <h5>Core real estates</h5>
@@ -326,13 +353,13 @@ const page = () => {
                           <li>
                             <div className="near-bx">
                               <div className="ne-1">
-                                <img src="/services/12.jpeg" alt='service' />
+                                <img src="/services/12.jpeg" alt="service" />
                               </div>
                               <div className="ne-2">
                                 <h5>Rolexo Villas in California</h5>
                                 <p>
-                                  City: 28800 Orchard Lake Road, Suite 180 Farmington
-                                  Hills, U.S.A.
+                                  City: 28800 Orchard Lake Road, Suite 180
+                                  Farmington Hills, U.S.A.
                                 </p>
                               </div>
                               <div className="ne-3">
@@ -345,7 +372,7 @@ const page = () => {
                           <li>
                             <div className="near-bx">
                               <div className="ne-1">
-                                <img src="/services/13.jpg" alt='service' />
+                                <img src="/services/13.jpg" alt="service" />
                               </div>
                               <div className="ne-2">
                                 <h5>Orange pet shop</h5>
@@ -364,7 +391,7 @@ const page = () => {
                           <li>
                             <div className="near-bx">
                               <div className="ne-1">
-                                <img src="/services/14.jpg" alt='service' />
+                                <img src="/services/14.jpg" alt="service" />
                               </div>
                               <div className="ne-2">
                                 <h5>Best villas near you</h5>
@@ -383,7 +410,7 @@ const page = () => {
                           <li>
                             <div className="near-bx">
                               <div className="ne-1">
-                                <img src="/services/20.jpeg" alt='service' />
+                                <img src="/services/20.jpeg" alt="service" />
                               </div>
                               <div className="ne-2">
                                 <h5>Ac services near you</h5>
@@ -404,10 +431,11 @@ const page = () => {
                     <div className="filt-com lhs-cate">
                       <h4>Cities</h4>
                       <div
-                        className={`chosen-container chosen-container-single ${select.num === 1 && select.isVisible
+                        className={`chosen-container chosen-container-single ${
+                          select.num === 1 && select.isVisible
                             ? "chosen-with-drop"
                             : ""
-                          }`}
+                        }`}
                         ref={divRef1}
                         id="city_check_chosen"
                         style={{ width: 200 }}
@@ -425,45 +453,37 @@ const page = () => {
                             <b />
                           </div>
                         </a>
-                        <div
-                          className="chosen-drop"
-                          onClick={stopPropagation}
-                        >
+                        <div className="chosen-drop" onClick={stopPropagation}>
                           <div className="chosen-search">
                             <input
                               className="chosen-search-input"
                               type="text"
                               value={searchCity.keyword}
-                              onChange={(e) =>
-                                handleInputChange(e, 1)
-                              }
+                              onChange={(e) => handleInputChange(e, 1)}
                               autoComplete="off"
                               onClick={stopPropagation}
                             />
                           </div>
                           <ul className="chosen-results">
-                            {filteredcity?.length > 0 ? (<>
-                              {filteredcity?.map((option, index) => (
-                                <li
-                                  key={index}
-                                  onClick={() =>
-                                    handleOptionClick(option, 1)
-                                  }
-                                  className={`active-result result-selected ${option ===
-                                    searchCity.value &&
-                                    "highlighted"
+                            {filteredcity?.length > 0 ? (
+                              <>
+                                {filteredcity?.map((option, index) => (
+                                  <li
+                                    key={index}
+                                    onClick={() => handleOptionClick(option, 1)}
+                                    className={`active-result result-selected ${
+                                      option === searchCity.value &&
+                                      "highlighted"
                                     }`}
-                                  data-option-array-index={0}
-                                >
-                                  {option}
-                                </li>
-                              ))}
-                            </>) : (
-                              <li className="no-results">
-                                city not found.
-                              </li>
+                                    data-option-array-index={0}
+                                  >
+                                    {option}
+                                  </li>
+                                ))}
+                              </>
+                            ) : (
+                              <li className="no-results">city not found.</li>
                             )}
-
                           </ul>
                         </div>
                       </div>
@@ -471,10 +491,11 @@ const page = () => {
                     <div className="filt-com lhs-cate">
                       <h4>Categories</h4>
                       <div
-                        className={`chosen-container chosen-container-single ${select.num === 2 && select.isVisible
+                        className={`chosen-container chosen-container-single ${
+                          select.num === 2 && select.isVisible
                             ? "chosen-with-drop"
                             : ""
-                          }`}
+                        }`}
                         ref={divRef2}
                         id="expert_select_search_chosen"
                         style={{ width: 430 }}
@@ -492,33 +513,26 @@ const page = () => {
                             <b />
                           </div>
                         </a>
-                        <div
-                          className="chosen-drop"
-                          onClick={stopPropagation}
-                        >
+                        <div className="chosen-drop" onClick={stopPropagation}>
                           <div className="chosen-search">
                             <input
                               className="chosen-search-input"
                               type="text"
                               value={searchCat.keyword}
-                              onChange={(e) =>
-                                handleInputChange(e, 2)
-                              }
+                              onChange={(e) => handleInputChange(e, 2)}
                               autoComplete="off"
                               onClick={stopPropagation}
                             />
                           </div>
                           <ul className="chosen-results">
-                            {filteredcategory?.map((option,index) => (
+                            {filteredcategory?.map((option, index) => (
                               <li
                                 key={index}
-                                onClick={() =>
-                                  handleOptionClick(option, 2)
-                                }
-                                className={`active-result result-selected ${option.cat ===
-                                  searchCat.value &&
+                                onClick={() => handleOptionClick(option, 2)}
+                                className={`active-result result-selected ${
+                                  option.cat === searchCat.value &&
                                   "highlighted"
-                                  }`}
+                                }`}
                                 data-option-array-index={0}
                               >
                                 {option.cat}
@@ -533,22 +547,21 @@ const page = () => {
                     <div className="sub_cat_section filt-com lhs-sub">
                       <h4>Sub category</h4>
                       <ul>
-                        {subcat.map((option,index) =>(
+                        {subcat.map((option, index) => (
                           <li key={index}>
-                          <div className="chbox">
-                            <input
-                              type="checkbox"
-                              className="sub_cat_check"
-                              onChange={handleInputChange}
-                              name="sub_cat_check"
-                              value={option}
-                              id={index}
-                            />
-                            <label htmlFor={index}>{option}</label>
-                          </div>
-                        </li>
-                        ) )}
-                        
+                            <div className="chbox">
+                              <input
+                                type="checkbox"
+                                className="sub_cat_check"
+                                onChange={handleInputChange}
+                                name="sub_cat_check"
+                                value={option}
+                                id={index}
+                              />
+                              <label htmlFor={index}>{option}</label>
+                            </div>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                     {/*END*/}
@@ -564,7 +577,9 @@ const page = () => {
                               className="feature_check"
                               id="trusted"
                             />
-                            <label htmlFor="trusted">Trusted services provider</label>
+                            <label htmlFor="trusted">
+                              Trusted services provider
+                            </label>
                           </div>
                         </li>
                         <li>
@@ -769,7 +784,8 @@ const page = () => {
                     <div className="all-list-filt-form">
                       <div className="tit">
                         <h3>
-                          What service do you need? <span>BizBook will help you</span>
+                          What service do you need?{" "}
+                          <span>BizBook will help you</span>
                         </h3>
                       </div>
                       <div className="hom-col-req">
@@ -907,30 +923,32 @@ const page = () => {
                   </div>
                   {/* LISTING INN FILTER */}
                   <div className="top-ser w-1/2 flex">
-            <form name="filter_form" id="filter_form" className="filter_form">
-              <ul>
-                <li className="sr-sea">
-                 
-                  <input
-                    type="text"
-                    autoComplete="off"
-                    id="top-select-search"
-                    placeholder="Search for services and business..."
-                  />
-                 
-                </li>
-                <li className="sbtn">
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    id="top_filter_submit"
-                  >
-                    <i className="material-icons">&nbsp;</i>
-                  </button>
-                </li>
-              </ul>
-            </form>
-          </div>
+                    <form
+                      name="filter_form"
+                      id="filter_form"
+                      className="filter_form"
+                    >
+                      <ul>
+                        <li className="sr-sea">
+                          <input
+                            type="text"
+                            autoComplete="off"
+                            id="top-select-search"
+                            placeholder="Search for services and business..."
+                          />
+                        </li>
+                        <li className="sbtn">
+                          <button
+                            type="button"
+                            className="btn btn-success"
+                            id="top_filter_submit"
+                          >
+                            <i className="material-icons">&nbsp;</i>
+                          </button>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
                   {/* END LISTING INN FILTER */}
                   {/*ADS*/}
                   <div className="ban-ati-com ads-all-list">
@@ -946,13 +964,27 @@ const page = () => {
                   </div>
                   {/* Loader Image */}
                   <div className="all-list-sh all-listing-total">
-                    {(listings.length > 0 && !loading) ? (
+                    {listings.length > 0 && !loading ? (
                       <ul>
-                        {listings.map((item, index) =>
-                          (<ListingCard id={index} item={item} />)
-                        )}
+                        {listings.map((item, index) => (
+                          <ListingCard id={index} item={item} key={index} />
+                        ))}
                       </ul>
-                    ) : (<span style={{ fontSize: 21, color: '#bfbfbf', letterSpacing: 1, paddingLeft: 30, textShadow: '0px 0px 2px #fff', textTransform: 'uppercase', textAlign: 'center!important', marginTop: '5%' }}>!!! Oops No Listing Faund with the Selected Category</span>
+                    ) : (
+                      <span
+                        style={{
+                          fontSize: 21,
+                          color: "#bfbfbf",
+                          letterSpacing: 1,
+                          paddingLeft: 30,
+                          textShadow: "0px 0px 2px #fff",
+                          textTransform: "uppercase",
+                          textAlign: "center!important",
+                          marginTop: "5%",
+                        }}
+                      >
+                        !!! Oops No Listing Faund with the Selected Category
+                      </span>
                     )}
 
                     {/*ADS*/}
@@ -970,7 +1002,7 @@ const page = () => {
           </div>
         </section>
         {/* END */}
-        
+
         {/* START */}
         <section>
           <div className="full-bot-book">
@@ -983,9 +1015,9 @@ const page = () => {
                   <div className="col-md-7 bb-text">
                     <h4>#1 Business Directory and Service Provider</h4>
                     <p>
-                      There are many variations of passages of Lorem Ipsum available,
-                      but the majority have suffered alteration in some form, by
-                      injected humour.
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority have suffered alteration in
+                      some form, by injected humour.
                     </p>
                   </div>
                   <div className="col-md-3 bb-link">
@@ -1001,7 +1033,7 @@ const page = () => {
       <Footer />
       <BottomMenu />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

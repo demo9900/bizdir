@@ -98,7 +98,7 @@ const Table = () => {
                   }`}
                 >
                   <span className="db-list-rat">
-                    {listing.ratings.$numberDecimal}
+                    {listing.ratings?.$numberDecimal}
                   </span>
                 </td>
                 <td

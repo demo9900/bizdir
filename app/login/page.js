@@ -46,6 +46,7 @@ const page = () => {
     if (token && email) {
       verifyUser();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, email]);
   useEffect(() => {
     toast.error(error);

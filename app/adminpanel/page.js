@@ -16,7 +16,7 @@ const page = () => {
         <i className="material-icons mclose">close</i>
       </div>
       <div className="logo">
-        <img src="images/logo-b.png" />
+        <img src="images/logo-b.png" alt='logo-b' />
       </div>
     </div>
     <div className="head-s2">

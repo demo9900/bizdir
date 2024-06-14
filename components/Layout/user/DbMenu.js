@@ -23,6 +23,7 @@ const DbMenu = ({ session, dashboardvisiblity, setDashboardVisiblity }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dashboardRef]);
   const pathname = usePathname();
   return (

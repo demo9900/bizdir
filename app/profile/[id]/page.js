@@ -1,16 +1,17 @@
-'use client'
-import React,{useState,useEffect} from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Header from "@/components/Header";
 import Link from "next/link";
-const page = ({params}) => {
-  const [open,setOpen] = useState(false);
-  const {data:session} = useSession();
-  const [user,setUser] = useState();
+const page = ({ params }) => {
+  const [open, setOpen] = useState(false);
+  const { data: session } = useSession();
+  const [user, setUser] = useState();
   const getUser = async () => {
     try {
       const res = await fetch(
-        process.env.BACKEND_URL + `/api/user/${params.id}`,{
+        process.env.BACKEND_URL + `/api/user/${params.id}`,
+        {
           headers: {
             authorization: "Bearer " + session.jwt,
           },
@@ -52,18 +53,14 @@ const page = ({params}) => {
                       Join on:
                       <b>14, Nov 2021</b>
                     </p>
-                    <img
-                      loading="lazy"
-                      src={user?.cover_image}
-                      alt
-                    />
+                    <img loading="lazy" src={user?.cover_image} alt="image" />
                   </div>
                   <div className="jpro-ban-tit">
                     <div className="s1">
                       <img
                         src={user?.profile_image}
                         className="pro"
-                        alt
+                        alt="image"
                       />
                     </div>
                     <div className="s2">
@@ -71,7 +68,10 @@ const page = ({params}) => {
                       <span className="loc">
                         <b>City :</b> {user?.user_info?.user_city}
                       </span>
-                      <p>{user?.total_listing_count} Listings | 2 Blogs | 4 Events</p>
+                      <p>
+                        {user?.total_listing_count} Listings | 2 Blogs | 4
+                        Events
+                      </p>
                     </div>
                     <div className="s3">
                       <a
@@ -101,18 +101,12 @@ const page = ({params}) => {
                         target="_blank"
                         href="https://www.facebook.com/rn53themes"
                       >
-                        <img
-                          src="/images/social/3.png"
-                          alt
-                        />
+                        <img src="/images/social/3.png" alt="image" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://twitter.com/Rn53_themes">
-                        <img
-                          src="/images/social/2.png"
-                          alt
-                        />
+                        <img src="/images/social/2.png" alt="image" />
                       </a>
                     </li>
                     <li>
@@ -120,18 +114,12 @@ const page = ({params}) => {
                         target="_blank"
                         href="https://www.youtube.com/channel/UCEuC2HN5jb02knjP9o3Q8QA/videos"
                       >
-                        <img
-                          src="/images/social/5.png"
-                          alt
-                        />
+                        <img src="/images/social/5.png" alt="image" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="www.rn53themes.net">
-                        <img
-                          src="/images/social/1.png"
-                          alt
-                        />
+                        <img src="/images/social/1.png" alt="image" />
                       </a>
                     </li>
                   </ul>
@@ -145,33 +133,38 @@ const page = ({params}) => {
                       <li>
                         <div className="pro-listing-box">
                           <div>
-                            <img src="https://res.cloudinary.com/dncikfz66/image/upload/v1716466324/bizdir/listing/images.png" />
+                            <img
+                              src="https://res.cloudinary.com/dncikfz66/image/upload/v1716466324/bizdir/listing/images.png"
+                              alt="listing-image"
+                            />
                             <h2>New billa villas </h2>
                             <p>
                               No:2, 4th Avenue, Newyork, USA, Near to Airport
                             </p>
-                            <Link
-                              href="#"
-                              className="fclick"
-                            >
+                            <Link href="#" className="fclick">
                               &nbsp;
                             </Link>
                           </div>
                           <div>
-                            <span onClick={() =>setOpen(true)}>
-                              Get quote
-                            </span>
+                            <span onClick={() => setOpen(true)}>Get quote</span>
                           </div>
                         </div>
                       </li>
                       <div className="pop-ups pop-quo">
                         {/* The Modal */}
-                        <div className="modal fade show" id="quote"  style={{display: open ?'block':'none',paddingRight: open? '15px':'0'}}>
+                        <div
+                          className="modal fade show"
+                          id="quote"
+                          style={{
+                            display: open ? "block" : "none",
+                            paddingRight: open ? "15px" : "0",
+                          }}
+                        >
                           <div className="modal-dialog">
                             <div className="modal-content">
                               <button
                                 type="button"
-                                onClick={()=> setOpen(false)}
+                                onClick={() => setOpen(false)}
                                 className="close"
                                 data-dismiss="modal"
                               >
@@ -313,7 +306,7 @@ const page = ({params}) => {
                           <div>
                             <img
                               src="/images/events/31974pexels-nicole-michalou-5779176.jpg"
-                              alt
+                              alt="image"
                             />
                           </div>
                           <div>
@@ -339,7 +332,7 @@ const page = ({params}) => {
                           <div>
                             <img
                               src="/images/events/5079pexels-matheus-bertelli-3856027.jpg"
-                              alt
+                              alt="image"
                             />
                           </div>
                           <div>
@@ -363,10 +356,7 @@ const page = ({params}) => {
                       <li>
                         <div className="pro-eve-box pro-eve-box1">
                           <div>
-                            <img
-                              src="/images/events/1551525.jpg"
-                              alt
-                            />
+                            <img src="/images/events/1551525.jpg" alt="image" />
                           </div>
                           <div>
                             <span>
@@ -375,10 +365,7 @@ const page = ({params}) => {
                             <h2>VUX Music Event 2024</h2>
                             <p>No:24, North west street, Newyork</p>
                           </div>
-                          <Link
-                            href="#"
-                            className="fclick"
-                          >
+                          <Link href="#" className="fclick">
                             &nbsp;
                           </Link>
                         </div>
@@ -386,10 +373,7 @@ const page = ({params}) => {
                       <li>
                         <div className="pro-eve-box pro-eve-box1">
                           <div>
-                            <img
-                              src="/images/events/5792023.jpg"
-                              alt
-                            />
+                            <img src="/images/events/5792023.jpg" alt="image" />
                           </div>
                           <div>
                             <span>
@@ -414,10 +398,7 @@ const page = ({params}) => {
                       <ul>
                         <li>
                           <div className="pro-sm-box">
-                            <img
-                              src="/images/user/970813.jpg"
-                              alt
-                            />
+                            <img src="/images/user/970813.jpg" alt="image" />
                             <h5>shajahan kp</h5>
                             <p>
                               City: <b> N/A</b>
@@ -459,10 +440,7 @@ const page = ({params}) => {
                     <ul>
                       <li>
                         <div className="hot-page2-hom-pre-1">
-                          <img
-                            src="/images/user/970813.jpg"
-                            alt
-                          />
+                          <img src="/images/user/970813.jpg" alt="image" />
                         </div>
                         <div className="hot-page2-hom-pre-2">
                           <h5>sachin</h5>
@@ -477,10 +455,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <div className="hot-page2-hom-pre-1">
-                          <img
-                            src="/images/user/970813.jpg"
-                            alt
-                          />
+                          <img src="/images/user/970813.jpg" alt="image" />
                         </div>
                         <div className="hot-page2-hom-pre-2">
                           <h5>ritesh</h5>
@@ -495,10 +470,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <div className="hot-page2-hom-pre-1">
-                          <img
-                            src="/images/user/970813.jpg"
-                            alt
-                          />
+                          <img src="/images/user/970813.jpg" alt="image" />
                         </div>
                         <div className="hot-page2-hom-pre-2">
                           <h5>mohammed</h5>
@@ -513,10 +485,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <div className="hot-page2-hom-pre-1">
-                          <img
-                            src="/images/user/970813.jpg"
-                            alt
-                          />
+                          <img src="/images/user/970813.jpg" alt="image" />
                         </div>
                         <div className="hot-page2-hom-pre-2">
                           <h5>conor</h5>
@@ -531,10 +500,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <div className="hot-page2-hom-pre-1">
-                          <img
-                            src="/images/user/970813.jpg"
-                            alt
-                          />
+                          <img src="/images/user/970813.jpg" alt="image" />
                         </div>
                         <div className="hot-page2-hom-pre-2">
                           <h5>Test test</h5>
@@ -559,7 +525,7 @@ const page = ({params}) => {
                           href="https://bizbookdirectorytemplate.com/all-category"
                           className="act"
                         >
-                          <img src="/images/icon/shop.png" />
+                          <img src="/images/icon/shop.png" alt="shop" />
                           <div className="qui-acc-short">
                             <h5>All Services</h5>
                             <p>Easy to find your nearby Services</p>
@@ -572,7 +538,7 @@ const page = ({params}) => {
                           href="https://bizbookdirectorytemplate.com/service-experts"
                           className="act"
                         >
-                          <img src="/images/icon/expert.png" />
+                          <img src="/images/icon/expert.png" alt="expert" />
                           <div className="qui-acc-short">
                             <h5>Service Experts</h5>
                             <p>Connect with the right Service Experts</p>
@@ -585,7 +551,10 @@ const page = ({params}) => {
                           href="https://bizbookdirectorytemplate.com/jobs"
                           className="act"
                         >
-                          <img src="https://bizbookdirectorytemplate.com/jobs/images/icon/employee.png" />
+                          <img
+                            src="https://bizbookdirectorytemplate.com/jobs/images/icon/employee.png"
+                            alt="employee"
+                          />
                           <div className="qui-acc-short">
                             <h5> Jobs</h5>
                             <p>Find your next job now</p>
@@ -595,7 +564,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <a href="https://bizbookdirectorytemplate.com/events">
-                          <img src="/images/icon/calendar.png" />
+                          <img src="/images/icon/calendar.png" alt="calendar" />
                           <div className="qui-acc-short">
                             <h5>Events</h5>
                             <p>Find upcoming events now</p>
@@ -605,7 +574,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <a href="https://bizbookdirectorytemplate.com/all-products">
-                          <img src="/images/icon/cart.png" />
+                          <img src="/images/icon/cart.png" alt="cart" />
                           <div className="qui-acc-short">
                             <h5>Products</h5>
                             <p>
@@ -617,7 +586,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <a href="https://bizbookdirectorytemplate.com/coupons">
-                          <img src="/images/icon/coupons.png" />
+                          <img src="/images/icon/coupons.png" alt="coupons" />
                           <div className="qui-acc-short">
                             <h5>Coupon &amp; deals</h5>
                             <p>Get the latest and up-to-date coupons</p>
@@ -627,7 +596,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <a href="https://bizbookdirectorytemplate.com/blog-posts">
-                          <img src="/images/icon/blog1.png" />
+                          <img src="/images/icon/blog1.png" alt="blog1" />
                           <div className="qui-acc-short">
                             <h5> Blogs</h5>
                             <p>
@@ -640,7 +609,7 @@ const page = ({params}) => {
                       </li>
                       <li>
                         <a href="https://bizbookdirectorytemplate.com/community">
-                          <img src="/images/icon/11.png" />
+                          <img src="/images/icon/11.png" alt="image" />
                           <div className="qui-acc-short">
                             <h5>Community</h5>
                             <p>
