@@ -62,14 +62,8 @@ const page = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-<<<<<<< HEAD
 
   useEffect(() => {
-=======
-  
-  useEffect(() => {console.log("runs", city)
-   
->>>>>>> codespace-zany-spoon-5jr9rgw9grv2v5jr
     const fetchListings = async (category, city, area, subcategory) => {
       try {
         setLoading(true);

@@ -4,6 +4,8 @@ import Link from "next/link";
 import axios from "axios";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
+import { CREATE_LISTING } from "@/lib/mutation";
+import { client } from "@/lib/apollo";
 import Step1 from "@/components/Layout/user/Listing/Step1";
 import Step2 from "@/components/Layout/user/Listing/Step2";
 import Step3 from "@/components/Layout/user/Listing/Step3";
@@ -34,7 +36,42 @@ const page = () => {
     youtube_link: "",
     map_url: "",
   });
-
+  const [errors, setErrors] = useState({});
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.listing_name) {
+      newErrors.listing_name = 'Listing Name is Required';
+    }
+    if (!formData.phone_number) {
+      newErrors.phone_number = 'Phone Number is Required';
+    }
+    if (!formData.listing_address) {
+      newErrors.listing_address = 'shop address is Required';
+    }
+    if (!formData.country) {
+      newErrors.country = 'country is Required';
+    }
+    if (!formData.state) {
+      newErrors.state = 'State is Required';
+    }
+    if (!formData.city) {
+      newErrors.city = 'city is Required';
+    }
+    if (!formData.area) {
+      newErrors.area = 'area is Required';
+    }
+    if (!formData.category) {
+      newErrors.category = 'Category is Required';
+    }
+  
+    if (!formData.listing_detail) {
+      newErrors.listing_detail = 'listing detail is Required';
+    }
+    // Add other validation as needed
+  
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
   const handleInputChange = (event,index) => {
     const { name, value } = event.target;
     if(name=== 'service_location'){
@@ -96,6 +133,38 @@ const page = () => {
     }
   };
 
+  const handleSubmitt = async (event) => {
+    event.preventDefault();
+    const jwt = session.jwt;
+  
+    try {
+      // Send GraphQL mutation request to create a listing
+      if(validate()){
+        const { data, errors } = await client.mutate({
+          mutation: CREATE_CLAIMABLE_LISTING,
+          variables: { data: formData },
+          context: {
+            headers: {
+              Authorization: `Bearer ${jwt}`,
+            },
+          },
+        });
+    
+        if (errors || data.createClaimableListing.code !== 201) {
+          throw new Error('Something went wrong');
+        }
+    
+        toast.success('Listing created successfully');
+        router.push('/admin-all-listings');
+        console.log(data);
+      } else{
+        toast.error("Please fill all required fields");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Handle error
+    }
+  };
   const [currentStep, setCurrentStep] = useState(0);
   const handleStepClick = (step) => {
     setCurrentStep(step - 1);

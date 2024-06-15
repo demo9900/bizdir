@@ -27,6 +27,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                   className="form-control"
                   placeholder="Listing name *"
                 />
+                
               </div>
             </div>
           </div>

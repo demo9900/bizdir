@@ -45,16 +45,20 @@ const page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        if(location.city){
         const res = await client.query({
           query: GET_LISTING_BY_TYPE,
+          fetchPolicy: "no-cache",
           variables: { type: "popular", city: location.city },
         });
         const res2 = await client.query({
           query: GET_LISTING_BY_TYPE,
+          fetchPolicy: "no-cache",
           variables: { type: "latest", city: location.city },
         });
         const res3 = await client.query({
           query: GET_LISTING_BY_TYPE,
+          fetchPolicy: "no-cache",
           variables: { type: "verified", city: location.city },
         });
         const { getListingsByTypes: data1 } = await res.data;
@@ -69,7 +73,8 @@ const page = () => {
         setLatestList(list2);
         const { listings: list3 } = await data3;
         setVerifiedList(list3);
-      } catch (error) {
+      
+      }} catch (error) {
         console.error("something went wrong:", error);
       }
     };

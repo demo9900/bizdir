@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import TabCard from "@/components/TabCard";
 const Listing_Tab = ({
   trendinglist,
   latestlist,
@@ -9,7 +10,7 @@ const Listing_Tab = ({
   offerlist,
 }) => {
   const [openTab, setOpenTab] = useState(1);
-
+console.log("latest listing =>", latestlist)
   return (
     <div className="products row mx-auto">
       <div className="home-tit">
@@ -83,10 +84,10 @@ const Listing_Tab = ({
         </ul>
       </div>
       <div className="plac-hom-all-pla">
-        {openTab === 1 && <ListingCard itemList={trendinglist} />}
-        {openTab === 2 && <ListingCard itemList={latestlist} />}
-        {openTab === 3 && <ListingCard itemList={verifiedlist} />}
-        {openTab === 4 && <ListingCard itemList={offerlist} />}
+        {openTab === 1 && <TabCard itemList={trendinglist} />}
+        {openTab === 2 && <TabCard itemList={latestlist} />}
+        {openTab === 3 && <TabCard itemList={verifiedlist} />}
+        {openTab === 4 && <TabCard itemList={offerlist} />}
       </div>
       <div className="hom-cate-more">
         <Link href="/all-listing" className="cta-new-blue">
@@ -99,44 +100,4 @@ const Listing_Tab = ({
 
 export default Listing_Tab;
 
-const ListingCard = ({ itemList }) => {
-  return (
-    <ul>
-      {itemList.length > 0 ? (
-        itemList.map((item, index) => (
-          <li key={index}>
-            <div className="plac-hom-box">
-              <div className="plac-hom-box-im">
-                {itemList.hasOwnProperty("isClaimed") && (
-                  <small
-                    style={{
-                      color: itemList.isClaimed === "claimed" ? "green" : "",
-                    }}
-                  >
-                    {itemList?.isClaimed}
-                  </small>
-                )}
-                <small>Unclaimed</small>
-                <img
-                  src={item?.listing_image}
-                  className="b-lazy b-loaded"
-                  alt=""
-                />
-                <h4>{item?.listing_name}</h4>
-              </div>
-              <div className="rel-list-txt-box">
-                <span className="dir-ho-cat">{item?.category}</span>
-                <span className="rat-more-cta-ic">More details</span>
-              </div>
-              <Link href={`/all-listing/${item._id}`} className="fclick" />
-            </div>
-          </li>
-        ))
-      ) : (
-        <div className="container ser-re-hu mx-auto my-10 text-center">
-          Oops!!! No result(s) Found . Please try with other!!!
-        </div>
-      )}
-    </ul>
-  );
-};
+

@@ -65,8 +65,8 @@ const page = () => {
     const result = await signIn("credentials", {
       email,
       password,
-      redirect: true,
-      callbackUrl: callbackurl || "/",
+      redirect: false
+      // callbackUrl: callbackurl || "/",
     });
 
     console.log("result => ", result);

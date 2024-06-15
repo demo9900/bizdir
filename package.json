@@ -22,7 +22,6 @@
     "cloudinary": "^2.2.0",
     "eslint": "8.31.0",
     "eslint-config-next": "^13.4.19",
-    "graphql": "^16.8.1",
     "jquery": "^3.6.3",
     "next": "^14.2.2",
     "next-auth": "^4.24.7",

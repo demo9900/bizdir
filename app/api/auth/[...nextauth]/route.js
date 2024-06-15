@@ -49,7 +49,7 @@ const authOptions = {
           };
         } catch (error) {
           console.log("something went wrong", error);
-          throw new Error(error);
+          throw new Error(error.message);
         }
       },
     }),
