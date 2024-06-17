@@ -146,7 +146,7 @@ const page = () => {
         }
     
         toast.success('Listing created successfully');
-        router.push('/admin-all-listings');
+        router.push('/account/db-all-listing');
         console.log(data);
       } else{
         toast.error("Please fill all required fields");

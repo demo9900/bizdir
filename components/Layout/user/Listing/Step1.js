@@ -4,7 +4,8 @@ import { CldUploadWidget } from 'next-cloudinary';
 
 const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,setErrors}) => {
 
-
+  const [selectprofile,setSelectProfile] =  useState();
+  const [selectcover,setSelectCover] = useState();
   return (
     <div className="row">
     <div className="login-main add-list posr">
@@ -177,7 +178,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
               <div className="form-group">
                 <label>Choose profile image</label>
                 <div className="fil-img-uplo">
-                <span className="dumfil">Upload a file</span>
+                <span className="dumfil">{selectprofile ? selectprofile : 'Upload a file'}</span>
                 <CldUploadWidget
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
@@ -186,6 +187,8 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
                     ...prevFormData,
                     listing_image: result?.info?.secure_url,
                   }));
+                  setSelectProfile(result?.info?.original_filename)
+                  console.log(result?.info)
                   widget.close();
                 }}
               >
@@ -200,7 +203,6 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
                   );
                 }}
               </CldUploadWidget>
-               
               </div>
               </div>
             </div>
@@ -208,7 +210,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
               <div className="form-group">
                 <label>Choose cover image</label>
                 <div className="fil-img-uplo">
-                <span className="dumfil">Upload a file</span>
+                <span className="dumfil">{selectcover ? selectcover : 'Upload a file'}</span>
                    <CldUploadWidget
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
@@ -217,6 +219,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
                     ...prevFormData,
                     cover_image: result?.info?.secure_url,
                   }));
+                  setSelectCover(result?.info?.original_filename)
                   widget.close();
                 }}
               >

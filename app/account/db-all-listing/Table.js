@@ -170,7 +170,7 @@ const Table = () => {
                       : ""
                   }`}
                 >
-                  <button>Preview</button>
+                  <button><Link href={`/all-listing/${listing._id}`}>Preview</Link></button>
                 </td>
               </tr>
             );

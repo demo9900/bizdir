@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import { useRouter, usePathname } from "next/navigation";
+import { notFound } from "next/navigation";
 import { CldUploadWidget } from "next-cloudinary";
 import Footer from "@/components/Footer";
 import { useSession } from "next-auth/react";
@@ -13,7 +14,7 @@ import { GETLISTING } from "@/lib/query";
 import Link from "next/link";
 import BottomMenu from "@/components/BottomMenu";
 
-const page = ({ params }) => {
+const page =  ({ params }) => {
   const { data: session, status, update } = useSession();
   const pathname = usePathname();
   const router = useRouter();
@@ -32,7 +33,7 @@ const page = ({ params }) => {
 
   const [activeSection, setActiveSection] = useState(null);
   const [claimModal, setClaimModal] = useState(false);
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState(false);
   const [listing, setListing] = useState();
   const [user, setUser] = useState();
   const aboutRef = useRef(null);
@@ -136,39 +137,8 @@ const page = ({ params }) => {
   };
 
   const getListing = async () => {
-    // try {
-    //   const res = await client.query({
-    //     query: GETLISTING,
-    //     variables: { id: params.id },
-    //     context: {
-    //       headers: {
-    //         Authorization: `Bearer ${session.jwt}`,
-    //       },
-    //     },
-    //   });
-    //   const { getListing: data } = await res.data;
-
-    //   console.log("these are listings", data);
-
-    //   if (data.code !== 200) {
-    //     console.log(data)
-    //     throw new Error("something went wrong");
-    //   }
-    //   const { listing } = await data;
-    //   setListing(listing);
-    //   setFormData((prevFormData) => ({
-    //     ...prevFormData,
-    //     listing_id: listing._id,
-    //     listing_name: listing.listing_name,
-    //     listing_image: listing.listing_image,
-    //     listing_date: listing.createdAt,
-    //   }));
-    // } catch (error) {
-    //   console.error("something went wrong:", error);
-    // }
-
-    console.log("should be working");
     try {
+      setLoading(true)
       const { data, errors } = await client.query({
         query: GETLISTING,
         variables: { id: params.id },
@@ -178,21 +148,21 @@ const page = ({ params }) => {
           },
         },
       });
-
       if (errors || data.getListing.code !== 200) {
         throw new Error("Something went wrong");
       }
 
-      const currentListing = data.getListing.listing;
+      const currentListing = await data.getListing.listing;
 
       setListing(currentListing);
       setFormData((prevFormData) => ({
         ...prevFormData,
-        listing_id: currentListing._id,
-        listing_name: currentListing.listing_name,
-        listing_image: currentListing.listing_image,
-        listing_date: currentListing.createdAt,
+        listing_id: currentListing?._id,
+        listing_name: currentListing?.listing_name,
+        listing_image: currentListing?.listing_image,
+        listing_date: currentListing?.createdAt,
       }));
+      setLoading(false)
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -202,6 +172,7 @@ const page = ({ params }) => {
     if (status === "authenticated") getListing();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
+
 
   return (
     <div>

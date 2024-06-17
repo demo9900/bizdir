@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
 import Enquiry from "@/components/Enquiry";
+import Loading from "./loading";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,7 +32,7 @@ export default function RootLayout({ children, session }) {
             />
           </Head>
           <body>
-        <Suspense fallback={<div>Loading ...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
             <div>
               {children}
               <ToastContainer />

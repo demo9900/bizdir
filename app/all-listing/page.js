@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import { useRouter, usePathname } from "next/navigation";
 import Footer from "@/components/Footer";
+import Skeleton from "react-loading-skeleton";
 import BottomMenu from "@/components/BottomMenu";
 import Link from "next/link";
 import {
@@ -42,6 +43,7 @@ const page = () => {
     keyword: "",
     value: "",
   });
+  const [searchlist,setSearchList] = useState("");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -90,13 +92,11 @@ const page = () => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching listings:", error);
-        setLoading(false);
       }
     };
-
+ 
     const fetchCity = async () => {
       try {
-        setLoading(true);
         const { data, error } = await client.query({
           query: GET_ALL_CITY,
         });
@@ -109,16 +109,14 @@ const page = () => {
         const city = await data.getAllCity.cities;
         const mappedCities = await city.map((item) => item.name);
         setCities(mappedCities); // assuming data.getFilteredListing.listings is an array of listings
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching listings:", error);
-        setLoading(false);
+    
       }
     };
 
     const getCategories = async () => {
       try {
-        setLoading(true);
         const { data, error } = await client.query({
           query: GET_ALL_CATEGORY,
         });
@@ -134,36 +132,14 @@ const page = () => {
           subcat: category.subcategory,
         }));
         setCategories(mappedcategory);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching categort:", error);
-        setLoading(false);
       }
     };
-
-    // const getCategories9 = async () => {
-    //   try {
-    //     const res = await fetch(
-    //       `https://bizdir-backend.vercel.app/api/listing/category/all`
-    //     );
-    //     if (!res.ok) {
-    //       throw new Error("Failed to fetch city data");
-    //     }
-    //     const data = await res.json();
-    //     const mappedcategory = await data.map((category) => ({
-    //       cat: category.category_name,
-    //       subcat: category.subcategory,
-    //     }));
-    //     setCategories(mappedcategory);
-    //   } catch (error) {
-    //     console.error("Error fetching pincode data:", error);
-    //   }
-    // };
 
     fetchListings(category, city, area, subcategory);
     fetchCity();
     getCategories();
-
     if (category) {
       setSearchCat((prevState) => ({
         ...prevState,
@@ -177,7 +153,7 @@ const page = () => {
       }));
     }
   }, [city, category, area, subcategory]);
-
+  console.log("loading is ",loading)
   const filterSubCategory = (category) => {
     const filtercat = categories
       .filter((option) =>
@@ -240,7 +216,10 @@ const page = () => {
       });
     }
   };
-
+ const handleSearch = (e) =>{
+  const {name,value} = e.target;
+  setSearchList(value)
+ }
   useEffect(() => {
     router.push(
       `/all-listing?${city ? `city=${city}` : ``}${
@@ -284,7 +263,9 @@ const page = () => {
   const filteredcategory = categories.filter((option) =>
     option.cat.toLowerCase().includes(searchCat.keyword.toLowerCase())
   );
-
+  const filterlisting = listings?.filter((option) =>
+    option?.listing_name?.toLowerCase().includes(searchlist.toLowerCase())
+  );
   return (
     <div>
       <section>
@@ -938,6 +919,9 @@ const page = () => {
                         <li className="sr-sea">
                           <input
                             type="text"
+                            name="search"
+                            value={searchlist}
+                            onChange={(e) => handleSearch(e)}
                             autoComplete="off"
                             id="top-select-search"
                             placeholder="Search for services and business..."
@@ -970,34 +954,40 @@ const page = () => {
                   </div>
                   {/* Loader Image */}
                   <div className="all-list-sh all-listing-total">
-                    {listings.length > 0 && !loading ? (
-                      <ul>
-                        {listings.map((item, index) => (
-                          <ListingCard id={index} item={item} key={index} />
-                        ))}
-                      </ul>
+                    {loading ? (
+                      <Skeleton count={5} height={40} />
                     ) : (
-                      <span
-                        style={{
-                          fontSize: 21,
-                          color: "#bfbfbf",
-                          letterSpacing: 1,
-                          paddingLeft: 30,
-                          textShadow: "0px 0px 2px #fff",
-                          textTransform: "uppercase",
-                          textAlign: "center!important",
-                          marginTop: "5%",
-                        }}
-                      >
-                        !!! Oops No Listing Faund with the Selected Category
-                      </span>
+                      <>
+                        {filterlisting.length > 0 ? (
+                          <ul>
+                            {filterlisting?.map((item, index) => (
+                              <ListingCard id={index} item={item} key={index} />
+                            ))}
+                          </ul>
+                        ) : (
+                          <span
+                            style={{
+                              fontSize: 21,
+                              color: "#bfbfbf",
+                              letterSpacing: 1,
+                              paddingLeft: 30,
+                              textShadow: "0px 0px 2px #fff",
+                              textTransform: "uppercase",
+                              textAlign: "center!important",
+                              marginTop: "5%",
+                            }}
+                          >
+                            !!! Oops No Listing Found with the Selected Category
+                          </span>
+                        )}
+                      </>
                     )}
 
                     {/*ADS*/}
                     <div className="ban-ati-com ads-all-list">
-                      <Link href="/https://themeforest.net/item/bizbook-directory-listings-template/25391222">
+                      <Link href="https://themeforest.net/item/bizbook-directory-listings-template/25391222">
                         <span>Ad</span>
-                        <img src="/ads/3.png" alt="" />
+                        <img src="/ads/3.png" alt="Ad" />
                       </Link>
                     </div>
                     {/*ADS*/}
