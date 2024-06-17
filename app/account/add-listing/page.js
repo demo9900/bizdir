@@ -4,7 +4,9 @@ import Link from "next/link";
 import axios from "axios";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { CREATE_LISTING } from "@/lib/mutation";
+import { toast } from "react-toastify";
 import { client } from "@/lib/apollo";
 import Step1 from "@/components/Layout/user/Listing/Step1";
 import Step2 from "@/components/Layout/user/Listing/Step2";
@@ -14,14 +16,15 @@ import Step5 from "@/components/Layout/user/Listing/Step5";
 
 const page = () => {
   const { data: session } = useSession();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     user_name: session?.user?.name,
     listing_name: "",
     phone_number: "",
-    email: "",
+    listing_email: "",
     whatsapp_number: "",
     website: "",
-    shop_address: "",
+    listing_address: "",
     country: "",
     state:"",
     city: "",
@@ -41,6 +44,9 @@ const page = () => {
     const newErrors = {};
     if (!formData.listing_name) {
       newErrors.listing_name = 'Listing Name is Required';
+    }
+    if (!formData.listing_email) {
+      newErrors.listing_email = 'email is Required';
     }
     if (!formData.phone_number) {
       newErrors.phone_number = 'Phone Number is Required';
@@ -67,8 +73,8 @@ const page = () => {
     if (!formData.listing_detail) {
       newErrors.listing_detail = 'listing detail is Required';
     }
+       
     // Add other validation as needed
-  
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -107,33 +113,18 @@ const page = () => {
         ...prevFormData,
         [name]: value,
       }));
+      if (value) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          [name]: '',
+        }));
+      }
     }
     console.log(formData);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const jwt = session.jwt;
-    try {
-      // Send POST request to /api/listing endpoint with formData
-      const response = await axios.post(
-        `${process.env.BACKEND_URL}/api/listing `,
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${jwt}`,
-          },
-        }
-      );
-      console.log(response.data); // Handle response from server
-      // Optionally, you can reset the form data after successful submission
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      // Handle error
-    }
-  };
 
-  const handleSubmitt = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const jwt = session.jwt;
   
@@ -141,7 +132,7 @@ const page = () => {
       // Send GraphQL mutation request to create a listing
       if(validate()){
         const { data, errors } = await client.mutate({
-          mutation: CREATE_CLAIMABLE_LISTING,
+          mutation: CREATE_LISTING,
           variables: { data: formData },
           context: {
             headers: {
@@ -150,7 +141,7 @@ const page = () => {
           },
         });
     
-        if (errors || data.createClaimableListing.code !== 201) {
+        if (errors || data.createListing.code !== 201) {
           throw new Error('Something went wrong');
         }
     
@@ -167,19 +158,24 @@ const page = () => {
   };
   const [currentStep, setCurrentStep] = useState(0);
   const handleStepClick = (step) => {
-    setCurrentStep(step - 1);
+    if(validate()){
+      setCurrentStep(step - 1);
+    }else {
+      toast.error("Please fill all required fields");
+    }
   };
   const steps = [
     <Step1 key="1"
       formData={formData}
       setFormData={setFormData}
       handleInputChange={handleInputChange}
+      errors={errors}
+      setErrors={setErrors}
       handleStepClick={handleStepClick}
     />,
     <Step2 key="2" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />,
     <Step3 key="3" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />,
-    <Step4 key="4" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />,
-    <Step5 key="5" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />,
+    <Step4 key="4" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />
   ];
   const stepNames = ["Besic Info", "Services", "Offers", "Gallery", "Others"];
   
@@ -194,7 +190,7 @@ const page = () => {
                 <div className="add-list-ste">
                   <div className="add-list-ste-inn">
                     <ul>
-                      {[1, 2, 3, 4, 5].map((step, index) => (
+                      {[1, 2, 3, 4].map((step, index) => (
                         <li key={index}>
                           <Link
                             href=""

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { GetAllstates,GetCityByState,GetAreaByCity,GET_ALL_CATEGORY } from "@/lib/query";
 import { client } from "@/lib/apollo";
-const Location_Filter = ({formData,InputChange,setFormData}) => {
+const Location_Filter = ({formData,InputChange,setFormData,errors,setErrors}) => {
   const divRef1 = useRef(null);
   const divRef2 = useRef(null);
   const divRef3 = useRef(null);
@@ -165,6 +165,10 @@ const [searchArea, setSearchArea] = useState({
       _id:option._id,
       value: option.name,
   }));
+  setErrors((prevErrors) => ({
+    ...prevErrors,
+    state: '',
+  }));
     }
     else if(number=== 2){
     setFormData((prevState) => ({
@@ -176,7 +180,10 @@ const [searchArea, setSearchArea] = useState({
       _id:option._id,
       value: option.name,
   }));
- 
+  setErrors((prevErrors) => ({
+    ...prevErrors,
+    city: '',
+  }));
   console.log(formData)
     }
    else if(number=== 3){
@@ -189,6 +196,10 @@ const [searchArea, setSearchArea] = useState({
         _id:option._id,
         value: option.name,
     }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      area: '',
+    }));
       }
     else if(number === 4){
       setFormData(prevState =>({
@@ -196,6 +207,10 @@ const [searchArea, setSearchArea] = useState({
         category:option.name
     }));
     setSubCategory(option.subcategory)
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      category: '',
+    }));
     } else if (number === 5){
       setFormData((prevFormData) => ({
         ...prevFormData,
@@ -272,8 +287,12 @@ const filteredsubcat = subcategory?.filter(option =>
               {country.map((option,index)=>(
                 <option key={index}  value={option}>{option}</option>
               ))}
-              
             </select>
+            {errors.country && (
+          <label htmlFor="country" className="error">
+            {errors.country}
+          </label>
+        )}
           </div>
         </div>
         <div className="col-md-6">
@@ -318,6 +337,11 @@ const filteredsubcat = subcategory?.filter(option =>
                 </ul>
               </div>
             </div>
+            {errors.state && (
+          <label htmlFor="state" className="error">
+            {errors.state}
+          </label>
+        )}
           </div>
         </div>
         <div className="col-md-6">
@@ -368,6 +392,11 @@ const filteredsubcat = subcategory?.filter(option =>
                 </ul>
               </div>
             </div>
+            {errors.city && (
+          <label htmlFor="city" className="error">
+            {errors.city}
+          </label>
+        )}
           </div>
         </div>
         <div className="col-md-6">
@@ -416,6 +445,11 @@ const filteredsubcat = subcategory?.filter(option =>
                 </ul>
               </div>
             </div>
+            {errors.area && (
+          <label htmlFor="area" className="error">
+            {errors.area}
+          </label>
+        )}
           </div>
         </div>
       </div>
@@ -462,6 +496,11 @@ const filteredsubcat = subcategory?.filter(option =>
                 </ul>
               </div>
             </div>
+            {errors.category && (
+          <label htmlFor="category" className="error">
+            {errors.category}
+          </label>
+        )}
           </div>
         </div>
         <div className="col-md-6">
@@ -474,7 +513,7 @@ const filteredsubcat = subcategory?.filter(option =>
               } chosen-container-active`}
               alt=""
               ref={divRef5}
-              id="city_id_chosen"
+              id="subcat_id_chosen"
               style={{ width: 640 }}
             >
               <ul className="chosen-choices">
@@ -514,6 +553,7 @@ const filteredsubcat = subcategory?.filter(option =>
                 </ul>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

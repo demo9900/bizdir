@@ -2,8 +2,8 @@ import React,{useState} from 'react'
 import Location_Filter from '@/components/Location_Filter'
 import { CldUploadWidget } from 'next-cloudinary';
 
-const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
-  const [resource, setResource] = useState();
+const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,setErrors}) => {
+
 
   return (
     <div className="row">
@@ -23,11 +23,14 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                   onChange={handleInputChange}
                   name="listing_name"
                   type="text"
-                  required="required"
                   className="form-control"
                   placeholder="Listing name *"
                 />
-                
+                  {errors.listing_name && (
+                                <label htmlFor="listing_name" className="error">
+                                  {errors.listing_name}
+                                </label>
+                              )}
               </div>
             </div>
           </div>
@@ -44,18 +47,28 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                   className="form-control"
                   placeholder="Phone number"
                 />
+                {errors.phone_number && (
+                                <label htmlFor="phone_number" className="error">
+                                  {errors.phone_number}
+                                </label>
+                              )}
               </div>
             </div>
             <div className="col-md-6">
               <div className="form-group">
                 <input
                   type="text"
-                  value={formData.email}
+                  value={formData.listing_email}
                   onChange={handleInputChange}
-                  name="email"
+                  name="listing_email"
                   className="form-control"
                   placeholder="Email id"
                 />
+                {errors.listing_email && (
+                                <label htmlFor="listing_email" className="error">
+                                  {errors.listing_email}
+                                </label>
+                              )}
               </div>
             </div>
           </div>
@@ -98,13 +111,17 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
               <div className="form-group">
                 <input
                   type="text"
-                  value={formData.shop_address}
+                  value={formData.listing_address}
                   onChange={handleInputChange}
-                  name="shop_address"
-                  required="required"
+                  name="listing_address"
                   className="form-control"
                   placeholder="Shop address"
                 />
+                 {errors.listing_address && (
+          <label htmlFor="listing_address" className="error">
+            {errors.listing_address}
+          </label>
+        )}
               </div>
             </div>
           </div>
@@ -133,7 +150,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
             </div>
           </div>
           
-        <Location_Filter formData={formData} InputChange={handleInputChange} setFormData={setFormData} />
+        <Location_Filter errors={errors} setErrors={setErrors}  formData={formData} InputChange={handleInputChange} setFormData={setFormData} />
         <div className="row">
             <div className="col-md-12">
               <div className="form-group">
@@ -145,6 +162,11 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
                   name="listing_detail"
                   placeholder="Details about your listing"
                 />
+                 {errors.listing_detail && (
+          <label htmlFor="listing_detail" className="error">
+            {errors.listing_detail}
+          </label>
+        )}
               </div>
             </div>
           </div>
@@ -169,7 +191,6 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
               >
                 {({ open }) => {
                   function handleOnClick() {
-                    setResource(undefined);
                     open();
                   }
                   return (
@@ -201,7 +222,6 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
               >
                 {({ open }) => {
                   function handleOnClick() {
-                    setResource(undefined);
                     open();
                   }
                   return (
@@ -222,7 +242,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
           <div className="col-md-12">
             <div className="form-group">
               <label >Enter your service locations... 
-                (i.e) London, Dallas, Wall Street, Opera House</label>
+                (ex:) Rohini, Vaishali, Indirapuram</label>
               <textarea
                 value={formData.service_location}
                 onChange={handleInputChange}
@@ -231,7 +251,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick}) => {
             </div>
           </div>
         </div>
-        <button type="submit" onClick={()=>handleStepClick(2)} name="listing_submit" className="btn btn-primary">Next</button>
+        <button type="button" onClick={()=>handleStepClick(2)} name="listing_submit" className="btn btn-primary">Next</button>
 
         </div>
           {/*FILED END*/}
