@@ -1,4 +1,7 @@
+import { client } from "@/lib/apollo";
+import { CREATE_ENQUIRY } from "@/lib/mutation";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Enquiry = () => {
   const [showBox, setShowBox] = useState(false);
@@ -6,7 +9,6 @@ const Enquiry = () => {
     enquirer_name: "",
     enquirer_email: "",
     enquirer_mobile: "",
-    enquiry_category: "",
     message: "",
   });
 
@@ -22,24 +24,27 @@ const Enquiry = () => {
   const handleSubmitEnquiry = async (e) => {
     e.preventDefault();
   
+    const enquiryData = {
+      ...formData,
+      enquiry_type: "internal",
+    };
+
     try {
-      const res = await fetch(`${process.env.BACKEND_URL}/api/enquiry`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const { data, errors } = await client.mutate({
+        mutation: CREATE_ENQUIRY,
+        variables: { data: enquiryData },
       });
-  
-      const data = await res.json();
-  
-      if (res.ok) {
-        console.log("Enquiry submitted successfully:", data);
-      } else {
-        console.error("Failed to submit enquiry:", res.status, data.message);
+
+      console.log(data);
+
+      if (errors || data.createEnquiry.code !== 201) {
+        throw new Error("Something went wrong");
       }
+
+      toast.success("Enquiry created successfully!!");
+      console.log(data);
     } catch (error) {
-      console.error("An error occurred while submitting the enquiry:", error);
+      console.error("Error submitting form:", error);
     }
   };
   
@@ -157,7 +162,7 @@ const Enquiry = () => {
               />
             </div>
             <div className="form-group">
-              <select
+              {/* <select
                 name="enquiry_category"
                 id="enquiry_category"
                 onChange={handleFormChange}
@@ -177,7 +182,7 @@ const Enquiry = () => {
                 <option value="5">Automobiles</option>
                 <option value="3">Transportation</option>
                 <option value="2">Hospitals</option>
-              </select>
+              </select> */}
               {/* <div
                 className="chosen-container chosen-container-single"
                 title=""

@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 import { signIn } from "next-auth/react";
 import { toast } from "react-toastify";
 import { client } from "@/lib/apollo";
-import { CREATE_CLAIM_REQUEST } from "@/lib/mutation";
+import { CREATE_CLAIM_REQUEST, CREATE_ENQUIRY } from "@/lib/mutation";
 import { GETLISTING } from "@/lib/query";
 import Link from "next/link";
 import BottomMenu from "@/components/BottomMenu";
@@ -33,7 +33,7 @@ const page = ({ params }) => {
   const [activeSection, setActiveSection] = useState(null);
   const [claimModal, setClaimModal] = useState(false);
   const [loading, setLoading] = useState();
-  const [listing, setListing] = useState();
+  const [listing, setListing] = useState({});
   const [user, setUser] = useState();
 
   const [enquiryFormData, setEnquiryFormData] = useState({
@@ -61,24 +61,30 @@ const page = ({ params }) => {
   const handleEnquirySubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData, listing, session?.user?.id);
+    const enquiryData = {
+      ...enquiryFormData,
+      listing: listing._id,
+      user_id: listing.user,
+      enquiry_type: "listing",
+    };
 
-    // try {
-    //   const { data, errors } = await client.mutate({
-    //     mutation: CREATE_ENQUIRY,
-    //     variables: { data: formData },
+    try {
+      const { data, errors } = await client.mutate({
+        mutation: CREATE_ENQUIRY,
+        variables: { data: enquiryData },
+      });
 
-    //   });
+      console.log(data);
 
-    //   if (errors || data.createRole.code !== 201) {
-    //     throw new Error("Something went wrong");
-    //   }
+      if (errors || data.createEnquiry.code !== 201) {
+        throw new Error("Something went wrong");
+      }
 
-    //   toast.success("Role created successfully");
-    //   console.log(data);
-    // } catch (error) {
-    //   console.error("Error submitting form:", error);
-    // }
+      toast.success("Enquiry created successfully!!");
+      console.log(data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   const handleChange = (event) => {
@@ -206,16 +212,10 @@ const page = ({ params }) => {
     //   console.error("something went wrong:", error);
     // }
 
-    console.log("should be working");
     try {
       const { data, errors } = await client.query({
         query: GETLISTING,
         variables: { id: params.id },
-        context: {
-          headers: {
-            Authorization: `Bearer ${session.jwt}`,
-          },
-        },
       });
 
       if (errors || data.getListing.code !== 200) {
@@ -223,6 +223,8 @@ const page = ({ params }) => {
       }
 
       const currentListing = data.getListing.listing;
+
+      console.log(currentListing);
 
       setListing(currentListing);
       setFormData((prevFormData) => ({
@@ -275,7 +277,7 @@ const page = ({ params }) => {
                       onClick={() => handleScrollToSection("service")}
                     >
                       <span>
-                        <i className="material-icons">business_center</i>{" "}
+                        <i className="material-icons">business_center</i>
                         Services
                       </span>
                     </li>
@@ -337,7 +339,7 @@ const page = ({ params }) => {
             <div className="row">
               <div className="col-md-12">
                 <div className="pg-list-1-pro">
-                  <img src={listing?.listing_image} alt="" />{" "}
+                  <img src={listing?.listing_image} alt="" />
                   <span className="stat">
                     <i className="material-icons">verified_user</i>
                   </span>
@@ -345,16 +347,14 @@ const page = ({ params }) => {
                 <div className="pg-list-1-left">
                   <h3>{listing?.listing_name}</h3>
                   <div className="list-rat-all">
-                    {" "}
                     <b>5.0</b>
                     <label className="rat">
-                      {" "}
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
-                    </label>{" "}
+                    </label>
                     <span>526 Reviews</span>
                   </div>
                   <p>
@@ -377,14 +377,12 @@ const page = ({ params }) => {
                 <div className="list-ban-btn">
                   <ul>
                     <li>
-                      {" "}
                       <a href="tel:87654567" className="cta cta-call">
                         Call now
                       </a>
                     </li>
 
                     <li>
-                      {" "}
                       <a
                         href="https://wa.me/98765657486"
                         className="cta cta-rev"
@@ -393,7 +391,6 @@ const page = ({ params }) => {
                       </a>
                     </li>
                     <li>
-                      {" "}
                       <span
                         onClick={handleClaimModal}
                         data-toggle="modal"
@@ -619,7 +616,6 @@ const page = ({ params }) => {
                           href="#demo"
                           data-slide="prev"
                         >
-                          {" "}
                           <span className="carousel-control-prev-icon" />
                         </a>
                         <a
@@ -627,7 +623,6 @@ const page = ({ params }) => {
                           href="#demo"
                           data-slide="next"
                         >
-                          {" "}
                           <span className="carousel-control-next-icon" />
                         </a>
                       </div>
@@ -661,14 +656,13 @@ const page = ({ params }) => {
                             fact that a reader will be distracted by the
                             readable content of a page when looking at its
                             layout.
-                          </p>{" "}
+                          </p>
                           <span className="home-list-pop-rat list-rom-pric">
                             $5000
                           </span>
                           <div className="list-enqu-btn">
                             <ul>
                               <li>
-                                {" "}
                                 <a target="_blank" href="#">
                                   View more
                                 </a>
@@ -969,13 +963,12 @@ const page = ({ params }) => {
                           <h5>Overall Ratings</h5>
                           <p>
                             <label className="rat">
-                              {" "}
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
-                            </label>{" "}
+                            </label>
                             <span>based on 1 reviews</span>
                           </p>
                         </div>
@@ -990,13 +983,12 @@ const page = ({ params }) => {
                             <div className="lr-user-wr-con">
                               <h6>Rn53 Themes</h6>
                               <label className="rat">
-                                {" "}
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
-                              </label>{" "}
+                              </label>
                               <span className="lr-revi-date">07, Mar 2021</span>
                               <p>
                                 verified_userRolexo Villas is well-known to all
@@ -1022,7 +1014,6 @@ const page = ({ params }) => {
                   {/*END LISTING DETAILS: LEFT PART 5*/}
                   {/*ADS*/}
                   <div className="ban-ati-com ads-det-page">
-                    {" "}
                     <a href="#">
                       <span>Ad</span>
                       <img src="/ads/3.png" alt="ads-3" />
@@ -1041,7 +1032,6 @@ const page = ({ params }) => {
                           <div className="land-pack-grid-text">
                             <h4>Core real estates</h4>
                             <div className="list-rat-all">
-                              {" "}
                               <b />
                             </div>
                           </div>
@@ -1060,7 +1050,6 @@ const page = ({ params }) => {
                           <div className="land-pack-grid-text">
                             <h4>Museo Villas and Plots</h4>
                             <div className="list-rat-all">
-                              {" "}
                               <b />
                             </div>
                           </div>
@@ -1079,7 +1068,6 @@ const page = ({ params }) => {
                           <div className="land-pack-grid-text">
                             <h4>ccc</h4>
                             <div className="list-rat-all">
-                              {" "}
                               <b />
                             </div>
                           </div>
@@ -1122,39 +1110,7 @@ const page = ({ params }) => {
                       >
                         <p>Something Went Wrong!!!</p>
                       </div>
-                      <form
-                        method="post"
-                        name="detail_enquiry_form"
-                        id="detail_enquiry_form"
-                      >
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="listing_id"
-                          defaultValue={385}
-                          required
-                        />
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="listing_user_id"
-                          defaultValue={325}
-                          required
-                        />
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="enquiry_sender_id"
-                          defaultValue={37}
-                          required
-                        />
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="enquiry_source"
-                          defaultValue="Website"
-                          required
-                        />
+                      <form onSubmit={handleEnquirySubmit}>
                         <div className="form-group ic-user">
                           <input
                             type="text"
@@ -1208,7 +1164,6 @@ const page = ({ params }) => {
                           id="detail_enquiry_submit"
                           name="enquiry_submit"
                           className="btn btn-primary"
-                          onClick={handleEnquirySubmit}
                         >
                           Submit
                         </button>
@@ -1249,7 +1204,6 @@ const page = ({ params }) => {
                     <div className="lis-comp-badg">
                       <div className="s1">
                         <div>
-                          {" "}
                           <span className="by">Business profile</span>
                           <img className="proi" src="/user/1.png" alt="" />
                           <h4>Rn53 Themes net</h4>
@@ -1303,7 +1257,6 @@ const page = ({ params }) => {
                         </div>
                       </div>
                       <div className="s2">
-                        {" "}
                         <a
                           target="_blank"
                           href="company-profile.html"
@@ -1388,7 +1341,6 @@ const page = ({ params }) => {
                   <div className="ld-rhs-pro pglist-bg pglist-p-com">
                     <div className="lis-pro-badg">
                       <div>
-                        {" "}
                         <span className="rat" alt="User rating">
                           4.2
                         </span>
@@ -1396,7 +1348,7 @@ const page = ({ params }) => {
                         <img src="/user/3.jpg" alt="" />
                         <h4>{listing?.user_name}</h4>
                         <p>Member since Feb 2021</p>
-                      </div>{" "}
+                      </div>
                       <Link
                         href={`/profile/${listing?.user}`}
                         className="fclick"
@@ -1422,7 +1374,6 @@ const page = ({ params }) => {
                   {/*END LISTING DETAILS: LEFT PART 10*/}
                   {/*ADS*/}
                   <div className="ban-ati-com ads-det-page">
-                    {" "}
                     <a href="#">
                       <span>Ad</span>
                       {/* This is giving error */}
@@ -1453,7 +1404,6 @@ const page = ({ params }) => {
                     </p>
                   </div>
                   <div className="col-md-3 bb-link">
-                    {" "}
                     <Link href="/pricing-details">Add my business</Link>
                   </div>
                 </div>
