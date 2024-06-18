@@ -142,11 +142,6 @@ const page =  ({ params }) => {
       const { data, errors } = await client.query({
         query: GETLISTING,
         variables: { id: params.id },
-        context: {
-          headers: {
-            Authorization: `Bearer ${session.jwt}`,
-          },
-        },
       });
       if (errors || data.getListing.code !== 200) {
         throw new Error("Something went wrong");
@@ -169,9 +164,9 @@ const page =  ({ params }) => {
   };
 
   useEffect(() => {
-    if (status === "authenticated") getListing();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status]);
+     getListing();
+    
+  }, []);
 
 
   return (
