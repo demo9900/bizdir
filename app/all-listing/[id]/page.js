@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import { useRouter, usePathname } from "next/navigation";
-import { notFound } from "next/navigation";
 import { CldUploadWidget } from "next-cloudinary";
 import Footer from "@/components/Footer";
 import { useSession } from "next-auth/react";
@@ -14,7 +13,7 @@ import { GETLISTING } from "@/lib/query";
 import Link from "next/link";
 import BottomMenu from "@/components/BottomMenu";
 
-const page =  ({ params }) => {
+const page = ({ params }) => {
   const { data: session, status, update } = useSession();
   const pathname = usePathname();
   const router = useRouter();
@@ -33,15 +32,54 @@ const page =  ({ params }) => {
 
   const [activeSection, setActiveSection] = useState(null);
   const [claimModal, setClaimModal] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState();
   const [listing, setListing] = useState();
   const [user, setUser] = useState();
+
+  const [enquiryFormData, setEnquiryFormData] = useState({
+    enquirer_name: "",
+    enquirer_email: "",
+    enquirer_mobile: "",
+    message: "",
+  });
+
   const aboutRef = useRef(null);
   const serviceRef = useRef(null);
   const galleryRef = useRef(null);
   const offerRef = useRef(null);
   const mapRef = useRef(null);
   const reviewRef = useRef(null);
+
+  const handleEnquiryFormData = (e) => {
+    console.log(e.target.name, e.target.value);
+    setEnquiryFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleEnquirySubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(formData, listing, session?.user?.id);
+
+    // try {
+    //   const { data, errors } = await client.mutate({
+    //     mutation: CREATE_ENQUIRY,
+    //     variables: { data: formData },
+
+    //   });
+
+    //   if (errors || data.createRole.code !== 201) {
+    //     throw new Error("Something went wrong");
+    //   }
+
+    //   toast.success("Role created successfully");
+    //   console.log(data);
+    // } catch (error) {
+    //   console.error("Error submitting form:", error);
+    // }
+  };
 
   const handleChange = (event) => {
     setFormData({
@@ -137,37 +175,72 @@ const page =  ({ params }) => {
   };
 
   const getListing = async () => {
+    // try {
+    //   const res = await client.query({
+    //     query: GETLISTING,
+    //     variables: { id: params.id },
+    //     context: {
+    //       headers: {
+    //         Authorization: `Bearer ${session.jwt}`,
+    //       },
+    //     },
+    //   });
+    //   const { getListing: data } = await res.data;
+
+    //   console.log("these are listings", data);
+
+    //   if (data.code !== 200) {
+    //     console.log(data)
+    //     throw new Error("something went wrong");
+    //   }
+    //   const { listing } = await data;
+    //   setListing(listing);
+    //   setFormData((prevFormData) => ({
+    //     ...prevFormData,
+    //     listing_id: listing._id,
+    //     listing_name: listing.listing_name,
+    //     listing_image: listing.listing_image,
+    //     listing_date: listing.createdAt,
+    //   }));
+    // } catch (error) {
+    //   console.error("something went wrong:", error);
+    // }
+
+    console.log("should be working");
     try {
-      setLoading(true)
       const { data, errors } = await client.query({
         query: GETLISTING,
         variables: { id: params.id },
+        context: {
+          headers: {
+            Authorization: `Bearer ${session.jwt}`,
+          },
+        },
       });
+
       if (errors || data.getListing.code !== 200) {
         throw new Error("Something went wrong");
       }
 
-      const currentListing = await data.getListing.listing;
+      const currentListing = data.getListing.listing;
 
       setListing(currentListing);
       setFormData((prevFormData) => ({
         ...prevFormData,
-        listing_id: currentListing?._id,
-        listing_name: currentListing?.listing_name,
-        listing_image: currentListing?.listing_image,
-        listing_date: currentListing?.createdAt,
+        listing_id: currentListing._id,
+        listing_name: currentListing.listing_name,
+        listing_image: currentListing.listing_image,
+        listing_date: currentListing.createdAt,
       }));
-      setLoading(false)
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
   useEffect(() => {
-     getListing();
-    
-  }, []);
-
+    getListing();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session]);
 
   return (
     <div>
@@ -1085,8 +1158,9 @@ const page =  ({ params }) => {
                         <div className="form-group ic-user">
                           <input
                             type="text"
-                            name="enquiry_name"
-                            defaultValue="Rn53 Themes"
+                            name="enquirer_name"
+                            value={enquiryFormData.enquirer_name}
+                            onChange={handleEnquiryFormData}
                             required="required"
                             className="form-control"
                             placeholder="Enter name*"
@@ -1098,8 +1172,9 @@ const page =  ({ params }) => {
                             className="form-control"
                             placeholder="Enter email*"
                             required="required"
-                            defaultValue="rn53themes@gmail.com"
-                            name="enquiry_email"
+                            value={enquiryFormData.enquirer_email}
+                            onChange={handleEnquiryFormData}
+                            name="enquirer_email"
                             pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
                             title="Invalid email address"
                           />
@@ -1108,8 +1183,9 @@ const page =  ({ params }) => {
                           <input
                             type="text"
                             className="form-control"
-                            defaultValue={5522114422}
-                            name="enquiry_mobile"
+                            value={enquiryFormData.enquirer_mobile}
+                            onChange={handleEnquiryFormData}
+                            name="enquirer_mobile"
                             placeholder="Enter mobile number *"
                             pattern="[7-9]{1}[0-9]{9}"
                             title="Phone number starting with 7-9 and remaing 9 digit with 0-9"
@@ -1120,9 +1196,10 @@ const page =  ({ params }) => {
                           <textarea
                             className="form-control"
                             rows={3}
-                            name="enquiry_message"
+                            name="message"
                             placeholder="Enter your query or message"
-                            defaultValue={""}
+                            value={enquiryFormData.message}
+                            onChange={handleEnquiryFormData}
                           />
                         </div>
                         <input type="hidden" id="source" />
@@ -1131,6 +1208,7 @@ const page =  ({ params }) => {
                           id="detail_enquiry_submit"
                           name="enquiry_submit"
                           className="btn btn-primary"
+                          onClick={handleEnquirySubmit}
                         >
                           Submit
                         </button>
@@ -1347,7 +1425,8 @@ const page =  ({ params }) => {
                     {" "}
                     <a href="#">
                       <span>Ad</span>
-                      <img src="/ads/59040boat-728x90.png" alt="boat-ads" />
+                      {/* This is giving error */}
+                      {/* <img src="/ads/59040boat-728x90.png" alt="boat-ads" /> */}
                     </a>
                   </div>
                   {/*ADS*/}
@@ -1505,8 +1584,7 @@ const page =  ({ params }) => {
                         name="popup_enquiry_submit"
                         className="btn btn-primary"
                       >
-                        {" "}
-                        Log In To Submit{" "}
+                        Log In To Submit
                       </button>
                     </form>
                   </div>
