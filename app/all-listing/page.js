@@ -287,7 +287,7 @@ const page = () => {
             <div className="all-list-bre">
               <div className="container sec-all-list-bre">
                 <div className="row">
-                  <h1>Real Estate</h1>
+                  <h1>{category || ''}</h1>
                   <ul>
                     <li>
                       <Link href="/index">Home</Link>
@@ -297,7 +297,7 @@ const page = () => {
                     </li>
                     <li>
                       {" "}
-                      <Link href="/all-listing">Real Estate</Link>
+                      <Link href="/all-listing">{category || ''}</Link>
                     </li>
                   </ul>
                 </div>
