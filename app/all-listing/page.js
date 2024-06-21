@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import { useRouter, usePathname } from "next/navigation";
+import { textformate } from "@/components/TextFormate";
 import Footer from "@/components/Footer";
 import Skeleton from "react-loading-skeleton";
 import BottomMenu from "@/components/BottomMenu";
