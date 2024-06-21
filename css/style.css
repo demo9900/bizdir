@@ -1160,7 +1160,7 @@ div#event_detail_enq_success p{
 }
 .ban-search{
     margin: 0 auto;
-    display: table;
+    display: flex;
     width: 60%;
     position: relative;
 }
@@ -13160,6 +13160,10 @@ color: #333;
     .us-pro-sec-1-rhs h1{
         font-size: 32px;
     }
+    .ban-search.ban-sear-all{
+        width:auto!important;
+        justify-content: center;
+    }
 }
 @media screen and (max-width:1150px){
     .ud-lhs-s2 ul li a {
@@ -14941,6 +14945,7 @@ width:8px;
     .plac-hom-box-im h4{font-size:16px}
     .plac-det-ban-sub ul li span,.plac-det-ban-sub ul li a{font-size:13px}
     .plac-gal-imag{width:20%}
+
     }
     @media screen and (max-width: 992px) {
         .bl, .fil-mob-view, .db-open .al, .ud-lhs{
@@ -14957,8 +14962,8 @@ width:8px;
     .plac-hom-tit-ic-sugg span{position:relative;display:inline-block;top:auto;right:auto;margin-top:20px}
     .plac-hom-tit-ic-sugg h2{font-size:16px}
     .ban-search.ban-sear-all{width:100%}
-    .ban-search.ban-sear-all li.sr-cate,.ban-search.ban-sear-all li.sr-cit, li.sr-state, li.sr-area,.ban-search.ban-sear-all.ser-oly-place li.sr-nor,.ban-search.ban-sear-all.ser-oly-event li.sr-nor,.ban-search.ban-sear-all.ser-oly-blog li.sr-nor,.ban-search.ban-sear-all.ser-oly-product li.sr-nor{width:50%!important}
-    .ban-search.ban-sear-all li,.ban-search.ban-sear-all,.ban-search.ban-sear-all li.sr-btn{width:100%;margin-bottom:10px}
+    .ban-search.ban-sear-all li.sr-cate,.ban-search.ban-sear-all li.sr-cit, li.sr-state, li.sr-area,.ban-search.ban-sear-all.ser-oly-place li.sr-nor,.ban-search.ban-sear-all.ser-oly-event li.sr-nor,.ban-search.ban-sear-all.ser-oly-blog li.sr-nor,.ban-search.ban-sear-all.ser-oly-product li.sr-nor{width:50%}
+    .ban-search.ban-sear-all li,.ban-search.ban-sear-all,.ban-search.ban-sear-all li.sr-btn{width:100%!important;margin-bottom:10px}
     .plac-det-ban-im img{height:230px}
     .plac-det-tit h1{font-size:30px}
     .plac-det-tit h4{font-size:18px}
