@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import { useRouter, usePathname } from "next/navigation";
+import { textformate } from "@/components/TextFormate";
 import Footer from "@/components/Footer";
 import Skeleton from "react-loading-skeleton";
 import BottomMenu from "@/components/BottomMenu";
@@ -287,7 +288,7 @@ const page = () => {
             <div className="all-list-bre">
               <div className="container sec-all-list-bre">
                 <div className="row">
-                  <h1>Real Estate</h1>
+                  <h1>{category || ''}</h1>
                   <ul>
                     <li>
                       <Link href="/index">Home</Link>
@@ -297,7 +298,7 @@ const page = () => {
                     </li>
                     <li>
                       {" "}
-                      <Link href="/all-listing">Real Estate</Link>
+                      <Link href="/all-listing">{category || ''}</Link>
                     </li>
                   </ul>
                 </div>
