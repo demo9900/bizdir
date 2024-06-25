@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import { useRouter, usePathname } from "next/navigation";
+import { CldImage } from "next-cloudinary";
 import { CldUploadWidget } from "next-cloudinary";
 import Footer from "@/components/Footer";
 import { useSession } from "next-auth/react";
@@ -181,37 +182,7 @@ const page = ({ params }) => {
   };
 
   const getListing = async () => {
-    // try {
-    //   const res = await client.query({
-    //     query: GETLISTING,
-    //     variables: { id: params.id },
-    //     context: {
-    //       headers: {
-    //         Authorization: `Bearer ${session.jwt}`,
-    //       },
-    //     },
-    //   });
-    //   const { getListing: data } = await res.data;
-
-    //   console.log("these are listings", data);
-
-    //   if (data.code !== 200) {
-    //     console.log(data)
-    //     throw new Error("something went wrong");
-    //   }
-    //   const { listing } = await data;
-    //   setListing(listing);
-    //   setFormData((prevFormData) => ({
-    //     ...prevFormData,
-    //     listing_id: listing._id,
-    //     listing_name: listing.listing_name,
-    //     listing_image: listing.listing_image,
-    //     listing_date: listing.createdAt,
-    //   }));
-    // } catch (error) {
-    //   console.error("something went wrong:", error);
-    // }
-
+   
     try {
       const { data, errors } = await client.query({
         query: GETLISTING,
@@ -222,7 +193,7 @@ const page = ({ params }) => {
         throw new Error("Something went wrong");
       }
 
-      const currentListing = data.getListing.listing;
+      const currentListing = await data.getListing.listing;
 
       console.log(currentListing);
 
@@ -244,6 +215,7 @@ const page = ({ params }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
+  console.log("all listings =>",listing)
   return (
     <div>
       <section>
@@ -644,26 +616,28 @@ const page = ({ params }) => {
                       <div className="home-list-pop">
                         {/*LISTINGS IMAGE*/}
                         <div className="col-md-3">
-                          <img src="/services/2.jpeg" alt="" />
+                        <CldImage
+                            width="150"
+                            height="172"
+                            src={listing?.offer?.offer_image}
+                            alt="Description of my image"
+                          />
                         </div>
                         {/*LISTINGS: CONTENT*/}
                         <div className="col-md-9 home-list-pop-desc inn-list-pop-desc list-room-deta">
                           <a href="#!">
-                            <h3>Villa offer 10%</h3>
+                            <h3>{listing?.offer?.offer_name}</h3>
                           </a>
                           <p>
-                            Special booking March offer It is a long established
-                            fact that a reader will be distracted by the
-                            readable content of a page when looking at its
-                            layout.
+                            {listing?.offer?.offer_description}
                           </p>
                           <span className="home-list-pop-rat list-rom-pric">
-                            $5000
+                            {listing?.offer?.offer_amount }{listing?.offer?.offer_type=== 'percent' ? '%':'₹'}
                           </span>
                           <div className="list-enqu-btn">
                             <ul>
                               <li>
-                                <a target="_blank" href="#">
+                                <a  href="#">
                                   View more
                                 </a>
                               </li>
