@@ -23,7 +23,8 @@ const page = () => {
   const searchParams = useSearchParams();
   const area = searchParams.get("area");
   const category = searchParams.get("category");
-  const subcategory = searchParams.get("subcat");
+  const subcategory = searchParams.get("subcategory");
+  const tags = searchParams.get("tags");
   const city = searchParams.get("city");
   const [categories, setCategories] = useState([]);
   const [subcat, setSubCat] = useState([]);
@@ -67,7 +68,7 @@ const page = () => {
   }, []);
 
   useEffect(() => {
-    const fetchListings = async (category, city, area, subcategory) => {
+    const fetchListings = async (category, city, area, subcategory,tags) => {
       try {
         setLoading(true);
 
@@ -75,6 +76,7 @@ const page = () => {
           category,
           city,
           area,
+          tags,
           subcategory,
         };
 
@@ -138,7 +140,7 @@ const page = () => {
       }
     };
 
-    fetchListings(category, city, area, subcategory);
+    fetchListings(category, city, area, subcategory,tags);
     fetchCity();
     getCategories();
     if (category) {
@@ -153,7 +155,7 @@ const page = () => {
         value: city,
       }));
     }
-  }, [city, category, area, subcategory]);
+  }, [city, category, area, subcategory,tags]);
   console.log("loading is ",loading)
   const filterSubCategory = (category) => {
     const filtercat = categories
@@ -221,16 +223,16 @@ const page = () => {
   const {name,value} = e.target;
   setSearchList(value)
  }
-  useEffect(() => {
-    router.push(
-      `/all-listing?${city ? `city=${city}` : ``}${
-        category ? `&category=${category}` : ``
-      }${area ? `&area=${area}` : ``}${
-        checkedsubcat ? `&subcat=${checkedsubcat.join(",")}` : ``
-      }`
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [checkedsubcat]);
+  // useEffect(() => {
+  //   router.push(
+  //     `/all-listing?${city ? `city=${city}` : ``}${
+  //       category ? `&category=${category}` : ``
+  //     }${area ? `&area=${area}` : ``}${
+  //       checkedsubcat ? `&subcat=${checkedsubcat.join(",")}` : ``
+  //     }`
+  //   );
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [checkedsubcat]);
 
   const handleOptionClick = (option, number) => {
     if (number === 1) {
