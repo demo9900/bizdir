@@ -62,6 +62,7 @@ const Listing_Filter =  ({location}) => {
     const [searchService, setSearchService] = useState({
         keyword: "",
         value: '',
+        type:''
     });
     useEffect(() => {
         const fetchData = async () => {
@@ -141,14 +142,14 @@ const Listing_Filter =  ({location}) => {
             const filteredByTags = subcat.flatMap(item => 
               item.tags.filter(tag => tag.toLowerCase().includes(input))
             );
-      
-            setFilteredSubCat(filteredByTags);
-            console.log("tags filter =>", filteredByTags);
+            const findtag = filteredByTags.map(item=>({name:item,type:'tag'}))
+            setFilteredSubCat(findtag);
+            
           } else {
-            setFilteredSubCat(filtered.map(item => item.name)); // or whatever you need to show for name matches
+            setFilteredSubCat(filtered.map(item => ({name:item.name,type:'subcat'}))); // or whatever you need to show for name matches
           }
         } else {
-          setFilteredSubCat(subcat?.map(item=> item.name));
+          setFilteredSubCat(subcat?.map(item=>({name: item.name,type:'subcat'})));
         }
       }, [searchService, subcat]);
       
@@ -237,8 +238,10 @@ const Listing_Filter =  ({location}) => {
         } else if (number === 4) {
             setSearchService((prevState) => ({
                 ...prevState,
-                value: option,
+                value: option.name,
+                type:option.type
             }));
+
         }
 
         setSelect((prevState) => ({
@@ -263,7 +266,7 @@ const Listing_Filter =  ({location}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Redirect user to the desired route
-        router.push(`/all-listing?category=${encodeURIComponent(searchService.value)}&state=${encodeURIComponent(searchState.value)}&city=${encodeURIComponent(searchCity.value)}&area=${encodeURIComponent(seachArea.value)}`);
+        router.push(`/all-listing?state=${encodeURIComponent(searchState.value)}&city=${encodeURIComponent(searchCity.value)}&area=${encodeURIComponent(seachArea.value)}${searchService.type=== 'subcat' ? `&subcategory=${encodeURIComponent(searchService.value)}`:`&tags=${encodeURIComponent(searchService.value)}`}`);
       };
     return (
         <div className="ban-search ban-sear-all">
@@ -511,13 +514,13 @@ const Listing_Filter =  ({location}) => {
                                                 handleOptionClick(option, 4)
                                             }
                                             className={`active-result result-selected ${
-                                                option ===
+                                                option.name ===
                                                     searchService.value &&
                                                 "highlighted"
                                             }`}
                                             data-option-array-index={0}
                                         >
-                                            {option}
+                                            {option.name}
                                         </li>
                                     ))}
                                 </ul>
