@@ -12,6 +12,10 @@ import { CREATE_CLAIM_REQUEST, CREATE_ENQUIRY } from "@/lib/mutation";
 import { GETLISTING } from "@/lib/query";
 import Link from "next/link";
 import BottomMenu from "@/components/BottomMenu";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const page = ({ params }) => {
   const { data: session, status, update } = useSession();
@@ -29,6 +33,12 @@ const page = ({ params }) => {
     listing_date: "",
     description: "",
   });
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   const [activeSection, setActiveSection] = useState(null);
   const [claimModal, setClaimModal] = useState(false);
@@ -583,12 +593,11 @@ const page = ({ params }) => {
                       </h3>
                     </div>
                     <div className="list-pg-inn-sp">
-                      <div
+                      {/* <div
                         id="demo"
                         className="carousel slide"
                         data-ride="carousel"
                       >
-                        {/* Indicators */}
                         <ul className="carousel-indicators">
                           <li
                             data-target="#demo"
@@ -598,7 +607,6 @@ const page = ({ params }) => {
                           <li data-target="#demo" data-slide-to={1} />
                           <li data-target="#demo" data-slide-to={2} />
                         </ul>
-                        {/* The slideshow */}
                         <div className="carousel-inner">
                           <div className="carousel-item active">
                             <img src="/listings/1.jpg" alt="" />
@@ -610,7 +618,6 @@ const page = ({ params }) => {
                             <img src="/listings/14.jpg" alt="" />
                           </div>
                         </div>
-                        {/* Left and right controls */}
                         <a
                           className="carousel-control-prev"
                           href="#demo"
@@ -625,6 +632,28 @@ const page = ({ params }) => {
                         >
                           <span className="carousel-control-next-icon" />
                         </a>
+                      </div> */}
+
+                      <div className="slider-container">
+                        <Slider {...settings}>
+                          {/* <div className="carousel-item active">
+                          <img src="/slider/1.jpg" alt="Los Angeles" />
+                          <Link href="//demo" target="_blank" />
+                        </div>
+                        <div className="carousel-item ">
+                          <img src="/slider/2.jpg" alt="Los Angeles" />
+                          <Link href="//demo" target="_blank" />
+                        </div> */}
+                          {listing?.gallery_images?.map((image, idx) => {
+                            return (
+                              <div key={idx}>
+                                <img src={image} alt="carousel-image" style={{
+                                  backgroundSize: "cover"
+                                }} height={200} />
+                              </div>
+                            );
+                          })}
+                        </Slider>
                       </div>
                     </div>
                   </div>
