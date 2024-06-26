@@ -206,7 +206,6 @@ const page = ({ params }) => {
       const currentListing = await data.getListing.listing;
 
       console.log(currentListing);
-
       setListing(currentListing);
       setFormData((prevFormData) => ({
         ...prevFormData,
@@ -564,70 +563,29 @@ const page = ({ params }) => {
                         <span>Photo</span> Gallery
                       </h3>
                     </div>
-                    <div className="list-pg-inn-sp">
-                      {/* <div
-                        id="demo"
-                        className="carousel slide"
-                        data-ride="carousel"
-                      >
-                        <ul className="carousel-indicators">
-                          <li
-                            data-target="#demo"
-                            data-slide-to={0}
-                            className="active"
-                          />
-                          <li data-target="#demo" data-slide-to={1} />
-                          <li data-target="#demo" data-slide-to={2} />
-                        </ul>
-                        <div className="carousel-inner">
-                          <div className="carousel-item active">
-                            <img src="/listings/1.jpg" alt="" />
-                          </div>
-                          <div className="carousel-item ">
-                            <img src="/listings/2.jpg" alt="" />
-                          </div>
-                          <div className="carousel-item ">
-                            <img src="/listings/14.jpg" alt="" />
-                          </div>
-                        </div>
-                        <a
-                          className="carousel-control-prev"
-                          href="#demo"
-                          data-slide="prev"
-                        >
-                          <span className="carousel-control-prev-icon" />
-                        </a>
-                        <a
-                          className="carousel-control-next"
-                          href="#demo"
-                          data-slide="next"
-                        >
-                          <span className="carousel-control-next-icon" />
-                        </a>
-                      </div> */}
-
-                      <div className="slider-container">
+                    {listing?.gallery_images && (
+                      <div className="list-pg-inn-sp">
+                      <div className="carousel slide">
                         <Slider {...settings}>
-                          {/* <div className="carousel-item active">
-                          <img src="/slider/1.jpg" alt="Los Angeles" />
-                          <Link href="//demo" target="_blank" />
-                        </div>
-                        <div className="carousel-item ">
-                          <img src="/slider/2.jpg" alt="Los Angeles" />
-                          <Link href="//demo" target="_blank" />
-                        </div> */}
                           {listing?.gallery_images?.map((image, idx) => {
                             return (
-                              <div key={idx}>
-                                <img src={image} alt="carousel-image" style={{
-                                  backgroundSize: "cover"
-                                }} height={200} />
+                              <div key={idx} className="h-[380px] w-full ">
+                               <CldImage
+                            width="750"
+                            crop="fill"
+                            gravity="east"
+                            height="380"
+                            src={image}
+                            alt="Description of my image"
+                          />
                               </div>
                             );
                           })}
                         </Slider>
                       </div>
                     </div>
+                    )}
+                    
                   </div>
                   {/*END LISTING DETAILS: LEFT PART 3*/}
                   {/*LISTING DETAILS: LEFT PART 4*/}
@@ -645,12 +603,15 @@ const page = ({ params }) => {
                       <div className="home-list-pop">
                         {/*LISTINGS IMAGE*/}
                         <div className="col-md-3">
-                        <CldImage
-                            width="150"
-                            height="172"
-                            src={listing?.offer?.offer_image}
-                            alt="Description of my image"
-                          />
+                          {listing?.offer?.offer_image && (
+                             <CldImage
+                             width="150"
+                             height="172"
+                             src={listing?.offer?.offer_image}
+                             alt="Description of my image"
+                           />
+                          )}
+                       
                         </div>
                         {/*LISTINGS: CONTENT*/}
                         <div className="col-md-9 home-list-pop-desc inn-list-pop-desc list-room-deta">
@@ -1349,7 +1310,7 @@ const page = ({ params }) => {
                         </span>
                         <span className="by">Created by</span>
                         <img src="/user/3.jpg" alt="" />
-                        <h4>{listing?.user_name}</h4>
+                        <h4>{listing?.user_name?.length > 0 ? listing?.user_name: listing?.createdBy?.name }</h4>
                         <p>Member since Feb 2021</p>
                       </div>
                       <Link
