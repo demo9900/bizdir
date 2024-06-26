@@ -30,10 +30,19 @@ const page = () => {
     city: "",
     area: "",
     category: "",
-    subcategory: [],
+    subcategory: "",
+    tags: [],
     listing_detail: "",
+    gallery_images: [],
     listing_image: "",
     cover_image: "",
+    offer: {
+      offer_name: "",
+      offer_amount: "",
+      offer_description: "",
+      offer_type:"percent",
+      offer_image: "",
+    },
     service_location: [],
     service_provided:[],
     youtube_link: "",
@@ -78,37 +87,49 @@ const page = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  const handleInputChange = (event,index) => {
+  const handleInputChange = (event, index) => {
     const { name, value } = event.target;
-    if(name=== 'service_location'){
-       // Update service_location with the array of locations
-       const locationsArray = value.split(',');
-       setFormData((prevFormData) => ({
-         ...prevFormData,
-         [name]: locationsArray, // Update service_location with the array of locations
-       }));
-       
-    }else if(name=== 'service_provided') {
+    if (name === "service_location") {
+      // Update service_location with the array of locations
+      const locationsArray = value.split(",");
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: locationsArray, // Update service_location with the array of locations
+      }));
+    } else if (name === "service_provided") {
       const updatedServiceProvided = [...formData.service_provided];
 
       // If the index exceeds the length of the updatedServiceProvided array,
       // it means a new service object needs to be added
       if (index >= updatedServiceProvided.length) {
-          updatedServiceProvided.push({ name: "", image: "" });
+        updatedServiceProvided.push({ name: "", image: "" });
       }
-  
+
       // Update the corresponding field (name or image) of the service object at the specified index
       updatedServiceProvided[index] = {
-          ...updatedServiceProvided[index],
-          name: value
+        ...updatedServiceProvided[index],
+        name: value,
       };
-  
+
       // Update the formData state with the modified service_provided array
-      setFormData(prevFormData => ({
-          ...prevFormData,
-          service_provided: updatedServiceProvided
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        service_provided: updatedServiceProvided,
       }));
-    } else{
+    } else if (
+      name === "offer_name" ||
+      name === "offer_amount" ||
+      name === "offer_description" ||
+      name === "offer_type"
+    ) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        offer: {
+          ...prevFormData.offer, // Spread the existing offers object
+          [name]: value, // Update the specific field
+        },
+      }));
+    } else {
       setFormData((prevFormData) => ({
         ...prevFormData,
         [name]: value,
@@ -116,10 +137,11 @@ const page = () => {
       if (value) {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          [name]: '',
+          [name]: "",
         }));
       }
     }
+
     console.log(formData);
   };
 
@@ -174,8 +196,8 @@ const page = () => {
       handleStepClick={handleStepClick}
     />,
     <Step2 key="2" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />,
-    <Step3 key="3" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />,
-    <Step4 key="4" handleStepClick={handleStepClick} formData={formData} handleInputChange={handleInputChange} />
+    <Step3 key="3" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />,
+    <Step4 key="4" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />
   ];
   const stepNames = ["Besic Info", "Services", "Offers", "Gallery", "Others"];
   
