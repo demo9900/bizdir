@@ -2,19 +2,23 @@
 import React, { useRef, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import { useRouter, usePathname } from "next/navigation";
-import { notFound } from "next/navigation";
+import { CldImage } from "next-cloudinary";
 import { CldUploadWidget } from "next-cloudinary";
 import Footer from "@/components/Footer";
 import { useSession } from "next-auth/react";
 import { signIn } from "next-auth/react";
 import { toast } from "react-toastify";
 import { client } from "@/lib/apollo";
-import { CREATE_CLAIM_REQUEST } from "@/lib/mutation";
+import { CREATE_CLAIM_REQUEST, CREATE_ENQUIRY } from "@/lib/mutation";
 import { GETLISTING } from "@/lib/query";
 import Link from "next/link";
 import BottomMenu from "@/components/BottomMenu";
+import Slider from "react-slick";
 
-const page =  ({ params }) => {
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const page = ({ params }) => {
   const { data: session, status, update } = useSession();
   const pathname = usePathname();
   const router = useRouter();
@@ -30,18 +34,69 @@ const page =  ({ params }) => {
     listing_date: "",
     description: "",
   });
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   const [activeSection, setActiveSection] = useState(null);
   const [claimModal, setClaimModal] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [listing, setListing] = useState();
+  const [loading, setLoading] = useState();
+  const [listing, setListing] = useState({});
   const [user, setUser] = useState();
+
+  const [enquiryFormData, setEnquiryFormData] = useState({
+    enquirer_name: "",
+    enquirer_email: "",
+    enquirer_mobile: "",
+    message: "",
+  });
+
   const aboutRef = useRef(null);
   const serviceRef = useRef(null);
   const galleryRef = useRef(null);
   const offerRef = useRef(null);
   const mapRef = useRef(null);
   const reviewRef = useRef(null);
+
+  const handleEnquiryFormData = (e) => {
+    console.log(e.target.name, e.target.value);
+    setEnquiryFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleEnquirySubmit = async (e) => {
+    e.preventDefault();
+
+    const enquiryData = {
+      ...enquiryFormData,
+      listing: listing._id,
+      user_id: listing.user,
+      enquiry_type: "listing",
+    };
+
+    try {
+      const { data, errors } = await client.mutate({
+        mutation: CREATE_ENQUIRY,
+        variables: { data: enquiryData },
+      });
+
+      console.log(data);
+
+      if (errors || data.createEnquiry.code !== 201) {
+        throw new Error("Something went wrong");
+      }
+
+      toast.success("Enquiry created successfully!!");
+      console.log(data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
 
   const handleChange = (event) => {
     setFormData({
@@ -137,38 +192,39 @@ const page =  ({ params }) => {
   };
 
   const getListing = async () => {
+   
     try {
-      setLoading(true)
       const { data, errors } = await client.query({
         query: GETLISTING,
         variables: { id: params.id },
       });
+
       if (errors || data.getListing.code !== 200) {
         throw new Error("Something went wrong");
       }
 
       const currentListing = await data.getListing.listing;
 
+      console.log(currentListing);
       setListing(currentListing);
       setFormData((prevFormData) => ({
         ...prevFormData,
-        listing_id: currentListing?._id,
-        listing_name: currentListing?.listing_name,
-        listing_image: currentListing?.listing_image,
-        listing_date: currentListing?.createdAt,
+        listing_id: currentListing._id,
+        listing_name: currentListing.listing_name,
+        listing_image: currentListing.listing_image,
+        listing_date: currentListing.createdAt,
       }));
-      setLoading(false)
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
   useEffect(() => {
-     getListing();
-    
-  }, []);
+    getListing();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session]);
 
-
+  console.log("all listings =>",listing)
   return (
     <div>
       <section>
@@ -202,7 +258,7 @@ const page =  ({ params }) => {
                       onClick={() => handleScrollToSection("service")}
                     >
                       <span>
-                        <i className="material-icons">business_center</i>{" "}
+                        <i className="material-icons">business_center</i>
                         Services
                       </span>
                     </li>
@@ -264,7 +320,7 @@ const page =  ({ params }) => {
             <div className="row">
               <div className="col-md-12">
                 <div className="pg-list-1-pro">
-                  <img src={listing?.listing_image} alt="" />{" "}
+                  <img src={listing?.listing_image} alt="" />
                   <span className="stat">
                     <i className="material-icons">verified_user</i>
                   </span>
@@ -272,16 +328,14 @@ const page =  ({ params }) => {
                 <div className="pg-list-1-left">
                   <h3>{listing?.listing_name}</h3>
                   <div className="list-rat-all">
-                    {" "}
                     <b>5.0</b>
                     <label className="rat">
-                      {" "}
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
                       <i className="material-icons">star</i>
-                    </label>{" "}
+                    </label>
                     <span>526 Reviews</span>
                   </div>
                   <p>
@@ -304,14 +358,12 @@ const page =  ({ params }) => {
                 <div className="list-ban-btn">
                   <ul>
                     <li>
-                      {" "}
                       <a href="tel:87654567" className="cta cta-call">
                         Call now
                       </a>
                     </li>
 
                     <li>
-                      {" "}
                       <a
                         href="https://wa.me/98765657486"
                         className="cta cta-rev"
@@ -320,7 +372,6 @@ const page =  ({ params }) => {
                       </a>
                     </li>
                     <li>
-                      {" "}
                       <span
                         onClick={handleClaimModal}
                         data-toggle="modal"
@@ -512,53 +563,29 @@ const page =  ({ params }) => {
                         <span>Photo</span> Gallery
                       </h3>
                     </div>
-                    <div className="list-pg-inn-sp">
-                      <div
-                        id="demo"
-                        className="carousel slide"
-                        data-ride="carousel"
-                      >
-                        {/* Indicators */}
-                        <ul className="carousel-indicators">
-                          <li
-                            data-target="#demo"
-                            data-slide-to={0}
-                            className="active"
+                    {listing?.gallery_images && (
+                      <div className="list-pg-inn-sp">
+                      <div className="carousel slide">
+                        <Slider {...settings}>
+                          {listing?.gallery_images?.map((image, idx) => {
+                            return (
+                              <div key={idx} className="h-[380px] w-full ">
+                               <CldImage
+                            width="750"
+                            crop="fill"
+                            gravity="east"
+                            height="380"
+                            src={image}
+                            alt="Description of my image"
                           />
-                          <li data-target="#demo" data-slide-to={1} />
-                          <li data-target="#demo" data-slide-to={2} />
-                        </ul>
-                        {/* The slideshow */}
-                        <div className="carousel-inner">
-                          <div className="carousel-item active">
-                            <img src="/listings/1.jpg" alt="" />
-                          </div>
-                          <div className="carousel-item ">
-                            <img src="/listings/2.jpg" alt="" />
-                          </div>
-                          <div className="carousel-item ">
-                            <img src="/listings/14.jpg" alt="" />
-                          </div>
-                        </div>
-                        {/* Left and right controls */}
-                        <a
-                          className="carousel-control-prev"
-                          href="#demo"
-                          data-slide="prev"
-                        >
-                          {" "}
-                          <span className="carousel-control-prev-icon" />
-                        </a>
-                        <a
-                          className="carousel-control-next"
-                          href="#demo"
-                          data-slide="next"
-                        >
-                          {" "}
-                          <span className="carousel-control-next-icon" />
-                        </a>
+                              </div>
+                            );
+                          })}
+                        </Slider>
                       </div>
                     </div>
+                    )}
+                    
                   </div>
                   {/*END LISTING DETAILS: LEFT PART 3*/}
                   {/*LISTING DETAILS: LEFT PART 4*/}
@@ -576,27 +603,31 @@ const page =  ({ params }) => {
                       <div className="home-list-pop">
                         {/*LISTINGS IMAGE*/}
                         <div className="col-md-3">
-                          <img src="/services/2.jpeg" alt="" />
+                          {listing?.offer?.offer_image && (
+                             <CldImage
+                             width="150"
+                             height="172"
+                             src={listing?.offer?.offer_image}
+                             alt="Description of my image"
+                           />
+                          )}
+                       
                         </div>
                         {/*LISTINGS: CONTENT*/}
                         <div className="col-md-9 home-list-pop-desc inn-list-pop-desc list-room-deta">
                           <a href="#!">
-                            <h3>Villa offer 10%</h3>
+                            <h3>{listing?.offer?.offer_name}</h3>
                           </a>
                           <p>
-                            Special booking March offer It is a long established
-                            fact that a reader will be distracted by the
-                            readable content of a page when looking at its
-                            layout.
-                          </p>{" "}
+                            {listing?.offer?.offer_description}
+                          </p>
                           <span className="home-list-pop-rat list-rom-pric">
-                            $5000
+                            {listing?.offer?.offer_amount }{listing?.offer?.offer_type=== 'percent' ? '%':'₹'}
                           </span>
                           <div className="list-enqu-btn">
                             <ul>
                               <li>
-                                {" "}
-                                <a target="_blank" href="#">
+                                <a  href="#">
                                   View more
                                 </a>
                               </li>
@@ -896,13 +927,12 @@ const page =  ({ params }) => {
                           <h5>Overall Ratings</h5>
                           <p>
                             <label className="rat">
-                              {" "}
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
                               <i className="material-icons">star</i>
-                            </label>{" "}
+                            </label>
                             <span>based on 1 reviews</span>
                           </p>
                         </div>
@@ -917,13 +947,12 @@ const page =  ({ params }) => {
                             <div className="lr-user-wr-con">
                               <h6>Rn53 Themes</h6>
                               <label className="rat">
-                                {" "}
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
                                 <i className="material-icons">star</i>
-                              </label>{" "}
+                              </label>
                               <span className="lr-revi-date">07, Mar 2021</span>
                               <p>
                                 verified_userRolexo Villas is well-known to all
@@ -949,7 +978,6 @@ const page =  ({ params }) => {
                   {/*END LISTING DETAILS: LEFT PART 5*/}
                   {/*ADS*/}
                   <div className="ban-ati-com ads-det-page">
-                    {" "}
                     <a href="#">
                       <span>Ad</span>
                       <img src="/ads/3.png" alt="ads-3" />
@@ -968,7 +996,6 @@ const page =  ({ params }) => {
                           <div className="land-pack-grid-text">
                             <h4>Core real estates</h4>
                             <div className="list-rat-all">
-                              {" "}
                               <b />
                             </div>
                           </div>
@@ -987,7 +1014,6 @@ const page =  ({ params }) => {
                           <div className="land-pack-grid-text">
                             <h4>Museo Villas and Plots</h4>
                             <div className="list-rat-all">
-                              {" "}
                               <b />
                             </div>
                           </div>
@@ -1006,7 +1032,6 @@ const page =  ({ params }) => {
                           <div className="land-pack-grid-text">
                             <h4>ccc</h4>
                             <div className="list-rat-all">
-                              {" "}
                               <b />
                             </div>
                           </div>
@@ -1049,44 +1074,13 @@ const page =  ({ params }) => {
                       >
                         <p>Something Went Wrong!!!</p>
                       </div>
-                      <form
-                        method="post"
-                        name="detail_enquiry_form"
-                        id="detail_enquiry_form"
-                      >
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="listing_id"
-                          defaultValue={385}
-                          required
-                        />
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="listing_user_id"
-                          defaultValue={325}
-                          required
-                        />
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="enquiry_sender_id"
-                          defaultValue={37}
-                          required
-                        />
-                        <input
-                          type="hidden"
-                          className="form-control"
-                          name="enquiry_source"
-                          defaultValue="Website"
-                          required
-                        />
+                      <form onSubmit={handleEnquirySubmit}>
                         <div className="form-group ic-user">
                           <input
                             type="text"
-                            name="enquiry_name"
-                            defaultValue="Rn53 Themes"
+                            name="enquirer_name"
+                            value={enquiryFormData.enquirer_name}
+                            onChange={handleEnquiryFormData}
                             required="required"
                             className="form-control"
                             placeholder="Enter name*"
@@ -1098,8 +1092,9 @@ const page =  ({ params }) => {
                             className="form-control"
                             placeholder="Enter email*"
                             required="required"
-                            defaultValue="rn53themes@gmail.com"
-                            name="enquiry_email"
+                            value={enquiryFormData.enquirer_email}
+                            onChange={handleEnquiryFormData}
+                            name="enquirer_email"
                             pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
                             title="Invalid email address"
                           />
@@ -1108,8 +1103,9 @@ const page =  ({ params }) => {
                           <input
                             type="text"
                             className="form-control"
-                            defaultValue={5522114422}
-                            name="enquiry_mobile"
+                            value={enquiryFormData.enquirer_mobile}
+                            onChange={handleEnquiryFormData}
+                            name="enquirer_mobile"
                             placeholder="Enter mobile number *"
                             pattern="[7-9]{1}[0-9]{9}"
                             title="Phone number starting with 7-9 and remaing 9 digit with 0-9"
@@ -1120,9 +1116,10 @@ const page =  ({ params }) => {
                           <textarea
                             className="form-control"
                             rows={3}
-                            name="enquiry_message"
+                            name="message"
                             placeholder="Enter your query or message"
-                            defaultValue={""}
+                            value={enquiryFormData.message}
+                            onChange={handleEnquiryFormData}
                           />
                         </div>
                         <input type="hidden" id="source" />
@@ -1171,7 +1168,6 @@ const page =  ({ params }) => {
                     <div className="lis-comp-badg">
                       <div className="s1">
                         <div>
-                          {" "}
                           <span className="by">Business profile</span>
                           <img className="proi" src="/user/1.png" alt="" />
                           <h4>Rn53 Themes net</h4>
@@ -1225,7 +1221,6 @@ const page =  ({ params }) => {
                         </div>
                       </div>
                       <div className="s2">
-                        {" "}
                         <a
                           target="_blank"
                           href="company-profile.html"
@@ -1310,15 +1305,14 @@ const page =  ({ params }) => {
                   <div className="ld-rhs-pro pglist-bg pglist-p-com">
                     <div className="lis-pro-badg">
                       <div>
-                        {" "}
                         <span className="rat" alt="User rating">
                           4.2
                         </span>
                         <span className="by">Created by</span>
                         <img src="/user/3.jpg" alt="" />
-                        <h4>{listing?.user_name}</h4>
+                        <h4>{listing?.user_name?.length > 0 ? listing?.user_name: listing?.createdBy?.name }</h4>
                         <p>Member since Feb 2021</p>
-                      </div>{" "}
+                      </div>
                       <Link
                         href={`/profile/${listing?.user}`}
                         className="fclick"
@@ -1344,10 +1338,10 @@ const page =  ({ params }) => {
                   {/*END LISTING DETAILS: LEFT PART 10*/}
                   {/*ADS*/}
                   <div className="ban-ati-com ads-det-page">
-                    {" "}
                     <a href="#">
                       <span>Ad</span>
-                      <img src="/ads/59040boat-728x90.png" alt="boat-ads" />
+                      {/* This is giving error */}
+                      {/* <img src="/ads/59040boat-728x90.png" alt="boat-ads" /> */}
                     </a>
                   </div>
                   {/*ADS*/}
@@ -1374,7 +1368,6 @@ const page =  ({ params }) => {
                     </p>
                   </div>
                   <div className="col-md-3 bb-link">
-                    {" "}
                     <Link href="/pricing-details">Add my business</Link>
                   </div>
                 </div>
@@ -1505,8 +1498,7 @@ const page =  ({ params }) => {
                         name="popup_enquiry_submit"
                         className="btn btn-primary"
                       >
-                        {" "}
-                        Log In To Submit{" "}
+                        Log In To Submit
                       </button>
                     </form>
                   </div>

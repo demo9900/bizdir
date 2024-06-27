@@ -7,7 +7,9 @@ const ListingCard = ({ item, id }) => {
       <div className="eve-box">
         {/*-LISTING IMAGE-*/}
         <div className="al-img">
-          <span className="open-stat">open</span>
+          {item?.isClaimed?.length > 0 && (
+          <span className="open-stat">{item?.isClaimed}</span>
+          )}
           <Link href={`/all-listing/${item._id}`}>
             <img src={item.listing_image} alt="" />
           </Link>
@@ -32,18 +34,11 @@ const ListingCard = ({ item, id }) => {
           <span className="pho">{item.phone_number}</span>
           <span className="mail">{item.email}</span>
           <div className="links">
-            <Link
-              href="/#"
-              data-toggle="modal"
-              data-target="#quote"
-              className="quo"
-            >
-              Get quote
-            </Link>
+            
             <Link href={`/all-listing/${item._id}`}>View more</Link>
             <Link href="/Tel:7904462944">Call Now</Link>
             <Link
-              href="/https://wa.me/7904462944"
+              href="https://wa.me/7904462944"
               className="what"
               target="_blank"
             >

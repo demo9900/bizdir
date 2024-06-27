@@ -178,7 +178,15 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
               <div className="form-group">
                 <label>Choose profile image</label>
                 <div className="fil-img-uplo">
-                <span className="dumfil">{selectprofile ? selectprofile : 'Upload a file'}</span>
+                <span
+                                  className={`dumfil ${
+                                    selectprofile ? "!text-green-600" : ""
+                                  }`}
+                                >
+                                  {selectprofile
+                                    ? selectprofile
+                                    : "Upload a file"}
+                                </span>
                 <CldUploadWidget
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
@@ -187,6 +195,9 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
                     ...prevFormData,
                     listing_image: result?.info?.secure_url,
                   }));
+                  toast.success(
+                    "your image uploaded successfully!"
+                  );
                   setSelectProfile(result?.info?.original_filename)
                   console.log(result?.info)
                   widget.close();
@@ -210,7 +221,13 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
               <div className="form-group">
                 <label>Choose cover image</label>
                 <div className="fil-img-uplo">
-                <span className="dumfil">{selectcover ? selectcover : 'Upload a file'}</span>
+                <span
+                                  className={`dumfil ${
+                                    selectcover ? "!text-green-600" : ""
+                                  }`}
+                                >
+                                  {selectcover ? selectcover : " Upload a file"}
+                                </span>
                    <CldUploadWidget
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
@@ -219,6 +236,9 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
                     ...prevFormData,
                     cover_image: result?.info?.secure_url,
                   }));
+                  toast.success(
+                    "your image uploaded successfully!"
+                  );
                   setSelectCover(result?.info?.original_filename)
                   widget.close();
                 }}

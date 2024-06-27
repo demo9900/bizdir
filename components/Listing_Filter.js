@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { client } from "@/lib/apollo";
 import { gql } from "@apollo/client";
-import { GetAllstates,GetCityByState,GetAreaByCity,GetStateByCity } from "@/lib/query";
+import { GetAllstates,GetCityByState,GetAreaByCity,GET_ALL_CATEGORY } from "@/lib/query";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/navigation";
 const Listing_Filter =  ({location}) => {
@@ -35,6 +35,8 @@ const Listing_Filter =  ({location}) => {
     const [state,setState] = useState();
     const [city,setCity] = useState();
     const [area,setArea] = useState();
+    const [subcat,setSubCat] = useState();
+    const [filteredsubcat,setFilteredSubCat] = useState();
 
     const [select, setSelect] = useState({
         num: null,
@@ -56,6 +58,11 @@ const Listing_Filter =  ({location}) => {
         _id:'',
         keyword: "",
         value: '',
+    });
+    const [searchService, setSearchService] = useState({
+        keyword: "",
+        value: '',
+        type:''
     });
     useEffect(() => {
         const fetchData = async () => {
@@ -92,7 +99,25 @@ const Listing_Filter =  ({location}) => {
                 setArea(mappedarea);
                 }
                
-                
+                const res3 = await client.query({query:GET_ALL_CATEGORY})
+                const {getAllCategories} = await res3.data;
+                if(getAllCategories.code !== 200){
+                  throw new Error('Failed to fetch category.')
+                }
+                const serviceCategory = getAllCategories?.categories?.find(item => item.category_name.toLowerCase() === 'service');
+                // console.log('servicecategory =>',serviceCategory);
+                if (serviceCategory) {
+                    const mappedSubcategories = serviceCategory.subcategories.map(item => ({
+                     name:item.subcategory_name,
+                     tags:item.tags
+                    }));
+                  
+                    setSubCat(mappedSubcategories);
+                    // setFilteredSubCat(mappedSubcategories)
+
+                  } else {
+                    setSubCat([]); // Or handle the case when the service category is not found
+                  }
                 
             } catch (error) {
                 console.error('something went wrong:', error);
@@ -103,8 +128,34 @@ const Listing_Filter =  ({location}) => {
         fetchData();
       }, [searchState,searchCity]);
      
+      useEffect(() => {
+        if (searchService.keyword.trim() !== '') {
+          const input = searchService.keyword.toLowerCase();
+          
+          // Filter by name
+          const filtered = subcat.filter(item =>
+            item.name.toLowerCase().includes(input)
+          ); 
+          
+          if (filtered.length === 0) {
+            // Filter by tags and collect only matching tags
+            const filteredByTags = subcat.flatMap(item => 
+              item.tags.filter(tag => tag.toLowerCase().includes(input))
+            );
+            const findtag = filteredByTags.map(item=>({name:item,type:'tag'}))
+            setFilteredSubCat(findtag);
+            
+          } else {
+            setFilteredSubCat(filtered.map(item => ({name:item.name,type:'subcat'}))); // or whatever you need to show for name matches
+          }
+        } else {
+          setFilteredSubCat(subcat?.map(item=>({name: item.name,type:'subcat'})));
+        }
+      }, [searchService, subcat]);
+      
+      
     
-    
+    console.log("subcategory fatched =>",filteredsubcat);
     
      
   
@@ -124,10 +175,7 @@ const Listing_Filter =  ({location}) => {
         "Transportation",
     ];
     
-    const [searchService, setSearchService] = useState({
-        keyword: "",
-        value: '',
-    });
+   
     const handleClick = (num) => {
         setSelect((prevState) => ({
             num: num,
@@ -190,8 +238,10 @@ const Listing_Filter =  ({location}) => {
         } else if (number === 4) {
             setSearchService((prevState) => ({
                 ...prevState,
-                value: option,
+                value: option.name,
+                type:option.type
             }));
+
         }
 
         setSelect((prevState) => ({
@@ -211,14 +261,12 @@ const Listing_Filter =  ({location}) => {
     const filteredarea = area?.filter((option) =>
         option.name.toLowerCase().includes(seachArea.keyword.toLowerCase())
     );
-    const filteredServices = services.filter((option) =>
-        option.toLowerCase().includes(searchService.keyword.toLowerCase())
-    );
+    
     const router = useRouter();
     const handleSubmit = (e) => {
         e.preventDefault();
         // Redirect user to the desired route
-        router.push(`/all-listing?category=${encodeURIComponent(searchService.value)}&state=${encodeURIComponent(searchState.value)}&city=${encodeURIComponent(searchCity.value)}&area=${encodeURIComponent(seachArea.value)}`);
+        router.push(`/all-listing?state=${encodeURIComponent(searchState.value)}&city=${encodeURIComponent(searchCity.value)}&area=${encodeURIComponent(seachArea.value)}${searchService.type=== 'subcat' ? `&subcategory=${encodeURIComponent(searchService.value)}`:`&tags=${encodeURIComponent(searchService.value)}`}`);
       };
     return (
         <div className="ban-search ban-sear-all">
@@ -459,20 +507,20 @@ const Listing_Filter =  ({location}) => {
                                     />
                                 </div>
                                 <ul className="chosen-results">
-                                    {filteredServices.map((option) => (
+                                    {filteredsubcat?.map((option,index) => (
                                         <li
-                                            key={option}
+                                            key={index}
                                             onClick={() =>
                                                 handleOptionClick(option, 4)
                                             }
                                             className={`active-result result-selected ${
-                                                option ===
+                                                option.name ===
                                                     searchService.value &&
                                                 "highlighted"
                                             }`}
                                             data-option-array-index={0}
                                         >
-                                            {option}
+                                            {option.name}
                                         </li>
                                     ))}
                                 </ul>
