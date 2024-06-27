@@ -75,7 +75,7 @@ const page = ({ params }) => {
     const enquiryData = {
       ...enquiryFormData,
       listing: listing._id,
-      user_id: listing.user,
+      user_id: listing.user._id,
       enquiry_type: "listing",
     };
 
@@ -92,6 +92,13 @@ const page = ({ params }) => {
       }
 
       toast.success("Enquiry created successfully!!");
+
+      setEnquiryFormData({
+        enquirer_name: "",
+        enquirer_email: "",
+        enquirer_mobile: "",
+        message: "",
+      });
       console.log(data);
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -192,7 +199,6 @@ const page = ({ params }) => {
   };
 
   const getListing = async () => {
-   
     try {
       const { data, errors } = await client.query({
         query: GETLISTING,
@@ -225,7 +231,7 @@ const page = ({ params }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
-  console.log("all listings =>",listing)
+  console.log("all listings =>", listing);
   return (
     <div>
       <section>
@@ -616,15 +622,21 @@ const page = ({ params }) => {
                           <img src="/slider/2.jpg" alt="Los Angeles" />
                           <Link href="//demo" target="_blank" />
                         </div> */}
-                          {listing?.gallery_images?.map((image, idx) => {
-                            return (
-                              <div key={idx}>
-                                <img src={image} alt="carousel-image" style={{
-                                  backgroundSize: "cover"
-                                }} height={200} />
-                              </div>
-                            );
-                          })}
+                          {listing?.gallery_images &&
+                            listing?.gallery_images?.map((image, idx) => {
+                              return (
+                                <div key={idx}>
+                                  <img
+                                    src={image}
+                                    alt="carousel-image"
+                                    style={{
+                                      backgroundSize: "cover",
+                                    }}
+                                    height={750}
+                                  />
+                                </div>
+                              );
+                            })}
                         </Slider>
                       </div>
                     </div>
@@ -645,30 +657,29 @@ const page = ({ params }) => {
                       <div className="home-list-pop">
                         {/*LISTINGS IMAGE*/}
                         <div className="col-md-3">
-                        <CldImage
+                          {/* <CldImage
                             width="150"
                             height="172"
                             src={listing?.offer?.offer_image}
                             alt="Description of my image"
-                          />
+                          /> */}
                         </div>
                         {/*LISTINGS: CONTENT*/}
                         <div className="col-md-9 home-list-pop-desc inn-list-pop-desc list-room-deta">
                           <a href="#!">
                             <h3>{listing?.offer?.offer_name}</h3>
                           </a>
-                          <p>
-                            {listing?.offer?.offer_description}
-                          </p>
+                          <p>{listing?.offer?.offer_description}</p>
                           <span className="home-list-pop-rat list-rom-pric">
-                            {listing?.offer?.offer_amount }{listing?.offer?.offer_type=== 'percent' ? '%':'₹'}
+                            {listing?.offer?.offer_amount}
+                            {listing?.offer?.offer_type === "percent"
+                              ? "%"
+                              : "₹"}
                           </span>
                           <div className="list-enqu-btn">
                             <ul>
                               <li>
-                                <a  href="#">
-                                  View more
-                                </a>
+                                <a href="#">View more</a>
                               </li>
                               <li>
                                 <a
@@ -1353,7 +1364,7 @@ const page = ({ params }) => {
                         <p>Member since Feb 2021</p>
                       </div>
                       <Link
-                        href={`/profile/${listing?.user}`}
+                        href={`/profile/${listing?.user?.id}`}
                         className="fclick"
                       >
                         &nbsp;
