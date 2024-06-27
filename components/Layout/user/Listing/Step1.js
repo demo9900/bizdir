@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Location_Filter from '@/components/Location_Filter'
 import { CldUploadWidget } from 'next-cloudinary';
+import { toast } from 'react-toastify';
 
 const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,setErrors}) => {
 
@@ -128,28 +129,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
           </div>
           {/*FILED END*/}
           {/*FILED START*/}
-          <div className="row">
-            <div className="col-md-6">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="listing_lat"
-                  className="form-control"
-                  placeholder="Latitude i.e 40.730610"
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="listing_lng"
-                  className="form-control"
-                  placeholder="Longitude i.e -73.935242"
-                />
-              </div>
-            </div>
-          </div>
+      
           
         <Location_Filter errors={errors} setErrors={setErrors}  formData={formData} InputChange={handleInputChange} setFormData={setFormData} />
         <div className="row">
@@ -178,7 +158,15 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
               <div className="form-group">
                 <label>Choose profile image</label>
                 <div className="fil-img-uplo">
-                <span className="dumfil">{selectprofile ? selectprofile : 'Upload a file'}</span>
+                <span
+                                  className={`dumfil ${
+                                    selectprofile ? "!text-green-600" : ""
+                                  }`}
+                                >
+                                  {selectprofile
+                                    ? selectprofile
+                                    : "Upload a file"}
+                                </span>
                 <CldUploadWidget
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
@@ -187,6 +175,9 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
                     ...prevFormData,
                     listing_image: result?.info?.secure_url,
                   }));
+                  toast.success(
+                    "your image uploaded successfully!"
+                  );
                   setSelectProfile(result?.info?.original_filename)
                   console.log(result?.info)
                   widget.close();
@@ -210,7 +201,13 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
               <div className="form-group">
                 <label>Choose cover image</label>
                 <div className="fil-img-uplo">
-                <span className="dumfil">{selectcover ? selectcover : 'Upload a file'}</span>
+                <span
+                                  className={`dumfil ${
+                                    selectcover ? "!text-green-600" : ""
+                                  }`}
+                                >
+                                  {selectcover ? selectcover : " Upload a file"}
+                                </span>
                    <CldUploadWidget
                 signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='listing_image'
@@ -219,6 +216,9 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
                     ...prevFormData,
                     cover_image: result?.info?.secure_url,
                   }));
+                  toast.success(
+                    "your image uploaded successfully!"
+                  );
                   setSelectCover(result?.info?.original_filename)
                   widget.close();
                 }}

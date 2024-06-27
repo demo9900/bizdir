@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
+import { CldUploadWidget } from "next-cloudinary";
+import { toast } from "react-toastify";
+const Step3 = ({ formData, handleInputChange, setFormData, handleStepClick }) => {
+  const [selectoffer, setSelectOffer] = useState();
 
-const Step3 = ({ formData, handleInputChange, handleStepClick }) => {
   return (
     <div className="row">
       <div className="login-main add-list">
@@ -19,72 +22,118 @@ const Step3 = ({ formData, handleInputChange, handleStepClick }) => {
               -
             </span>
             <ul>
-              <li>
-                {/*FILED START*/}
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        name="offer_name"
-                        className="form-control"
-                        placeholder="Offer name *"
-                        value={formData.offers?.offer_name}
-                        onChange={handleInputChange}
-                        required="required"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        name="price"
-                        className="form-control"
-                        onKeyDown={(e) => !isNaN(e.target.value)}
-                        placeholder="Price"
-                        value={formData.offers?.price}
-                        onChange={handleInputChange}
-                        required="required"
-                      />
-                    </div>
-                  </div>
-                </div>
-                {/*FILED END*/}
-                {/*FILED START*/}
-                <div className="row">
-                  <div className="col-md-12">
-                    <div className="form-group">
-                      <textarea
-                        className="form-control"
-                        name="description"
-                        placeholder="Details about this offer"
-                        value={formData.offers?.description}
-                        onChange={handleInputChange}
-                        required="required"
-                      />
-                    </div>
-                  </div>
-                </div>
-                {/*FILED END*/}
-                {/*FILED START*/}
-                <div className="row">
-                  <div className="col-md-12">
-                    <div className="form-group">
-                      <label>Choose offer image</label>
-                      <input
-                        type="file"
-                        name="service_1_image[]"
-                        className="form-control"
-                      />
-                    </div>
-                  </div>
-                </div>
-                {/*FILED END*/}
-                {/*FILED START*/}
-                {/*FILED END*/}
-              </li>
-            </ul>
+                          <li>
+                            {/*FILED START*/}
+                            <div className="row">
+                              <div className="col-md-5">
+                                <div className="form-group">
+                                  <input
+                                    type="text"
+                                    name="offer_name"
+                                    className="form-control"
+                                    placeholder="Offer name *"
+                                    value={formData.offer?.offer_name}
+                                    onChange={handleInputChange}
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-4">
+                                <div className="form-group">
+                                  <input
+                                    type="text"
+                                    name="offer_amount"
+                                    className="form-control"
+                                    placeholder="amount"
+                                    value={formData.offer?.offer_amount}
+                                    onChange={handleInputChange}
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-3">
+                              <div className="form-group">
+                            <select name="offer_type" required="required"  value={formData.offer.offer_type} onChange={handleInputChange}  className="form-control !w-[60px] ">
+                              <option value="percent"> %</option>
+                              <option value="flate"> ₹</option>
+                              
+                            </select>
+                          </div>
+                              </div>
+                            </div>
+                            
+                            {/*FILED END*/}
+                            {/*FILED START*/}
+                            <div className="row">
+                              <div className="col-md-12">
+                                <div className="form-group">
+                                  <textarea
+                                    className="form-control"
+                                    name="offer_description"
+                                    placeholder="Details about this offer"
+                                    value={formData.offer?.offer_description}
+                                    onChange={handleInputChange}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            {/*FILED END*/}
+                            {/*FILED START*/}
+                            <div className="row">
+                              <div className="col-md-12">
+                                <div className="form-group">
+                                  <label>Choose offer image</label>
+                                  <div className="fil-img-uplo">
+                                    <span
+                                      className={`dumfil ${
+                                        selectoffer ? "!text-green-600" : ""
+                                      }`}
+                                    >
+                                      {selectoffer
+                                        ? selectoffer
+                                        : "Upload a file"}
+                                    </span>
+                                    <CldUploadWidget
+                                      signatureEndpoint="/api/sign-cloudinary-params"
+                                      uploadPreset="listing_image"
+                                      onSuccess={(result, { widget }) => {
+                                        setFormData((prevFormData) => ({
+                                          ...prevFormData,
+                                          offer: {
+                                            ...prevFormData.offer, // Spread the existing offers object
+                                            offer_image:  result?.info?.secure_url, // Update the specific field
+                                          },
+                                        }));
+                                        toast.success(
+                                          "your image uploaded successfully!"
+                                        );
+                                        setSelectOffer(
+                                          result?.info?.original_filename
+                                        );
+                                        widget.close();
+                                      }}
+                                    >
+                                      {({ open }) => {
+                                        function handleOnClick() {
+                                          open();
+                                        }
+                                        return (
+                                          <button
+                                            type="button"
+                                            onClick={handleOnClick}
+                                          >
+                                            upload image
+                                          </button>
+                                        );
+                                      }}
+                                    </CldUploadWidget>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            {/*FILED END*/}
+                            {/*FILED START*/}
+                            {/*FILED END*/}
+                          </li>
+                        </ul>
             <div className="row">
               <div className="col-md-6">
                 <button

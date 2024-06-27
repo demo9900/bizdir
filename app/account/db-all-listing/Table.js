@@ -2,7 +2,11 @@
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { GET_USER_LISTINGS } from "@/lib/query";
+import { DELETE_LISTING } from "@/lib/mutation";
+import { client } from "@/lib/apollo";
 import { toast } from "react-toastify";
+import { CldImage } from "next-cloudinary";
 
 const Table = () => {
   const [listingData, setListingData] = useState([]);
@@ -11,23 +15,26 @@ const Table = () => {
 
   const getListingData = async () => {
     try {
-      setLoading(true);
-      const res = await fetch(
-        process.env.BACKEND_URL + `/api/listing/user/${session.user.id}`,
-        {
+      const { data, errors } = await client.query({
+        query: GET_USER_LISTINGS,
+        fetchPolicy:"no-cache",
+        variables: { userId:session?.user.id },
+        context: {
           headers: {
-            authorization: "Bearer " + session.jwt,
+            Authorization: `Bearer ${session.jwt}`,
           },
-        }
-      );
+        },
+      });
 
-      const data = await res.json();
+      if (errors || data.getUserListings.code !== 200) {
+        throw new Error("Something went wrong");
+      }
 
+      setListingData(data.getUserListings.listings);
       console.log(data);
-      setListingData(data);
       setLoading(false);
     } catch (error) {
-      console.error(error);
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -37,22 +44,28 @@ const Table = () => {
   }, [session]);
 
   const deleteListing = async (id) => {
+
     try {
-      const res = await fetch(process.env.BACKEND_URL + "/api/listing/" + id, {
-        headers: {
-          authorization: "Bearer " + session.jwt,
+      const { data, errors } = await client.mutate({
+        mutation: DELETE_LISTING,
+        variables: { id: id },
+        context: {
+          headers: {
+            Authorization: `Bearer ${session.jwt}`,
+          },
         },
-        method: "DELETE",
       });
 
-      if (res.status === 200) {
-        toast.success("listing deleted successfully");
-        // Call getListingData to update the listing data
-        getListingData();
+      if (errors || data.deleteListing.code !== 200) {
+        throw new Error("Something went wrong");
       }
+      getListingData();
+      setLoading(false);
+      toast.success("Listing deleted successfully");
+      console.log(data);
     } catch (error) {
-      console.error(error);
-      toast.error("somthing went wrong");
+      toast.error("something went wrong");
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -88,7 +101,16 @@ const Table = () => {
                     listing.listing_status === "Disabled" ? "disabled" : ""
                   }`}
                 >
-                  <img src={listing.listing_image} alt="N/A" />
+                  <CldImage
+                  width="50"
+                  height="50"
+                  gravity="east"
+                  src={listing.listing_image.length > 0 ? listing.listing_image : 'https://res.cloudinary.com/dncikfz66/image/upload/v1719473731/bizdir/listing/defaultlisting.png'}
+                  sizes="100vw"
+                  alt={listing.listing_name}
+                />
+
+
                   {listing.listing_name}
                   {/* <span>09, Apr 2021</span> */}
                 </td>

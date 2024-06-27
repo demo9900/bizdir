@@ -1,6 +1,7 @@
 import React from "react";
+import UploadGallery from "../../UploadGallery";
 
-const Step4 = ({ formData, handleInputChange, handleStepClick }) => {
+const Step4 = ({ formData,setFormData, handleInputChange, handleStepClick }) => {
   return (
     <div className="row">
       <div className="login-main add-list">
@@ -54,76 +55,9 @@ const Step4 = ({ formData, handleInputChange, handleStepClick }) => {
                 </div>
               </div>
             </div>
-            {/*FILED END*/}
-            {/*FILED START*/}
-
-            {/*FILED END*/}
-            <h4 className="pt30">Photo gallery</h4>
-            {/*FILED START*/}
-            <div className="row">
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input
-                    type="file"
-                    name="gallery_image[]"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input
-                    type="file"
-                    name="gallery_image[]"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-            </div>
-            {/*FILED END*/}
-            {/*FILED START*/}
-            <div className="row">
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input
-                    type="file"
-                    name="gallery_image[]"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input
-                    type="file"
-                    name="gallery_image[]"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-            </div>
-            {/*FILED END*/}
-            {/*FILED START*/}
-            <div className="row">
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input
-                    type="file"
-                    name="gallery_image[]"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="form-group">
-                  <input
-                    type="file"
-                    name="gallery_image[]"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-            </div>
+         
+         <UploadGallery formData={formData}
+                          setFormData={setFormData} />
             <div class="row">
               <div className="col-md-6">
                 <button
