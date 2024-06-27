@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Location_Filter from '@/components/Location_Filter'
 import { CldUploadWidget } from 'next-cloudinary';
+import { toast } from 'react-toastify';
 
 const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,setErrors}) => {
 
@@ -128,28 +129,7 @@ const Step1 = ({formData,handleInputChange,setFormData,handleStepClick,errors,se
           </div>
           {/*FILED END*/}
           {/*FILED START*/}
-          <div className="row">
-            <div className="col-md-6">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="listing_lat"
-                  className="form-control"
-                  placeholder="Latitude i.e 40.730610"
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="listing_lng"
-                  className="form-control"
-                  placeholder="Longitude i.e -73.935242"
-                />
-              </div>
-            </div>
-          </div>
+      
           
         <Location_Filter errors={errors} setErrors={setErrors}  formData={formData} InputChange={handleInputChange} setFormData={setFormData} />
         <div className="row">

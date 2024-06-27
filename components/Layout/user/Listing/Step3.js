@@ -44,7 +44,7 @@ const Step3 = ({ formData, handleInputChange, setFormData, handleStepClick }) =>
                                     name="offer_amount"
                                     className="form-control"
                                     placeholder="amount"
-                                    value={formData.offer?.amount}
+                                    value={formData.offer?.offer_amount}
                                     onChange={handleInputChange}
                                   />
                                 </div>
@@ -69,7 +69,7 @@ const Step3 = ({ formData, handleInputChange, setFormData, handleStepClick }) =>
                                     className="form-control"
                                     name="offer_description"
                                     placeholder="Details about this offer"
-                                    value={formData.offer?.description}
+                                    value={formData.offer?.offer_description}
                                     onChange={handleInputChange}
                                   />
                                 </div>
