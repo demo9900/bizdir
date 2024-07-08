@@ -14867,18 +14867,14 @@ color: #333;
 .plac-hom-box-txt span:nth-child(1).red-sml-cta{background:var(--red);width:auto;color:#fff;font-size:12px;padding:3px 16px;border-radius:2px;font-weight:500;margin-right:25px}
 .plac-hom-all-pla{float:left;width:100%;position:relative;overflow:hidden;padding:0 8px}
 .plac-hom-box-im > small {
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 1px 5px 2px 5px;
     position: absolute;
-    background: #ffff60;
     top: 12px;
-    left: -36px;
-    padding: 6px 36px;
-    /* width: 300px; */
-    /* color: white; */
-    font-size: 12px;
-    /* border-radius: 300px; */
-    transform: rotate(-45deg);
-    font-weight: 800;
-    z-index: 1000;
+    left: 12px;
+    color: white;
 }
 
 

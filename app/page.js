@@ -45,36 +45,36 @@ const page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if(location.city){
-        const res = await client.query({
-          query: GET_LISTING_BY_TYPE,
-          fetchPolicy: "no-cache",
-          variables: { type: "popular", city: location.city },
-        });
-        const res2 = await client.query({
-          query: GET_LISTING_BY_TYPE,
-          fetchPolicy: "no-cache",
-          variables: { type: "latest", city: location.city },
-        });
-        const res3 = await client.query({
-          query: GET_LISTING_BY_TYPE,
-          fetchPolicy: "no-cache",
-          variables: { type: "verified", city: location.city },
-        });
-        const { getListingsByTypes: data1 } = await res.data;
-        const { getListingsByTypes: data2 } = await res2.data;
-        const { getListingsByTypes: data3 } = await res3.data;
-        if (data1.code !== 200 && data2.code !== 200 && data3.code !== 200) {
-          throw new Error("Failed to fetch data");
+        if (location.city) {
+          const res = await client.query({
+            query: GET_LISTING_BY_TYPE,
+            fetchPolicy: "no-cache",
+            variables: { type: "popular", city: location.city },
+          });
+          const res2 = await client.query({
+            query: GET_LISTING_BY_TYPE,
+            fetchPolicy: "no-cache",
+            variables: { type: "latest", city: location.city },
+          });
+          const res3 = await client.query({
+            query: GET_LISTING_BY_TYPE,
+            fetchPolicy: "no-cache",
+            variables: { type: "verified", city: location.city },
+          });
+          const { getListingsByTypes: data1 } = await res.data;
+          const { getListingsByTypes: data2 } = await res2.data;
+          const { getListingsByTypes: data3 } = await res3.data;
+          if (data1.code !== 200 && data2.code !== 200 && data3.code !== 200) {
+            throw new Error("Failed to fetch data");
+          }
+          const { listings: list1 } = await data1;
+          setTrendingList(list1);
+          const { listings: list2 } = await data2;
+          setLatestList(list2);
+          const { listings: list3 } = await data3;
+          setVerifiedList(list3);
         }
-        const { listings: list1 } = await data1;
-        setTrendingList(list1);
-        const { listings: list2 } = await data2;
-        setLatestList(list2);
-        const { listings: list3 } = await data3;
-        setVerifiedList(list3);
-      
-      }} catch (error) {
+      } catch (error) {
         console.error("something went wrong:", error);
       }
     };
@@ -87,7 +87,7 @@ const page = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  
+
   const category = {
     data: [
       {
@@ -148,9 +148,9 @@ const page = () => {
                       Connect with the right
                       <br />
                       Service Experts
-                    </b>{" "}
-                    Restaurants, cafe&apos;s, and bars in {location.city},{" "}
-                    {location.country}{" "}
+                    </b>
+                    Restaurants, cafe&apos;s, and bars in {location.city},
+                    {location.country}
                   </h1>
                 </div>
                 <Listing_Filter location={location.city} />
@@ -244,7 +244,7 @@ const page = () => {
                         <p>
                           Choose from a collection of handpicked luxury villas
                           &amp; apartments
-                        </p>{" "}
+                        </p>
                         <Link href="/#">Explore Now</Link>
                       </div>
                     </li>
@@ -255,7 +255,7 @@ const page = () => {
                         <p>
                           Choose from a collection of handpicked luxury villas
                           &amp; apartments
-                        </p>{" "}
+                        </p>
                         <Link href="/#">Explore Now</Link>
                       </div>
                     </li>
@@ -266,7 +266,7 @@ const page = () => {
                         <p>
                           Choose from a collection of handpicked luxury villas
                           &amp; apartments
-                        </p>{" "}
+                        </p>
                         <Link href="/#">Explore Now</Link>
                       </div>
                     </li>
@@ -277,7 +277,7 @@ const page = () => {
                         <p>
                           Choose from a collection of handpicked luxury villas
                           &amp; apartments
-                        </p>{" "}
+                        </p>
                         <Link href="/#">Explore Now</Link>
                       </div>
                     </li>
@@ -337,7 +337,7 @@ const page = () => {
             <div className="row">
               <div className="home-tit">
                 <h2>
-                  <span>Explore City</span> Category{" "}
+                  <span>Explore City</span> Category
                 </h2>
                 <p>
                   lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu
@@ -355,20 +355,18 @@ const page = () => {
                         <img src="/services/1.jpg" alt="bizdir" />
                         <h4>Hotels And Resorts</h4>
                         <div className="list-rat-all">
-                          {" "}
                           <b>3.0</b>
                           <label className="rat">
-                            {" "}
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons ratstar">star</i>
                             <i className="material-icons ratstar">star</i>
-                          </label>{" "}
+                          </label>
                           <span>2 Reviews</span>
                         </div>
                         <p>09 Listings</p>
-                      </div>{" "}
+                      </div>
                       <Link href="/all-listing" className="fclick">
                         &nbsp;
                       </Link>
@@ -383,16 +381,14 @@ const page = () => {
                         <img src="/services/20356s7.jpeg" alt="bizdir" />
                         <h4>Automobiles</h4>
                         <div className="list-rat-all">
-                          {" "}
                           <b>3.0</b>
                           <label className="rat">
-                            {" "}
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons ratstar">star</i>
                             <i className="material-icons ratstar">star</i>
-                          </label>{" "}
+                          </label>
                           <span>2 Reviews</span>
                         </div>
                         <p>06 Listings</p>
@@ -411,20 +407,18 @@ const page = () => {
                         <img src="/services/20356s7.jpeg" alt="bizdir" />
                         <h4>Wedding halls</h4>
                         <div className="list-rat-all">
-                          {" "}
                           <b>5.0</b>
                           <label className="rat">
-                            {" "}
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
-                          </label>{" "}
+                          </label>
                           <span>1 Reviews</span>
                         </div>
                         <p>03 Listings</p>
-                      </div>{" "}
+                      </div>
                       <Link href="/all-listing" className="fclick">
                         &nbsp;
                       </Link>
@@ -439,20 +433,18 @@ const page = () => {
                         <img src="/services/445234.jpg" alt="bizdir" />
                         <h4>Digital products</h4>
                         <div className="list-rat-all">
-                          {" "}
                           <b>3.3</b>
                           <label className="rat">
-                            {" "}
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons ratstar">star</i>
-                          </label>{" "}
+                          </label>
                           <span>3 Reviews</span>
                         </div>
                         <p>23 Listings</p>
-                      </div>{" "}
+                      </div>
                       <Link href="/all-listing" className="fclick">
                         &nbsp;
                       </Link>
@@ -467,20 +459,18 @@ const page = () => {
                         <img src="/services/20356s7.jpeg" alt="bizdir" />
                         <h4>Real Estate</h4>
                         <div className="list-rat-all">
-                          {" "}
                           <b>3.3</b>
                           <label className="rat">
-                            {" "}
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons">star</i>
                             <i className="material-icons ratstar">star</i>
-                          </label>{" "}
+                          </label>
                           <span>3 Reviews</span>
                         </div>
                         <p>23 Listings</p>
-                      </div>{" "}
+                      </div>
                       <Link href="/all-listing" className="fclick">
                         &nbsp;
                       </Link>
@@ -498,7 +488,7 @@ const page = () => {
             <div className="hom-mpop-main">
               <div className="home-tit">
                 <h2>
-                  <span>Featured Services</span> in your city{" "}
+                  <span>Featured Services</span> in your city
                 </h2>
                 <p>
                   lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu
@@ -519,9 +509,9 @@ const page = () => {
                       <h4>Wedding halls</h4>
                       <p>
                         Titan wedding happ, North street, No 2, Newyork, USA
-                      </p>{" "}
+                      </p>
                       <span className="rat-sh">5.0</span>
-                    </div>{" "}
+                    </div>
                     <Link href="/listing-details">&nbsp;</Link>
                   </div>
                   {/*POPULAR LISTINGS*/}
@@ -552,7 +542,7 @@ const page = () => {
                       <p>
                         28800 Orchard Lake Road, Suite 180 Farmington Hills,
                         U.S.A.
-                      </p>{" "}
+                      </p>
                       <span className="rat-sh">5.0</span>
                     </div>
                     <Link href="/listing-details">&nbsp;</Link>
@@ -567,9 +557,7 @@ const page = () => {
                     <div className="col-md-9">
                       <h3>The Spa at Mandarin Oriental</h3>
                       <h4>Hospitals</h4>
-                      <p>
-                        No:2, 4th Avenue, Newyork, USA, Near to Airport
-                      </p>{" "}
+                      <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>
                       <span className="rat-sh">4.0</span>
                     </div>
                     <Link href="/listing-details">&nbsp;</Link>
@@ -602,9 +590,7 @@ const page = () => {
                     <div className="col-md-9">
                       <h3>Rachel Taj Hotels</h3>
                       <h4>Hotels And Resorts</h4>
-                      <p>
-                        No:2, 4th Avenue, Newyork, USA, Near to Airport
-                      </p>{" "}
+                      <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>
                       <span className="rat-sh">3.0</span>
                     </div>
                     <Link href="/listing-details">&nbsp;</Link>
@@ -620,7 +606,7 @@ const page = () => {
                       <h3>Joseph Multispeciality Hospital</h3>
                       <h4>Hospitals</h4>
                       <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>
-                    </div>{" "}
+                    </div>
                     <Link href="/listing-details">&nbsp;</Link>
                   </div>
                   {/*POPULAR LISTINGS*/}
@@ -633,11 +619,9 @@ const page = () => {
                     <div className="col-md-9">
                       <h3>Green Healthcare Hospital</h3>
                       <h4>Hospitals</h4>
-                      <p>
-                        No:2, 4th Avenue, Newyork, USA, Near to Airport
-                      </p>{" "}
+                      <p>No:2, 4th Avenue, Newyork, USA, Near to Airport</p>
                       <span className="rat-sh">3.0</span>
-                    </div>{" "}
+                    </div>
                     <Link href="/listing-details">&nbsp;</Link>
                   </div>
                 </div>
@@ -690,7 +674,7 @@ const page = () => {
               </div>
               <div className="col-md-6">
                 <div className="hom-col-req">
-                  <div className="log-bor">&nbsp;</div>{" "}
+                  <div className="log-bor">&nbsp;</div>
                   <span className="udb-inst">Fill the form</span>
                   <h4>What you looking for?</h4>
                   <div
@@ -841,7 +825,7 @@ const page = () => {
               <div className="row">
                 <div className="home-tit">
                   <h2>
-                    <span>Top Service Provider</span> in city{" "}
+                    <span>Top Service Provider</span> in city
                   </h2>
                   <p>
                     lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu
@@ -884,7 +868,6 @@ const page = () => {
                             </span>
                           </div>
                           <div className="hot-page2-hom-pre-3">
-                            {" "}
                             <span>2.0</span>
                           </div>
                           <Link href="/listing-details" className="fclick" />
@@ -902,7 +885,6 @@ const page = () => {
                             </span>
                           </div>
                           <div className="hot-page2-hom-pre-3">
-                            {" "}
                             <span>3.3</span>
                           </div>
                           <Link href="/listing-details" className="fclick" />
@@ -1001,7 +983,6 @@ const page = () => {
                             </span>
                           </div>
                           <div className="hot-page2-hom-pre-3">
-                            {" "}
                             <span>3.7</span>
                           </div>
                           <Link href="/listing-details" className="fclick" />
@@ -1019,7 +1000,6 @@ const page = () => {
                             </span>
                           </div>
                           <div className="hot-page2-hom-pre-3">
-                            {" "}
                             <span>3.2</span>
                           </div>
                           <Link href="/listing-details" className="fclick" />
@@ -1062,7 +1042,6 @@ const page = () => {
                             </span>
                           </div>
                           <div className="hot-page2-hom-pre-3">
-                            {" "}
                             <span>4.0</span>
                           </div>
                           <Link href="/listing-details" className="fclick" />
@@ -1094,7 +1073,6 @@ const page = () => {
                             </span>
                           </div>
                           <div className="hot-page2-hom-pre-3">
-                            {" "}
                             <span>4.0</span>
                           </div>
                           <Link href="/listing-details" className="fclick" />
@@ -1112,7 +1090,6 @@ const page = () => {
                             </span>
                           </div>
                           <div className="hot-page2-hom-pre-3">
-                            {" "}
                             <span>3.0</span>
                           </div>
                           <Link href="/listing-details" className="fclick" />
@@ -1136,7 +1113,7 @@ const page = () => {
               <div className="row">
                 <div className="home-tit">
                   <h2>
-                    <span>Feature Events</span> in city{" "}
+                    <span>Feature Events</span> in city
                   </h2>
                   <p>
                     lacinia viverra lectus. Fusce imperdiet ullamcorper metus eu
@@ -1166,7 +1143,7 @@ const page = () => {
                         </div>
                         <div>
                           <div className="auth">
-                            <img src="/user/1.png" alt="bizdir" />{" "}
+                            <img src="/user/1.png" alt="bizdir" />
                             <b>Hosted by</b>
                             <br />
                             <h4>Directory Finder</h4>
@@ -1200,7 +1177,7 @@ const page = () => {
                         </div>
                         <div>
                           <div className="auth">
-                            <img src="/user/2.jpeg" alt="bizdir" />{" "}
+                            <img src="/user/2.jpeg" alt="bizdir" />
                             <b>Hosted by</b>
                             <br />
                             <h4>Chris moris</h4>
@@ -1223,7 +1200,7 @@ const page = () => {
                             </h4>
                             <p>
                               Celebrate as the sights, sounds and aromas of A
-                            </p>{" "}
+                            </p>
                             <span>
                               Jan <b> 07</b>
                             </span>
@@ -1236,7 +1213,7 @@ const page = () => {
                             <h4 title="Car Fest 2020">Car Fest 2020</h4>
                             <p>
                               Celebrate as the sights, sounds and aromas of A
-                            </p>{" "}
+                            </p>
                             <span>
                               Jan <b> 10</b>
                             </span>
@@ -1251,7 +1228,7 @@ const page = () => {
                             </h4>
                             <p>
                               Celebrate as the sights, sounds and aromas of A
-                            </p>{" "}
+                            </p>
                             <span>
                               Jan <b> 18</b>
                             </span>
@@ -1266,7 +1243,7 @@ const page = () => {
                             </h4>
                             <p>
                               Celebrate as the sights, sounds and aromas of A
-                            </p>{" "}
+                            </p>
                             <span>
                               Mar <b> 18</b>
                             </span>
@@ -1281,7 +1258,7 @@ const page = () => {
                             </h4>
                             <p>
                               Celebrate as the sights, sounds and aromas of A
-                            </p>{" "}
+                            </p>
                             <span>
                               Jan <b> 31</b>
                             </span>
@@ -1296,7 +1273,7 @@ const page = () => {
                             </h4>
                             <p>
                               Celebrate as the sights, sounds and aromas of A
-                            </p>{" "}
+                            </p>
                             <span>
                               Jan <b> 18</b>
                             </span>
@@ -1323,7 +1300,6 @@ const page = () => {
                     <ul>
                       <li>
                         <div>
-                          {" "}
                           <span>1</span>
                           <img src="/icon/how1.png" alt="bizdir" />
                           <h4>Create an account</h4>
@@ -1335,7 +1311,6 @@ const page = () => {
                       </li>
                       <li>
                         <div>
-                          {" "}
                           <span>2</span>
                           <img src="/icon/how2.png" alt="bizdir" />
                           <h4>Add your business</h4>
@@ -1347,7 +1322,6 @@ const page = () => {
                       </li>
                       <li>
                         <div>
-                          {" "}
                           <span>3</span>
                           <img src="/icon/how3.png" alt="bizdir" />
                           <h4>Get more leads</h4>
@@ -1359,7 +1333,6 @@ const page = () => {
                       </li>
                       <li>
                         <div>
-                          {" "}
                           <span>4</span>
                           <img src="/icon/how4.png" alt="bizdir" />
                           <h4>Archive goles</h4>
@@ -1441,7 +1414,7 @@ const page = () => {
                   </div>
                   <div className="rhs">
                     <h2>
-                      Looking for the Best Service Provider?{" "}
+                      Looking for the Best Service Provider?
                       <span>Get the App!</span>
                     </h2>
                     <ul>
@@ -1449,7 +1422,7 @@ const page = () => {
                       <li>Easy service enquiry</li>
                       <li>Listing reviews and ratings</li>
                       <li>Manage your listing, enquiry and reviews</li>
-                    </ul>{" "}
+                    </ul>
                     <span>
                       We&apos;ll send you a link, to you below provided email id
                       &amp; open it on your smart phone to download the app
@@ -1489,7 +1462,6 @@ const page = () => {
                 <div className="filt-com lhs-ads">
                   <div className="ads-box">
                     <Link href="/">
-                      {" "}
                       <span>Ad</span>
                       <img src="/ads/ads2.jpg" alt="bizdir" />
                     </Link>
@@ -1514,7 +1486,6 @@ const page = () => {
         {/* START */}
         {/* <span className="btn-ser-need-ani">Help &amp; Support</span> */}
         <div className="ani-quo-form">
-          {" "}
           <i className="material-icons ani-req-clo">close</i>
           <div className="tit">
             <h3>
@@ -1677,7 +1648,6 @@ const page = () => {
                     </p>
                   </div>
                   <div className="col-md-3 bb-link">
-                    {" "}
                     <Link href="/pricing-details">Add my business</Link>
                   </div>
                 </div>
