@@ -26,7 +26,7 @@ const page = () => {
     website: "",
     listing_address: "",
     country: "",
-    state:"",
+    state: "",
     city: "",
     area: "",
     category: "",
@@ -40,55 +40,63 @@ const page = () => {
       offer_name: "",
       offer_amount: "",
       offer_description: "",
-      offer_type:"percent",
+      offer_type: "percent",
       offer_image: "",
     },
+    business_time: {
+      week_off: [],
+      month_off: [],
+      open_time: "",
+      close_time: "",
+    },
     service_location: [],
-    service_provided:[],
+    service_provided: [],
     youtube_link: "",
     map_url: "",
   });
   const [errors, setErrors] = useState({});
+
   const validate = () => {
     const newErrors = {};
     if (!formData.listing_name) {
-      newErrors.listing_name = 'Listing Name is Required';
+      newErrors.listing_name = "Listing Name is Required";
     }
     if (!formData.listing_email) {
-      newErrors.listing_email = 'email is Required';
+      newErrors.listing_email = "email is Required";
     }
     if (!formData.phone_number) {
-      newErrors.phone_number = 'Phone Number is Required';
+      newErrors.phone_number = "Phone Number is Required";
     }
     if (!formData.listing_address) {
-      newErrors.listing_address = 'shop address is Required';
+      newErrors.listing_address = "shop address is Required";
     }
     if (!formData.country) {
-      newErrors.country = 'country is Required';
+      newErrors.country = "country is Required";
     }
     if (!formData.state) {
-      newErrors.state = 'State is Required';
+      newErrors.state = "State is Required";
     }
     if (!formData.city) {
-      newErrors.city = 'city is Required';
+      newErrors.city = "city is Required";
     }
     if (!formData.area) {
-      newErrors.area = 'area is Required';
+      newErrors.area = "area is Required";
     }
     if (!formData.category) {
-      newErrors.category = 'Category is Required';
+      newErrors.category = "Category is Required";
     }
-  
+
     if (!formData.listing_detail) {
-      newErrors.listing_detail = 'listing detail is Required';
+      newErrors.listing_detail = "listing detail is Required";
     }
-       
+
     // Add other validation as needed
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
   const handleInputChange = (event, index) => {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
     if (name === "service_location") {
       // Update service_location with the array of locations
       const locationsArray = value.split(",");
@@ -129,6 +137,26 @@ const page = () => {
           [name]: value, // Update the specific field
         },
       }));
+    } else if (type === "checkbox") {
+      if (checked) {
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          business_time: {
+            ...prevFormData.business_time,
+            week_off: [...prevFormData.business_time.week_off, value],
+          },
+        }));
+      } else {
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          business_time: {
+            ...prevFormData.business_time,
+            week_off: prevFormData.business_time.week_off.filter(
+              (item) => item !== value
+            ),
+          },
+        }));
+      }
     } else {
       setFormData((prevFormData) => ({
         ...prevFormData,
@@ -145,14 +173,13 @@ const page = () => {
     console.log(formData);
   };
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const jwt = session.jwt;
-  
+
     try {
       // Send GraphQL mutation request to create a listing
-      if(validate()){
+      if (validate()) {
         const { data, errors } = await client.mutate({
           mutation: CREATE_LISTING,
           variables: { data: formData },
@@ -162,32 +189,36 @@ const page = () => {
             },
           },
         });
-    
+
         if (errors || data.createListing.code !== 201) {
-          throw new Error('Something went wrong');
+          throw new Error("Something went wrong");
         }
-    
-        toast.success('Listing created successfully');
-        router.push('/account/db-all-listing');
+
+        toast.success("Listing created successfully");
+        router.push("/account/db-all-listing");
         console.log(data);
-      } else{
+      } else {
         toast.error("Please fill all required fields");
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       // Handle error
     }
   };
+
   const [currentStep, setCurrentStep] = useState(0);
+
   const handleStepClick = (step) => {
-    if(validate()){
+    if (validate()) {
       setCurrentStep(step - 1);
-    }else {
+    } else {
       toast.error("Please fill all required fields");
     }
   };
+
   const steps = [
-    <Step1 key="1"
+    <Step1
+      key="1"
       formData={formData}
       setFormData={setFormData}
       handleInputChange={handleInputChange}
@@ -195,12 +226,29 @@ const page = () => {
       setErrors={setErrors}
       handleStepClick={handleStepClick}
     />,
-    <Step2 key="2" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />,
-    <Step3 key="3" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />,
-    <Step4 key="4" handleStepClick={handleStepClick} formData={formData} setFormData={setFormData} handleInputChange={handleInputChange} />
+    <Step2
+      key="2"
+      handleStepClick={handleStepClick}
+      formData={formData}
+      setFormData={setFormData}
+      handleInputChange={handleInputChange}
+    />,
+    <Step3
+      key="3"
+      handleStepClick={handleStepClick}
+      formData={formData}
+      setFormData={setFormData}
+      handleInputChange={handleInputChange}
+    />,
+    <Step4
+      key="4"
+      handleStepClick={handleStepClick}
+      formData={formData}
+      setFormData={setFormData}
+      handleInputChange={handleInputChange}
+    />,
   ];
   const stepNames = ["Besic Info", "Services", "Offers", "Gallery", "Others"];
-  
 
   return (
     <section>
