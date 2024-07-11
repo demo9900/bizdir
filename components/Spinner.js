@@ -12,7 +12,7 @@ const Spinner = () => {
     animationDuration="0.75"
     ariaLabel="rotating-lines-loading"
     wrapperStyle={{margin:'auto'}}
-    wrapperClass="rotating-lines-loading"
+    wrapperclassName="rotating-lines-loading"
     />
   )
 }

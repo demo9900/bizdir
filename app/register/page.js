@@ -117,7 +117,7 @@ const [userEmail, setuserEmail] = useState("");
                    <div className="g-signin2" data-onsuccess="onSignIn" />
                  </li>
                  {/*                                        <li>*/}
-                 {/*                                            <a href="google_login.html" class="login-goog"><img*/}
+                 {/*                                            <a href="google_login.html" className="login-goog"><img*/}
                  {/*                                                    src="images/icon/seo.png">Continue*/}
                  {/*                                                with Google</a>*/}
                  {/*                                        </li>*/}

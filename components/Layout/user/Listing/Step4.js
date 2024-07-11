@@ -58,7 +58,7 @@ const Step4 = ({ formData,setFormData, handleInputChange, handleStepClick }) => 
          
          <UploadGallery formData={formData}
                           setFormData={setFormData} />
-            <div class="row">
+            <div className="row">
               <div className="col-md-6">
                 <button
                   onClick={() => handleStepClick(3)}

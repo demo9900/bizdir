@@ -17,6 +17,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BusinessTimings from "./BusinessTimings";
 
 const page = ({ params }) => {
   const { data: session, status, update } = useSession();
@@ -571,27 +572,26 @@ const page = ({ params }) => {
                     </div>
                     {listing?.gallery_images && (
                       <div className="list-pg-inn-sp">
-                      <div className="carousel slide">
-                        <Slider {...settings}>
-                          {listing?.gallery_images?.map((image, idx) => {
-                            return (
-                              <div key={idx} className="h-[380px] w-full ">
-                               <CldImage
-                            width="750"
-                            crop="fill"
-                            gravity="east"
-                            height="380"
-                            src={image}
-                            alt="Description of my image"
-                          />
-                              </div>
-                            );
-                          })}
-                        </Slider>
+                        <div className="carousel slide">
+                          <Slider {...settings}>
+                            {listing?.gallery_images?.map((image, idx) => {
+                              return (
+                                <div key={idx} className="h-[380px] w-full ">
+                                  <CldImage
+                                    width="750"
+                                    crop="fill"
+                                    gravity="east"
+                                    height="380"
+                                    src={image}
+                                    alt="Description of my image"
+                                  />
+                                </div>
+                              );
+                            })}
+                          </Slider>
+                        </div>
                       </div>
-                    </div>
                     )}
-                    
                   </div>
                   {/*END LISTING DETAILS: LEFT PART 3*/}
                   {/*LISTING DETAILS: LEFT PART 4*/}
@@ -609,7 +609,7 @@ const page = ({ params }) => {
                       <div className="home-list-pop">
                         {/*LISTINGS IMAGE*/}
                         <div className="col-md-3">
-                        <CldImage
+                          <CldImage
                             width="150"
                             height="172"
                             src={listing?.offer?.offer_image}
@@ -1272,6 +1272,11 @@ const page = ({ params }) => {
                       <div className="list-pg-oth-info">
                         <ul>
                           <li>
+                            <BusinessTimings
+                              timingData={listing.business_time}
+                            />
+                          </li>
+                          <li>
                             Available villas <span>12</span>
                           </li>
                           <li>
@@ -1312,7 +1317,11 @@ const page = ({ params }) => {
                         </span>
                         <span className="by">Created by</span>
                         <img src="/user/3.jpg" alt="" />
-                        <h4>{listing?.user_name?.length > 0 ? listing?.user_name: listing?.createdBy?.name }</h4>
+                        <h4>
+                          {listing?.user_name?.length > 0
+                            ? listing?.user_name
+                            : listing?.createdBy?.name}
+                        </h4>
                         <p>Member since Feb 2021</p>
                       </div>
                       <Link

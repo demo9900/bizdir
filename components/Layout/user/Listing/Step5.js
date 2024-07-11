@@ -173,7 +173,7 @@ const Step5 = ({
               {/*FILED END*/}
             </ul>
             {/*FILED START*/}
-            <div class="row">
+            <div className="row">
               <div className="col-md-6">
                 <button
                   onClick={() => handleStepClick(4)}

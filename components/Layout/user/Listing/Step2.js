@@ -79,7 +79,7 @@ const Step2 = ({
                 </li>
               ))}
             </ul>
-            <div class="row">
+            <div className="row">
               <div className="col-md-6">
                 <button
                   onClick={() => handleStepClick(1)}
